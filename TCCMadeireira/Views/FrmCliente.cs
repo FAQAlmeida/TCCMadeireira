@@ -44,6 +44,7 @@ namespace TCCMadeireira.Views
             this.rbtnCpfFiltro.Checked = true;
             this.ControlEnable(false);
             this.cmbUf.SelectedItem = "SP";
+            this.lblDataInfo.Text = "";
         }
         #endregion
         #region @event.Click
@@ -69,7 +70,7 @@ namespace TCCMadeireira.Views
                 else
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
-                    banco.Insert(cliente);
+                    banco.InsertCliente(cliente);
                     cLIENTESDataGridView.DataSource = dataSetMadeireira.CLIENTES;
                     cLIENTESDataGridView.Update();
                     ControlEnable(false);
@@ -105,7 +106,8 @@ namespace TCCMadeireira.Views
                 {
                     if (MessageBox.Show(String.Format("Você deseja excluir o cliente de CPF {0}?", txtIdentidade.Text), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
-                        cLIENTESTableAdapter.DeletePessoaIdentidade(txtIdentidade.Text);
+                        Cliente cliente = new Cliente(txtIdentidade.Text);
+                        cLIENTESTableAdapter.DeletePessoaIdentidade(cliente.Identidade);
                         btnExcluir.Text = "Excluir";
                         txtIdentidade.Enabled = false;
                     }
@@ -140,7 +142,8 @@ namespace TCCMadeireira.Views
                 else if (btnAlterar.Text == "Pesquisar")
                 {
                     DataTable dt = new DataTable();
-                    dt = banco.Select(txtIdentidade.Text);
+                    Cliente cliente = new Cliente(txtIdentidade.Text);
+                    dt = banco.SelectCliente(cliente.Identidade);
                     txtNome.Text = dt.Rows[0]["NOME_CLIENTE"].ToString();
                     txtIdentidade.Text = dt.Rows[0]["CPF/CNPJ_CLIENTE"].ToString();
                     txtCep.Text = dt.Rows[0]["CEP_CLIENTE"].ToString();
@@ -159,13 +162,13 @@ namespace TCCMadeireira.Views
                 else
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
-                    banco.Update(cliente);
+                    banco.UpdateCliente(cliente);
                     cLIENTESDataGridView.DataSource = dataSetMadeireira.CLIENTES;
                     cLIENTESDataGridView.Update();
                     ControlEnable(false);
                     btnExcluir.Enabled = true;
                     btnCadastrar.Enabled = true;
-                    btnCadastrar.Text = "Cadastrar";
+                    btnCadastrar.Text = "Alterar";
                 }
             }
             catch (Exception ex)
@@ -185,7 +188,7 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (cLIENTESDataGridView.SelectedCells.Count > 1)
+                if (cLIENTESDataGridView.SelectedCells.Count == 14)
                 {
                     txtNome.Text = cLIENTESDataGridView.SelectedCells[1].Value.ToString().Trim();
                     txtIdentidade.Text = cLIENTESDataGridView.SelectedCells[2].Value.ToString().Trim();
@@ -264,7 +267,7 @@ namespace TCCMadeireira.Views
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
-            cLIENTESBindingSource.Filter = String.Format("{0} like '{1}'", "[CPF/CNPJ_CLIENTE]", txtFiltro.Text);
+            cLIENTESBindingSource.Filter = String.Format("{0} like '%{1}%'", "[CPF/CNPJ_CLIENTE]", txtFiltro.Text);
         }
         #endregion
         #region @Control.Methods
