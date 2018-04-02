@@ -11,6 +11,11 @@ using TCCMadeireira.Model;
 
 namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Classe do FrmCliente
+    /// <para>Responsável por toda a funcionalidade do Form</para>
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class FrmCliente : Form
     {    
         #region @Atributos

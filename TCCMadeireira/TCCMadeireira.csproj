@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Docs\TCCMadeireira.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Bancos\DataSetMadeireiraV2.cs">
+      <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Bancos\DataSetMadeireiraV2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\ValidarCpfCnpj.cs" />
@@ -61,6 +70,18 @@
     </Compile>
     <Compile Include="Views\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmFornecedor.Designer.cs">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmFornecimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmFornecimento.Designer.cs">
+      <DependentUpon>FrmFornecimento.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmFuncionario.cs">
       <SubType>Form</SubType>
@@ -74,6 +95,24 @@
     <Compile Include="Views\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmProduto.Designer.cs">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmVenda.Designer.cs">
+      <DependentUpon>FrmVenda.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,11 +125,17 @@
     <EmbeddedResource Include="Views\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmFornecedor.resx">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmFuncionario.resx">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmProduto.resx">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Bancos\DataSetMadeireira.xsc">
       <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
@@ -102,6 +147,17 @@
     </None>
     <None Include="Bancos\DataSetMadeireira.xss">
       <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
+    </None>
+    <None Include="Bancos\DataSetMadeireiraV2.xsc">
+      <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
+    </None>
+    <None Include="Bancos\DataSetMadeireiraV2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMadeireiraV2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Bancos\DataSetMadeireiraV2.xss">
+      <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

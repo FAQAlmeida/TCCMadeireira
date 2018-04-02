@@ -1,5 +1,10 @@
 ﻿namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Classe de design do FrmFuncionario
+    /// <para>Responsável pelo visual do Form</para>
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class FrmFuncionario
     {
         /// <summary>
