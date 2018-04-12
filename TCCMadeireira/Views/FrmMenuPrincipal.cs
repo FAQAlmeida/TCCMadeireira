@@ -82,7 +82,73 @@ namespace TCCMadeireira.Views
                     MdiParent = this
                 };
                 frmFornecedor.Show();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmProduto frmProduto = new FrmProduto
+                {
+                    MdiParent = this
+                };
+                frmProduto.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmVenda frmVenda = new FrmVenda
+                {
+                    MdiParent = this
+                };
+                frmVenda.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void fonecimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmFornecimento frmFornecimento = new FrmFornecimento
+                {
+                    MdiParent = this
+                };
+                frmFornecimento.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmUsuario frmUsuario = new FrmUsuario
+                {
+                    MdiParent = this
+                };
+                frmUsuario.Show();
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

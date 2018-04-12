@@ -52,6 +52,10 @@ namespace TCCMadeireira.Bancos {
         
         private global::System.Data.DataRelation relationFK__FORNECIME__ID_FO__3E52440B;
         
+        private global::System.Data.DataRelation relationPRODUTOS_FORNECIMENTO_PRODUTO;
+        
+        private global::System.Data.DataRelation relationPRODUTOS_VENDA_PRODUTO;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -401,6 +405,8 @@ namespace TCCMadeireira.Bancos {
             this.relationFK__VENDA_PRO__ID_VE__34C8D9D1 = this.Relations["FK__VENDA_PRO__ID_VE__34C8D9D1"];
             this.relationFK__FORNECIME__ID_FO__412EB0B6 = this.Relations["FK__FORNECIME__ID_FO__412EB0B6"];
             this.relationFK__FORNECIME__ID_FO__3E52440B = this.Relations["FK__FORNECIME__ID_FO__3E52440B"];
+            this.relationPRODUTOS_FORNECIMENTO_PRODUTO = this.Relations["PRODUTOS_FORNECIMENTO_PRODUTO"];
+            this.relationPRODUTOS_VENDA_PRODUTO = this.Relations["PRODUTOS_VENDA_PRODUTO"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,6 +455,14 @@ namespace TCCMadeireira.Bancos {
                         this.tableFORNECEDORES.ID_FORNECEDORColumn}, new global::System.Data.DataColumn[] {
                         this.tableFORNECIMENTOS.ID_FORNECEDORColumn}, false);
             this.Relations.Add(this.relationFK__FORNECIME__ID_FO__3E52440B);
+            this.relationPRODUTOS_FORNECIMENTO_PRODUTO = new global::System.Data.DataRelation("PRODUTOS_FORNECIMENTO_PRODUTO", new global::System.Data.DataColumn[] {
+                        this.tablePRODUTOS.ID_PRODUTOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFORNECIMENTO_PRODUTO.ID_PRODUTOColumn}, false);
+            this.Relations.Add(this.relationPRODUTOS_FORNECIMENTO_PRODUTO);
+            this.relationPRODUTOS_VENDA_PRODUTO = new global::System.Data.DataRelation("PRODUTOS_VENDA_PRODUTO", new global::System.Data.DataColumn[] {
+                        this.tablePRODUTOS.ID_PRODUTOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVENDA_PRODUTO.ID_PRODUTOColumn}, false);
+            this.Relations.Add(this.relationPRODUTOS_VENDA_PRODUTO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2724,15 +2738,18 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VENDA_PRODUTORow AddVENDA_PRODUTORow(VENDASRow parentVENDASRowByFK__VENDA_PRO__ID_VE__34C8D9D1, int ID_PRODUTO, int QUANTIDADE_PRODUTO) {
+            public VENDA_PRODUTORow AddVENDA_PRODUTORow(VENDASRow parentVENDASRowByFK__VENDA_PRO__ID_VE__34C8D9D1, PRODUTOSRow parentPRODUTOSRowByPRODUTOS_VENDA_PRODUTO, int QUANTIDADE_PRODUTO) {
                 VENDA_PRODUTORow rowVENDA_PRODUTORow = ((VENDA_PRODUTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        ID_PRODUTO,
+                        null,
                         QUANTIDADE_PRODUTO};
                 if ((parentVENDASRowByFK__VENDA_PRO__ID_VE__34C8D9D1 != null)) {
                     columnValuesArray[1] = parentVENDASRowByFK__VENDA_PRO__ID_VE__34C8D9D1[0];
+                }
+                if ((parentPRODUTOSRowByPRODUTOS_VENDA_PRODUTO != null)) {
+                    columnValuesArray[2] = parentPRODUTOSRowByPRODUTOS_VENDA_PRODUTO[0];
                 }
                 rowVENDA_PRODUTORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVENDA_PRODUTORow);
@@ -3031,15 +3048,18 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public FORNECIMENTO_PRODUTORow AddFORNECIMENTO_PRODUTORow(FORNECIMENTOSRow parentFORNECIMENTOSRowByFK__FORNECIME__ID_FO__412EB0B6, int ID_PRODUTO, int QUANTIDADE_PRODUTO) {
+            public FORNECIMENTO_PRODUTORow AddFORNECIMENTO_PRODUTORow(FORNECIMENTOSRow parentFORNECIMENTOSRowByFK__FORNECIME__ID_FO__412EB0B6, PRODUTOSRow parentPRODUTOSRowByPRODUTOS_FORNECIMENTO_PRODUTO, int QUANTIDADE_PRODUTO) {
                 FORNECIMENTO_PRODUTORow rowFORNECIMENTO_PRODUTORow = ((FORNECIMENTO_PRODUTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        ID_PRODUTO,
+                        null,
                         QUANTIDADE_PRODUTO};
                 if ((parentFORNECIMENTOSRowByFK__FORNECIME__ID_FO__412EB0B6 != null)) {
                     columnValuesArray[1] = parentFORNECIMENTOSRowByFK__FORNECIME__ID_FO__412EB0B6[0];
+                }
+                if ((parentPRODUTOSRowByPRODUTOS_FORNECIMENTO_PRODUTO != null)) {
+                    columnValuesArray[2] = parentPRODUTOSRowByPRODUTOS_FORNECIMENTO_PRODUTO[0];
                 }
                 rowFORNECIMENTO_PRODUTORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFORNECIMENTO_PRODUTORow);
@@ -5373,6 +5393,17 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public PRODUTOSRow PRODUTOSRow {
+                get {
+                    return ((PRODUTOSRow)(this.GetParentRow(this.Table.ParentRelations["PRODUTOS_VENDA_PRODUTO"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["PRODUTOS_VENDA_PRODUTO"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsID_VENDANull() {
                 return this.IsNull(this.tableVENDA_PRODUTO.ID_VENDAColumn);
             }
@@ -5490,6 +5521,17 @@ namespace TCCMadeireira.Bancos {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__FORNECIME__ID_FO__412EB0B6"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public PRODUTOSRow PRODUTOSRow {
+                get {
+                    return ((PRODUTOSRow)(this.GetParentRow(this.Table.ParentRelations["PRODUTOS_FORNECIMENTO_PRODUTO"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["PRODUTOS_FORNECIMENTO_PRODUTO"]);
                 }
             }
             
@@ -5853,6 +5895,28 @@ namespace TCCMadeireira.Bancos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetOBS_PRODUTONull() {
                 this[this.tablePRODUTOS.OBS_PRODUTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public FORNECIMENTO_PRODUTORow[] GetFORNECIMENTO_PRODUTORows() {
+                if ((this.Table.ChildRelations["PRODUTOS_FORNECIMENTO_PRODUTO"] == null)) {
+                    return new FORNECIMENTO_PRODUTORow[0];
+                }
+                else {
+                    return ((FORNECIMENTO_PRODUTORow[])(base.GetChildRows(this.Table.ChildRelations["PRODUTOS_FORNECIMENTO_PRODUTO"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public VENDA_PRODUTORow[] GetVENDA_PRODUTORows() {
+                if ((this.Table.ChildRelations["PRODUTOS_VENDA_PRODUTO"] == null)) {
+                    return new VENDA_PRODUTORow[0];
+                }
+                else {
+                    return ((VENDA_PRODUTORow[])(base.GetChildRows(this.Table.ChildRelations["PRODUTOS_VENDA_PRODUTO"])));
+                }
             }
         }
         
@@ -11093,6 +11157,15 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._pRODUTOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pRODUTOSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._fUNCIONARIOSTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.FUNCIONARIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -11117,15 +11190,6 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._fORNECIMENTO_PRODUTOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pRODUTOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pRODUTOSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11179,6 +11243,14 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._pRODUTOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pRODUTOSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._fUNCIONARIOSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.FUNCIONARIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -11203,14 +11275,6 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pRODUTOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pRODUTOSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -11221,14 +11285,6 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(DataSetMadeireiraV2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._pRODUTOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pRODUTOSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._fORNECIMENTO_PRODUTOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.FORNECIMENTO_PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -11250,6 +11306,14 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._fUNCIONARIOSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._pRODUTOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pRODUTOSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
