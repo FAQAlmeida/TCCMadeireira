@@ -44,7 +44,8 @@ namespace TCCMadeireira.Views
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireira1.CLIENTES'. Você pode movê-la ou removê-la conforme necessário.
-            this.cLIENTESTableAdapter.Fill(this.dataSetMadeireira.CLIENTES);
+            this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
+            this.dvgClientes.DataSource = cLIENTESBindingSource;
             this.rbtnCpf.Checked = true;
             this.rbtnCpfFiltro.Checked = true;
             this.ControlEnable(false);
@@ -76,8 +77,8 @@ namespace TCCMadeireira.Views
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.InsertCliente(cliente);
-                    cLIENTESDataGridView.DataSource = dataSetMadeireira.CLIENTES;
-                    cLIENTESDataGridView.Update();
+                    dvgClientes.DataSource = dataSetMadeireiraV2.CLIENTES;
+                    dvgClientes.Update();
                     ControlEnable(false);
                     btnExcluir.Enabled = true;
                     btnAlterar.Enabled = true;
@@ -168,8 +169,8 @@ namespace TCCMadeireira.Views
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.UpdateCliente(cliente);
-                    cLIENTESDataGridView.DataSource = dataSetMadeireira.CLIENTES;
-                    cLIENTESDataGridView.Update();
+                    dvgClientes.DataSource = dataSetMadeireiraV2.CLIENTES;
+                    dvgClientes.Update();
                     ControlEnable(false);
                     btnExcluir.Enabled = true;
                     btnCadastrar.Enabled = true;
@@ -193,21 +194,21 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (cLIENTESDataGridView.SelectedCells.Count == 14)
+                if (dvgClientes.SelectedCells.Count == 14)
                 {
-                    txtNome.Text = cLIENTESDataGridView.SelectedCells[1].Value.ToString().Trim();
-                    txtIdentidade.Text = cLIENTESDataGridView.SelectedCells[2].Value.ToString().Trim();
-                    txtCep.Text = cLIENTESDataGridView.SelectedCells[3].Value.ToString().Trim();
-                    txtRua.Text = cLIENTESDataGridView.SelectedCells[4].Value.ToString().Trim();
-                    txtNumero.Text = cLIENTESDataGridView.SelectedCells[5].Value.ToString().Trim();
-                    txtBairro.Text = cLIENTESDataGridView.SelectedCells[6].Value.ToString().Trim();
-                    txtCidade.Text = cLIENTESDataGridView.SelectedCells[7].Value.ToString().Trim();
-                    cmbUf.Text = cLIENTESDataGridView.SelectedCells[8].Value.ToString().Trim();
-                    txtTelefone.Text = cLIENTESDataGridView.SelectedCells[9].Value.ToString().Trim();
-                    txtCelular.Text = cLIENTESDataGridView.SelectedCells[10].Value.ToString().Trim();
-                    txtEmail.Text = cLIENTESDataGridView.SelectedCells[11].Value.ToString().Trim();
-                    lblDataInfo.Text = cLIENTESDataGridView.SelectedCells[12].Value.ToString().Trim();
-                    txtObs.Text = cLIENTESDataGridView.SelectedCells[13].Value.ToString().Trim();
+                    txtNome.Text = dvgClientes.SelectedCells[1].Value.ToString().Trim();
+                    txtIdentidade.Text = dvgClientes.SelectedCells[2].Value.ToString().Trim();
+                    txtCep.Text = dvgClientes.SelectedCells[3].Value.ToString().Trim();
+                    txtRua.Text = dvgClientes.SelectedCells[4].Value.ToString().Trim();
+                    txtNumero.Text = dvgClientes.SelectedCells[5].Value.ToString().Trim();
+                    txtBairro.Text = dvgClientes.SelectedCells[6].Value.ToString().Trim();
+                    txtCidade.Text = dvgClientes.SelectedCells[7].Value.ToString().Trim();
+                    cmbUf.Text = dvgClientes.SelectedCells[8].Value.ToString().Trim();
+                    txtTelefone.Text = dvgClientes.SelectedCells[9].Value.ToString().Trim();
+                    txtCelular.Text = dvgClientes.SelectedCells[10].Value.ToString().Trim();
+                    txtEmail.Text = dvgClientes.SelectedCells[11].Value.ToString().Trim();
+                    lblDataInfo.Text = dvgClientes.SelectedCells[12].Value.ToString().Trim();
+                    txtObs.Text = dvgClientes.SelectedCells[13].Value.ToString().Trim();
                 }
             }
             catch (Exception ex)
@@ -301,6 +302,10 @@ namespace TCCMadeireira.Views
                     (ctrl as RadioButton).Enabled = status;
                 }
             }
+        }
+        private void TableRefresh()
+        {
+            this.dvgClientes.Refresh();
         }
         #endregion
 

@@ -72,5 +72,20 @@ namespace TCCMadeireira.Views
             }
         }
         #endregion
+
+        private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmFornecedor frmFornecedor = new FrmFornecedor
+                {
+                    MdiParent = this
+                };
+                frmFornecedor.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

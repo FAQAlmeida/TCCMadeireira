@@ -246,17 +246,22 @@
             Represents the strongly named DataTable class.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSDataTable">
              <summary>
             Represents the strongly named DataTable class.
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTODataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSDataTable">
              <summary>
             Represents the strongly named DataTable class.
             </summary>
@@ -276,17 +281,7 @@
             Represents strongly named DataRow class.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRow">
              <summary>
             Represents strongly named DataRow class.
             </summary>
@@ -297,6 +292,21 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRow">
              <summary>
             Represents strongly named DataRow class.
             </summary>
@@ -316,17 +326,7 @@
             Row event argument class
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRowChangeEvent">
              <summary>
             Row event argument class
             </summary>
@@ -337,6 +337,21 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTORowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRowChangeEvent">
              <summary>
             Row event argument class
             </summary>
@@ -356,17 +371,7 @@
             Represents the connection and commands used to retrieve and save data.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTOSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FUNCIONARIOSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
             </summary>
@@ -377,6 +382,21 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDA_PRODUTOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTO_PRODUTOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTOSTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
             </summary>
@@ -567,6 +587,40 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:TCCMadeireira.Views.FrmFornecedor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmFornecimento.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecimento.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecimento.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Views.FrmFuncionario">
             <summary>
             Classe de design do FrmFuncionario
@@ -722,6 +776,57 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmProduto.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmUsuario.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmVenda.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmVenda.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmVenda.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
