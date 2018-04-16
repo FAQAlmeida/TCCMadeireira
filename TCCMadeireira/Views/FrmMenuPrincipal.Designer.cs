@@ -122,6 +122,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmMenuPrincipal";
             this.Text = "FrmMenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -23,6 +23,7 @@ namespace TCCMadeireira.Views
         /// Objeto banco para acessar os TableAdapters de forma mais simplória
         /// </summary>
         private Bancos.Banco banco = new Bancos.Banco();
+        private DataTable dataTable = new DataTable();
         #endregion
         #region @Construtor
         /// <summary>
@@ -45,7 +46,8 @@ namespace TCCMadeireira.Views
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireira1.CLIENTES'. Você pode movê-la ou removê-la conforme necessário.
             this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
-            this.dvgClientes.DataSource = cLIENTESBindingSource;
+            this.btnCancelar.Visible = false;
+            this.dvgClientes.DataSource = this.cLIENTESBindingSource;
             this.rbtnCpf.Checked = true;
             this.rbtnCpfFiltro.Checked = true;
             this.ControlEnable(false);
@@ -69,6 +71,7 @@ namespace TCCMadeireira.Views
                 if (btnCadastrar.Text == "Cadastrar")
                 {
                     ControlEnable(true);
+                    btnCancelar.Visible = true;
                     btnExcluir.Enabled = false;
                     btnAlterar.Enabled = false;
                     btnCadastrar.Text = "Gravar";
@@ -76,18 +79,24 @@ namespace TCCMadeireira.Views
                 else
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
-                    banco.InsertCliente(cliente);
-                    dvgClientes.DataSource = dataSetMadeireiraV2.CLIENTES;
-                    dvgClientes.Update();
-                    ControlEnable(false);
-                    btnExcluir.Enabled = true;
-                    btnAlterar.Enabled = true;
-                    btnCadastrar.Text = "Cadastrar";
+                    if (banco.SelectCliente(cliente.Identidade).Rows.Count == 0)
+                    {
+                        banco.InsertCliente(cliente);
+                        BtnCancelar_Click(null, null);
+                    }
+                    else
+                    {
+                        throw new Exception("Identidade já cadastrada");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                TableRefresh();
             }
         }
 
@@ -103,25 +112,27 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnExcluir.Text == "Excluir")
+                if (dvgClientes.SelectedRows.Count == 1)
                 {
-                    txtIdentidade.Enabled = true;
-                    btnExcluir.Text = "Gravar";
+                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de CPF {0}?", dvgClientes.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
+                        cLIENTESTableAdapter.DeletePessoaIdentidade(cliente.Identidade);
+                        BtnCancelar_Click(null, null);
+                    }
                 }
                 else
                 {
-                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de CPF {0}?", txtIdentidade.Text), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                    {
-                        Cliente cliente = new Cliente(txtIdentidade.Text);
-                        cLIENTESTableAdapter.DeletePessoaIdentidade(cliente.Identidade);
-                        btnExcluir.Text = "Excluir";
-                        txtIdentidade.Enabled = false;
-                    }
+                    throw new Exception("Selecione uma e apenas uma linha na tabela para excluir");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                TableRefresh();
             }
         }
 
@@ -137,49 +148,48 @@ namespace TCCMadeireira.Views
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
                 if (btnAlterar.Text == "Alterar")
                 {
-                    txtIdentidade.Enabled = true;
-                    btnExcluir.Enabled = false;
-                    btnCadastrar.Enabled = false;
-                    btnAlterar.Text = "Pesquisar";
-                }
-                else if (btnAlterar.Text == "Pesquisar")
-                {
-                    DataTable dt = new DataTable();
-                    Cliente cliente = new Cliente(txtIdentidade.Text);
-                    dt = banco.SelectCliente(cliente.Identidade);
-                    txtNome.Text = dt.Rows[0]["NOME_CLIENTE"].ToString();
-                    txtIdentidade.Text = dt.Rows[0]["CPF/CNPJ_CLIENTE"].ToString();
-                    txtCep.Text = dt.Rows[0]["CEP_CLIENTE"].ToString();
-                    txtRua.Text = dt.Rows[0]["RUA_CLIENTE"].ToString();
-                    txtNumero.Text = dt.Rows[0]["NUMERO_CLIENTE"].ToString();
-                    txtBairro.Text = dt.Rows[0]["BAIRRO_CLIENTE"].ToString();
-                    txtCidade.Text = dt.Rows[0]["CIDADE_CLIENTE"].ToString();
-                    cmbUf.Text = dt.Rows[0]["ESTADO_CLIENTE"].ToString();
-                    txtTelefone.Text = dt.Rows[0]["TELEFONE_CLIENTE"].ToString();
-                    txtCelular.Text = dt.Rows[0]["CELULAR_CLIENTE"].ToString();
-                    txtEmail.Text = dt.Rows[0]["EMAIL_CLIENTE"].ToString();
-                    lblDataInfo.Text = dt.Rows[0]["DATA_INFO_CLIENTE"].ToString();
-                    txtObs.Text = dt.Rows[0]["OBS_CLIENTE"].ToString();
-                    btnAlterar.Text = "Gravar";
+                    if (dvgClientes.SelectedRows.Count == 1)
+                    {
+                        DataTable dt = new DataTable();
+                        Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
+                        dt = banco.SelectCliente(cliente.Identidade);
+                        txtNome.Text = dt.Rows[0]["NOME_CLIENTE"].ToString();
+                        txtIdentidade.Text = dt.Rows[0]["IDENTIDADE_CLIENTE"].ToString();
+                        txtCep.Text = dt.Rows[0]["CEP_CLIENTE"].ToString();
+                        txtRua.Text = dt.Rows[0]["RUA_CLIENTE"].ToString();
+                        txtNumero.Text = dt.Rows[0]["NUMERO_CLIENTE"].ToString();
+                        txtBairro.Text = dt.Rows[0]["BAIRRO_CLIENTE"].ToString();
+                        txtCidade.Text = dt.Rows[0]["CIDADE_CLIENTE"].ToString();
+                        cmbUf.Text = dt.Rows[0]["ESTADO_CLIENTE"].ToString();
+                        txtTelefone.Text = dt.Rows[0]["TELEFONE_CLIENTE"].ToString();
+                        txtCelular.Text = dt.Rows[0]["CELULAR_CLIENTE"].ToString();
+                        txtEmail.Text = dt.Rows[0]["EMAIL_CLIENTE"].ToString();
+                        lblDataInfo.Text = "DATA INFO: " + dt.Rows[0]["DATA_INFO_CLIENTE"].ToString();
+                        txtObs.Text = dt.Rows[0]["OBS_CLIENTE"].ToString();
+                        btnAlterar.Text = "Gravar";
+                    }
+                    else
+                    {
+                        throw new Exception("Selecione uma e apenas uma linha na tabela para excluir");
+                    }
                 }
                 else
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.UpdateCliente(cliente);
-                    dvgClientes.DataSource = dataSetMadeireiraV2.CLIENTES;
-                    dvgClientes.Update();
-                    ControlEnable(false);
-                    btnExcluir.Enabled = true;
-                    btnCadastrar.Enabled = true;
-                    btnCadastrar.Text = "Alterar";
+                    BtnCancelar_Click(null, null);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                TableRefresh();
             }
         }
         #endregion
@@ -207,7 +217,7 @@ namespace TCCMadeireira.Views
                     txtTelefone.Text = dvgClientes.SelectedCells[9].Value.ToString().Trim();
                     txtCelular.Text = dvgClientes.SelectedCells[10].Value.ToString().Trim();
                     txtEmail.Text = dvgClientes.SelectedCells[11].Value.ToString().Trim();
-                    lblDataInfo.Text = dvgClientes.SelectedCells[12].Value.ToString().Trim();
+                    lblDataInfo.Text = "DATA INFO: " + dvgClientes.SelectedCells[12].Value.ToString().Trim();
                     txtObs.Text = dvgClientes.SelectedCells[13].Value.ToString().Trim();
                 }
             }
@@ -273,7 +283,11 @@ namespace TCCMadeireira.Views
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
-            cLIENTESBindingSource.Filter = String.Format("{0} like '%{1}%'", "[CPF/CNPJ_CLIENTE]", txtFiltro.Text);
+            this.cLIENTESBindingSource.Filter = String.Format("{0} like '%{1}%'", "IDENTIDADE_CLIENTE", txtFiltro.Text);
+            if(dvgClientes.RowCount <= 0)
+            {
+                this.cLIENTESBindingSource.RemoveFilter();
+            }
         }
         #endregion
         #region @Control.Methods
@@ -283,7 +297,7 @@ namespace TCCMadeireira.Views
         /// <param name="status">Define se o status vai ser true ou false</param>
         private void ControlEnable(bool status)
         {
-            foreach (Control ctrl in groupBox1.Controls)
+            foreach (Control ctrl in groupComp.Controls)
             {
                 if (ctrl is TextBox)
                 {
@@ -305,9 +319,54 @@ namespace TCCMadeireira.Views
         }
         private void TableRefresh()
         {
+            this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
             this.dvgClientes.Refresh();
         }
-        #endregion
+        private string CharResearch(string statement)
+        {
+            char[] chars = { '.', '-', '/', ',' };
+            char[] lista = statement.ToCharArray();
+            string retorno = "";
 
+            for (int i = 0; i < lista.Length; i++)
+            {
+                if (chars.Contains(lista[i]))
+                {
+                    lista[i] = ' ';
+                }
+                retorno += lista[i];
+            }            
+            return retorno;
+        }
+        
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            foreach(Control ctrl in groupComp.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    (ctrl as TextBox).Clear();
+                }
+                else if (ctrl is MaskedTextBox)
+                {
+                    (ctrl as MaskedTextBox).Clear();
+                }
+                else if (ctrl is ComboBox)
+                {
+                    (ctrl as ComboBox).SelectedItem = "SP";
+                }
+            }
+            btnCadastrar.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnCadastrar.Text = "Cadastrar";
+            btnAlterar.Text = "Alterar";
+            btnExcluir.Text = "Excluir";
+            btnCancelar.Visible = false;
+            ControlEnable(false);
+            txtFiltro.Clear();
+        }
+        #endregion
     }
 }

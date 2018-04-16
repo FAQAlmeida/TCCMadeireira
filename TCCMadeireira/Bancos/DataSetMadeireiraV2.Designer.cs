@@ -6398,7 +6398,7 @@ SELECT ID_CLIENTE, NOME_CLIENTE, IDENTIDADE_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, N
 SET                NOME_CLIENTE = @NOME_CLIENTE, CEP_CLIENTE = @CEP_CLIENTE, RUA_CLIENTE = @RUA_CLIENTE, NUMERO_CLIENTE = @NUMERO_CLIENTE, BAIRRO_CLIENTE = @BAIRRO_CLIENTE, 
                          CIDADE_CLIENTE = @CIDADE_CLIENTE, ESTADO_CLIENTE = @ESTADO_CLIENTE, TELEFONE_CLIENTE = @TELEFONE_CLIENTE, CELULAR_CLIENTE = @CELULAR_CLIENTE, EMAIL_CLIENTE = @EMAIL_CLIENTE, 
                          DATA_INFO_CLIENTE = @DATA_INFO_CLIENTE, OBS_CLIENTE = @OBS_CLIENTE
-WHERE        (IDENTIDADE_CLIENTE = @IDENTIDADE);  
+WHERE        (IDENTIDADE_CLIENTE = @IDENTIDADE);   
 SELECT ID_CLIENTE, NOME_CLIENTE, IDENTIDADE_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, NUMERO_CLIENTE, BAIRRO_CLIENTE, CIDADE_CLIENTE, ESTADO_CLIENTE, TELEFONE_CLIENTE, CELULAR_CLIENTE, EMAIL_CLIENTE, DATA_INFO_CLIENTE, OBS_CLIENTE FROM CLIENTES WHERE (ID_CLIENTE = @ID_CLIENTE)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_CLIENTE", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_CLIENTE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6436,9 +6436,9 @@ SELECT ID_CLIENTE, NOME_CLIENTE, IDENTIDADE_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, N
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[CLIENTES] \r\nWHERE [CPF/CNPJ_CLIENTE] = @IDENTIDADE";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[CLIENTES] \r\nWHERE [IDENTIDADE_CLIENTE] = @IDENTIDADE";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_CLIENTE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT ID_CLIENTE, NOME_CLIENTE, IDENTIDADE_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, NUMERO_CLIENTE, BAIRRO_CLIENTE, CIDADE_CLIENTE, ESTADO_CLIENTE, TELEFONE_CLIENTE, CELULAR_CLIENTE, EMAIL_CLIENTE, DATA_INFO_CLIENTE, OBS_CLIENTE FROM dbo.CLIENTES
@@ -6760,13 +6760,13 @@ where IDENTIDADE_CLIENTE = @IDENTIDADE";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeletePessoaIdentidade(object IDENTIDADE) {
+        public virtual int DeletePessoaIdentidade(string IDENTIDADE) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((IDENTIDADE == null)) {
                 throw new global::System.ArgumentNullException("IDENTIDADE");
             }
             else {
-                command.Parameters[0].Value = ((object)(IDENTIDADE));
+                command.Parameters[0].Value = ((string)(IDENTIDADE));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
