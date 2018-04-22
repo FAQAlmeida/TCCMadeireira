@@ -396,13 +396,14 @@
             // 
             // lblDataInfo
             // 
-            this.lblDataInfo.Location = new System.Drawing.Point(2, 206);
+            this.lblDataInfo.AutoSize = true;
+            this.lblDataInfo.Location = new System.Drawing.Point(5, 212);
             this.lblDataInfo.MaximumSize = new System.Drawing.Size(10000, 1000);
             this.lblDataInfo.Name = "lblDataInfo";
-            this.lblDataInfo.Size = new System.Drawing.Size(100, 20);
+            this.lblDataInfo.Size = new System.Drawing.Size(67, 13);
             this.lblDataInfo.TabIndex = 33;
             this.lblDataInfo.Text = "DATA_INFO";
-            this.lblDataInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDataInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlDvg
             // 
@@ -682,14 +683,14 @@
             this.pnlComp.Controls.Add(this.txtFiltro);
             this.pnlComp.Location = new System.Drawing.Point(703, 13);
             this.pnlComp.Name = "pnlComp";
-            this.pnlComp.Size = new System.Drawing.Size(110, 235);
+            this.pnlComp.Size = new System.Drawing.Size(233, 235);
             this.pnlComp.TabIndex = 42;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 597);
+            this.ClientSize = new System.Drawing.Size(948, 610);
             this.Controls.Add(this.pnlDvg);
             this.Controls.Add(this.groupComp);
             this.Controls.Add(oBS__FORNECEDORLabel);

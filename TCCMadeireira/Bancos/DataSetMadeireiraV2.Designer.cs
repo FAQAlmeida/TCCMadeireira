@@ -6474,25 +6474,6 @@ where IDENTIDADE_CLIENTE = @IDENTIDADE";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillCliente(DataSetMadeireiraV2.CLIENTESDataTable dataTable, string IDENTIDADE) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((IDENTIDADE == null)) {
-                throw new global::System.ArgumentNullException("IDENTIDADE");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IDENTIDADE));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSetMadeireiraV2.CLIENTESDataTable GetDataCliente(string IDENTIDADE) {
             this.Adapter.SelectCommand = this.CommandCollection[2];

@@ -217,7 +217,7 @@ namespace TCCMadeireira.Views
                     txtTelefone.Text = dvgClientes.SelectedCells[9].Value.ToString().Trim();
                     txtCelular.Text = dvgClientes.SelectedCells[10].Value.ToString().Trim();
                     txtEmail.Text = dvgClientes.SelectedCells[11].Value.ToString().Trim();
-                    lblDataInfo.Text = "DATA INFO: " + dvgClientes.SelectedCells[12].Value.ToString().Trim();
+                    lblDataInfo.Text = String.Concat("DATA INFO: ", dvgClientes.SelectedCells[12].Value.ToString().Trim());
                     txtObs.Text = dvgClientes.SelectedCells[13].Value.ToString().Trim();
                 }
             }
@@ -241,15 +241,11 @@ namespace TCCMadeireira.Views
             {
                 txtIdentidade.Size = new Size(85, 20);
                 txtIdentidade.Mask = "999,999,999-99";
-                txtFiltro.Mask = "999,999,999-99";
-                txtFiltro.Size = new Size(85, 20);
             }
             else
             {
                 txtIdentidade.Size = new Size(107, 20);
                 txtIdentidade.Mask = "99,999,999/9999-99";
-                txtFiltro.Mask = "99,999,999/9999-99";
-                txtFiltro.Size = new Size(107, 20);
             }
         }
         /// <summary>
@@ -337,6 +333,31 @@ namespace TCCMadeireira.Views
                 retorno += lista[i];
             }            
             return retorno;
+        }
+        /// <summary>
+        /// Atribui o valor da txtIdentidade e a mask baseado nos parametros
+        /// </summary>
+        /// <param name="identidade">Identidade a ser atribuida</param>
+        /// <param name="tipo">Tipo para mudar a mask</param>
+        public void IdentidadeInput(string identidade, string tipo)
+        {
+            try
+            {
+                if (tipo.Equals("CPF"))
+                {
+                    txtIdentidade.Mask = "999,999,999-99";
+                    txtIdentidade.Text = identidade;
+                }
+                else
+                {
+                    txtIdentidade.Mask = "99,999,999/9999-99";
+                    txtIdentidade.Text = identidade;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
         
 
