@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form responsável por manter o CRUD de Fornecedor
+    /// </summary>
     public partial class FrmFornecedor : Form
     {
+        /// <summary>
+        /// Inicializa o Form de Fornecedor
+        /// </summary>
         public FrmFornecedor()
         {
             InitializeComponent();
         }
 
-        private void fORNECEDORESBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void FornecedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.fORNECEDORESBindingSource.EndEdit();
+            this.FornecedoresBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dataSetMadeireiraV2);
 
         }
@@ -28,7 +34,7 @@ namespace TCCMadeireira.Views
         private void FrmFornecedor_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.FORNECEDORES'. Você pode movê-la ou removê-la conforme necessário.
-            this.fORNECEDORESTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
+            this.FornecedoresTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
 
         }
     }

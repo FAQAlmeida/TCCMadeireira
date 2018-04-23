@@ -1,5 +1,8 @@
 ﻿namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form responsavel pelo CRUD de Produtos
+    /// </summary>
     partial class FrmProduto
     {
         /// <summary>
@@ -34,13 +37,13 @@
             System.Windows.Forms.Label vALOR_PRODUTOLabel;
             System.Windows.Forms.Label iD_FORNECEDOR_PRODUTOLabel;
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
-            this.pRODUTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
+            this.ProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ProdutosTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
-            this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
+            this.FornecedoresTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.FornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numQuantidade = new System.Windows.Forms.NumericUpDown();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -62,9 +65,9 @@
             vALOR_PRODUTOLabel = new System.Windows.Forms.Label();
             iD_FORNECEDOR_PRODUTOLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProdutosBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -111,32 +114,32 @@
             this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
             this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pRODUTOSBindingSource
+            // ProdutosBindingSource
             // 
-            this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
-            this.pRODUTOSBindingSource.DataSource = this.dataSetMadeireiraV2;
+            this.ProdutosBindingSource.DataMember = "PRODUTOS";
+            this.ProdutosBindingSource.DataSource = this.dataSetMadeireiraV2;
             // 
-            // pRODUTOSTableAdapter
+            // ProdutosTableAdapter
             // 
-            this.pRODUTOSTableAdapter.ClearBeforeFill = true;
+            this.ProdutosTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CLIENTESTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORESTableAdapter = this.fORNECEDORESTableAdapter;
+            this.tableAdapterManager.FORNECEDORESTableAdapter = this.FornecedoresTableAdapter;
             this.tableAdapterManager.FORNECIMENTO_PRODUTOTableAdapter = null;
             this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
             this.tableAdapterManager.FUNCIONARIOSTableAdapter = null;
-            this.tableAdapterManager.PRODUTOSTableAdapter = this.pRODUTOSTableAdapter;
+            this.tableAdapterManager.PRODUTOSTableAdapter = this.ProdutosTableAdapter;
             this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USERSTableAdapter = null;
             this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
             this.tableAdapterManager.VENDASTableAdapter = null;
             // 
-            // fORNECEDORESTableAdapter
+            // FornecedoresTableAdapter
             // 
-            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
+            this.FornecedoresTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox1
             // 
@@ -158,18 +161,18 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
-            this.comboBox1.DataSource = this.fORNECEDORESBindingSource;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.FornecedoresBindingSource, "NOME_FORNECEDOR", true));
+            this.comboBox1.DataSource = this.FornecedoresBindingSource;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(270, 53);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(252, 21);
             this.comboBox1.TabIndex = 26;
             // 
-            // fORNECEDORESBindingSource
+            // FornecedoresBindingSource
             // 
-            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
-            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireiraV2;
+            this.FornecedoresBindingSource.DataMember = "FORNECEDORES";
+            this.FornecedoresBindingSource.DataSource = this.dataSetMadeireiraV2;
             // 
             // numQuantidade
             // 
@@ -181,7 +184,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODUTOSBindingSource, "NOME_PRODUTO", true));
+            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ProdutosBindingSource, "NOME_PRODUTO", true));
             this.txtNome.Location = new System.Drawing.Point(76, 27);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(225, 20);
@@ -189,7 +192,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODUTOSBindingSource, "VALOR_PRODUTO", true));
+            this.txtValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ProdutosBindingSource, "VALOR_PRODUTO", true));
             this.txtValor.Location = new System.Drawing.Point(60, 53);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(113, 20);
@@ -197,7 +200,7 @@
             // 
             // oBS_PRODUTOTextBox
             // 
-            this.oBS_PRODUTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODUTOSBindingSource, "OBS_PRODUTO", true));
+            this.oBS_PRODUTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ProdutosBindingSource, "OBS_PRODUTO", true));
             this.oBS_PRODUTOTextBox.Location = new System.Drawing.Point(9, 79);
             this.oBS_PRODUTOTextBox.Multiline = true;
             this.oBS_PRODUTOTextBox.Name = "oBS_PRODUTOTextBox";
@@ -217,7 +220,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.pRODUTOSDataGridView.DataSource = this.pRODUTOSBindingSource;
+            this.pRODUTOSDataGridView.DataSource = this.ProdutosBindingSource;
             this.pRODUTOSDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pRODUTOSDataGridView.Location = new System.Drawing.Point(0, 0);
             this.pRODUTOSDataGridView.Name = "pRODUTOSDataGridView";
@@ -328,10 +331,10 @@
             this.Text = "FrmProduto";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProdutosBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -343,8 +346,8 @@
         #endregion
 
         private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
-        private System.Windows.Forms.BindingSource pRODUTOSBindingSource;
-        private Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter pRODUTOSTableAdapter;
+        private System.Windows.Forms.BindingSource ProdutosBindingSource;
+        private Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter ProdutosTableAdapter;
         private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNome;
@@ -358,13 +361,13 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.NumericUpDown numQuantidade;
-        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
+        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter FornecedoresTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource fORNECEDORESBindingSource;
+        private System.Windows.Forms.BindingSource FornecedoresBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }

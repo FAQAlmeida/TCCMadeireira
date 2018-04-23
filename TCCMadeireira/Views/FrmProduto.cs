@@ -12,15 +12,18 @@ namespace TCCMadeireira.Views
 {
     public partial class FrmProduto : Form
     {
+        /// <summary>
+        /// Inicializa o Form de Produtos
+        /// </summary>
         public FrmProduto()
         {
             InitializeComponent();
         }
 
-        private void pRODUTOSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void ProdutosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.pRODUTOSBindingSource.EndEdit();
+            this.ProdutosBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dataSetMadeireiraV2);
 
         }
@@ -28,9 +31,9 @@ namespace TCCMadeireira.Views
         private void FrmProduto_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.FORNECEDORES'. Você pode movê-la ou removê-la conforme necessário.
-            this.fORNECEDORESTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
+            this.FornecedoresTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.PRODUTOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.pRODUTOSTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
+            this.ProdutosTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
 
         }
     }

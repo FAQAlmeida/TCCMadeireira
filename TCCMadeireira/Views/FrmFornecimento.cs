@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form responsavel por Registrar o consultar Fornecimentos
+    /// </summary>
     public partial class FrmFornecimento : Form
     {
+        /// <summary>
+        /// Inicializa o Form de Fornecimento
+        /// </summary>
         public FrmFornecimento()
         {
             InitializeComponent();

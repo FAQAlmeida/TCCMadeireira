@@ -1,5 +1,8 @@
 ﻿namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form responsavel por adicionar produtos a uma venda
+    /// </summary>
     partial class FrmProdVenda
     {
         /// <summary>
@@ -282,12 +285,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        /// <summary>
+        /// Valor unitário do produto a ser inserido na venda
+        /// </summary>
         public System.Windows.Forms.NumericUpDown numValor;
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
+        /// <summary>
+        /// Tabela com todos os produtos
+        /// </summary>
         public System.Windows.Forms.DataGridView dvgProduto;
+        /// <summary>
+        /// Valor correspondente a quantidade do produto a ser registrado
+        /// </summary>
         public System.Windows.Forms.NumericUpDown numQuantidade;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnCancelar;

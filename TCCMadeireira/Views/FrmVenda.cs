@@ -11,8 +11,14 @@ using TCCMadeireira.Model;
 
 namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form responsavel por registrar uma venda
+    /// </summary>
     public partial class FrmVenda : Form
     {
+        /// <summary>
+        /// Inicializa o form de venda
+        /// </summary>
         public FrmVenda()
         {
             InitializeComponent();

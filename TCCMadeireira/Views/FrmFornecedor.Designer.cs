@@ -49,7 +49,7 @@
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
             this.nOME_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.FornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
             this.rUA_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
             this.nUMERO_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.cIDADE_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
             this.eMAIL_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
             this.oBS_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
+            this.FornecedoresTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
             this.lblDataInfo = new System.Windows.Forms.Label();
             this.rbtnCnpjFiltro = new System.Windows.Forms.RadioButton();
@@ -93,7 +93,7 @@
             cELULAR_FORNECEDORLabel = new System.Windows.Forms.Label();
             eMAIL_FORNECEDORLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESDataGridView)).BeginInit();
@@ -325,16 +325,16 @@
             // 
             // nOME_FORNECEDORTextBox
             // 
-            this.nOME_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
+            this.nOME_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "NOME_FORNECEDOR", true));
             this.nOME_FORNECEDORTextBox.Location = new System.Drawing.Point(97, 23);
             this.nOME_FORNECEDORTextBox.Name = "nOME_FORNECEDORTextBox";
             this.nOME_FORNECEDORTextBox.Size = new System.Drawing.Size(402, 20);
             this.nOME_FORNECEDORTextBox.TabIndex = 3;
             // 
-            // fORNECEDORESBindingSource
+            // FornecedoresBindingSource
             // 
-            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
-            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireiraV2;
+            this.FornecedoresBindingSource.DataMember = "FORNECEDORES";
+            this.FornecedoresBindingSource.DataSource = this.dataSetMadeireiraV2;
             // 
             // dataSetMadeireiraV2
             // 
@@ -343,7 +343,7 @@
             // 
             // rUA_FORNECEDORTextBox
             // 
-            this.rUA_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "RUA_FORNECEDOR", true));
+            this.rUA_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "RUA_FORNECEDOR", true));
             this.rUA_FORNECEDORTextBox.Location = new System.Drawing.Point(146, 75);
             this.rUA_FORNECEDORTextBox.Name = "rUA_FORNECEDORTextBox";
             this.rUA_FORNECEDORTextBox.Size = new System.Drawing.Size(574, 20);
@@ -351,7 +351,7 @@
             // 
             // nUMERO_FORNECEDORTextBox
             // 
-            this.nUMERO_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "NUMERO_FORNECEDOR", true));
+            this.nUMERO_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "NUMERO_FORNECEDOR", true));
             this.nUMERO_FORNECEDORTextBox.Location = new System.Drawing.Point(754, 75);
             this.nUMERO_FORNECEDORTextBox.Name = "nUMERO_FORNECEDORTextBox";
             this.nUMERO_FORNECEDORTextBox.Size = new System.Drawing.Size(48, 20);
@@ -359,7 +359,7 @@
             // 
             // bAIRRO_FORNECEDORTextBox
             // 
-            this.bAIRRO_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "BAIRRO_FORNECEDOR", true));
+            this.bAIRRO_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "BAIRRO_FORNECEDOR", true));
             this.bAIRRO_FORNECEDORTextBox.Location = new System.Drawing.Point(63, 102);
             this.bAIRRO_FORNECEDORTextBox.Name = "bAIRRO_FORNECEDORTextBox";
             this.bAIRRO_FORNECEDORTextBox.Size = new System.Drawing.Size(310, 20);
@@ -367,7 +367,7 @@
             // 
             // cIDADE_FORNECEDORTextBox
             // 
-            this.cIDADE_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "CIDADE_FORNECEDOR", true));
+            this.cIDADE_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "CIDADE_FORNECEDOR", true));
             this.cIDADE_FORNECEDORTextBox.Location = new System.Drawing.Point(435, 103);
             this.cIDADE_FORNECEDORTextBox.Name = "cIDADE_FORNECEDORTextBox";
             this.cIDADE_FORNECEDORTextBox.Size = new System.Drawing.Size(278, 20);
@@ -375,7 +375,7 @@
             // 
             // eMAIL_FORNECEDORTextBox
             // 
-            this.eMAIL_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "EMAIL_FORNECEDOR", true));
+            this.eMAIL_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "EMAIL_FORNECEDOR", true));
             this.eMAIL_FORNECEDORTextBox.Location = new System.Drawing.Point(57, 46);
             this.eMAIL_FORNECEDORTextBox.Name = "eMAIL_FORNECEDORTextBox";
             this.eMAIL_FORNECEDORTextBox.Size = new System.Drawing.Size(428, 20);
@@ -383,22 +383,22 @@
             // 
             // oBS_FORNECEDORTextBox
             // 
-            this.oBS_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDORESBindingSource, "OBS_FORNECEDOR", true));
+            this.oBS_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "OBS_FORNECEDOR", true));
             this.oBS_FORNECEDORTextBox.Location = new System.Drawing.Point(9, 129);
             this.oBS_FORNECEDORTextBox.Multiline = true;
             this.oBS_FORNECEDORTextBox.Name = "oBS_FORNECEDORTextBox";
             this.oBS_FORNECEDORTextBox.Size = new System.Drawing.Size(793, 105);
             this.oBS_FORNECEDORTextBox.TabIndex = 27;
             // 
-            // fORNECEDORESTableAdapter
+            // FornecedoresTableAdapter
             // 
-            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
+            this.FornecedoresTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CLIENTESTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORESTableAdapter = this.fORNECEDORESTableAdapter;
+            this.tableAdapterManager.FORNECEDORESTableAdapter = this.FornecedoresTableAdapter;
             this.tableAdapterManager.FORNECIMENTO_PRODUTOTableAdapter = null;
             this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
             this.tableAdapterManager.FUNCIONARIOSTableAdapter = null;
@@ -504,7 +504,7 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn14});
-            this.fORNECEDORESDataGridView.DataSource = this.fORNECEDORESBindingSource;
+            this.fORNECEDORESDataGridView.DataSource = this.FornecedoresBindingSource;
             this.fORNECEDORESDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fORNECEDORESDataGridView.Location = new System.Drawing.Point(0, 0);
             this.fORNECEDORESDataGridView.Name = "fORNECEDORESDataGridView";
@@ -622,7 +622,7 @@
             this.Load += new System.EventHandler(this.FrmFornecedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESDataGridView)).EndInit();
@@ -635,8 +635,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
-        private System.Windows.Forms.BindingSource fORNECEDORESBindingSource;
-        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
+        private System.Windows.Forms.BindingSource FornecedoresBindingSource;
+        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter FornecedoresTableAdapter;
         private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox nOME_FORNECEDORTextBox;
         private System.Windows.Forms.TextBox rUA_FORNECEDORTextBox;

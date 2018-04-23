@@ -10,9 +10,16 @@ using System.Windows.Forms;
 
 namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form responsavel por adicionar produtos a uma venda
+    /// </summary>
     public partial class FrmProdVenda : Form
     {
         private FrmVenda venda;
+        /// <summary>
+        /// Inicializa o Form ProdVenda
+        /// </summary>
+        /// <param name="frmVenda"></param>
         public FrmProdVenda(FrmVenda frmVenda)
         {    
             InitializeComponent();
