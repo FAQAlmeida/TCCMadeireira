@@ -1004,18 +1004,18 @@
         </member>
         <member name="T:TCCMadeireira.Properties.Resources">
             <summary>
-              Uma classe de recurso fortemente tipados, para pesquisar cadeias de caracteres localizadas etc.
+              Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.ResourceManager">
             <summary>
-              Retorna a instância cacheada de ResourceManager utilizada por esta classe.
+              Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.Culture">
             <summary>
-              Substitui a propriedade CurrentUICulture do thread atual para todas
-              as pesquisas de recursos que usam esta classe de recursos fortemente tipados.
+              Substitui a propriedade CurrentUICulture do thread atual para todas as
+              pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
             </summary>
         </member>
     </members>
