@@ -594,6 +594,16 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:TCCMadeireira.Views.FrmFornecedor">
+            <summary>
+            Form responsável por manter o CRUD de Fornecedor
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.#ctor">
+            <summary>
+            Inicializa o Form de Fornecedor
+            </summary>
+        </member>
         <member name="F:TCCMadeireira.Views.FrmFornecedor.components">
             <summary>
             Required designer variable.
@@ -609,6 +619,16 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Views.FrmFornecimento">
+            <summary>
+            Form responsavel por Registrar o consultar Fornecimentos
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecimento.#ctor">
+            <summary>
+            Inicializa o Form de Fornecimento
             </summary>
         </member>
         <member name="F:TCCMadeireira.Views.FrmFornecimento.components">
@@ -788,6 +808,16 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:TCCMadeireira.Views.FrmProduto">
+            <summary>
+            Form responsavel pelo CRUD de Produtos
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.#ctor">
+            <summary>
+            Inicializa o Form de Produtos
+            </summary>
+        </member>
         <member name="F:TCCMadeireira.Views.FrmProduto.components">
             <summary>
             Required designer variable.
@@ -804,6 +834,20 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
+        </member>
+        <member name="T:TCCMadeireira.Views.FrmProdVenda">
+            <summary>
+            Form responsavel por adicionar produtos a uma venda
+            </summary>
+            <summary>
+            Form responsavel por adicionar produtos a uma venda
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProdVenda.#ctor(TCCMadeireira.Views.FrmVenda)">
+            <summary>
+            Inicializa o Form ProdVenda
+            </summary>
+            <param name="frmVenda"></param>
         </member>
         <member name="F:TCCMadeireira.Views.FrmProdVenda.components">
             <summary>
@@ -822,6 +866,31 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:TCCMadeireira.Views.FrmProdVenda.numValor">
+            <summary>
+            Valor unitário do produto a ser inserido na venda
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmProdVenda.dvgProduto">
+            <summary>
+            Tabela com todos os produtos
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmProdVenda.numQuantidade">
+            <summary>
+            Valor correspondente a quantidade do produto a ser registrado
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Views.FrmUsuario">
+            <summary>
+            Form responsavel por adicionar e excluir Usuarios do sistema
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.#ctor">
+            <summary>
+            Inicializa o Form de Usuário
+            </summary>
+        </member>
         <member name="F:TCCMadeireira.Views.FrmUsuario.components">
             <summary>
             Required designer variable.
@@ -837,6 +906,16 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Views.FrmVenda">
+            <summary>
+            Form responsavel por registrar uma venda
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmVenda.#ctor">
+            <summary>
+            Inicializa o form de venda
             </summary>
         </member>
         <member name="M:TCCMadeireira.Views.FrmVenda.RbtnIden_CheckedChanged(System.Object,System.EventArgs)">
@@ -869,6 +948,55 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:TCCMadeireira.Views.FrmVenda.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.Login.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.Login.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.Login.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Views.SplashScreen">
+            <summary>
+            Splash Screen do Projeto
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.SplashScreen.#ctor">
+            <summary>
+            Inicializa a Splash Screen
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Views.SplashScreen.Progress">
+            <summary>
+            Get e Set do valor da progressBar
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.SplashScreen.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.SplashScreen.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.SplashScreen.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

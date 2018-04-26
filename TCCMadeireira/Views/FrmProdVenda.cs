@@ -38,11 +38,11 @@ namespace TCCMadeireira.Views
             {
                 if (cmbFiltro.SelectedItem.Equals("Código"))
                 {
-                    produtosBindingSource.Filter = String.Format("where id_produto = {0}", txtFiltro.Text);
+                    produtosBindingSource.Filter = String.Format("id_produto = '{0}'", txtFiltro.Text);
                 }
                 else
                 {
-                    produtosBindingSource.Filter = String.Concat("where nome_produto like %{0}%", txtFiltro.Text);
+                    produtosBindingSource.Filter = String.Concat("nome_produto like '%{0}%'", txtFiltro.Text);
                 }
             }
             else

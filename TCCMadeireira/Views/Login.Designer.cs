@@ -1,6 +1,6 @@
 ﻿namespace TCCMadeireira.Views
 {
-    partial class FrmUsuario
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FrmUsuario
-            // 
-            this.AccessibleName = "FrmUsuario";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmUsuario";
-            this.Text = "FrmUsuario";
-            this.ResumeLayout(false);
-
+            this.Text = "Login";
         }
 
         #endregion

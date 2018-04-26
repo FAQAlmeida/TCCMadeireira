@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,15 @@ namespace TCCMadeireira.Views
     /// TODO Edit XML Comment Template for FrmMenuPrincipal
     public partial class FrmMenuPrincipal : Form
     {
+        #region @Objects
+        FrmCliente frmCliente;
+        FrmFuncionario frmFuncionario;
+        FrmFornecedor frmFornecedor;
+        FrmProduto frmProduto;
+        FrmVenda frmVenda;
+        FrmFornecimento frmFornecimento;
+        FrmUsuario frmUsuario;
+        #endregion
         #region Construtor
         /// <summary>
         /// Método construtor do <see cref="FrmMenuPrincipal"/>.
@@ -24,6 +34,16 @@ namespace TCCMadeireira.Views
         /// TODO Edit XML Comment Template for #ctor
         public FrmMenuPrincipal()
         {
+            Form[] forms =
+            {
+                frmCliente,
+                frmFuncionario,
+                frmFornecedor,
+                frmProduto,
+                frmVenda,
+                frmFornecimento,
+                frmUsuario,
+            };
             InitializeComponent();
         }
         #endregion
@@ -38,12 +58,19 @@ namespace TCCMadeireira.Views
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
-            {
-                FrmCliente frmCliente = new FrmCliente
+            {                
+                if (Application.OpenForms["FrmCliente"] == null)
                 {
-                    MdiParent = this
-                };
-                frmCliente.Show();
+                    frmCliente = new FrmCliente
+                    {
+                        MdiParent = this
+                    };
+                    frmCliente.Show();
+                }
+                else
+                {
+                    Application.OpenForms["FrmCliente"].BringToFront();
+                }
             }
             catch (Exception ex)
             {
@@ -60,11 +87,133 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                FrmFuncionario frmCliente = new FrmFuncionario
+                if (Application.OpenForms["FrmFuncionario"] == null)
                 {
-                    MdiParent = this
-                };
-                frmCliente.Show();
+                    frmFuncionario = new FrmFuncionario
+                    {
+                        MdiParent = this
+                    };
+                    frmFuncionario.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmFuncionario.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try {
+                if (Application.OpenForms["FrmFornecedor"] == null)
+                {
+                    frmFornecedor = new FrmFornecedor
+                    {
+                        MdiParent = this
+                    };
+                    frmFornecedor.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmFornecedor.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmProduto"] == null)
+                {
+                    frmProduto = new FrmProduto
+                    {
+                        MdiParent = this
+                    };
+                    frmProduto.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmProduto.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void VendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmVenda"] == null)
+                {
+                    frmVenda = new FrmVenda
+                    {
+                        MdiParent = this
+                    };
+                    frmVenda.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmVenda.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FonecimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmFornecimento"] == null)
+                {
+                    frmFornecimento = new FrmFornecimento
+                    {
+                        MdiParent = this
+                    };
+                    frmFornecimento.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmFornecimento.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmUsuario"] == null)
+                {
+                    frmUsuario = new FrmUsuario
+                    {
+                        MdiParent = this
+                    };
+                    frmUsuario.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmUsuario.Name].BringToFront();
+                }
             }
             catch (Exception ex)
             {
@@ -72,86 +221,14 @@ namespace TCCMadeireira.Views
             }
         }
         #endregion
-
-        private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        #region Test
+        private void MdiParentSetter(Form[] forms)
         {
-            try
+            for (int i = 0; i < forms.Length; i++)
             {
-                FrmFornecedor frmFornecedor = new FrmFornecedor
-                {
-                    MdiParent = this
-                };
-                frmFornecedor.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                forms[i].MdiParent = this;
             }
         }
-
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmProduto frmProduto = new FrmProduto
-                {
-                    MdiParent = this
-                };
-                frmProduto.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmVenda frmVenda = new FrmVenda
-                {
-                    MdiParent = this
-                };
-                frmVenda.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void fonecimentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmFornecimento frmFornecimento = new FrmFornecimento
-                {
-                    MdiParent = this
-                };
-                frmFornecimento.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmUsuario frmUsuario = new FrmUsuario
-                {
-                    MdiParent = this
-                };
-                frmUsuario.Show();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        #endregion
     }
 }

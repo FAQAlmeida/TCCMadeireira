@@ -119,6 +119,18 @@
     <Compile Include="Views\FrmVenda.Designer.cs">
       <DependentUpon>FrmVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -146,8 +158,14 @@
     <EmbeddedResource Include="Views\FrmProdVenda.resx">
       <DependentUpon>FrmProdVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmVenda.resx">
       <DependentUpon>FrmVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Bancos\DataSetMadeireira.xsc">
       <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
