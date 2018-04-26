@@ -33,21 +33,12 @@ namespace TCCMadeireira.Views
         /// </summary>
         /// TODO Edit XML Comment Template for #ctor
         public FrmMenuPrincipal()
-        {
-            Form[] forms =
-            {
-                frmCliente,
-                frmFuncionario,
-                frmFornecedor,
-                frmProduto,
-                frmVenda,
-                frmFornecimento,
-                frmUsuario,
-            };
+        {            
             InitializeComponent();
+            toolStripStatusLabelData.Text = DateTime.Now.ToString();
+            timer.Start();
         }
         #endregion
-
         #region toolStripMenu @event.Click
         /// <summary>
         /// Evento CLICK do menuStrip Cliente
@@ -228,6 +219,12 @@ namespace TCCMadeireira.Views
             {
                 forms[i].MdiParent = this;
             }
+        }
+        #endregion
+        #region @timer.Tick
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabelData.Text = DateTime.Now.ToString();
         }
         #endregion
     }
