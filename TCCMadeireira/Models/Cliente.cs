@@ -47,19 +47,19 @@ namespace TCCMadeireira.Model
             }
         }
 
-        public string Id { get => id; set => id = value; }
-        public string Nome { get => nome.ToUpper(); set => nome = value; }
-        public string Identidade { get => identidade; set => identidade = value; }
-        public string Cep { get => cep; set => cep = value; }
-        public string Rua { get => rua.ToUpper(); set => rua = value; }
-        public string Numero { get => numero; set => numero = value; }
-        public string Bairro { get => bairro.ToUpper(); set => bairro = value; }
-        public string Cidade { get => cidade.ToUpper(); set => cidade = value; }
-        public string Estado { get => estado.ToUpper(); set => estado = value; }
-        public string Telefone { get => telefone; set => telefone = value; }
-        public string Celular { get => celular; set => celular = value; }
-        public string Email { get => email.ToUpper(); set => email = value; }
-        public string Obs { get => obs; set => obs = value; }
-        public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
+        public string Id { get { return id; } set { id = value; } }
+        public string Nome { get { return nome.ToUpper(); } set { nome = value; } }
+        public string Identidade { get { return identidade; } set { identidade = value; } }
+        public string Cep { get {return cep; } set { cep = value; } }
+        public string Rua { get { return rua.ToUpper(); } set { rua = value; } }
+        public string Numero { get { return numero; } set { numero = value; } }
+        public string Bairro { get { return bairro.ToUpper(); } set { bairro = value; } }
+        public string Cidade { get { return cidade.ToUpper(); } set { cidade = value; } }
+        public string Estado { get { return estado.ToUpper(); } set { estado = value; } }
+        public string Telefone { get { return telefone; } set{ telefone = value; } }
+        public string Celular { get { return celular; } set { celular = value; } }
+        public string Email { get { return email.ToUpper(); } set { email = value; } }
+        public string Obs { get { return obs; } set { obs = value; } }
+        public DateTime DataInfo { get { return dataInfo; } set { dataInfo = value; } }
     }
 }

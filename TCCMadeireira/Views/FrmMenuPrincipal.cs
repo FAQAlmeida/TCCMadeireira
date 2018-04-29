@@ -33,18 +33,10 @@ namespace TCCMadeireira.Views
         /// </summary>
         /// TODO Edit XML Comment Template for #ctor
         public FrmMenuPrincipal()
-        {
-            Form[] forms =
-            {
-                frmCliente,
-                frmFuncionario,
-                frmFornecedor,
-                frmProduto,
-                frmVenda,
-                frmFornecimento,
-                frmUsuario,
-            };
+        {            
             InitializeComponent();
+            toolStripStatusLabelData.Text = DateTime.Now.ToString();
+            timer.Start();
         }
         #endregion
         #region toolStripMenu @event.Click
@@ -229,10 +221,17 @@ namespace TCCMadeireira.Views
             }
         }
         #endregion
+<<<<<<< HEAD
         #region @event.FormClosed
         private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+=======
+        #region @timer.Tick
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabelData.Text = DateTime.Now.ToString();
+>>>>>>> origin/master
         }
         #endregion
     }
