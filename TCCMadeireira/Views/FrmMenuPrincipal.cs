@@ -221,17 +221,16 @@ namespace TCCMadeireira.Views
             }
         }
         #endregion
-<<<<<<< HEAD
         #region @event.FormClosed
         private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-=======
+        }
+        #endregion
         #region @timer.Tick
-        private void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabelData.Text = DateTime.Now.ToString();
->>>>>>> origin/master
         }
         #endregion
     }

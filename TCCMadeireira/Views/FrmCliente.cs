@@ -47,16 +47,22 @@ namespace TCCMadeireira.Views
         /// <param name="e"></param>
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireira1.CLIENTES'. Você pode movê-la ou removê-la conforme necessário.
-            this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
-            this.btnCancelar.Visible = false;
-            this.dvgClientes.DataSource = this.cLIENTESBindingSource;
-            this.rbtnCpf.Checked = true;
-            this.rbtnCpfFiltro.Checked = true;
-            this.ControlEnable(false);
-            this.cmbUf.SelectedItem = "SP";
-            this.lblDataInfo.Text = "";
-            log.WriteEntry("FrmCliente load");
+            try
+            {
+                // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireira1.CLIENTES'. Você pode movê-la ou removê-la conforme necessário.
+                this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
+                this.btnCancelar.Visible = false;
+                this.dvgClientes.DataSource = this.cLIENTESBindingSource;
+                this.rbtnCpf.Checked = true;
+                this.rbtnCpfFiltro.Checked = true;
+                this.ControlEnable(false);
+                this.cmbUf.SelectedItem = "SP";
+                this.lblDataInfo.Text = "";
+                log.WriteEntry("FrmCliente load");
+            }catch(Exception ex)
+            {
+                log.WriteEntry(ex);
+            }
         }
         #endregion
         #region @event.Click

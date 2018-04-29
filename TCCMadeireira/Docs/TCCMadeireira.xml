@@ -530,6 +530,14 @@
             <param name="sender">The source of the event.</param>
             <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
         </member>
+        <member name="M:TCCMadeireira.Views.FrmCliente.BtnCancelar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnCancelar
+            <para>Retorna o form ao seu estado inicial</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:TCCMadeireira.Views.FrmCliente.CLIENTESDataGridView_SelectionChanged(System.Object,System.EventArgs)">
             <summary>
             Evento de SelectionChanged do DataGridView
