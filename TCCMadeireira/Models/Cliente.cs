@@ -27,7 +27,7 @@ namespace TCCMadeireira.Model
                 this.telefone = telefone.Trim();
                 this.celular = celular.Trim();
                 this.email = email.ToUpper().Trim();
-                this.DataInfo = dataInfo;
+                this.dataInfo = dataInfo;
                 this.obs = obs.ToUpper().Trim();
             }
             else

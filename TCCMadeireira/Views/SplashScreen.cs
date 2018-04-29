@@ -15,44 +15,32 @@ namespace TCCMadeireira.Views
     /// </summary>
     public partial class SplashScreen : Form
     {
-        private delegate void ProgressDelegate(int progress);
-        private ProgressDelegate del;
         /// <summary>
         /// Inicializa a Splash Screen
         /// </summary>
         public SplashScreen()
         {
             InitializeComponent();
-            progressBar.Maximum = 100;
-            del = UpdateProgressInternal;
+            ProgressWorker();
         }
-        /// <summary>
-        /// Get e Set do valor da progressBar
-        /// </summary>
-        public int Progress
+        async private void ProgressWorker(int progress= 1, int step = 1,  int maximum = 100, int delay = 30)
         {
-            get
+            ProgressUpdate(progress);
+            if(progress != maximum)
             {
-                return progressBar.Value;
-            }
-            set
-            {
-                progressBar.Value = value;
+                await Task.Delay(delay);
+                ProgressWorker(progress: progress + step);
             }
         }
-
-        private void UpdateProgressInternal(int progress)
+        private void ProgressUpdate(int valor)
         {
-            if (Handle == null)
+            progressBar.Value = valor;
+            if(valor == 100)
             {
-                return;
+                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal();
+                frmMenuPrincipal.Show();
+                Hide();
             }
-            progressBar.Value = progress;
-        }
-
-        public void UpdateProgress(double progress)
-        {
-            Invoke(del, progress);
         }
     }
 }

@@ -47,7 +47,6 @@ namespace TCCMadeireira.Views
             InitializeComponent();
         }
         #endregion
-
         #region toolStripMenu @event.Click
         /// <summary>
         /// Evento CLICK do menuStrip Cliente
@@ -228,6 +227,12 @@ namespace TCCMadeireira.Views
             {
                 forms[i].MdiParent = this;
             }
+        }
+        #endregion
+        #region @event.FormClosed
+        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
         #endregion
     }

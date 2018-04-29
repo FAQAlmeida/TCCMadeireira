@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCCMadeireira.Bancos;
 using TCCMadeireira.Model;
+using TCCMadeireira.Util;
 
 namespace TCCMadeireira.Views
 {
@@ -22,8 +24,9 @@ namespace TCCMadeireira.Views
         /// <summary>
         /// Objeto banco para acessar os TableAdapters de forma mais simplória
         /// </summary>
-        private Bancos.Banco banco = new Bancos.Banco();
+        private Banco banco = new Banco();
         private DataTable dataTable = new DataTable();
+        private Log log = new Log();
         #endregion
         #region @Construtor
         /// <summary>
@@ -53,6 +56,7 @@ namespace TCCMadeireira.Views
             this.ControlEnable(false);
             this.cmbUf.SelectedItem = "SP";
             this.lblDataInfo.Text = "";
+            log.WriteEntry("FrmCliente load");
         }
         #endregion
         #region @event.Click
@@ -83,6 +87,7 @@ namespace TCCMadeireira.Views
                     {
                         banco.InsertCliente(cliente);
                         BtnCancelar_Click(null, null);
+                        log.WriteEntry(String.Format("cliente {0} cadastrado", cliente.Identidade));
                     }
                     else
                     {
@@ -92,6 +97,7 @@ namespace TCCMadeireira.Views
             }
             catch (Exception ex)
             {
+                log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -118,6 +124,7 @@ namespace TCCMadeireira.Views
                     {
                         Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
                         cLIENTESTableAdapter.DeletePessoaIdentidade(cliente.Identidade);
+                        log.WriteEntry(String.Format("cliente {0} excluido", cliente.Identidade));
                         BtnCancelar_Click(null, null);
                     }
                 }
@@ -128,6 +135,7 @@ namespace TCCMadeireira.Views
             }
             catch (Exception ex)
             {
+                log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -153,6 +161,10 @@ namespace TCCMadeireira.Views
                 {
                     if (dvgClientes.SelectedRows.Count == 1)
                     {
+                        ControlEnable(true);
+                        btnCadastrar.Enabled = false;
+                        btnExcluir.Enabled = false;
+                        btnCancelar.Visible = true;
                         DataTable dt = new DataTable();
                         Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
                         dt = banco.SelectCliente(cliente.Identidade);
@@ -180,17 +192,52 @@ namespace TCCMadeireira.Views
                 {
                     Cliente cliente = new Cliente(txtNome.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.UpdateCliente(cliente);
+                    log.WriteEntry(String.Format("cliente {0} alterado", cliente.Identidade));
                     BtnCancelar_Click(null, null);
                 }
             }
             catch (Exception ex)
             {
+                log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
             }
             finally
             {
                 TableRefresh();
             }
+        }
+        /// <summary>
+        /// Evento de CLICK do btnCancelar
+        /// <para>Retorna o form ao seu estado inicial</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in groupComp.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    (ctrl as TextBox).Clear();
+                }
+                else if (ctrl is MaskedTextBox)
+                {
+                    (ctrl as MaskedTextBox).Clear();
+                }
+                else if (ctrl is ComboBox)
+                {
+                    (ctrl as ComboBox).SelectedItem = "SP";
+                }
+            }
+            btnCadastrar.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnCadastrar.Text = "Cadastrar";
+            btnAlterar.Text = "Alterar";
+            btnExcluir.Text = "Excluir";
+            btnCancelar.Visible = false;
+            ControlEnable(false);
+            txtFiltro.Clear();
         }
         #endregion
         #region @event.SelectChanged
@@ -223,6 +270,7 @@ namespace TCCMadeireira.Views
             }
             catch (Exception ex)
             {
+                log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
             }
         }
@@ -313,11 +361,13 @@ namespace TCCMadeireira.Views
                 }
             }
         }
+
         private void TableRefresh()
         {
-            this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
-            this.dvgClientes.Refresh();
+            cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
+            dvgClientes.Refresh();
         }
+
         private string CharResearch(string statement)
         {
             char[] chars = { '.', '-', '/', ',' };
@@ -334,6 +384,7 @@ namespace TCCMadeireira.Views
             }            
             return retorno;
         }
+
         /// <summary>
         /// Atribui o valor da txtIdentidade e a mask baseado nos parametros
         /// </summary>
@@ -358,35 +409,6 @@ namespace TCCMadeireira.Views
             {
                 throw ex;
             }
-        }
-        
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            foreach(Control ctrl in groupComp.Controls)
-            {
-                if (ctrl is TextBox)
-                {
-                    (ctrl as TextBox).Clear();
-                }
-                else if (ctrl is MaskedTextBox)
-                {
-                    (ctrl as MaskedTextBox).Clear();
-                }
-                else if (ctrl is ComboBox)
-                {
-                    (ctrl as ComboBox).SelectedItem = "SP";
-                }
-            }
-            btnCadastrar.Enabled = true;
-            btnAlterar.Enabled = true;
-            btnExcluir.Enabled = true;
-            btnCadastrar.Text = "Cadastrar";
-            btnAlterar.Text = "Alterar";
-            btnExcluir.Text = "Excluir";
-            btnCancelar.Visible = false;
-            ControlEnable(false);
-            txtFiltro.Clear();
         }
         #endregion
     }

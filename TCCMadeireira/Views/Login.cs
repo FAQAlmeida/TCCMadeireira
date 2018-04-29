@@ -12,8 +12,14 @@ using TCCMadeireira.Views;
 
 namespace TCCMadeireira.Views
 {
+    /// <summary>
+    /// Form para fazer login no sistema
+    /// </summary>
     public partial class Login : Form
     {
+        /// <summary>
+        /// Inicializa o Form
+        /// </summary>
         public Login()
         {
             InitializeComponent();
