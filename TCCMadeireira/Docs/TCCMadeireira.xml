@@ -7,9 +7,47 @@
         <member name="T:TCCMadeireira.Bancos.Banco">
             <summary>
             Classe utilizada para acessar os table Adapters utilizado objetos
-            <para>tem função de reduxir o código nos Frms</para>
+            <para>tem função de reduzir o código nos Frms</para>
             </summary>
             TODO Edit XML Comment Template for Banco
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.InsertCliente(TCCMadeireira.Model.Cliente)">
+            <summary>
+            Overload do metódo "InserirCliente" do TableAdapter para suportar o objeto cliente
+            </summary>
+            <param name="cliente"> Objeto cliente, que devera conter todas as informações do cliente</param>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.SelectCliente(System.String)">
+            <summary>
+            Overload do metódo SelectCliente do TableAdapter  
+            </summary>
+            <param name="iden">Identidade para se pesquisar um cliente </param>
+            <returns>DataTable com o cliente pesquisar </returns>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.UpdateCliente(TCCMadeireira.Model.Cliente)">
+            <summary>
+            Overload do metódo "UpdateCliente" do TableAdapter para suportar o objeto cliente
+            </summary>
+            <param name="cliente"> Objeto cliente, que devera conter todas as informações do cliente</param>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.InsertFuncionario(TCCMadeireira.Models.Funcionario)">
+            <summary>
+            Overload do metódo "InserirFuncionario" do TableAdapter para suportar o objeto funcionario
+            </summary>
+            <param name="funcionario"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.SelectFuncionario(System.String)">
+            <summary>
+            Overload do metódo SelectFuncionario do TableAdapter  
+            </summary>
+            <param name="iden">Identidade para se pesquisar um funcionario</param>
+            <returns>DataTable com o funcionario pesquisar</returns>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.UpdateFuncionario(TCCMadeireira.Models.Funcionario)">
+            <summary>
+            Overload do metódo "UpdateFuncionario" do TableAdapter para suportar o objeto funcionario
+            </summary>
+            <param name="funcionario">Objeto funcionario, que devera conter todas as informações do funcionario</param>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireira">
              <summary>

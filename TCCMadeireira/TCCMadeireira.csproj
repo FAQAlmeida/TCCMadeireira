@@ -173,6 +173,9 @@
     <EmbeddedResource Include="Views\FrmVenda.resx">
       <DependentUpon>FrmVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>

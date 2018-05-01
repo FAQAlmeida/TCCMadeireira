@@ -37,8 +37,8 @@ namespace TCCMadeireira.Views
             progressBar.Value = valor;
             if(valor == 100)
             {
-                FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal();
-                frmMenuPrincipal.Show();
+                Login frmLogin = new Login();
+                frmLogin.Show();
                 Hide();
             }
         }

@@ -58,6 +58,15 @@
             this.grbFornecedor.SuspendLayout();
             this.SuspendLayout();
             // 
+            // cPF_CNPJ_CLIENTELabel
+            // 
+            cPF_CNPJ_CLIENTELabel.AutoSize = true;
+            cPF_CNPJ_CLIENTELabel.Location = new System.Drawing.Point(6, 16);
+            cPF_CNPJ_CLIENTELabel.Name = "cPF_CNPJ_CLIENTELabel";
+            cPF_CNPJ_CLIENTELabel.Size = new System.Drawing.Size(76, 13);
+            cPF_CNPJ_CLIENTELabel.TabIndex = 30;
+            cPF_CNPJ_CLIENTELabel.Text = "IDENTIDADE:";
+            // 
             // pnlVenda
             // 
             this.pnlVenda.Controls.Add(this.btnCancelar);
@@ -121,6 +130,7 @@
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // grbProdutos
             // 
@@ -246,15 +256,6 @@
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "NOME:";
-            // 
-            // cPF_CNPJ_CLIENTELabel
-            // 
-            cPF_CNPJ_CLIENTELabel.AutoSize = true;
-            cPF_CNPJ_CLIENTELabel.Location = new System.Drawing.Point(6, 16);
-            cPF_CNPJ_CLIENTELabel.Name = "cPF_CNPJ_CLIENTELabel";
-            cPF_CNPJ_CLIENTELabel.Size = new System.Drawing.Size(76, 13);
-            cPF_CNPJ_CLIENTELabel.TabIndex = 30;
-            cPF_CNPJ_CLIENTELabel.Text = "IDENTIDADE:";
             // 
             // txtIdentidade
             // 
