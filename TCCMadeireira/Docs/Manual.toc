@@ -1,0 +1,70 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}
+\babel@toc {brazil}{}
+\contentsline {chapter}{Sum\'ario}{2}{section*.2}
+\contentsline {section}{\numberline {1}Menu Principal}{4}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Objetivo}{4}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Funcionalidades}{4}{subsection.0.1.2}
+\contentsline {subsection}{\numberline {1.3}Componentes}{4}{subsection.0.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Aba de Cadastros}{4}{subsubsection.0.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Aba de Relat\IeC {\'o}rios}{5}{subsubsection.0.1.3.2}
+\contentsline {section}{\numberline {2}Formul\IeC {\'a}rio de Clientes}{6}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Objetivo}{6}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Funcionalidades}{6}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Componentes}{6}{subsection.0.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Regi\IeC {\~a}o de dados}{6}{subsubsection.0.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Regi\IeC {\~a}o de opera\IeC {\c c}\IeC {\~o}es e miscel\IeC {\^a}nea}{7}{subsubsection.0.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Regi\IeC {\~a}o da Tabela}{7}{subsubsection.0.2.3.3}
+\contentsline {section}{\numberline {3}Formul\IeC {\'a}rio de Fornecedores}{8}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Objetivo}{8}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Funcionalidades}{8}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Componentes}{8}{subsection.0.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Regi\IeC {\~a}o de dados}{8}{subsubsection.0.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Regi\IeC {\~a}o de opera\IeC {\c c}\IeC {\~o}es e miscel\IeC {\^a}nea}{9}{subsubsection.0.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Regi\IeC {\~a}o da Tabela}{9}{subsubsection.0.3.3.3}
+\contentsline {section}{\numberline {4}Formul\IeC {\'a}rio de Vendas}{10}{section.0.4}
+\contentsline {subsection}{\numberline {4.1}Objetivo}{10}{subsection.0.4.1}
+\contentsline {subsection}{\numberline {4.2}Funcionalidades}{10}{subsection.0.4.2}
+\contentsline {subsection}{\numberline {4.3}Componentes}{10}{subsection.0.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Dados do Cliente}{10}{subsubsection.0.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Produtos}{10}{subsubsection.0.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Opera\IeC {\c c}\IeC {\~o}es de produtos}{10}{subsubsection.0.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Opera\IeC {\c c}\IeC {\~o}es de Venda}{11}{subsubsection.0.4.3.4}
+\contentsline {section}{\numberline {5}Formul\IeC {\'a}rio de Fornecimentos}{12}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Objetivo}{12}{subsection.0.5.1}
+\contentsline {subsection}{\numberline {5.2}Funcionalidades}{12}{subsection.0.5.2}
+\contentsline {subsection}{\numberline {5.3}Componentes}{12}{subsection.0.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Dados do Fornecedor}{12}{subsubsection.0.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Produtos}{12}{subsubsection.0.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Opera\IeC {\c c}\IeC {\~o}es de produtos}{12}{subsubsection.0.5.3.3}
+\contentsline {section}{\numberline {6}Formul\IeC {\'a}rio de Funcion\IeC {\'a}rios}{14}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}Objetivo}{14}{subsection.0.6.1}
+\contentsline {subsection}{\numberline {6.2}Funcionalidades}{14}{subsection.0.6.2}
+\contentsline {subsection}{\numberline {6.3}Componentes}{14}{subsection.0.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Regi\IeC {\~a}o de dados}{14}{subsubsection.0.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}Regi\IeC {\~a}o de opera\IeC {\c c}\IeC {\~o}es e miscel\IeC {\^a}nea}{15}{subsubsection.0.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}Regi\IeC {\~a}o da Tabela}{15}{subsubsection.0.6.3.3}
+\contentsline {section}{\numberline {7}Formul\IeC {\'a}rio de Produtos}{16}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Objetivo}{16}{subsection.0.7.1}
+\contentsline {subsection}{\numberline {7.2}Funcionalidades}{16}{subsection.0.7.2}
+\contentsline {subsection}{\numberline {7.3}Componentes}{16}{subsection.0.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Regi\IeC {\~a}o de dados}{16}{subsubsection.0.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Regi\IeC {\~a}o de opera\IeC {\c c}\IeC {\~o}es e miscel\IeC {\^a}nea}{17}{subsubsection.0.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Regi\IeC {\~a}o da Tabela}{17}{subsubsection.0.7.3.3}
+\contentsline {section}{\numberline {8}Formul\IeC {\'a}rio de I.P.O (Inser\IeC {\c c}\IeC {\~a}o de Produto em Opera\IeC {\c c}\IeC {\~o}es)}{18}{section.0.8}
+\contentsline {subsection}{\numberline {8.1}Objetivo}{18}{subsection.0.8.1}
+\contentsline {subsection}{\numberline {8.2}Funcionalidades}{18}{subsection.0.8.2}
+\contentsline {subsection}{\numberline {8.3}Componentes}{18}{subsection.0.8.3}
+\contentsline {subsubsection}{\numberline {8.3.1}Regi\IeC {\~a}o de dados}{18}{subsubsection.0.8.3.1}
+\contentsline {subsubsection}{\numberline {8.3.2}Regi\IeC {\~a}o de opera\IeC {\c c}\IeC {\~o}es e miscel\IeC {\^a}nea}{19}{subsubsection.0.8.3.2}
+\contentsline {subsubsection}{\numberline {8.3.3}Regi\IeC {\~a}o da Tabela}{19}{subsubsection.0.8.3.3}
+\contentsline {section}{\numberline {9}Formul\IeC {\'a}rio de Usu\IeC {\'a}rios}{20}{section.0.9}
+\contentsline {subsection}{\numberline {9.1}Objetivo}{20}{subsection.0.9.1}
+\contentsline {subsection}{\numberline {9.2}Funcionalidades}{20}{subsection.0.9.2}
+\contentsline {subsection}{\numberline {9.3}Componentes}{20}{subsection.0.9.3}
+\contentsline {subsubsection}{\numberline {9.3.1}Regi\IeC {\~a}o de Dados}{20}{subsubsection.0.9.3.1}
+\contentsline {subsubsection}{\numberline {9.3.2}Regi\IeC {\~a}o de Opera\IeC {\c c}\IeC {\~o}es}{20}{subsubsection.0.9.3.2}
+\contentsline {section}{\numberline {10}Formul\IeC {\'a}rio de Login}{21}{section.0.10}
+\contentsline {subsection}{\numberline {10.1}Objetivo}{21}{subsection.0.10.1}
+\contentsline {subsection}{\numberline {10.2}Funcionalidades}{21}{subsection.0.10.2}
+\contentsline {subsection}{\numberline {10.3}Componentes}{21}{subsection.0.10.3}
