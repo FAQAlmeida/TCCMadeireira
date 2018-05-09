@@ -37,7 +37,7 @@ namespace TCCMadeireira.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.168.255.252;Initial Catalog=db_05579_1_C_1_2017;User ID=04919_1_C" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.168.255.252;Initial Catalog=db_04919_1_C_1_2017;User ID=04919_1_C" +
             "_1_2017;Password=p@ssw0rd")]
         public string MadeireiraConnectionString {
             get {
@@ -48,7 +48,7 @@ namespace TCCMadeireira.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.168.255.252;Initial Catalog=db_05579_1_C_1_2017;User ID=04919_1_C" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.168.255.252;Initial Catalog=db_04919_1_C_1_2017;User ID=04919_1_C" +
             "_1_2017;Password=p@ssw0rd")]
         public string EscolaConnectionString {
             get {
@@ -64,6 +64,17 @@ namespace TCCMadeireira.Properties {
         public string CasaConnectionString {
             get {
                 return ((string)(this["CasaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.168.255.252;Initial Catalog=db_04919_1_C_1_2017;User ID=04919_1_C" +
+            "_1_2017;Password=p@ssw0rd")]
+        public string db_04919_1_C_1_2017ConnectionString {
+            get {
+                return ((string)(this["db_04919_1_C_1_2017ConnectionString"]));
             }
         }
     }

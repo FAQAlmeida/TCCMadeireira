@@ -46,7 +46,7 @@ namespace TCCMadeireira.Bancos
         public void UpdateCliente(Cliente cliente)
         {
             CLIENTESTableAdapter clientesTableAdapter = new CLIENTESTableAdapter();
-            clientesTableAdapter.Update(cliente.Nome, cliente.Cep, cliente.Rua, cliente.Numero, cliente.Bairro, cliente.Cidade, cliente.Estado, cliente.Telefone, cliente.Celular, cliente.Email, cliente.DataInfo, cliente.Obs, cliente.Identidade);
+            clientesTableAdapter.Update(cliente.Nome,cliente.Identidade, cliente.Cep, cliente.Rua, cliente.Numero, cliente.Bairro, cliente.Cidade, cliente.Estado, cliente.Telefone, cliente.Celular, cliente.Email, cliente.DataInfo, cliente.Obs, cliente.Id);
         }
         #endregion
         #region Funcionario
@@ -76,7 +76,7 @@ namespace TCCMadeireira.Bancos
         public void UpdateFuncionario(Funcionario funcionario)
         {
             FUNCIONARIOSTableAdapter funcionariosTableAdapter = new FUNCIONARIOSTableAdapter();
-            funcionariosTableAdapter.Update(funcionario.Nome,  funcionario.Cargo, funcionario.Cep, funcionario.Rua, funcionario.Numero, funcionario.Bairro, funcionario.Cidade, funcionario.Estado, funcionario.Telefone, funcionario.Celular, funcionario.Email, funcionario.DataInfo, funcionario.Obs, funcionario.Identidade);
+            funcionariosTableAdapter.Update(funcionario.Nome,funcionario.Identidade, funcionario.Cargo, funcionario.Cep, funcionario.Rua, funcionario.Numero, funcionario.Bairro, funcionario.Cidade, funcionario.Estado, funcionario.Telefone, funcionario.Celular, funcionario.Email, funcionario.DataInfo, funcionario.Obs, funcionario.Id);
         }
         #endregion
     }
