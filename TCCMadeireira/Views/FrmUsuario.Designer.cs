@@ -39,12 +39,13 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.grbUsuario = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.grbUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 74);
+            this.label2.Location = new System.Drawing.Point(29, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 8;
@@ -53,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 48);
+            this.label1.Location = new System.Drawing.Point(27, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
@@ -78,6 +79,9 @@
             // cmbNivel
             // 
             this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Items.AddRange(new object[] {
+            "ADMIN",
+            "USER"});
             this.cmbNivel.Location = new System.Drawing.Point(107, 98);
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(121, 21);
@@ -86,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 101);
+            this.label3.Location = new System.Drawing.Point(39, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 10;
@@ -121,6 +125,9 @@
             // 
             // grbUsuario
             // 
+            this.grbUsuario.Controls.Add(this.label2);
+            this.grbUsuario.Controls.Add(this.label3);
+            this.grbUsuario.Controls.Add(this.label1);
             this.grbUsuario.Location = new System.Drawing.Point(28, 19);
             this.grbUsuario.Name = "grbUsuario";
             this.grbUsuario.Size = new System.Drawing.Size(237, 127);
@@ -147,15 +154,14 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbNivel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.grbUsuario);
             this.Name = "FrmUsuario";
             this.Text = "FrmUsuario";
+            this.grbUsuario.ResumeLayout(false);
+            this.grbUsuario.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

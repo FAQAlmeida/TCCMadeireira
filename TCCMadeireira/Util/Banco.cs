@@ -19,6 +19,16 @@ namespace TCCMadeireira.Bancos
     /// TODO Edit XML Comment Template for Banco
     class Banco
     {
+        #region Atributos @TableAdapter
+        private CLIENTESTableAdapter clientesTableAdapter = new CLIENTESTableAdapter();
+        private FUNCIONARIOSTableAdapter funcionariosTableAdapter = new FUNCIONARIOSTableAdapter();
+        private FORNECEDORESTableAdapter fornecedoresTableAdapter = new FORNECEDORESTableAdapter();
+        private FORNECIMENTOSTableAdapter fornecimentosTableAdapter = new FORNECIMENTOSTableAdapter();
+        private PRODUTOSTableAdapter produtosTableAdapter = new PRODUTOSTableAdapter();
+        private VENDA_PRODUTOTableAdapter vendaprodutoTableAdapter = new VENDA_PRODUTOTableAdapter();
+        private USERSTableAdapter usersTableAdapter = new USERSTableAdapter();
+        private VENDASTableAdapter vendasTableAdapter = new VENDASTableAdapter();
+        #endregion
         #region Cliente
         /// <summary>
         /// Overload do metódo "InserirCliente" do TableAdapter para suportar o objeto cliente
@@ -26,7 +36,6 @@ namespace TCCMadeireira.Bancos
         /// <param name="cliente"> Objeto cliente, que devera conter todas as informações do cliente</param>
         public void InsertCliente(Cliente cliente)
         {
-            CLIENTESTableAdapter clientesTableAdapter = new CLIENTESTableAdapter();
             clientesTableAdapter.Insert(cliente.Nome, cliente.Identidade, cliente.Cep, cliente.Rua, cliente.Numero, cliente.Bairro, cliente.Cidade, cliente.Estado, cliente.Telefone, cliente.Celular, cliente.Email, cliente.DataInfo, cliente.Obs);
         }
         /// <summary>
@@ -35,8 +44,7 @@ namespace TCCMadeireira.Bancos
         /// <param name="iden">Identidade para se pesquisar um cliente </param>
         /// <returns>DataTable com o cliente pesquisar </returns>
         public CLIENTESDataTable SelectCliente(string iden)
-        {
-            CLIENTESTableAdapter clientesTableAdapter = new CLIENTESTableAdapter();
+        {            
             return clientesTableAdapter.GetDataCliente(iden);
         }
         /// <summary>
@@ -45,8 +53,16 @@ namespace TCCMadeireira.Bancos
          /// <param name="cliente"> Objeto cliente, que devera conter todas as informações do cliente</param>
         public void UpdateCliente(Cliente cliente)
         {
-            CLIENTESTableAdapter clientesTableAdapter = new CLIENTESTableAdapter();
             clientesTableAdapter.Update(cliente.Nome,cliente.Identidade, cliente.Cep, cliente.Rua, cliente.Numero, cliente.Bairro, cliente.Cidade, cliente.Estado, cliente.Telefone, cliente.Celular, cliente.Email, cliente.DataInfo, cliente.Obs, cliente.Id);
+        }
+        public void DeleteCliente (Cliente cliente)
+        {
+            CLIENTESDataTable clientedt = SelectCliente(cliente.Identidade);
+            clientesTableAdapter.Delete(Convert.ToInt32(clientedt.Rows[0]["id_cliente"]));
+        }
+        public CLIENTESDataTable SelectCliente()
+        {
+            return clientesTableAdapter.GetData();
         }
         #endregion
         #region Funcionario
@@ -55,8 +71,7 @@ namespace TCCMadeireira.Bancos
         /// </summary>
         /// <param name="funcionario"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void InsertFuncionario(Funcionario funcionario)
-        {
-            FUNCIONARIOSTableAdapter funcionariosTableAdapter = new FUNCIONARIOSTableAdapter();
+        {            
             funcionariosTableAdapter.Insert(funcionario.Nome, funcionario.Identidade, funcionario.Cargo, funcionario.Cep, funcionario.Rua, funcionario.Numero, funcionario.Bairro, funcionario.Cidade, funcionario.Estado, funcionario.Telefone, funcionario.Celular, funcionario.Email, funcionario.DataInfo, funcionario.Obs);
         }
         /// <summary>
@@ -66,7 +81,6 @@ namespace TCCMadeireira.Bancos
          /// <returns>DataTable com o funcionario pesquisar</returns>
         public FUNCIONARIOSDataTable SelectFuncionario(string iden)
         {
-            FUNCIONARIOSTableAdapter funcionariosTableAdapter = new FUNCIONARIOSTableAdapter();
             return funcionariosTableAdapter.GetDataFuncionario(iden);
         }
         /// <summary>
@@ -75,8 +89,16 @@ namespace TCCMadeireira.Bancos
         /// <param name="funcionario">Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void UpdateFuncionario(Funcionario funcionario)
         {
-            FUNCIONARIOSTableAdapter funcionariosTableAdapter = new FUNCIONARIOSTableAdapter();
             funcionariosTableAdapter.Update(funcionario.Nome,funcionario.Identidade, funcionario.Cargo, funcionario.Cep, funcionario.Rua, funcionario.Numero, funcionario.Bairro, funcionario.Cidade, funcionario.Estado, funcionario.Telefone, funcionario.Celular, funcionario.Email, funcionario.DataInfo, funcionario.Obs, funcionario.Id);
+        }
+        public FUNCIONARIOSDataTable SelectFuncionario()
+        {
+            return funcionariosTableAdapter.GetData();
+        }
+        public void DeleteFuncionario(Funcionario funcionario)
+        {
+            FUNCIONARIOSDataTable funcionariodt = SelectFuncionario(funcionario.Identidade);
+            funcionariosTableAdapter.Delete(Convert.ToInt32(funcionariodt[0]["id_funcionario"]));
         }
         #endregion
     }

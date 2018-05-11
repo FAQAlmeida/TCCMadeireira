@@ -95,7 +95,7 @@ namespace TCCMadeireira.Views
                 if (dvgProduto.SelectedRows.Count > 0)
                 {
                     venda.InsertDataProd(dvgProduto.SelectedCells[0].ToString(), dvgProduto.SelectedCells[1].ToString(),
-                        numQuantidade.ToString(), numValor.ToString());
+                        numQuantidade.ToString());
 
                     Close();
                     if (MessageBox.Show("Deseja adicionar mais produtos?", "Dialogo", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
@@ -118,6 +118,11 @@ namespace TCCMadeireira.Views
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dvgProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

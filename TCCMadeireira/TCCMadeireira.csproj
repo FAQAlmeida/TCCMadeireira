@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Fornecedor.cs" />
+    <Compile Include="Models\Fornecimento.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\ProdVenda.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Venda.cs" />
     <Compile Include="Util\Banco.cs" />
     <Compile Include="Bancos\DataSetMadeireira.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -44,19 +44,17 @@
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
             this.produtosTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
-            this.numValor = new System.Windows.Forms.NumericUpDown();
             this.numQuantidade = new System.Windows.Forms.NumericUpDown();
             this.lblQuantidade = new System.Windows.Forms.Label();
-            this.lblValor = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +90,7 @@
             this.dvgProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgProduto.Size = new System.Drawing.Size(652, 280);
             this.dvgProduto.TabIndex = 0;
+            this.dvgProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgProduto_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -169,16 +168,6 @@
             this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
             this.tableAdapterManager.VENDASTableAdapter = null;
             // 
-            // numValor
-            // 
-            this.numValor.DecimalPlaces = 2;
-            this.numValor.Location = new System.Drawing.Point(122, 33);
-            this.numValor.Name = "numValor";
-            this.numValor.Size = new System.Drawing.Size(120, 20);
-            this.numValor.TabIndex = 2;
-            this.numValor.ThousandsSeparator = true;
-            this.numValor.Leave += new System.EventHandler(this.NumValor_Leave);
-            // 
             // numQuantidade
             // 
             this.numQuantidade.Location = new System.Drawing.Point(122, 7);
@@ -195,15 +184,6 @@
             this.lblQuantidade.Size = new System.Drawing.Size(81, 13);
             this.lblQuantidade.TabIndex = 3;
             this.lblQuantidade.Text = "QUANTIDADE:";
-            // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(12, 35);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(104, 13);
-            this.lblValor.TabIndex = 4;
-            this.lblValor.Text = "VALOR UNITÁRIO: ";
             // 
             // cmbFiltro
             // 
@@ -244,6 +224,12 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // FrmProdVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,10 +239,8 @@
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.cmbFiltro);
-            this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.numQuantidade);
-            this.Controls.Add(this.numValor);
             this.Controls.Add(this.panel1);
             this.Name = "FrmProdVenda";
             this.Text = "FrmProdVenda";
@@ -265,7 +249,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dvgProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -285,12 +268,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        /// <summary>
-        /// Valor unitário do produto a ser inserido na venda
-        /// </summary>
-        public System.Windows.Forms.NumericUpDown numValor;
         private System.Windows.Forms.Label lblQuantidade;
-        private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
         /// <summary>
@@ -303,5 +281,6 @@
         public System.Windows.Forms.NumericUpDown numQuantidade;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

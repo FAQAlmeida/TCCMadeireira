@@ -108,9 +108,9 @@ namespace TCCMadeireira.Views
         /// <param name="produto"></param>
         /// <param name="quantidade"></param>
         /// <param name="valor"></param>
-        public void InsertDataProd(string id, string produto, string quantidade, string valor)
+        public void InsertDataProd(string id, string produto, string quantidade)
         {
-            dgvProdutos.Rows.Add(id, produto, quantidade, valor);
+            dgvProdutos.Rows.Add(id, produto, quantidade);
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {

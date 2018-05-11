@@ -129,7 +129,7 @@ namespace TCCMadeireira.Views
                     if (MessageBox.Show(String.Format("Você deseja excluir o cliente de CPF {0}?", dvgClientes.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
                         Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
-                        cLIENTESTableAdapter.DeletePessoaIdentidade(cliente.Identidade);
+                        banco.DeleteCliente(cliente);
                         log.WriteEntry(String.Format("cliente {0} excluido", cliente.Identidade));
                         BtnCancelar_Click(null, null);
                     }
