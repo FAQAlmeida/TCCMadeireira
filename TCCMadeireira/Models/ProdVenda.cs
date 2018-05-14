@@ -8,13 +8,16 @@ namespace TCCMadeireira.Models
 {
     class ProdVenda
     {
-        Produto produto;
-        int quantidade;
+        private Produto produto;
+        private int quantidade;
 
         public ProdVenda(Produto produto, int quantidade)
         {
-            this.produto = produto;
-            this.quantidade = quantidade;
+            this.Produto = produto;
+            this.Quantidade = quantidade;
         }
+
+        public int Quantidade { get => quantidade; set => quantidade = value; }
+        internal Produto Produto { get => produto; set => produto = value; }
     }
 }

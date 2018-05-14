@@ -8,27 +8,33 @@ namespace TCCMadeireira.Models
 {
     class Usuario
     {
-        int id;
-        string nome;
-        string senha;
-        string nivel;
-        DateTime dataInfo;
+        private int id;
+        private string nome;
+        private string senha;
+        private string nivel;
+        private DateTime dataInfo;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Senha { get => senha; set => senha = value; }
+        public string Nivel { get => nivel; set => nivel = value; }
+        public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
 
         public Usuario(int id, string nome, string senha, string nivel, DateTime dataInfo)
         {
-            this.id = id;
-            this.nome = nome;
-            this.senha = senha;
-            this.nivel = nivel;
-            this.dataInfo = dataInfo;
+            this.Id = id;
+            this.Nome = nome;
+            this.Senha = senha;
+            this.Nivel = nivel;
+            this.DataInfo = dataInfo;
         }
 
         public Usuario(string nome, string senha, string nivel, DateTime dataInfo)
         {
-            this.nome = nome;
-            this.senha = senha;
-            this.nivel = nivel;
-            this.dataInfo = dataInfo;
+            this.Nome = nome;
+            this.Senha = senha;
+            this.Nivel = nivel;
+            this.DataInfo = dataInfo;
         }
     }
 }

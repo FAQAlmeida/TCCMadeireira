@@ -9,10 +9,10 @@ namespace TCCMadeireira.Models
 {
     class Funcionario
     {
-        int id;
-        string nome, identidade, cargo, cep, rua, numero, bairro, cidade, estado, telefone, celular, email, obs;
-        DateTime dataInfo;
-        ValidarCpfCnpj cpfCnpj = new ValidarCpfCnpj();
+        private int id;
+        private string nome, identidade, cargo, cep, rua, numero, bairro, cidade, estado, telefone, celular, email, obs;
+        private DateTime dataInfo;
+        private ValidarCpfCnpj cpfCnpj = new ValidarCpfCnpj();
 
         public Funcionario(int id, string nome, string identidade, string cargo, string cep, string rua, string numero, string bairro, string cidade, string estado, string telefone, string celular, string email, DateTime dataInfo, string obs)
         {

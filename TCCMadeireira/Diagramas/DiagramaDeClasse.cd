@@ -52,7 +52,7 @@
   <Class Name="TCCMadeireira.Views.FrmProdVenda">
     <Position X="12.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QCAAQBACEDAoAICBDACAQCAKBABAIAEAAgAAAQQAAAQ=</HashCode>
+      <HashCode>QCAAQBACADAoAICBDACAQCAKRABAIAEAAAAAAQQAAAQ=</HashCode>
       <FileName>Views\FrmProdVenda.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +66,7 @@
   <Class Name="TCCMadeireira.Bancos.Banco">
     <Position X="16.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAABEQAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAA=</HashCode>
+      <HashCode>AgAAAABABERAAAAAAAACEQQEJAAAAAAAAIAgAAAAABA=</HashCode>
       <FileName>Util\Banco.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -96,6 +96,48 @@
     <TypeIdentifier>
       <HashCode>CQACCggAgCAAIIAkACABBACAAQCAgEABgAEAAQkBAgo=</HashCode>
       <FileName>Models\Funcionario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Models.Fornecedor">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQACCggAgCAAIIAkACABBACAAQCAgEAAgAEAAAkBAgo=</HashCode>
+      <FileName>Models\Fornecedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Models.Usuario">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAGAAAABAAAAAAAAAABIAAAASAAAAAAAAAAAAEAAgA=</HashCode>
+      <FileName>Models\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Models.Produto">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAAAAAAAAAAAABAAAEAQAABAAAAAASAAEAEgA=</HashCode>
+      <FileName>Models\Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Models.ProdVenda">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAE=</HashCode>
+      <FileName>Models\ProdVenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Models.Venda">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAAAAAAAAAACBAAAEgQAABAAAAAAAAAAAAgE=</HashCode>
+      <FileName>Models\Venda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Models.Fornecimento">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAKAAAAAAAAAAAAAAABAAAAAQAAAAAAAAACAAEACgA=</HashCode>
+      <FileName>Models\Fornecimento.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

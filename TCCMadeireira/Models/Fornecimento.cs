@@ -8,26 +8,32 @@ namespace TCCMadeireira.Models
 {
     class Fornecimento
     {
-        int id;
-        string nome;
-        Fornecedor fornecedor;
-        Produto[] produtos;
-        DateTime dataInfo;
+        private int id;
+        private string nome;
+        private Fornecedor fornecedor;
+        private Produto[] produtos;
+        private DateTime dataInfo;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        internal Fornecedor Fornecedor { get => fornecedor; set => fornecedor = value; }
+        internal Produto[] Produtos { get => produtos; set => produtos = value; }
+        public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
 
         public Fornecimento(int id, string nome, Fornecedor fornecedor, Produto[] produtos, DateTime dataInfo)
         {
-            this.id = id;
-            this.nome = nome;
-            this.fornecedor = fornecedor;
-            this.produtos = produtos;
-            this.dataInfo = dataInfo;
+            this.Id = id;
+            this.Nome = nome;
+            this.Fornecedor = fornecedor;
+            this.Produtos = produtos;
+            this.DataInfo = dataInfo;
         }
         public Fornecimento(string nome, Fornecedor fornecedor, Produto[] produtos, DateTime dataInfo)
         {
-            this.nome = nome;
-            this.fornecedor = fornecedor;
-            this.produtos = produtos;
-            this.dataInfo = dataInfo;
+            this.Nome = nome;
+            this.Fornecedor = fornecedor;
+            this.Produtos = produtos;
+            this.DataInfo = dataInfo;
         }
     }
 }
