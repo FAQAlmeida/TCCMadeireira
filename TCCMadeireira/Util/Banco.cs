@@ -110,13 +110,11 @@ namespace TCCMadeireira.Bancos
         #region ProdOper
         public VENDA_PRODUTODataTable SelectProdutosVenda(Venda venda)
         {
-            //TODO
-            return null; // vendaprodutoTableAdapter.GetDataVenda(venda.Id);
+            return vendaprodutoTableAdapter.GetDataVenda(venda.Id);
         }
         public VENDA_PRODUTODataTable SelectProdutoVenda(Produto produto)
         {
-            //TODO
-            return null; // vendaprodutoTableAdapter.GetDataVenda(produto.Id);
+            return vendaprodutoTableAdapter.GetDataProdVenda(produto.Id);
         }
         public void InsertProduto(Venda venda, Produto produto)
         {
@@ -137,8 +135,7 @@ namespace TCCMadeireira.Bancos
         }
         public USERSDataTable SelectUsuario(int id)
         {
-            //TODO
-            return null; // usersTableAdapter.GetDataUsuario(id);
+            return usersTableAdapter.GetDataUsuario(id);
         }
         public void InsertUsuario(Usuario usuario)
         {
@@ -146,13 +143,11 @@ namespace TCCMadeireira.Bancos
         }
         public void UpdateUsuario(Usuario usuario)
         {
-            //TODO
-            //usersTableAdapter.Update(usuario.Nome, usuario.Senha, usuario.Nivel, usuario.Id);
+            usersTableAdapter.Update(usuario.Nome, usuario.Senha, usuario.Nivel, usuario.Id);
         }
         public void DeleteUSuario(Usuario usuario)
         {
-            //TODO
-            //usersTableAdapter.Delete(usuario.id);
+            usersTableAdapter.Delete(usuario.Id);
         }
         #endregion
         #region Venda
@@ -162,7 +157,7 @@ namespace TCCMadeireira.Bancos
         /// <param name="venda"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void InsertVenda(Venda venda)
         {
-            vendasTableAdapter.Insert(venda.Cliente.Id, venda.Usuario.Id, DateTime.Now, venda.Valor);
+            vendasTableAdapter.Insert(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor);
         }
         /// <summary>
         /// Overload do metódo SelectFuncionario do TableAdapter  
@@ -171,17 +166,15 @@ namespace TCCMadeireira.Bancos
         /// <returns>DataTable com o funcionario pesquisar</returns>
         public VENDASDataTable SelectVenda(int id)
         {
-            //TODO
-            return null;//vendasTableAdapter.getDataVenda(id);
+            return vendasTableAdapter.GetDataVenda(id);
         }
         /// <summary>
         /// Overload do metódo "UpdateFuncionario" do TableAdapter para suportar o objeto funcionario
         /// </summary>
-        /// <param name="funcionario">Objeto funcionario, que devera conter todas as informações do funcionario</param>
+        /// <param name="venda">Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void UpdateVenda(Venda venda)
         {
-            //TODO
-            //vendasTableAdapter.Update(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor, venda.Id);
+            vendasTableAdapter.Update(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor, venda.Id);
         }
         public VENDASDataTable SelectVenda()
         {

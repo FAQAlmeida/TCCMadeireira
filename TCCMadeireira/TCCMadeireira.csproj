@@ -50,12 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bancos\DataSetMadeireiraV2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\Fornecimento.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdVenda.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venda.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Util\Banco.cs" />
     <Compile Include="Bancos\DataSetMadeireira.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -63,11 +69,6 @@
       <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
     </Compile>
     <Compile Include="Bancos\DataSetMadeireiraV2.cs">
-      <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Bancos\DataSetMadeireiraV2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />

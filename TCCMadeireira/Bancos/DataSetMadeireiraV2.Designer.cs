@@ -7016,7 +7016,7 @@ WHERE      IDENTIDADE_CLIENTE = @IDENTIDADE_CLIENTE";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[VENDAS] WHERE (([ID_VENDA] = @Original_ID_VENDA) AND ((@IsNull_ID_CLIENTE = 1 AND [ID_CLIENTE] IS NULL) OR ([ID_CLIENTE] = @Original_ID_CLIENTE)) AND ((@IsNull_ID_VENDEDOR = 1 AND [ID_VENDEDOR] IS NULL) OR ([ID_VENDEDOR] = @Original_ID_VENDEDOR)) AND ((@IsNull_DATA_VENDA = 1 AND [DATA_VENDA] IS NULL) OR ([DATA_VENDA] = @Original_DATA_VENDA)) AND ((@IsNull_VALOR_VENDA = 1 AND [VALOR_VENDA] IS NULL) OR ([VALOR_VENDA] = @Original_VALOR_VENDA)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM VENDAS\r\nWHERE        (ID_VENDA = @Original_ID_VENDA)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_VENDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_CLIENTE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CLIENTE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7029,7 +7029,9 @@ WHERE      IDENTIDADE_CLIENTE = @IDENTIDADE_CLIENTE";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VALOR_VENDA", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[VENDAS] ([ID_CLIENTE], [ID_VENDEDOR], [DATA_VENDA], [VALOR_VENDA]) VALUES (@ID_CLIENTE, @ID_VENDEDOR, @DATA_VENDA, @VALOR_VENDA);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO VENDAS
+                         (ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA)
+VALUES        (@ID_CLIENTE,@ID_VENDEDOR,@DATA_VENDA,@VALOR_VENDA); 
 SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WHERE (ID_VENDA = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CLIENTE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CLIENTE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7038,23 +7040,16 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_VENDA", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[VENDAS] SET [ID_CLIENTE] = @ID_CLIENTE, [ID_VENDEDOR] = @ID_VENDEDOR, [DATA_VENDA] = @DATA_VENDA, [VALOR_VENDA] = @VALOR_VENDA WHERE (([ID_VENDA] = @Original_ID_VENDA) AND ((@IsNull_ID_CLIENTE = 1 AND [ID_CLIENTE] IS NULL) OR ([ID_CLIENTE] = @Original_ID_CLIENTE)) AND ((@IsNull_ID_VENDEDOR = 1 AND [ID_VENDEDOR] IS NULL) OR ([ID_VENDEDOR] = @Original_ID_VENDEDOR)) AND ((@IsNull_DATA_VENDA = 1 AND [DATA_VENDA] IS NULL) OR ([DATA_VENDA] = @Original_DATA_VENDA)) AND ((@IsNull_VALOR_VENDA = 1 AND [VALOR_VENDA] IS NULL) OR ([VALOR_VENDA] = @Original_VALOR_VENDA)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       VENDAS
+SET                ID_CLIENTE = @ID_CLIENTE, ID_VENDEDOR = @ID_VENDEDOR, DATA_VENDA = @DATA_VENDA, VALOR_VENDA = @VALOR_VENDA
+WHERE        (ID_VENDA = @Original_ID_VENDA);      
 SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WHERE (ID_VENDA = @ID_VENDA)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CLIENTE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CLIENTE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_VENDEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_VENDA", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_VENDA", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_VENDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_CLIENTE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CLIENTE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_CLIENTE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CLIENTE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_VENDEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_VENDEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATA_VENDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_VENDA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATA_VENDA", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VALOR_VENDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VALOR_VENDA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VALOR_VENDA", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_VENDA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CLIENTE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CLIENTE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_VENDEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_VENDA", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_VENDA", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "VALOR_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_VENDA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7067,12 +7062,18 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM dbo.VENDAS" +
                 "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA\r\nFROM   " +
+                "         VENDAS\r\nWHERE        (ID_VENDA = @id_venda)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_venda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7094,6 +7095,18 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.VENDASDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.VENDASDataTable dataTable = new DataSetMadeireiraV2.VENDASDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.VENDASDataTable GetDataVenda(int id_venda) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_venda));
             DataSetMadeireiraV2.VENDASDataTable dataTable = new DataSetMadeireiraV2.VENDASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7231,7 +7244,7 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ID_CLIENTE, global::System.Nullable<int> ID_VENDEDOR, global::System.Nullable<global::System.DateTime> DATA_VENDA, global::System.Nullable<decimal> VALOR_VENDA, int Original_ID_VENDA, global::System.Nullable<int> Original_ID_CLIENTE, global::System.Nullable<int> Original_ID_VENDEDOR, global::System.Nullable<global::System.DateTime> Original_DATA_VENDA, global::System.Nullable<decimal> Original_VALOR_VENDA, int ID_VENDA) {
+        public virtual int Update(global::System.Nullable<int> ID_CLIENTE, global::System.Nullable<int> ID_VENDEDOR, global::System.Nullable<global::System.DateTime> DATA_VENDA, global::System.Nullable<decimal> VALOR_VENDA, int Original_ID_VENDA) {
             if ((ID_CLIENTE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_CLIENTE.Value));
             }
@@ -7257,39 +7270,6 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_VENDA));
-            if ((Original_ID_CLIENTE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_CLIENTE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_VENDEDOR.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID_VENDEDOR.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DATA_VENDA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DATA_VENDA.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_VALOR_VENDA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_VALOR_VENDA.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID_VENDA));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7304,14 +7284,6 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ID_CLIENTE, global::System.Nullable<int> ID_VENDEDOR, global::System.Nullable<global::System.DateTime> DATA_VENDA, global::System.Nullable<decimal> VALOR_VENDA, int Original_ID_VENDA, global::System.Nullable<int> Original_ID_CLIENTE, global::System.Nullable<int> Original_ID_VENDEDOR, global::System.Nullable<global::System.DateTime> Original_DATA_VENDA, global::System.Nullable<decimal> Original_VALOR_VENDA) {
-            return this.Update(ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA, Original_ID_VENDA, Original_ID_CLIENTE, Original_ID_VENDEDOR, Original_DATA_VENDA, Original_VALOR_VENDA, Original_ID_VENDA);
         }
     }
     
@@ -10084,14 +10056,9 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[USERS] WHERE (([ID_USUARIO] = @Original_ID_USUARIO) AND ([LOGI" +
-                "N_USUARIO] = @Original_LOGIN_USUARIO) AND ([SENHA_USUARIO] = @Original_SENHA_USU" +
-                "ARIO) AND ([NIVEL_USUARIO] = @Original_NIVEL_USUARIO))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM USERS\r\nWHERE        (ID_USUARIO = @Original_ID_USUARIO)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USUARIO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOGIN_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SENHA_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NIVEL_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIVEL_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[USERS] ([LOGIN_USUARIO], [SENHA_USUARIO], [NIVEL_USUARIO]) VAL" +
@@ -10104,17 +10071,15 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIVEL_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIVEL_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[USERS] SET [LOGIN_USUARIO] = @LOGIN_USUARIO, [SENHA_USUARIO] = @SENHA_USUARIO, [NIVEL_USUARIO] = @NIVEL_USUARIO WHERE (([ID_USUARIO] = @Original_ID_USUARIO) AND ([LOGIN_USUARIO] = @Original_LOGIN_USUARIO) AND ([SENHA_USUARIO] = @Original_SENHA_USUARIO) AND ([NIVEL_USUARIO] = @Original_NIVEL_USUARIO));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       USERS
+SET                LOGIN_USUARIO = @LOGIN_USUARIO, SENHA_USUARIO = @SENHA_USUARIO, NIVEL_USUARIO = @NIVEL_USUARIO
+WHERE        (ID_USUARIO = @Original_ID_USUARIO); 
 SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE (ID_USUARIO = @ID_USUARIO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOGIN_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SENHA_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIVEL_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIVEL_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USUARIO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOGIN_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SENHA_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NIVEL_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NIVEL_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_USUARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOGIN_USUARIO", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SENHA_USUARIO", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIVEL_USUARIO", global::System.Data.SqlDbType.NVarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NIVEL_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USUARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10127,11 +10092,17 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM dbo.USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO\r\nFROM      " +
+                "      USERS\r\nWHERE        (ID_USUARIO = @id_usuario)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_usuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10153,6 +10124,18 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.USERSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.USERSDataTable dataTable = new DataSetMadeireiraV2.USERSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.USERSDataTable GetDataUsuario(int id_usuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_usuario));
             DataSetMadeireiraV2.USERSDataTable dataTable = new DataSetMadeireiraV2.USERSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10191,26 +10174,8 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_USUARIO, string Original_LOGIN_USUARIO, string Original_SENHA_USUARIO, string Original_NIVEL_USUARIO) {
+        public virtual int Delete(int Original_ID_USUARIO) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_USUARIO));
-            if ((Original_LOGIN_USUARIO == null)) {
-                throw new global::System.ArgumentNullException("Original_LOGIN_USUARIO");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_LOGIN_USUARIO));
-            }
-            if ((Original_SENHA_USUARIO == null)) {
-                throw new global::System.ArgumentNullException("Original_SENHA_USUARIO");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SENHA_USUARIO));
-            }
-            if ((Original_NIVEL_USUARIO == null)) {
-                throw new global::System.ArgumentNullException("Original_NIVEL_USUARIO");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_NIVEL_USUARIO));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10270,7 +10235,7 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string LOGIN_USUARIO, string SENHA_USUARIO, string NIVEL_USUARIO, int Original_ID_USUARIO, string Original_LOGIN_USUARIO, string Original_SENHA_USUARIO, string Original_NIVEL_USUARIO, int ID_USUARIO) {
+        public virtual int Update(string LOGIN_USUARIO, string SENHA_USUARIO, string NIVEL_USUARIO, int Original_ID_USUARIO) {
             if ((LOGIN_USUARIO == null)) {
                 throw new global::System.ArgumentNullException("LOGIN_USUARIO");
             }
@@ -10290,25 +10255,6 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(NIVEL_USUARIO));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_USUARIO));
-            if ((Original_LOGIN_USUARIO == null)) {
-                throw new global::System.ArgumentNullException("Original_LOGIN_USUARIO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_LOGIN_USUARIO));
-            }
-            if ((Original_SENHA_USUARIO == null)) {
-                throw new global::System.ArgumentNullException("Original_SENHA_USUARIO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_SENHA_USUARIO));
-            }
-            if ((Original_NIVEL_USUARIO == null)) {
-                throw new global::System.ArgumentNullException("Original_NIVEL_USUARIO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_NIVEL_USUARIO));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID_USUARIO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10323,14 +10269,6 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string LOGIN_USUARIO, string SENHA_USUARIO, string NIVEL_USUARIO, int Original_ID_USUARIO, string Original_LOGIN_USUARIO, string Original_SENHA_USUARIO, string Original_NIVEL_USUARIO) {
-            return this.Update(LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO, Original_ID_USUARIO, Original_LOGIN_USUARIO, Original_SENHA_USUARIO, Original_NIVEL_USUARIO, Original_ID_USUARIO);
         }
     }
     
@@ -10507,12 +10445,24 @@ SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM VENDA_PRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM dbo.VENDA_" +
                 "PRODUTO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM dbo.VENDA_" +
+                "PRODUTO\r\nwhere id_produto = @id_produto";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_produto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM dbo.VENDA_" +
+                "PRODUTO\r\nwhere id_venda=@id_venda";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_venda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10534,6 +10484,40 @@ SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM VENDA_PRO
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.VENDA_PRODUTODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.VENDA_PRODUTODataTable dataTable = new DataSetMadeireiraV2.VENDA_PRODUTODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.VENDA_PRODUTODataTable GetDataProdVenda(global::System.Nullable<int> id_produto) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id_produto.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_produto.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            DataSetMadeireiraV2.VENDA_PRODUTODataTable dataTable = new DataSetMadeireiraV2.VENDA_PRODUTODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.VENDA_PRODUTODataTable GetDataVenda(global::System.Nullable<int> id_venda) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((id_venda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_venda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             DataSetMadeireiraV2.VENDA_PRODUTODataTable dataTable = new DataSetMadeireiraV2.VENDA_PRODUTODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
