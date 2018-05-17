@@ -101,5 +101,97 @@ namespace TCCMadeireira.Bancos
             funcionariosTableAdapter.Delete(Convert.ToInt32(funcionariodt[0]["id_funcionario"]));
         }
         #endregion
+        #region Fornecimento
+        #endregion
+        #region Fornecedor
+        #endregion
+        #region Produto
+        #endregion
+        #region ProdOper
+        public VENDA_PRODUTODataTable SelectProdutosVenda(Venda venda)
+        {
+            //TODO
+            return null; // vendaprodutoTableAdapter.GetDataVenda(venda.Id);
+        }
+        public VENDA_PRODUTODataTable SelectProdutoVenda(Produto produto)
+        {
+            //TODO
+            return null; // vendaprodutoTableAdapter.GetDataVenda(produto.Id);
+        }
+        public void InsertProduto(Venda venda, Produto produto)
+        {
+            vendaprodutoTableAdapter.Insert(venda.Id, produto.Id, produto.Quantidade);
+        }
+        public void InsertMultProd(Venda venda)
+        {
+            foreach(Produto produto in venda.Produto)
+            {
+                InsertProduto(venda, produto);
+            }
+        }
+        #endregion
+        #region Usuario
+        public USERSDataTable SelectUsuario()
+        {
+            return usersTableAdapter.GetData();
+        }
+        public USERSDataTable SelectUsuario(int id)
+        {
+            //TODO
+            return null; // usersTableAdapter.GetDataUsuario(id);
+        }
+        public void InsertUsuario(Usuario usuario)
+        {
+            usersTableAdapter.Insert(usuario.Nome, usuario.Senha, usuario.Nivel);
+        }
+        public void UpdateUsuario(Usuario usuario)
+        {
+            //TODO
+            //usersTableAdapter.Update(usuario.Nome, usuario.Senha, usuario.Nivel, usuario.Id);
+        }
+        public void DeleteUSuario(Usuario usuario)
+        {
+            //TODO
+            //usersTableAdapter.Delete(usuario.id);
+        }
+        #endregion
+        #region Venda
+        /// <summary>
+        /// Overload do metódo "InserirFuncionario" do TableAdapter para suportar o objeto funcionario
+        /// </summary>
+        /// <param name="venda"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
+        public void InsertVenda(Venda venda)
+        {
+            vendasTableAdapter.Insert(venda.Cliente.Id, venda.Usuario.Id, DateTime.Now, venda.Valor);
+        }
+        /// <summary>
+        /// Overload do metódo SelectFuncionario do TableAdapter  
+        /// </summary>
+        /// <param name="id">Identidade para se pesquisar um funcionario</param>
+        /// <returns>DataTable com o funcionario pesquisar</returns>
+        public VENDASDataTable SelectVenda(int id)
+        {
+            //TODO
+            return null;//vendasTableAdapter.getDataVenda(id);
+        }
+        /// <summary>
+        /// Overload do metódo "UpdateFuncionario" do TableAdapter para suportar o objeto funcionario
+        /// </summary>
+        /// <param name="funcionario">Objeto funcionario, que devera conter todas as informações do funcionario</param>
+        public void UpdateVenda(Venda venda)
+        {
+            //TODO
+            //vendasTableAdapter.Update(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor, venda.Id);
+        }
+        public VENDASDataTable SelectVenda()
+        {
+            return vendasTableAdapter.GetData();
+        }
+        public void DeleteVenda(Venda venda)
+        {
+            VENDASDataTable vendadt = SelectVenda(venda.Id);
+            funcionariosTableAdapter.Delete(Convert.ToInt32(vendadt[0]["id_venda"]));
+        }
+        #endregion
     }
 }

@@ -13,6 +13,7 @@ namespace TCCMadeireira.Models
         private Fornecedor fornecedor;
         private int valor;
         private int quantidade;
+        private string obs;
         private DateTime dataInfo;
 
         public int Id { get => id; set => id = value; }
@@ -21,18 +22,21 @@ namespace TCCMadeireira.Models
         public int Valor { get => valor; set => valor = value; }
         public int Quantidade { get => quantidade; set => quantidade = value; }
         public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
+        public string Obs { get => obs; set => obs = value; }
 
-        public Produto(int id, string nome, Fornecedor fornecedor, int valor, int quantidade, DateTime dataInfo) {
+        public Produto(int id, string nome, Fornecedor fornecedor, int valor, int quantidade, DateTime dataInfo, string obs) {
             this.Id = id;
             this.Nome = nome.ToUpper().Trim();
             this.Fornecedor = fornecedor;
+            this.obs = obs;
             this.Valor =  valor;
             this.Quantidade = quantidade;
             this.DataInfo = dataInfo;
         }
-        public Produto(string nome, Fornecedor fornecedor, int valor, int quantidade, DateTime dataInfo)
+        public Produto(string nome, Fornecedor fornecedor, int valor, int quantidade, DateTime dataInfo, string obs)
         {
             this.Nome = nome.ToUpper().Trim();
+            this.obs = obs;
             this.Fornecedor = fornecedor;
             this.Valor = valor;
             this.Quantidade = quantidade;
