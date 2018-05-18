@@ -102,10 +102,79 @@ namespace TCCMadeireira.Bancos
         }
         #endregion
         #region Fornecimento
+        public FORNECIMENTOSDataTable SelectFornecimento()
+        {
+            return fornecimentosTableAdapter.GetData();
+        }
+        public FORNECIMENTOSDataTable SelectFornecimento(int id)
+        {
+            return fornecimentosTableAdapter.GetDataFornecimento(id);
+        }
+        public void InsertFornecimento(Fornecimento fornecimento)
+        {
+            fornecimentosTableAdapter.Insert(fornecimento.DataInfo, fornecimento.Valor, fornecimento.Fornecedor.Id, fornecimento.Obs);
+        }
+        public void UpdateFornecimento(Fornecimento fornecimento)
+        {
+            fornecimentosTableAdapter.Update(fornecimento.DataInfo, fornecimento.Valor, fornecimento.Fornecedor.Id, fornecimento.Obs, fornecimento.Id);
+        }
+        public void DeleteFornecimento(Fornecimento fornecimento)
+        {
+            fornecimentosTableAdapter.Delete(fornecimento.Id);
+        }
         #endregion
         #region Fornecedor
+        public FORNECEDORESDataTable SelectFornecedor()
+        {
+            return fornecedoresTableAdapter.GetData();
+        }
+        public FORNECEDORESDataTable SelectFornecedor(int id)
+        {
+            return fornecedoresTableAdapter.GetDataFornecedor(id);
+        }
+        public FORNECEDORESDataTable SelectFornecedor(string iden)
+        {
+            return fornecedoresTableAdapter.GetDataFornecedorIden(iden);
+        }
+        public void InsertFornecedor (Fornecedor fornecedor)
+        {
+            fornecedoresTableAdapter.Insert(fornecedor.Nome, fornecedor.Identidade, fornecedor.Cep, 
+                fornecedor.Rua, fornecedor.Numero,fornecedor.Bairro, fornecedor.Cidade, fornecedor.Estado, 
+                fornecedor.Telefone, fornecedor.Celular, fornecedor.Email, fornecedor.DataInfo, fornecedor.Obs);
+        }
+        public void UpdateFornecedor(Fornecedor fornecedor)
+        {
+            fornecedoresTableAdapter.Update(fornecedor.Nome, fornecedor.Identidade, fornecedor.Cep, fornecedor.Rua,
+                fornecedor.Numero, fornecedor.Bairro, fornecedor.Cidade, fornecedor.Estado, fornecedor.Telefone,
+                fornecedor.Celular, fornecedor.Email, fornecedor.DataInfo, fornecedor.Obs, fornecedor.Id);
+        }
+        public void DeleteFornecedor(Fornecedor fornecedor)
+        {
+            fornecedoresTableAdapter.Delete(fornecedor.Id);
+        }
         #endregion
         #region Produto
+        public PRODUTOSDataTable SelectProduto()
+        {
+            return produtosTableAdapter.GetData();
+        }
+        public PRODUTOSDataTable SelectProduto(int id)
+        {
+            return produtosTableAdapter.GetDataProduto(id);
+        }
+        public void UpdateProduto(Produto produto)
+        {
+            produtosTableAdapter.Update(produto.Nome, produto.Quantidade, produto.Valor, produto.Fornecedor.Id, produto.Obs, produto.Id);
+        }
+        public void InsertProduto(Produto produto)
+        {
+            produtosTableAdapter.Insert(produto.Nome, produto.Quantidade, produto.Valor, produto.Fornecedor.Id, produto.Obs);
+        }
+        public void DeleteProduto(Produto produto)
+        {
+            produtosTableAdapter.Delete(produto.Id);
+        }
+
         #endregion
         #region ProdOper
         public VENDA_PRODUTODataTable SelectProdutosVenda(Venda venda)

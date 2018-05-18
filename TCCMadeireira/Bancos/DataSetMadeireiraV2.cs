@@ -12,8 +12,6 @@
 
 namespace TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters
 {
-
-
     public partial class CLIENTESTableAdapter
     {
     }

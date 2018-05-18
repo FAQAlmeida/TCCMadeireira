@@ -3087,7 +3087,7 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUTOSRow AddPRODUTOSRow(string NOME_PRODUTO, int QUANTIDADE_PRODUTO, decimal VALOR_PRODUTO, FORNECEDORESRow parentFORNECEDORESRowByFK__PRODUTOS__ID_FOR__3587F3E0, string OBS_PRODUTO) {
+            public PRODUTOSRow AddPRODUTOSRow(string NOME_PRODUTO, decimal QUANTIDADE_PRODUTO, decimal VALOR_PRODUTO, FORNECEDORESRow parentFORNECEDORESRowByFK__PRODUTOS__ID_FOR__3587F3E0, string OBS_PRODUTO) {
                 PRODUTOSRow rowPRODUTOSRow = ((PRODUTOSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3143,7 +3143,7 @@ namespace TCCMadeireira.Bancos {
                 base.Columns.Add(this.columnID_PRODUTO);
                 this.columnNOME_PRODUTO = new global::System.Data.DataColumn("NOME_PRODUTO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNOME_PRODUTO);
-                this.columnQUANTIDADE_PRODUTO = new global::System.Data.DataColumn("QUANTIDADE_PRODUTO", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnQUANTIDADE_PRODUTO = new global::System.Data.DataColumn("QUANTIDADE_PRODUTO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQUANTIDADE_PRODUTO);
                 this.columnVALOR_PRODUTO = new global::System.Data.DataColumn("VALOR_PRODUTO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVALOR_PRODUTO);
@@ -5594,10 +5594,10 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int QUANTIDADE_PRODUTO {
+            public decimal QUANTIDADE_PRODUTO {
                 get {
                     try {
-                        return ((int)(this[this.tablePRODUTOS.QUANTIDADE_PRODUTOColumn]));
+                        return ((decimal)(this[this.tablePRODUTOS.QUANTIDADE_PRODUTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'QUANTIDADE_PRODUTO\' na tabela \'PRODUTOS\' é DBNull.", e);
@@ -7425,147 +7425,54 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[FORNECEDORES] WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDO" +
-                "R) AND ((@IsNull_NOME_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FO" +
-                "RNECEDOR] = @Original_NOME_FORNECEDOR)) AND ([IDENTIDADE_FORNECEDOR] = @Original" +
-                "_IDENTIDADE_FORNECEDOR) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS" +
-                " NULL) OR ([CEP_FORNECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_RUA_FORNE" +
-                "CEDOR = 1 AND [RUA_FORNECEDOR] IS NULL) OR ([RUA_FORNECEDOR] = @Original_RUA_FOR" +
-                "NECEDOR)) AND ((@IsNull_NUMERO_FORNECEDOR = 1 AND [NUMERO_FORNECEDOR] IS NULL) O" +
-                "R ([NUMERO_FORNECEDOR] = @Original_NUMERO_FORNECEDOR)) AND ((@IsNull_BAIRRO_FORN" +
-                "ECEDOR = 1 AND [BAIRRO_FORNECEDOR] IS NULL) OR ([BAIRRO_FORNECEDOR] = @Original_" +
-                "BAIRRO_FORNECEDOR)) AND ((@IsNull_CIDADE_FORNECEDOR = 1 AND [CIDADE_FORNECEDOR] " +
-                "IS NULL) OR ([CIDADE_FORNECEDOR] = @Original_CIDADE_FORNECEDOR)) AND ((@IsNull_E" +
-                "STADO_FORNECEDOR = 1 AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = " +
-                "@Original_ESTADO_FORNECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFON" +
-                "E_FORNECEDOR] IS NULL) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR" +
-                ")) AND ((@IsNull_CELULAR_FORNECEDOR = 1 AND [CELULAR_FORNECEDOR] IS NULL) OR ([C" +
-                "ELULAR_FORNECEDOR] = @Original_CELULAR_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECED" +
-                "OR = 1 AND [EMAIL_FORNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_" +
-                "FORNECEDOR)) AND ((@IsNull_DATA_INFO_FORNECEDOR = 1 AND [DATA_INFO_FORNECEDOR] I" +
-                "S NULL) OR ([DATA_INFO_FORNECEDOR] = @Original_DATA_INFO_FORNECEDOR)) AND ((@IsN" +
-                "ull_OBS_FORNECEDOR = 1 AND [OBS_FORNECEDOR] IS NULL) OR ([OBS_FORNECEDOR] = @Ori" +
-                "ginal_OBS_FORNECEDOR)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM FORNECEDORES\r\nWHERE        (ID_FORNECEDOR = @ID_FORNECEDOR)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CEP_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CEP_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RUA_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RUA_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NUMERO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NUMERO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CIDADE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CELULAR_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CELULAR_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OBS_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OBS_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FORNECEDORES] ([NOME_FORNECEDOR], [IDENTIDADE_FORNECEDOR], [CEP_FORNECEDOR], [RUA_FORNECEDOR], [NUMERO_FORNECEDOR], [BAIRRO_FORNECEDOR], [CIDADE_FORNECEDOR], [ESTADO_FORNECEDOR], [TELEFONE_FORNECEDOR], [CELULAR_FORNECEDOR], [EMAIL_FORNECEDOR], [DATA_INFO_FORNECEDOR], [OBS_FORNECEDOR]) VALUES (@NOME_FORNECEDOR, @IDENTIDADE_FORNECEDOR, @CEP_FORNECEDOR, @RUA_FORNECEDOR, @NUMERO_FORNECEDOR, @BAIRRO_FORNECEDOR, @CIDADE_FORNECEDOR, @ESTADO_FORNECEDOR, @TELEFONE_FORNECEDOR, @CELULAR_FORNECEDOR, @EMAIL_FORNECEDOR, @DATA_INFO_FORNECEDOR, @OBS_FORNECEDOR);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO FORNECEDORES
+                         (NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, 
+                         CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR)
+VALUES        (@NOME_FORNECEDOR,@IDENTIDADE_FORNECEDOR,@CEP_FORNECEDOR,@RUA_FORNECEDOR,@NUMERO_FORNECEDOR,@BAIRRO_FORNECEDOR,@CIDADE_FORNECEDOR,@ESTADO_FORNECEDOR,@TELEFONE_FORNECEDOR,@CELULAR_FORNECEDOR,@EMAIL_FORNECEDOR,@DATA_INFO_FORNECEDOR,@OBS_FORNECEDOR); 
 SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR FROM FORNECEDORES WHERE (ID_FORNECEDOR = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RUA_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMERO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CELULAR_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RUA_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMERO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 2, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CELULAR_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[FORNECEDORES] SET [NOME_FORNECEDOR] = @NOME_FORNECEDOR, [IDENTIDADE" +
-                "_FORNECEDOR] = @IDENTIDADE_FORNECEDOR, [CEP_FORNECEDOR] = @CEP_FORNECEDOR, [RUA_" +
-                "FORNECEDOR] = @RUA_FORNECEDOR, [NUMERO_FORNECEDOR] = @NUMERO_FORNECEDOR, [BAIRRO" +
-                "_FORNECEDOR] = @BAIRRO_FORNECEDOR, [CIDADE_FORNECEDOR] = @CIDADE_FORNECEDOR, [ES" +
-                "TADO_FORNECEDOR] = @ESTADO_FORNECEDOR, [TELEFONE_FORNECEDOR] = @TELEFONE_FORNECE" +
-                "DOR, [CELULAR_FORNECEDOR] = @CELULAR_FORNECEDOR, [EMAIL_FORNECEDOR] = @EMAIL_FOR" +
-                "NECEDOR, [DATA_INFO_FORNECEDOR] = @DATA_INFO_FORNECEDOR, [OBS_FORNECEDOR] = @OBS" +
-                "_FORNECEDOR WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDOR) AND ((@IsNull_NOM" +
-                "E_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FORNECEDOR] = @Origina" +
-                "l_NOME_FORNECEDOR)) AND ([IDENTIDADE_FORNECEDOR] = @Original_IDENTIDADE_FORNECED" +
-                "OR) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS NULL) OR ([CEP_FORN" +
-                "ECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_RUA_FORNECEDOR = 1 AND [RUA_F" +
-                "ORNECEDOR] IS NULL) OR ([RUA_FORNECEDOR] = @Original_RUA_FORNECEDOR)) AND ((@IsN" +
-                "ull_NUMERO_FORNECEDOR = 1 AND [NUMERO_FORNECEDOR] IS NULL) OR ([NUMERO_FORNECEDO" +
-                "R] = @Original_NUMERO_FORNECEDOR)) AND ((@IsNull_BAIRRO_FORNECEDOR = 1 AND [BAIR" +
-                "RO_FORNECEDOR] IS NULL) OR ([BAIRRO_FORNECEDOR] = @Original_BAIRRO_FORNECEDOR)) " +
-                "AND ((@IsNull_CIDADE_FORNECEDOR = 1 AND [CIDADE_FORNECEDOR] IS NULL) OR ([CIDADE" +
-                "_FORNECEDOR] = @Original_CIDADE_FORNECEDOR)) AND ((@IsNull_ESTADO_FORNECEDOR = 1" +
-                " AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = @Original_ESTADO_FOR" +
-                "NECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFONE_FORNECEDOR] IS NUL" +
-                "L) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR)) AND ((@IsNull_CEL" +
-                "ULAR_FORNECEDOR = 1 AND [CELULAR_FORNECEDOR] IS NULL) OR ([CELULAR_FORNECEDOR] =" +
-                " @Original_CELULAR_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECEDOR = 1 AND [EMAIL_FO" +
-                "RNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_FORNECEDOR)) AND ((@" +
-                "IsNull_DATA_INFO_FORNECEDOR = 1 AND [DATA_INFO_FORNECEDOR] IS NULL) OR ([DATA_IN" +
-                "FO_FORNECEDOR] = @Original_DATA_INFO_FORNECEDOR)) AND ((@IsNull_OBS_FORNECEDOR =" +
-                " 1 AND [OBS_FORNECEDOR] IS NULL) OR ([OBS_FORNECEDOR] = @Original_OBS_FORNECEDOR" +
-                ")));\r\nSELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECED" +
-                "OR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, EST" +
-                "ADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_" +
-                "INFO_FORNECEDOR, OBS_FORNECEDOR FROM FORNECEDORES WHERE (ID_FORNECEDOR = @ID_FOR" +
-                "NECEDOR)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       FORNECEDORES
+SET                NOME_FORNECEDOR = @NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR = @IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR = @CEP_FORNECEDOR, RUA_FORNECEDOR = @RUA_FORNECEDOR, 
+                         NUMERO_FORNECEDOR = @NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR = @BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR = @CIDADE_FORNECEDOR, ESTADO_FORNECEDOR = @ESTADO_FORNECEDOR, 
+                         TELEFONE_FORNECEDOR = @TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR = @CELULAR_FORNECEDOR, EMAIL_FORNECEDOR = @EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR = @DATA_INFO_FORNECEDOR, 
+                         OBS_FORNECEDOR = @OBS_FORNECEDOR
+WHERE        (ID_FORNECEDOR = @ID_FORNECEDOR); 
+SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR FROM FORNECEDORES WHERE (ID_FORNECEDOR = @ID_FORNECEDOR)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RUA_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMERO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CELULAR_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CEP_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CEP_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RUA_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RUA_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NUMERO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NUMERO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CIDADE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CELULAR_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CELULAR_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OBS_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OBS_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RUA_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "RUA_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMERO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "NUMERO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BAIRRO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "BAIRRO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "CIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 2, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CELULAR_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CELULAR_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_INFO_FORNECEDOR", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7578,11 +7485,21 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR FROM dbo.FORNECEDORES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR FROM dbo.FORNECEDORES where (ID_FORNECEDOR = @ID_FORNECEDOR)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR FROM dbo.FORNECEDORES where (IDENTIDADE_FORNECEDOR = @IDENTIDADE_FORNECEDOR)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDENTIDADE_FORNECEDOR", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "IDENTIDADE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7604,6 +7521,35 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.FORNECEDORESDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.FORNECEDORESDataTable dataTable = new DataSetMadeireiraV2.FORNECEDORESDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.FORNECEDORESDataTable GetDataFornecedor(int ID_FORNECEDOR) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_FORNECEDOR));
+            DataSetMadeireiraV2.FORNECEDORESDataTable dataTable = new DataSetMadeireiraV2.FORNECEDORESDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.FORNECEDORESDataTable GetDataFornecedorIden(string IDENTIDADE_FORNECEDOR) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((IDENTIDADE_FORNECEDOR == null)) {
+                throw new global::System.ArgumentNullException("IDENTIDADE_FORNECEDOR");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IDENTIDADE_FORNECEDOR));
+            }
             DataSetMadeireiraV2.FORNECEDORESDataTable dataTable = new DataSetMadeireiraV2.FORNECEDORESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7642,110 +7588,8 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_IDENTIDADE_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_RUA_FORNECEDOR, string Original_NUMERO_FORNECEDOR, string Original_BAIRRO_FORNECEDOR, string Original_CIDADE_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_CELULAR_FORNECEDOR, string Original_EMAIL_FORNECEDOR, global::System.Nullable<global::System.DateTime> Original_DATA_INFO_FORNECEDOR, string Original_OBS_FORNECEDOR) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_FORNECEDOR));
-            if ((Original_NOME_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NOME_FORNECEDOR));
-            }
-            if ((Original_IDENTIDADE_FORNECEDOR == null)) {
-                throw new global::System.ArgumentNullException("Original_IDENTIDADE_FORNECEDOR");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_IDENTIDADE_FORNECEDOR));
-            }
-            if ((Original_CEP_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_CEP_FORNECEDOR));
-            }
-            if ((Original_RUA_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_RUA_FORNECEDOR));
-            }
-            if ((Original_NUMERO_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_NUMERO_FORNECEDOR));
-            }
-            if ((Original_BAIRRO_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_BAIRRO_FORNECEDOR));
-            }
-            if ((Original_CIDADE_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_CIDADE_FORNECEDOR));
-            }
-            if ((Original_ESTADO_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(Original_ESTADO_FORNECEDOR));
-            }
-            if ((Original_TELEFONE_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_TELEFONE_FORNECEDOR));
-            }
-            if ((Original_CELULAR_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((string)(Original_CELULAR_FORNECEDOR));
-            }
-            if ((Original_EMAIL_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((string)(Original_EMAIL_FORNECEDOR));
-            }
-            if ((Original_DATA_INFO_FORNECEDOR.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((System.DateTime)(Original_DATA_INFO_FORNECEDOR.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OBS_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((string)(Original_OBS_FORNECEDOR));
-            }
+        public virtual int Delete(int ID_FORNECEDOR) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_FORNECEDOR));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7865,35 +7709,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string NOME_FORNECEDOR, 
-                    string IDENTIDADE_FORNECEDOR, 
-                    string CEP_FORNECEDOR, 
-                    string RUA_FORNECEDOR, 
-                    string NUMERO_FORNECEDOR, 
-                    string BAIRRO_FORNECEDOR, 
-                    string CIDADE_FORNECEDOR, 
-                    string ESTADO_FORNECEDOR, 
-                    string TELEFONE_FORNECEDOR, 
-                    string CELULAR_FORNECEDOR, 
-                    string EMAIL_FORNECEDOR, 
-                    global::System.Nullable<global::System.DateTime> DATA_INFO_FORNECEDOR, 
-                    string OBS_FORNECEDOR, 
-                    int Original_ID_FORNECEDOR, 
-                    string Original_NOME_FORNECEDOR, 
-                    string Original_IDENTIDADE_FORNECEDOR, 
-                    string Original_CEP_FORNECEDOR, 
-                    string Original_RUA_FORNECEDOR, 
-                    string Original_NUMERO_FORNECEDOR, 
-                    string Original_BAIRRO_FORNECEDOR, 
-                    string Original_CIDADE_FORNECEDOR, 
-                    string Original_ESTADO_FORNECEDOR, 
-                    string Original_TELEFONE_FORNECEDOR, 
-                    string Original_CELULAR_FORNECEDOR, 
-                    string Original_EMAIL_FORNECEDOR, 
-                    global::System.Nullable<global::System.DateTime> Original_DATA_INFO_FORNECEDOR, 
-                    string Original_OBS_FORNECEDOR, 
-                    int ID_FORNECEDOR) {
+        public virtual int Update(string NOME_FORNECEDOR, string IDENTIDADE_FORNECEDOR, string CEP_FORNECEDOR, string RUA_FORNECEDOR, string NUMERO_FORNECEDOR, string BAIRRO_FORNECEDOR, string CIDADE_FORNECEDOR, string ESTADO_FORNECEDOR, string TELEFONE_FORNECEDOR, string CELULAR_FORNECEDOR, string EMAIL_FORNECEDOR, global::System.Nullable<global::System.DateTime> DATA_INFO_FORNECEDOR, string OBS_FORNECEDOR, int ID_FORNECEDOR) {
             if ((NOME_FORNECEDOR == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7972,110 +7788,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(OBS_FORNECEDOR));
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ID_FORNECEDOR));
-            if ((Original_NOME_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_NOME_FORNECEDOR));
-            }
-            if ((Original_IDENTIDADE_FORNECEDOR == null)) {
-                throw new global::System.ArgumentNullException("Original_IDENTIDADE_FORNECEDOR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_IDENTIDADE_FORNECEDOR));
-            }
-            if ((Original_CEP_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_CEP_FORNECEDOR));
-            }
-            if ((Original_RUA_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_RUA_FORNECEDOR));
-            }
-            if ((Original_NUMERO_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_NUMERO_FORNECEDOR));
-            }
-            if ((Original_BAIRRO_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_BAIRRO_FORNECEDOR));
-            }
-            if ((Original_CIDADE_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_CIDADE_FORNECEDOR));
-            }
-            if ((Original_ESTADO_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_ESTADO_FORNECEDOR));
-            }
-            if ((Original_TELEFONE_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_TELEFONE_FORNECEDOR));
-            }
-            if ((Original_CELULAR_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_CELULAR_FORNECEDOR));
-            }
-            if ((Original_EMAIL_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_EMAIL_FORNECEDOR));
-            }
-            if ((Original_DATA_INFO_FORNECEDOR.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((System.DateTime)(Original_DATA_INFO_FORNECEDOR.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OBS_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_OBS_FORNECEDOR));
-            }
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(ID_FORNECEDOR));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID_FORNECEDOR));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8090,41 +7803,6 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string NOME_FORNECEDOR, 
-                    string IDENTIDADE_FORNECEDOR, 
-                    string CEP_FORNECEDOR, 
-                    string RUA_FORNECEDOR, 
-                    string NUMERO_FORNECEDOR, 
-                    string BAIRRO_FORNECEDOR, 
-                    string CIDADE_FORNECEDOR, 
-                    string ESTADO_FORNECEDOR, 
-                    string TELEFONE_FORNECEDOR, 
-                    string CELULAR_FORNECEDOR, 
-                    string EMAIL_FORNECEDOR, 
-                    global::System.Nullable<global::System.DateTime> DATA_INFO_FORNECEDOR, 
-                    string OBS_FORNECEDOR, 
-                    int Original_ID_FORNECEDOR, 
-                    string Original_NOME_FORNECEDOR, 
-                    string Original_IDENTIDADE_FORNECEDOR, 
-                    string Original_CEP_FORNECEDOR, 
-                    string Original_RUA_FORNECEDOR, 
-                    string Original_NUMERO_FORNECEDOR, 
-                    string Original_BAIRRO_FORNECEDOR, 
-                    string Original_CIDADE_FORNECEDOR, 
-                    string Original_ESTADO_FORNECEDOR, 
-                    string Original_TELEFONE_FORNECEDOR, 
-                    string Original_CELULAR_FORNECEDOR, 
-                    string Original_EMAIL_FORNECEDOR, 
-                    global::System.Nullable<global::System.DateTime> Original_DATA_INFO_FORNECEDOR, 
-                    string Original_OBS_FORNECEDOR) {
-            return this.Update(NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RUA_FORNECEDOR, NUMERO_FORNECEDOR, BAIRRO_FORNECEDOR, CIDADE_FORNECEDOR, ESTADO_FORNECEDOR, TELEFONE_FORNECEDOR, CELULAR_FORNECEDOR, EMAIL_FORNECEDOR, DATA_INFO_FORNECEDOR, OBS_FORNECEDOR, Original_ID_FORNECEDOR, Original_NOME_FORNECEDOR, Original_IDENTIDADE_FORNECEDOR, Original_CEP_FORNECEDOR, Original_RUA_FORNECEDOR, Original_NUMERO_FORNECEDOR, Original_BAIRRO_FORNECEDOR, Original_CIDADE_FORNECEDOR, Original_ESTADO_FORNECEDOR, Original_TELEFONE_FORNECEDOR, Original_CELULAR_FORNECEDOR, Original_EMAIL_FORNECEDOR, Original_DATA_INFO_FORNECEDOR, Original_OBS_FORNECEDOR, Original_ID_FORNECEDOR);
         }
     }
     
@@ -8256,39 +7934,31 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[FORNECIMENTO_PRODUTO] WHERE (([ID_FORNECIMENTO_PRODUTO] = @Original_ID_FORNECIMENTO_PRODUTO) AND ((@IsNull_ID_FORNECIMENTO = 1 AND [ID_FORNECIMENTO] IS NULL) OR ([ID_FORNECIMENTO] = @Original_ID_FORNECIMENTO)) AND ((@IsNull_ID_PRODUTO = 1 AND [ID_PRODUTO] IS NULL) OR ([ID_PRODUTO] = @Original_ID_PRODUTO)) AND ((@IsNull_QUANTIDADE_PRODUTO = 1 AND [QUANTIDADE_PRODUTO] IS NULL) OR ([QUANTIDADE_PRODUTO] = @Original_QUANTIDADE_PRODUTO)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM FORNECIMENTO_PRODUTO\r\nWHERE        (ID_FORNECIMENTO_PRODUTO = @ID_FOR" +
+                "NECIMENTO_PRODUTO)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECIMENTO_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FORNECIMENTO_PRODUTO] ([ID_FORNECIMENTO], [ID_PRODUTO], [QUANTIDADE_PRODUTO]) VALUES (@ID_FORNECIMENTO, @ID_PRODUTO, @QUANTIDADE_PRODUTO);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO FORNECIMENTO_PRODUTO
+                         (ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO)
+VALUES        (@ID_FORNECIMENTO,@ID_PRODUTO,@QUANTIDADE_PRODUTO); 
 SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO FROM FORNECIMENTO_PRODUTO WHERE (ID_FORNECIMENTO_PRODUTO = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 4, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FORNECIMENTO_PRODUTO] SET [ID_FORNECIMENTO] = @ID_FORNECIMENTO, [ID_PRODUTO] = @ID_PRODUTO, [QUANTIDADE_PRODUTO] = @QUANTIDADE_PRODUTO WHERE (([ID_FORNECIMENTO_PRODUTO] = @Original_ID_FORNECIMENTO_PRODUTO) AND ((@IsNull_ID_FORNECIMENTO = 1 AND [ID_FORNECIMENTO] IS NULL) OR ([ID_FORNECIMENTO] = @Original_ID_FORNECIMENTO)) AND ((@IsNull_ID_PRODUTO = 1 AND [ID_PRODUTO] IS NULL) OR ([ID_PRODUTO] = @Original_ID_PRODUTO)) AND ((@IsNull_QUANTIDADE_PRODUTO = 1 AND [QUANTIDADE_PRODUTO] IS NULL) OR ([QUANTIDADE_PRODUTO] = @Original_QUANTIDADE_PRODUTO)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       FORNECIMENTO_PRODUTO
+SET                ID_FORNECIMENTO = @ID_FORNECIMENTO, ID_PRODUTO = @ID_PRODUTO, QUANTIDADE_PRODUTO = @QUANTIDADE_PRODUTO
+WHERE        (ID_FORNECIMENTO_PRODUTO = @ID_FORNECIMENTO_PRODUTO); 
 SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO FROM FORNECIMENTO_PRODUTO WHERE (ID_FORNECIMENTO_PRODUTO = @ID_FORNECIMENTO_PRODUTO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECIMENTO_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 4, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8301,12 +7971,19 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO F" +
                 "ROM dbo.FORNECIMENTO_PRODUTO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO F" +
+                "ROM dbo.FORNECIMENTO_PRODUTO WHERE (ID_FORNECIMENTO_PRODUTO = @ID_FORNECIMENTO_P" +
+                "RODUTO)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8328,6 +8005,18 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable dataTable = new DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable GetDataFornecimentoProduto(int ID_FORNECIMENTO_PRODUTO) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_FORNECIMENTO_PRODUTO));
             DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable dataTable = new DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8366,32 +8055,8 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_FORNECIMENTO_PRODUTO, global::System.Nullable<int> Original_ID_FORNECIMENTO, global::System.Nullable<int> Original_ID_PRODUTO, global::System.Nullable<int> Original_QUANTIDADE_PRODUTO) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_FORNECIMENTO_PRODUTO));
-            if ((Original_ID_FORNECIMENTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ID_FORNECIMENTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_PRODUTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ID_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_QUANTIDADE_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+        public virtual int Delete(int ID_FORNECIMENTO_PRODUTO) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_FORNECIMENTO_PRODUTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8412,7 +8077,7 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> ID_FORNECIMENTO, global::System.Nullable<int> ID_PRODUTO, global::System.Nullable<int> QUANTIDADE_PRODUTO) {
+        public virtual int Insert(global::System.Nullable<int> ID_FORNECIMENTO, global::System.Nullable<int> ID_PRODUTO, global::System.Nullable<decimal> QUANTIDADE_PRODUTO) {
             if ((ID_FORNECIMENTO.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_FORNECIMENTO.Value));
             }
@@ -8426,7 +8091,7 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(QUANTIDADE_PRODUTO.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(QUANTIDADE_PRODUTO.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -8451,7 +8116,7 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ID_FORNECIMENTO, global::System.Nullable<int> ID_PRODUTO, global::System.Nullable<int> QUANTIDADE_PRODUTO, int Original_ID_FORNECIMENTO_PRODUTO, global::System.Nullable<int> Original_ID_FORNECIMENTO, global::System.Nullable<int> Original_ID_PRODUTO, global::System.Nullable<int> Original_QUANTIDADE_PRODUTO, int ID_FORNECIMENTO_PRODUTO) {
+        public virtual int Update(global::System.Nullable<int> ID_FORNECIMENTO, global::System.Nullable<int> ID_PRODUTO, global::System.Nullable<decimal> QUANTIDADE_PRODUTO, int ID_FORNECIMENTO_PRODUTO) {
             if ((ID_FORNECIMENTO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_FORNECIMENTO.Value));
             }
@@ -8465,37 +8130,12 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(QUANTIDADE_PRODUTO.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(QUANTIDADE_PRODUTO.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_FORNECIMENTO_PRODUTO));
-            if ((Original_ID_FORNECIMENTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_FORNECIMENTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_QUANTIDADE_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID_FORNECIMENTO_PRODUTO));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_FORNECIMENTO_PRODUTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8510,14 +8150,6 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ID_FORNECIMENTO, global::System.Nullable<int> ID_PRODUTO, global::System.Nullable<int> QUANTIDADE_PRODUTO, int Original_ID_FORNECIMENTO_PRODUTO, global::System.Nullable<int> Original_ID_FORNECIMENTO, global::System.Nullable<int> Original_ID_PRODUTO, global::System.Nullable<int> Original_QUANTIDADE_PRODUTO) {
-            return this.Update(ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO, Original_ID_FORNECIMENTO_PRODUTO, Original_ID_FORNECIMENTO, Original_ID_PRODUTO, Original_QUANTIDADE_PRODUTO, Original_ID_FORNECIMENTO_PRODUTO);
         }
     }
     
@@ -8650,45 +8282,32 @@ SELECT ID_FORNECIMENTO_PRODUTO, ID_FORNECIMENTO, ID_PRODUTO, QUANTIDADE_PRODUTO 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[FORNECIMENTOS] WHERE (([ID_FORNECIMENTO] = @Original_ID_FORNECIMENTO) AND ((@IsNull_DATA_FORNECIMENTO = 1 AND [DATA_FORNECIMENTO] IS NULL) OR ([DATA_FORNECIMENTO] = @Original_DATA_FORNECIMENTO)) AND ((@IsNull_VALOR_FORNECIMENTO = 1 AND [VALOR_FORNECIMENTO] IS NULL) OR ([VALOR_FORNECIMENTO] = @Original_VALOR_FORNECIMENTO)) AND ((@IsNull_ID_FORNECEDOR = 1 AND [ID_FORNECEDOR] IS NULL) OR ([ID_FORNECEDOR] = @Original_ID_FORNECEDOR)) AND ((@IsNull_OBS_FORNECIMENTO = 1 AND [OBS_FORNECIMENTO] IS NULL) OR ([OBS_FORNECIMENTO] = @Original_OBS_FORNECIMENTO)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM FORNECIMENTOS\r\nWHERE        (ID_FORNECIMENTO = @ID_FORNECIMENTO)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATA_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATA_FORNECIMENTO", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OBS_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OBS_FORNECIMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FORNECIMENTOS] ([DATA_FORNECIMENTO], [VALOR_FORNECIMENTO], [ID_FORNECEDOR], [OBS_FORNECIMENTO]) VALUES (@DATA_FORNECIMENTO, @VALOR_FORNECIMENTO, @ID_FORNECEDOR, @OBS_FORNECIMENTO);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO FORNECIMENTOS
+                         (DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OBS_FORNECIMENTO)
+VALUES        (@DATA_FORNECIMENTO,@VALOR_FORNECIMENTO,@ID_FORNECEDOR,@OBS_FORNECIMENTO); 
 SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OBS_FORNECIMENTO FROM FORNECIMENTOS WHERE (ID_FORNECIMENTO = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_FORNECIMENTO", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECIMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_FORNECIMENTO", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECIMENTO", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FORNECIMENTOS] SET [DATA_FORNECIMENTO] = @DATA_FORNECIMENTO, [VALOR_FORNECIMENTO] = @VALOR_FORNECIMENTO, [ID_FORNECEDOR] = @ID_FORNECEDOR, [OBS_FORNECIMENTO] = @OBS_FORNECIMENTO WHERE (([ID_FORNECIMENTO] = @Original_ID_FORNECIMENTO) AND ((@IsNull_DATA_FORNECIMENTO = 1 AND [DATA_FORNECIMENTO] IS NULL) OR ([DATA_FORNECIMENTO] = @Original_DATA_FORNECIMENTO)) AND ((@IsNull_VALOR_FORNECIMENTO = 1 AND [VALOR_FORNECIMENTO] IS NULL) OR ([VALOR_FORNECIMENTO] = @Original_VALOR_FORNECIMENTO)) AND ((@IsNull_ID_FORNECEDOR = 1 AND [ID_FORNECEDOR] IS NULL) OR ([ID_FORNECEDOR] = @Original_ID_FORNECEDOR)) AND ((@IsNull_OBS_FORNECIMENTO = 1 AND [OBS_FORNECIMENTO] IS NULL) OR ([OBS_FORNECIMENTO] = @Original_OBS_FORNECIMENTO)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       FORNECIMENTOS
+SET                DATA_FORNECIMENTO = @DATA_FORNECIMENTO, VALOR_FORNECIMENTO = @VALOR_FORNECIMENTO, ID_FORNECEDOR = @ID_FORNECEDOR, OBS_FORNECIMENTO = @OBS_FORNECIMENTO
+WHERE        (ID_FORNECIMENTO = @ID_FORNECIMENTO); 
 SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OBS_FORNECIMENTO FROM FORNECIMENTOS WHERE (ID_FORNECIMENTO = @ID_FORNECIMENTO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_FORNECIMENTO", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECIMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DATA_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DATA_FORNECIMENTO", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OBS_FORNECIMENTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OBS_FORNECIMENTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_FORNECIMENTO", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_FORNECIMENTO", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "VALOR_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FORNECIMENTO", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8701,12 +8320,19 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OBS" +
-                "_FORNECIMENTO FROM dbo.FORNECIMENTOS";
+            this._commandCollection[0].CommandText = "SELECT        ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECED" +
+                "OR, OBS_FORNECIMENTO\r\nFROM            FORNECIMENTOS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECED" +
+                "OR, OBS_FORNECIMENTO\r\nFROM            FORNECIMENTOS Where(ID_FORNECIMENTO=@ID_FO" +
+                "RNECIMENTO)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECIMENTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECIMENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8728,6 +8354,18 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.FORNECIMENTOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.FORNECIMENTOSDataTable dataTable = new DataSetMadeireiraV2.FORNECIMENTOSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.FORNECIMENTOSDataTable GetDataFornecimento(int ID_FORNECIMENTO) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_FORNECIMENTO));
             DataSetMadeireiraV2.FORNECIMENTOSDataTable dataTable = new DataSetMadeireiraV2.FORNECIMENTOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8766,40 +8404,8 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_FORNECIMENTO, global::System.Nullable<global::System.DateTime> Original_DATA_FORNECIMENTO, global::System.Nullable<decimal> Original_VALOR_FORNECIMENTO, global::System.Nullable<int> Original_ID_FORNECEDOR, string Original_OBS_FORNECIMENTO) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_FORNECIMENTO));
-            if ((Original_DATA_FORNECIMENTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DATA_FORNECIMENTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_VALOR_FORNECIMENTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_VALOR_FORNECIMENTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_FORNECEDOR.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ID_FORNECEDOR.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OBS_FORNECIMENTO == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_OBS_FORNECIMENTO));
-            }
+        public virtual int Delete(int ID_FORNECIMENTO) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_FORNECIMENTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8865,7 +8471,7 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DATA_FORNECIMENTO, global::System.Nullable<decimal> VALOR_FORNECIMENTO, global::System.Nullable<int> ID_FORNECEDOR, string OBS_FORNECIMENTO, int Original_ID_FORNECIMENTO, global::System.Nullable<global::System.DateTime> Original_DATA_FORNECIMENTO, global::System.Nullable<decimal> Original_VALOR_FORNECIMENTO, global::System.Nullable<int> Original_ID_FORNECEDOR, string Original_OBS_FORNECIMENTO, int ID_FORNECIMENTO) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> DATA_FORNECIMENTO, global::System.Nullable<decimal> VALOR_FORNECIMENTO, global::System.Nullable<int> ID_FORNECEDOR, string OBS_FORNECIMENTO, int ID_FORNECIMENTO) {
             if ((DATA_FORNECIMENTO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DATA_FORNECIMENTO.Value));
             }
@@ -8890,40 +8496,7 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OBS_FORNECIMENTO));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_FORNECIMENTO));
-            if ((Original_DATA_FORNECIMENTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_DATA_FORNECIMENTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_VALOR_FORNECIMENTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_VALOR_FORNECIMENTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_FORNECEDOR.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_FORNECEDOR.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OBS_FORNECIMENTO == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_OBS_FORNECIMENTO));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID_FORNECIMENTO));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_FORNECIMENTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8938,14 +8511,6 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DATA_FORNECIMENTO, global::System.Nullable<decimal> VALOR_FORNECIMENTO, global::System.Nullable<int> ID_FORNECEDOR, string OBS_FORNECIMENTO, int Original_ID_FORNECIMENTO, global::System.Nullable<global::System.DateTime> Original_DATA_FORNECIMENTO, global::System.Nullable<decimal> Original_VALOR_FORNECIMENTO, global::System.Nullable<int> Original_ID_FORNECEDOR, string Original_OBS_FORNECIMENTO) {
-            return this.Update(DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OBS_FORNECIMENTO, Original_ID_FORNECIMENTO, Original_DATA_FORNECIMENTO, Original_VALOR_FORNECIMENTO, Original_ID_FORNECEDOR, Original_OBS_FORNECIMENTO, Original_ID_FORNECIMENTO);
         }
     }
     
@@ -9595,19 +9160,9 @@ WHERE IDENTIDADE_FUNCIONARIO = @IDENTIDADE_FUNCIONARIO";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PRODUTOS] WHERE (([ID_PRODUTO] = @Original_ID_PRODUTO) AND ((@IsNull_NOME_PRODUTO = 1 AND [NOME_PRODUTO] IS NULL) OR ([NOME_PRODUTO] = @Original_NOME_PRODUTO)) AND ((@IsNull_QUANTIDADE_PRODUTO = 1 AND [QUANTIDADE_PRODUTO] IS NULL) OR ([QUANTIDADE_PRODUTO] = @Original_QUANTIDADE_PRODUTO)) AND ((@IsNull_VALOR_PRODUTO = 1 AND [VALOR_PRODUTO] IS NULL) OR ([VALOR_PRODUTO] = @Original_VALOR_PRODUTO)) AND ((@IsNull_ID_FORNECEDOR_PRODUTO = 1 AND [ID_FORNECEDOR_PRODUTO] IS NULL) OR ([ID_FORNECEDOR_PRODUTO] = @Original_ID_FORNECEDOR_PRODUTO)) AND ((@IsNull_OBS_PRODUTO = 1 AND [OBS_PRODUTO] IS NULL) OR ([OBS_PRODUTO] = @Original_OBS_PRODUTO)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM PRODUTOS\r\nWHERE        (ID_PRODUTO = @ID_PRODUTO)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VALOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VALOR_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VALOR_PRODUTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_FORNECEDOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OBS_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OBS_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PRODUTOS] ([NOME_PRODUTO], [QUANTIDADE_PRODUTO], [VALOR_PRODUTO], [ID_FORNECEDOR_PRODUTO], [OBS_PRODUTO]) VALUES (@NOME_PRODUTO, @QUANTIDADE_PRODUTO, @VALOR_PRODUTO, @ID_FORNECEDOR_PRODUTO, @OBS_PRODUTO);
@@ -9620,26 +9175,18 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PRODUTOS] SET [NOME_PRODUTO] = @NOME_PRODUTO, [QUANTIDADE_PRODUTO] = @QUANTIDADE_PRODUTO, [VALOR_PRODUTO] = @VALOR_PRODUTO, [ID_FORNECEDOR_PRODUTO] = @ID_FORNECEDOR_PRODUTO, [OBS_PRODUTO] = @OBS_PRODUTO WHERE (([ID_PRODUTO] = @Original_ID_PRODUTO) AND ((@IsNull_NOME_PRODUTO = 1 AND [NOME_PRODUTO] IS NULL) OR ([NOME_PRODUTO] = @Original_NOME_PRODUTO)) AND ((@IsNull_QUANTIDADE_PRODUTO = 1 AND [QUANTIDADE_PRODUTO] IS NULL) OR ([QUANTIDADE_PRODUTO] = @Original_QUANTIDADE_PRODUTO)) AND ((@IsNull_VALOR_PRODUTO = 1 AND [VALOR_PRODUTO] IS NULL) OR ([VALOR_PRODUTO] = @Original_VALOR_PRODUTO)) AND ((@IsNull_ID_FORNECEDOR_PRODUTO = 1 AND [ID_FORNECEDOR_PRODUTO] IS NULL) OR ([ID_FORNECEDOR_PRODUTO] = @Original_ID_FORNECEDOR_PRODUTO)) AND ((@IsNull_OBS_PRODUTO = 1 AND [OBS_PRODUTO] IS NULL) OR ([OBS_PRODUTO] = @Original_OBS_PRODUTO)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       PRODUTOS
+SET                NOME_PRODUTO = @NOME_PRODUTO, QUANTIDADE_PRODUTO = @QUANTIDADE_PRODUTO, VALOR_PRODUTO = @VALOR_PRODUTO, ID_FORNECEDOR_PRODUTO = @ID_FORNECEDOR_PRODUTO, 
+                         OBS_PRODUTO = @OBS_PRODUTO
+WHERE        (ID_PRODUTO = @ID_PRODUTO); 
 SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDOR_PRODUTO, OBS_PRODUTO FROM PRODUTOS WHERE (ID_PRODUTO = @ID_PRODUTO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_PRODUTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VALOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VALOR_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VALOR_PRODUTO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "VALOR_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_FORNECEDOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OBS_PRODUTO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OBS_PRODUTO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_PRODUTO", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTIDADE_PRODUTO", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 4, "QUANTIDADE_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VALOR_PRODUTO", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "VALOR_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_PRODUTO", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9652,12 +9199,19 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDOR" +
                 "_PRODUTO, OBS_PRODUTO FROM dbo.PRODUTOS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FOR" +
+                "NECEDOR_PRODUTO, OBS_PRODUTO\r\nFROM            PRODUTOS\r\nWHERE        (ID_PRODUTO" +
+                " = @ID_PRODUTO)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PRODUTO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9679,6 +9233,18 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSetMadeireiraV2.PRODUTOSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetMadeireiraV2.PRODUTOSDataTable dataTable = new DataSetMadeireiraV2.PRODUTOSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetMadeireiraV2.PRODUTOSDataTable GetDataProduto(int ID_PRODUTO) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID_PRODUTO));
             DataSetMadeireiraV2.PRODUTOSDataTable dataTable = new DataSetMadeireiraV2.PRODUTOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9717,48 +9283,8 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_PRODUTO, string Original_NOME_PRODUTO, global::System.Nullable<int> Original_QUANTIDADE_PRODUTO, global::System.Nullable<decimal> Original_VALOR_PRODUTO, global::System.Nullable<int> Original_ID_FORNECEDOR_PRODUTO, string Original_OBS_PRODUTO) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_PRODUTO));
-            if ((Original_NOME_PRODUTO == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NOME_PRODUTO));
-            }
-            if ((Original_QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_QUANTIDADE_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_VALOR_PRODUTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_VALOR_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_FORNECEDOR_PRODUTO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_ID_FORNECEDOR_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OBS_PRODUTO == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_OBS_PRODUTO));
-            }
+        public virtual int Delete(int ID_PRODUTO) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_PRODUTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9830,7 +9356,7 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NOME_PRODUTO, global::System.Nullable<int> QUANTIDADE_PRODUTO, global::System.Nullable<decimal> VALOR_PRODUTO, global::System.Nullable<int> ID_FORNECEDOR_PRODUTO, string OBS_PRODUTO, int Original_ID_PRODUTO, string Original_NOME_PRODUTO, global::System.Nullable<int> Original_QUANTIDADE_PRODUTO, global::System.Nullable<decimal> Original_VALOR_PRODUTO, global::System.Nullable<int> Original_ID_FORNECEDOR_PRODUTO, string Original_OBS_PRODUTO, int ID_PRODUTO) {
+        public virtual int Update(string NOME_PRODUTO, global::System.Nullable<decimal> QUANTIDADE_PRODUTO, global::System.Nullable<decimal> VALOR_PRODUTO, global::System.Nullable<int> ID_FORNECEDOR_PRODUTO, string OBS_PRODUTO, int ID_PRODUTO) {
             if ((NOME_PRODUTO == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9838,7 +9364,7 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NOME_PRODUTO));
             }
             if ((QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(QUANTIDADE_PRODUTO.Value));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(QUANTIDADE_PRODUTO.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -9861,48 +9387,7 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(OBS_PRODUTO));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_PRODUTO));
-            if ((Original_NOME_PRODUTO == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NOME_PRODUTO));
-            }
-            if ((Original_QUANTIDADE_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_QUANTIDADE_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_VALOR_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_VALOR_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_FORNECEDOR_PRODUTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ID_FORNECEDOR_PRODUTO.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_OBS_PRODUTO == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_OBS_PRODUTO));
-            }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(ID_PRODUTO));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_PRODUTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9917,14 +9402,6 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NOME_PRODUTO, global::System.Nullable<int> QUANTIDADE_PRODUTO, global::System.Nullable<decimal> VALOR_PRODUTO, global::System.Nullable<int> ID_FORNECEDOR_PRODUTO, string OBS_PRODUTO, int Original_ID_PRODUTO, string Original_NOME_PRODUTO, global::System.Nullable<int> Original_QUANTIDADE_PRODUTO, global::System.Nullable<decimal> Original_VALOR_PRODUTO, global::System.Nullable<int> Original_ID_FORNECEDOR_PRODUTO, string Original_OBS_PRODUTO) {
-            return this.Update(NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDOR_PRODUTO, OBS_PRODUTO, Original_ID_PRODUTO, Original_NOME_PRODUTO, Original_QUANTIDADE_PRODUTO, Original_VALOR_PRODUTO, Original_ID_FORNECEDOR_PRODUTO, Original_OBS_PRODUTO, Original_ID_PRODUTO);
         }
     }
     
@@ -10056,15 +9533,15 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM USERS\r\nWHERE        (ID_USUARIO = @Original_ID_USUARIO)";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM USERS\r\nWHERE        (ID_USUARIO = @ID_USUARIO)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USUARIO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_USUARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[USERS] ([LOGIN_USUARIO], [SENHA_USUARIO], [NIVEL_USUARIO]) VAL" +
-                "UES (@LOGIN_USUARIO, @SENHA_USUARIO, @NIVEL_USUARIO);\r\nSELECT ID_USUARIO, LOGIN_" +
-                "USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE (ID_USUARIO = SCOPE_IDENT" +
-                "ITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [USERS] ([LOGIN_USUARIO], [SENHA_USUARIO], [NIVEL_USUARIO]) VALUES (@" +
+                "LOGIN_USUARIO, @SENHA_USUARIO, @NIVEL_USUARIO);\r\nSELECT ID_USUARIO, LOGIN_USUARI" +
+                "O, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE (ID_USUARIO = SCOPE_IDENTITY())" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOGIN_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SENHA_USUARIO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10073,13 +9550,13 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE       USERS
 SET                LOGIN_USUARIO = @LOGIN_USUARIO, SENHA_USUARIO = @SENHA_USUARIO, NIVEL_USUARIO = @NIVEL_USUARIO
-WHERE        (ID_USUARIO = @Original_ID_USUARIO); 
+WHERE        (ID_USUARIO = @ID_USUARIO); 
 SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE (ID_USUARIO = @ID_USUARIO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOGIN_USUARIO", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SENHA_USUARIO", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NIVEL_USUARIO", global::System.Data.SqlDbType.NVarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NIVEL_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USUARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_USUARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10095,12 +9572,13 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM dbo.USERS";
+            this._commandCollection[0].CommandText = "SELECT        ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO\r\nFROM      " +
+                "      USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO\r\nFROM      " +
-                "      USERS\r\nWHERE        (ID_USUARIO = @id_usuario)";
+            this._commandCollection[1].CommandText = "SELECT ID_USUARIO, LOGIN_USUARIO, NIVEL_USUARIO, SENHA_USUARIO FROM USERS WHERE (" +
+                "ID_USUARIO = @id_usuario)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_usuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -10174,8 +9652,8 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_USUARIO) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_USUARIO));
+        public virtual int Delete(int ID_USUARIO) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_USUARIO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10235,7 +9713,7 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string LOGIN_USUARIO, string SENHA_USUARIO, string NIVEL_USUARIO, int Original_ID_USUARIO) {
+        public virtual int Update(string LOGIN_USUARIO, string SENHA_USUARIO, string NIVEL_USUARIO, int ID_USUARIO) {
             if ((LOGIN_USUARIO == null)) {
                 throw new global::System.ArgumentNullException("LOGIN_USUARIO");
             }
@@ -10254,7 +9732,7 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(NIVEL_USUARIO));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID_USUARIO));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_USUARIO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

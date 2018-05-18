@@ -37,8 +37,8 @@ namespace TCCMadeireira.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-fqa\\fqasqlserver;Initial Catalog=Madeireira;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;Integrated Security=" +
+            "True")]
         public string MadeireiraConnectionString {
             get {
                 return ((string)(this["MadeireiraConnectionString"]));
@@ -47,7 +47,6 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.15.2\\FQASQLSERVER;Initial Catalog=Madeireira;User ID=Otavio;P" +
             "assword=Otavio@435")]
         public string EscolaConnectionString {
@@ -78,12 +77,21 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.15.2\\FQASQLSERVER;Initial Catalog=Madeireira;User ID=Otavio;P" +
             "assword=Otavio@435")]
         public string db_04919_1_C_1_2017ConnectionString {
             get {
                 return ((string)(this["db_04919_1_C_1_2017ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;Integrated Security=" +
+            "True")]
+        public string NoteConnectionString {
+            get {
+                return ((string)(this["NoteConnectionString"]));
             }
         }
     }
