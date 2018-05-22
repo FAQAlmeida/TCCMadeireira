@@ -51,21 +51,21 @@ namespace TCCMadeireira.Views
             }
         }
 
-        private void NumValor_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if(numValor.Value <= 0)
-                {
-                    numValor.Value = 1;
-                    throw new Exception("O valor não pode ser menor ou igual a ZERO");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void NumValor_Leave(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if(numValor.Value <= 0)
+        //        {
+        //            numValor.Value = 1;
+        //            throw new Exception("O valor não pode ser menor ou igual a ZERO");
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void NumQuantidade_Leave(object sender, EventArgs e)
         {
@@ -120,7 +120,7 @@ namespace TCCMadeireira.Views
             Close();
         }
 
-        private void dvgProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DvgProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

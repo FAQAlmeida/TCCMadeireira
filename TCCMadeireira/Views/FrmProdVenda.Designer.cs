@@ -90,7 +90,7 @@
             this.dvgProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgProduto.Size = new System.Drawing.Size(652, 280);
             this.dvgProduto.TabIndex = 0;
-            this.dvgProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgProduto_CellContentClick);
+            this.dvgProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgProduto_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

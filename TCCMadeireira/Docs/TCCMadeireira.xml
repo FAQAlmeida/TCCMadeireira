@@ -4,6 +4,231 @@
         <name>TCCMadeireira</name>
     </assembly>
     <members>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDASDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECEDORESDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTODataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDASRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECEDORESRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDASRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECEDORESRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTORowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDASTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTOSTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FUNCIONARIOSTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTO_PRODUTOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDA_PRODUTOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateUpdatedRows(TCCMadeireira.Bancos.DataSetMadeireiraV2,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateInsertedRows(TCCMadeireira.Bancos.DataSetMadeireiraV2,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateDeletedRows(TCCMadeireira.Bancos.DataSetMadeireiraV2,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateAll(TCCMadeireira.Bancos.DataSetMadeireiraV2)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Bancos.Banco">
             <summary>
             Classe utilizada para acessar os table Adapters utilizado objetos
@@ -48,6 +273,25 @@
             Overload do metódo "UpdateFuncionario" do TableAdapter para suportar o objeto funcionario
             </summary>
             <param name="funcionario">Objeto funcionario, que devera conter todas as informações do funcionario</param>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.InsertVenda(TCCMadeireira.Models.Venda)">
+            <summary>
+            Overload do metódo "InserirFuncionario" do TableAdapter para suportar o objeto funcionario
+            </summary>
+            <param name="venda"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.SelectVenda(System.Int32)">
+            <summary>
+            Overload do metódo SelectFuncionario do TableAdapter  
+            </summary>
+            <param name="id">Identidade para se pesquisar um funcionario</param>
+            <returns>DataTable com o funcionario pesquisar</returns>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.Banco.UpdateVenda(TCCMadeireira.Models.Venda)">
+            <summary>
+            Overload do metódo "UpdateFuncionario" do TableAdapter para suportar o objeto funcionario
+            </summary>
+            <param name="venda">Objeto funcionario, que devera conter todas as informações do funcionario</param>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireira">
              <summary>
@@ -254,229 +498,20 @@
             Used to sort self-referenced table's rows
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2">
-             <summary>
-            Represents a strongly typed in-memory cache of data.
+        <member name="T:TCCMadeireira.Properties.Resources">
+            <summary>
+              Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
+        <member name="P:TCCMadeireira.Properties.Resources.ResourceManager">
+            <summary>
+              Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDASDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECEDORESDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTODataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTODataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDASRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECEDORESRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTORow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDASRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECEDORESRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FUNCIONARIOSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTO_PRODUTORowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.FORNECIMENTOSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDASTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FUNCIONARIOSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDA_PRODUTOTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTO_PRODUTOTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECIMENTOSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager">
-             <summary>
-            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-            </summary>
-        </member>
-        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateUpdatedRows(TCCMadeireira.Bancos.DataSetMadeireiraV2,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-             <summary>
-            Update rows in top-down order.
-            </summary>
-        </member>
-        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateInsertedRows(TCCMadeireira.Bancos.DataSetMadeireiraV2,System.Collections.Generic.List{System.Data.DataRow})">
-             <summary>
-            Insert rows in top-down order.
-            </summary>
-        </member>
-        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateDeletedRows(TCCMadeireira.Bancos.DataSetMadeireiraV2,System.Collections.Generic.List{System.Data.DataRow})">
-             <summary>
-            Delete rows in bottom-up order.
-            </summary>
-        </member>
-        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-             <summary>
-            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-            </summary>
-        </member>
-        <member name="M:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateAll(TCCMadeireira.Bancos.DataSetMadeireiraV2)">
-             <summary>
-            Update all changes to the dataset.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption">
-             <summary>
-            Update Order Option
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.SelfReferenceComparer">
-             <summary>
-            Used to sort self-referenced table's rows
+        <member name="P:TCCMadeireira.Properties.Resources.Culture">
+            <summary>
+              Substitui a propriedade CurrentUICulture do thread atual para todas as
+              pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
             </summary>
         </member>
         <member name="T:TCCMadeireira.Model.ValidarCpfCnpj">
@@ -912,11 +947,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:TCCMadeireira.Views.FrmProdVenda.numValor">
-            <summary>
-            Valor unitário do produto a ser inserido na venda
-            </summary>
-        </member>
         <member name="F:TCCMadeireira.Views.FrmProdVenda.dvgProduto">
             <summary>
             Tabela com todos os produtos
@@ -973,7 +1003,7 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmVenda.InsertDataProd(System.String,System.String,System.String,System.String)">
+        <member name="M:TCCMadeireira.Views.FrmVenda.InsertDataProd(System.String,System.String,System.String)">
             <summary>
             Insere os dados provinientes do FrmProdVenda e atualiza a lblValorTotal
             </summary>
@@ -1051,22 +1081,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Properties.Resources">
-            <summary>
-              Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
-            </summary>
-        </member>
-        <member name="P:TCCMadeireira.Properties.Resources.ResourceManager">
-            <summary>
-              Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
-            </summary>
-        </member>
-        <member name="P:TCCMadeireira.Properties.Resources.Culture">
-            <summary>
-              Substitui a propriedade CurrentUICulture do thread atual para todas as
-              pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
             </summary>
         </member>
     </members>

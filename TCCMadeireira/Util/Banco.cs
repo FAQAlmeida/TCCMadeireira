@@ -53,6 +53,8 @@ namespace TCCMadeireira.Bancos
          /// <param name="cliente"> Objeto cliente, que devera conter todas as informações do cliente</param>
         public void UpdateCliente(Cliente cliente)
         {
+            CLIENTESDataTable clientedt = SelectCliente(cliente.Identidade);
+            cliente.Id = Convert.ToInt32(clientedt.Rows[0]["id_cliente"]);
             clientesTableAdapter.Update(cliente.Nome,cliente.Identidade, cliente.Cep, cliente.Rua, cliente.Numero, cliente.Bairro, cliente.Cidade, cliente.Estado, cliente.Telefone, cliente.Celular, cliente.Email, cliente.DataInfo, cliente.Obs, cliente.Id);
         }
         public void DeleteCliente (Cliente cliente)
@@ -177,6 +179,7 @@ namespace TCCMadeireira.Bancos
 
         #endregion
         #region ProdOper
+        #region Venda
         public VENDA_PRODUTODataTable SelectProdutosVenda(Venda venda)
         {
             return vendaprodutoTableAdapter.GetDataVenda(venda.Id);
@@ -196,6 +199,7 @@ namespace TCCMadeireira.Bancos
                 InsertProduto(venda, produto);
             }
         }
+        #endregion
         #endregion
         #region Usuario
         public USERSDataTable SelectUsuario()
