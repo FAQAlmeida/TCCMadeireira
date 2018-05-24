@@ -159,6 +159,8 @@
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(531, 267);
             this.dgvProdutos.TabIndex = 0;
+            this.dgvProdutos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ValorSet);
+            this.dgvProdutos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ValorSet);
             // 
             // IdProduto
             // 
@@ -264,6 +266,7 @@
             this.txtIdentidade.Name = "txtIdentidade";
             this.txtIdentidade.Size = new System.Drawing.Size(85, 20);
             this.txtIdentidade.TabIndex = 31;
+            this.txtIdentidade.Leave += new System.EventHandler(this.TxtIdentidade_Leave);
             // 
             // FrmFornecimento
             // 
@@ -276,6 +279,7 @@
             this.Controls.Add(this.grbFornecedor);
             this.Name = "FrmFornecimento";
             this.Text = "FrmFornecimento";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFornecimento_FormClosing);
             this.pnlVenda.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

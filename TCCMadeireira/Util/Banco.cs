@@ -26,6 +26,7 @@ namespace TCCMadeireira.Bancos
         private FORNECIMENTOSTableAdapter fornecimentosTableAdapter = new FORNECIMENTOSTableAdapter();
         private PRODUTOSTableAdapter produtosTableAdapter = new PRODUTOSTableAdapter();
         private VENDA_PRODUTOTableAdapter vendaprodutoTableAdapter = new VENDA_PRODUTOTableAdapter();
+        private FORNECIMENTO_PRODUTOTableAdapter fornecimentoprodutoTableAdapter = new FORNECIMENTO_PRODUTOTableAdapter();
         private USERSTableAdapter usersTableAdapter = new USERSTableAdapter();
         private VENDASTableAdapter vendasTableAdapter = new VENDASTableAdapter();
         #endregion
@@ -110,7 +111,7 @@ namespace TCCMadeireira.Bancos
         }
         public FORNECIMENTOSDataTable SelectFornecimento(int id)
         {
-            return fornecimentosTableAdapter.GetDataFornecimento(id);
+            return fornecimentosTableAdapter.GetDataFornecimeto(id);
         }
         public void InsertFornecimento(Fornecimento fornecimento)
         {
@@ -194,9 +195,30 @@ namespace TCCMadeireira.Bancos
         }
         public void InsertMultProd(Venda venda)
         {
-            foreach(Produto produto in venda.Produto)
+            foreach(Produto produto in venda.Produtos)
             {
                 InsertProduto(venda, produto);
+            }
+        }
+        #endregion
+        #region Fornecimento
+        public FORNECIMENTO_PRODUTODataTable SelectProdutosFornecimento(Fornecimento fornecimento)
+        {
+            return fornecimentoprodutoTableAdapter.GetDataFornecimento(fornecimento.Id);
+        }
+        public FORNECIMENTO_PRODUTODataTable SelectProdutosFornecimento(Produto produto)
+        {
+            return fornecimentoprodutoTableAdapter.GetDataProdFornecimento(produto.Id);
+        }
+        public void InsertProduto(Fornecimento fornecimento, Produto produto)
+        {
+            fornecimentoprodutoTableAdapter.Insert(fornecimento.Id, produto.Id, produto.Quantidade);
+        }
+        public void InsertMultProd(Fornecimento fornecimento)
+        {
+            foreach (Produto produto in fornecimento.Produtos)
+            {
+                InsertProduto(fornecimento, produto);
             }
         }
         #endregion

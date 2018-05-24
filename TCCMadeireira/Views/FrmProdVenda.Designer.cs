@@ -170,10 +170,16 @@
             // 
             // numQuantidade
             // 
+            this.numQuantidade.DecimalPlaces = 2;
             this.numQuantidade.Location = new System.Drawing.Point(122, 7);
             this.numQuantidade.Name = "numQuantidade";
             this.numQuantidade.Size = new System.Drawing.Size(120, 20);
             this.numQuantidade.TabIndex = 1;
+            this.numQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numQuantidade.Leave += new System.EventHandler(this.NumQuantidade_Leave);
             // 
             // lblQuantidade

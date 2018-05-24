@@ -16,6 +16,7 @@ namespace TCCMadeireira.Views
     public partial class FrmProdVenda : Form
     {
         private FrmVenda venda;
+        private FrmFornecimento fornecimento;
         /// <summary>
         /// Inicializa o Form ProdVenda
         /// </summary>
@@ -24,6 +25,15 @@ namespace TCCMadeireira.Views
         {    
             InitializeComponent();
             venda = frmVenda;
+        }
+        /// <summary>
+        /// Inicializa o Form ProdVenda
+        /// </summary>
+        /// <param name="frmFornecimento"></param>
+        public FrmProdVenda(FrmFornecimento frmFornecimento)
+        {
+            InitializeComponent();
+            fornecimento = frmFornecimento;
         }
 
         private void FrmProdVenda_Load(object sender, EventArgs e)
@@ -94,8 +104,22 @@ namespace TCCMadeireira.Views
             {
                 if (dvgProduto.SelectedRows.Count > 0)
                 {
-                    venda.InsertDataProd(dvgProduto.SelectedCells[0].ToString(), dvgProduto.SelectedCells[1].ToString(),
-                        numQuantidade.ToString());
+                    if (!(venda is null))
+                    {
+                        venda.InsertDataProd(dvgProduto.SelectedCells[0].ToString(),
+                            dvgProduto.SelectedCells[1].ToString(),
+                            numQuantidade.Value.ToString());
+                    }
+                    else if(!(fornecimento is null))
+                    {
+                        fornecimento.InsertDataProd(dvgProduto.SelectedCells[0].ToString(),
+                            dvgProduto.SelectedCells[1].ToString(),
+                            numQuantidade.Value.ToString());
+                    }
+                    else
+                    {
+                        throw new Exception("Formulário chamado sem nenhum parent a espera");
+                    }
 
                     Close();
                     if (MessageBox.Show("Deseja adicionar mais produtos?", "Dialogo", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3) == DialogResult.Yes)

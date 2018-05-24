@@ -12,13 +12,13 @@ namespace TCCMadeireira.Models
         private int id;
         private Cliente cliente;
         private Usuario usuario;
-        private Produto[] produto;
+        private Produto[] produtos;
         private DateTime dataInfo;
         private decimal valor;
 
         public int Id { get => id; set => id = value; }
         internal Cliente Cliente { get => cliente; set => cliente = value; }
-        internal Produto[] Produto { get => produto; set => produto = value; }
+        internal Produto[] Produtos { get => produtos; set => produtos = value; }
         public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
         public decimal Valor { get => valor; set => valor = value; }
         internal Usuario Usuario { get => usuario; set => usuario = value; }
@@ -28,7 +28,7 @@ namespace TCCMadeireira.Models
             this.Id = id;
             this.Usuario = usuario;
             this.Cliente = cliente;
-            this.Produto = produto;
+            this.Produtos = produto;
             this.DataInfo = dataInfo;
             this.Valor = valor;
         }
@@ -37,7 +37,7 @@ namespace TCCMadeireira.Models
         {
             this.Cliente = cliente;
             this.Usuario = usuario;
-            this.Produto = produto;
+            this.Produtos = produto;
             this.DataInfo = dataInfo;
             this.Valor = valor;
         }

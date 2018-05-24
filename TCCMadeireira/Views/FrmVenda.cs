@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCCMadeireira.Bancos;
 using TCCMadeireira.Model;
 
 namespace TCCMadeireira.Views
@@ -16,6 +17,9 @@ namespace TCCMadeireira.Views
     /// </summary>
     public partial class FrmVenda : Form
     {
+        #region Atributes
+        Banco banco = new Banco();
+        #endregion
         /// <summary>
         /// Inicializa o form de venda
         /// </summary>
@@ -30,7 +34,7 @@ namespace TCCMadeireira.Views
             {
                 Cliente cliente = new Cliente(txtIdentidade.Text);
                 DataTable dt = new DataTable();
-                dt = clientesTableAdapter.GetDataCliente(cliente.Identidade);
+                dt = banco.SelectCliente(cliente.Identidade);
                 if (dt.Rows.Count > 0)
                 {
                     lblNome.Text = dt.Rows[0][1].ToString();
@@ -64,7 +68,6 @@ namespace TCCMadeireira.Views
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.VENDAS'. Você pode movê-la ou removê-la conforme necessário.
             this.vendasTableAdapter.Fill(this.dataSetMadeireiraV2.VENDAS);
-
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -107,10 +110,12 @@ namespace TCCMadeireira.Views
         /// <param name="id"></param>
         /// <param name="produto"></param>
         /// <param name="quantidade"></param>
-        /// <param name="valor"></param>
         public void InsertDataProd(string id, string produto, string quantidade)
         {
             dgvProdutos.Rows.Add(id, produto, quantidade);
+        }
+        private void ValorSet()
+        {
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {
@@ -118,16 +123,42 @@ namespace TCCMadeireira.Views
             }
             lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valorTotal);
         }
-        
+        private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            decimal valorTotal = 0;
+            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
+            {
+                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
+            }
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valorTotal);
+        }
+        private void ValorSet(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            decimal valorTotal = 0;
+            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
+            {
+                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
+            }
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valorTotal);
+        }
+
         private string SelectedRadioButton()
         {
             if (rbtnCpf.Checked)
             {
                 return "CPF";
             }
-            return "CNPF";
+            return "CNPJ";
         }
         #endregion
 
+        private void FrmVenda_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(Application.OpenForms["FrmProdVenda"] != null)
+            {
+                e.Cancel = true;
+                throw new Exception("O formuçário para inserir produtos deve ser fechado primeiro");
+            }
+        }
     }
 }

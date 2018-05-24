@@ -214,6 +214,8 @@
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(531, 267);
             this.dgvProdutos.TabIndex = 0;
+            this.dgvProdutos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ValorSet);
+            this.dgvProdutos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ValorSet);
             // 
             // IdProduto
             // 
@@ -320,6 +322,7 @@
             this.Controls.Add(this.grbCliente);
             this.Name = "FrmVenda";
             this.Text = "FrmVenda";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVenda_FormClosing);
             this.Load += new System.EventHandler(this.FrmVenda_Load);
             this.grbCliente.ResumeLayout(false);
             this.grbCliente.PerformLayout();
