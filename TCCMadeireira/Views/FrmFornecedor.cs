@@ -37,5 +37,25 @@ namespace TCCMadeireira.Views
             this.FornecedoresTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
 
         }
+        public void IdentidadeInput(string identidade, string tipo)
+        {
+            try
+            {
+                if (tipo.Equals("CPF"))
+                {
+                    txtIdentidade.Mask = "999,999,999-99";
+                    txtIdentidade.Text = identidade;
+                }
+                else
+                {
+                    txtIdentidade.Mask = "99,999,999/9999-99";
+                    txtIdentidade.Text = identidade;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

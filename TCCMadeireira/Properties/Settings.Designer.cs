@@ -94,5 +94,41 @@ namespace TCCMadeireira.Properties {
                 return ((string)(this["NoteConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int idUsuario {
+            get {
+                return ((int)(this["idUsuario"]));
+            }
+            set {
+                this["idUsuario"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string nomeUsuario {
+            get {
+                return ((string)(this["nomeUsuario"]));
+            }
+            set {
+                this["nomeUsuario"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string nivelUsuario {
+            get {
+                return ((string)(this["nivelUsuario"]));
+            }
+            set {
+                this["nivelUsuario"] = value;
+            }
+        }
     }
 }

@@ -93,6 +93,7 @@
             this.btnFinalizar.TabIndex = 0;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // panel1
             // 
@@ -121,6 +122,7 @@
             this.btnRemover.TabIndex = 1;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnAdicionar
             // 
@@ -280,6 +282,7 @@
             this.Name = "FrmFornecimento";
             this.Text = "FrmFornecimento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFornecimento_FormClosing);
+            this.Load += new System.EventHandler(this.FrmFornecimento_Load);
             this.pnlVenda.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

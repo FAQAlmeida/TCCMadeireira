@@ -3,7 +3,7 @@
     /// <summary>
     /// Form responsavel por adicionar produtos a uma venda
     /// </summary>
-    partial class FrmProdVenda
+    partial class FrmProdOper
     {
         /// <summary>
         /// Required designer variable.

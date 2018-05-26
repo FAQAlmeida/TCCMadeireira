@@ -28,6 +28,19 @@ namespace TCCMadeireira.Models
             this.Nivel = nivel;
             this.DataInfo = dataInfo;
         }
+        public Usuario(int id, string nome, string nivel, DateTime dataInfo)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Nivel = nivel;
+            this.DataInfo = dataInfo;
+        }
+        public Usuario(int id, string nome, string nivel)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Nivel = nivel;
+        }
 
         public Usuario(string nome, string senha, string nivel, DateTime dataInfo)
         {

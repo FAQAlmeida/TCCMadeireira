@@ -33,5 +33,14 @@
     <Setting Name="NoteConnectionString" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=NOTE-FQA\FQASQLSERVER;Initial Catalog=Madeireira;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="idUsuario" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="nomeUsuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="nivelUsuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

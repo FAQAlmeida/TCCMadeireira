@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Bancos;
 using TCCMadeireira.Model;
+using TCCMadeireira.Models;
+using static TCCMadeireira.Bancos.DataSetMadeireiraV2;
 
 namespace TCCMadeireira.Views
 {
@@ -19,7 +21,12 @@ namespace TCCMadeireira.Views
     {
         #region Atributes
         Banco banco = new Banco();
+        List<ProdVenda> produtos = new List<ProdVenda>();
+        Cliente cliente = null;
+        Usuario usuario;
+        decimal valor;
         #endregion
+        #region Constructor
         /// <summary>
         /// Inicializa o form de venda
         /// </summary>
@@ -27,18 +34,29 @@ namespace TCCMadeireira.Views
         {
             InitializeComponent();
         }
-
+        #endregion
+        #region @event.Leave
         private void TxtIdentidade_Leave(object sender, EventArgs e)
         {
             try
             {
-                Cliente cliente = new Cliente(txtIdentidade.Text);
-                DataTable dt = new DataTable();
+                cliente = new Cliente(txtIdentidade.Text);
+                CLIENTESDataTable dt = new CLIENTESDataTable();
                 dt = banco.SelectCliente(cliente.Identidade);
-                if (dt.Rows.Count > 0)
+                //TODO arruamar lbls
+                if (dt.Rows.Count == 1)
                 {
+                    cliente = new Cliente(
+                    Convert.ToInt32(dt.Rows[0]["Id_cliente"]), Convert.ToString(dt.Rows[0]["nome_cliente"]),
+                    Convert.ToString(dt.Rows[0]["identidade_cliente"]), Convert.ToString(dt.Rows[0]["cep_cliente"]),
+                    Convert.ToString(dt.Rows[0]["rua_cliente"]), Convert.ToString(dt.Rows[0]["numero_cliente"]),
+                    Convert.ToString(dt.Rows[0]["bairro_cliente"]), Convert.ToString(dt.Rows[0]["cidade_cliente"]),
+                    Convert.ToString(dt.Rows[0]["estado_cliente"]), Convert.ToString(dt.Rows[0]["telefone_cliente"]),
+                    Convert.ToString(dt.Rows[0]["celular_cliente"]), Convert.ToString(dt.Rows[0]["email_cliente"]),
+                    Convert.ToDateTime(dt.Rows[0]["data_info_cliente"]), Convert.ToString(dt.Rows[0]["obs_cliente"])
+                    );
                     lblNome.Text = dt.Rows[0][1].ToString();
-                    lblNome.Text = String.Format("CEP: {0} RUA: {1} Nº: {1} BAIRRO: {2} CIDADE: {3} UF: {4}",
+                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1} BAIRRO: {2} CIDADE: {3} UF: {4}",
                         dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(),
                         dt.Rows[0][6].ToString(), dt.Rows[0][7].ToString(), dt.Rows[0][8].ToString());
                 }
@@ -49,12 +67,8 @@ namespace TCCMadeireira.Views
                     frmCliente.IdentidadeInput(txtIdentidade.Text, SelectedRadioButton());
                 }
                 //TODO Rever este erro
-                if (dt.Rows.Count < 0)
+                if (dt.Rows.Count > 1)
                 {
-                    lblNome.Text = dt.Rows[0][1].ToString();
-                    lblNome.Text = String.Format("CEP: {0} RUA: {1} Nº: {1}\nBAIRRO: {2} CIDADE: {3} UF: {4}",
-                        dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(),
-                        dt.Rows[0][6].ToString(), dt.Rows[0][7].ToString(), dt.Rows[0][8].ToString());
                     throw new Exception("Há um erro no DB, há mais de uma identidade registrada com esses digitos\n" +
                         "Contate a central para reparar o DB");
                 }
@@ -63,17 +77,71 @@ namespace TCCMadeireira.Views
                 MessageBox.Show(ex.Message);
             }
         }
-
+        #endregion
+        #region @event.Load
         private void FrmVenda_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.VENDAS'. Você pode movê-la ou removê-la conforme necessário.
             this.vendasTableAdapter.Fill(this.dataSetMadeireiraV2.VENDAS);
+            USERSDataTable usersdt = banco.SelectUsuario(Properties.Settings.Default.idUsuario);
+            usuario = new Usuario(
+                Convert.ToInt32(usersdt.Rows[0]["id_usuario"]), Convert.ToString(usersdt.Rows[0]["login_usuario"]),
+                Convert.ToString(usersdt.Rows[0]["nivel_usuario"])
+            );
         }
-
+        #endregion
+        #region @event.Click
+        private void BtnFinalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cliente is null)
+                {
+                    throw new Exception("Um cliente deve ser informado");
+                }
+                if (dgvProdutos.Rows.Count <= 0)
+                {
+                    throw new Exception("A venda não pode conter nenhum produto");
+                }
+                Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
+                banco.InsertVenda(venda);
+                MessageBox.Show("Venda efetuada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            FrmProdOper frmProdVenda = new FrmProdOper(this);
+            frmProdVenda.Show();
+        }
+        private void BtnRemover_Click(object sender, EventArgs e)
+        {
+            if (dgvProdutos.SelectedRows.Count == 1)
+            {
+                ProdVenda prodVenda = produtos.ElementAt(dgvProdutos.SelectedRows[0].Index);
+                if (MessageBox.Show(
+                    String.Format("Deseja mesmo remover o produto {0} de código {1}?", prodVenda.Produto.Nome, prodVenda.Produto.Id),
+                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
+                {
+                    produtos.Remove(prodVenda);
+                    dgvProdutos.Rows.Remove(dgvProdutos.SelectedRows[0]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto na tabela para remover", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
         #region @event.CheckedChanged
         /// <summary>
         /// Ocorre quando o evento CheckedChanged é disparado no radioButton do CPF ou do CNPJ
@@ -96,13 +164,6 @@ namespace TCCMadeireira.Views
             }
         }
         #endregion
-
-        private void BtnAdicionar_Click(object sender, EventArgs e)
-        {
-            FrmProdVenda frmProdVenda = new FrmProdVenda(this);
-            frmProdVenda.Show();
-        }
-
         #region Control.methods
         /// <summary>
         /// Insere os dados provinientes do FrmProdVenda e atualiza a lblValorTotal
@@ -114,6 +175,15 @@ namespace TCCMadeireira.Views
         {
             dgvProdutos.Rows.Add(id, produto, quantidade);
         }
+        /// <summary>
+        /// Insere os dados provinientes do FrmProdOper
+        /// </summary>
+        /// <param name="prodVenda"></param>
+        internal void InsertDataProd(ProdVenda prodVenda)
+        {
+            produtos.Add(prodVenda);
+            dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+        }
         private void ValorSet()
         {
             decimal valorTotal = 0;
@@ -121,7 +191,8 @@ namespace TCCMadeireira.Views
             {
                 valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
             }
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valorTotal);
+            valor = valorTotal;
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -130,7 +201,8 @@ namespace TCCMadeireira.Views
             {
                 valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
             }
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valorTotal);
+            valor = valorTotal;
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsRemovedEventArgs e)
         {
@@ -139,7 +211,8 @@ namespace TCCMadeireira.Views
             {
                 valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
             }
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valorTotal);
+            valor = valorTotal;
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
         }
 
         private string SelectedRadioButton()
@@ -151,14 +224,17 @@ namespace TCCMadeireira.Views
             return "CNPJ";
         }
         #endregion
-
+        #region @event.FormClosing
         private void FrmVenda_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(Application.OpenForms["FrmProdVenda"] != null)
+            if(Application.OpenForms["FrmProdOper"] != null)
             {
                 e.Cancel = true;
-                throw new Exception("O formuçário para inserir produtos deve ser fechado primeiro");
+                throw new Exception("O formulário para inserir produtos deve ser fechado primeiro");
             }
         }
+        #endregion
+
+        
     }
 }

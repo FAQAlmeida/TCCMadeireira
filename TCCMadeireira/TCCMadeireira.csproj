@@ -113,11 +113,11 @@
     <Compile Include="Views\FrmProduto.Designer.cs">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmProdVenda.cs">
+    <Compile Include="Views\FrmProdOper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmProdVenda.Designer.cs">
-      <DependentUpon>FrmProdVenda.cs</DependentUpon>
+    <Compile Include="Views\FrmProdOper.Designer.cs">
+      <DependentUpon>FrmProdOper.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmUsuario.cs">
       <SubType>Form</SubType>
@@ -171,8 +171,8 @@
     <EmbeddedResource Include="Views\FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmProdVenda.resx">
-      <DependentUpon>FrmProdVenda.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmProdOper.resx">
+      <DependentUpon>FrmProdOper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>

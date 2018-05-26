@@ -268,6 +268,7 @@
             this.btnRemover.TabIndex = 1;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
             // btnAdicionar
             // 
@@ -306,6 +307,7 @@
             this.btnFinalizar.TabIndex = 0;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.BtnFinalizar_Click);
             // 
             // clientesTableAdapter
             // 
