@@ -50,7 +50,6 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
@@ -170,7 +169,7 @@
             // 
             // numQuantidade
             // 
-            this.numQuantidade.DecimalPlaces = 2;
+            this.numQuantidade.DecimalPlaces = 4;
             this.numQuantidade.Location = new System.Drawing.Point(122, 7);
             this.numQuantidade.Name = "numQuantidade";
             this.numQuantidade.Size = new System.Drawing.Size(120, 20);
@@ -230,13 +229,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // FrmProdVenda
+            // FrmProdOper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,7 +241,7 @@
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.numQuantidade);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmProdVenda";
+            this.Name = "FrmProdOper";
             this.Text = "FrmProdVenda";
             this.Load += new System.EventHandler(this.FrmProdVenda_Load);
             this.panel1.ResumeLayout(false);
@@ -287,6 +280,5 @@
         public System.Windows.Forms.NumericUpDown numQuantidade;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ImageList imageList1;
     }
 }

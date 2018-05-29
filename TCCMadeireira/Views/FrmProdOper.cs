@@ -43,6 +43,7 @@ namespace TCCMadeireira.Views
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.PRODUTOS'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
+            cmbFiltro.SelectedIndex = 0;
         }
 
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
@@ -131,7 +132,7 @@ namespace TCCMadeireira.Views
                                         Convert.ToDecimal(produtosdt.Rows[0][0]), Convert.ToDateTime(produtosdt.Rows[0][0]),
                                         produtosdt.Rows[0]["obs_produto"].ToString()
                                 );
-                                ProdVenda prodVenda = new ProdVenda(produto, numQuantidade.Value);
+                                ProdOper prodVenda = new ProdOper(produto, numQuantidade.Value);
                                 venda.InsertDataProd(prodVenda);
                             }
                         }
@@ -159,7 +160,7 @@ namespace TCCMadeireira.Views
                                         Convert.ToDecimal(produtosdt.Rows[0][0]), Convert.ToDateTime(produtosdt.Rows[0][0]),
                                         produtosdt.Rows[0]["obs_produto"].ToString()
                                 );
-                                ProdVenda prodVenda = new ProdVenda(produto, numQuantidade.Value);
+                                ProdOper prodVenda = new ProdOper(produto, numQuantidade.Value);
                                 fornecimento.InsertDataProd(prodVenda);
                             }
                         }

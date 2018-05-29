@@ -25,7 +25,7 @@ namespace TCCMadeireira.Views
         /// Objeto banco para acessar os TableAdapters de forma mais simplória
         /// </summary>
         private Banco banco = new Banco();
-        private DataTable dataTable = new DataTable();
+        //private DataTable dataTable = new DataTable();
         private Log log = new Log();
         #endregion
         #region @Construtor
@@ -126,7 +126,7 @@ namespace TCCMadeireira.Views
             {
                 if (dvgClientes.SelectedRows.Count == 1)
                 {
-                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de CPF {0}?", dvgClientes.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de identidade {0}?", dvgClientes.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
                         Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
                         banco.DeleteCliente(cliente);
@@ -191,7 +191,7 @@ namespace TCCMadeireira.Views
                     }
                     else
                     {
-                        throw new Exception("Selecione uma e apenas uma linha na tabela para excluir");
+                        throw new Exception("Selecione uma e apenas uma linha na tabela para alterar");
                     }
                 }
                 else
@@ -253,7 +253,7 @@ namespace TCCMadeireira.Views
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void CLIENTESDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void ClientesDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             try
             {

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TCCMadeireira.Models
 {
-    class ProdVenda
+    class ProdOper
     {
         private Produto produto;
         private decimal quantidade;
 
-        public ProdVenda(Produto produto, decimal quantidade)
+        public ProdOper(Produto produto, decimal quantidade)
         {
             this.Produto = produto;
             this.Quantidade = quantidade;

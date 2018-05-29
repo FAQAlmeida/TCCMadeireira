@@ -115,7 +115,7 @@ namespace TCCMadeireira.Bancos
         }
         public void InsertFornecimento(Fornecimento fornecimento)
         {
-            fornecimento.Id = fornecimentosTableAdapter.Insert(fornecimento.DataInfo, fornecimento.Valor, fornecimento.Fornecedor.Id, fornecimento.Obs);
+            fornecimento.Id = (int) fornecimentosTableAdapter.InsertFornecimento(fornecimento.DataInfo, fornecimento.Valor, fornecimento.Fornecedor.Id, fornecimento.Obs);
             InsertMultProdForn(fornecimento);
         }
         public void UpdateFornecimento(Fornecimento fornecimento)
@@ -178,6 +178,14 @@ namespace TCCMadeireira.Bancos
         {
             produtosTableAdapter.Delete(produto.Id);
         }
+        public void UpdateEstoqueVenda(ProdOper produto)
+        {
+            produtosTableAdapter.UpdateEstoqueVenda(produto.Quantidade, produto.Produto.Id);
+        }
+        public void UpdateEstoqueFornecimento(ProdOper produto)
+        {
+            produtosTableAdapter.UpdateEstoqueFornecimento(produto.Quantidade, produto.Produto.Id);
+        }
 
         #endregion
         #region ProdOper
@@ -190,15 +198,16 @@ namespace TCCMadeireira.Bancos
         {
             return vendaprodutoTableAdapter.GetDataProdVenda(produto.Id);
         }
-        public void InsertProdutoVenda(Venda venda, ProdVenda produto)
+        public void InsertProdutoVenda(Venda venda, ProdOper produto)
         {
             vendaprodutoTableAdapter.Insert(venda.Id, produto.Produto.Id, produto.Quantidade);
         }
         public void InsertMultProdVenda(Venda venda)
         {
-            foreach(ProdVenda produto in venda.Produtos)
+            foreach(ProdOper produto in venda.Produtos)
             {
                 InsertProdutoVenda(venda, produto);
+                UpdateEstoqueVenda(produto);
             }
         }
         #endregion
@@ -211,15 +220,16 @@ namespace TCCMadeireira.Bancos
         {
             return fornecimentoprodutoTableAdapter.GetDataProdFornecimento(produto.Id);
         }
-        public void InsertProdutoForn(Fornecimento fornecimento, ProdVenda produto)
+        public void InsertProdutoForn(Fornecimento fornecimento, ProdOper produto)
         {
             fornecimentoprodutoTableAdapter.Insert(fornecimento.Id, produto.Produto.Id, produto.Quantidade);
         }
         public void InsertMultProdForn(Fornecimento fornecimento)
         {
-            foreach (ProdVenda produto in fornecimento.Produtos)
+            foreach (ProdOper produto in fornecimento.Produtos)
             {
                 InsertProdutoForn(fornecimento, produto);
+                UpdateEstoqueFornecimento(produto);
             }
         }
         #endregion
@@ -253,7 +263,7 @@ namespace TCCMadeireira.Bancos
         /// <param name="venda"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void InsertVenda(Venda venda)
         {
-            venda.Id = vendasTableAdapter.Insert(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor);
+            venda.Id = (int) vendasTableAdapter.InsertVenda(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor);
             InsertMultProdVenda(venda);
         }
         /// <summary>

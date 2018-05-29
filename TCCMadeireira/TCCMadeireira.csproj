@@ -58,7 +58,7 @@
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\Fornecimento.cs" />
     <Compile Include="Models\Produto.cs" />
-    <Compile Include="Models\ProdVenda.cs" />
+    <Compile Include="Models\ProdOper.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venda.cs" />
     <Compile Include="Settings.cs" />
@@ -73,7 +73,7 @@
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Util\ValidarCpfCnpj.cs" />
+    <Compile Include="Util\ValidarIdentidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Log.cs" />

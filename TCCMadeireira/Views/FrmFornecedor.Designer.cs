@@ -40,7 +40,7 @@
             System.Windows.Forms.Label tELEFONE_FORNECEDORLabel;
             System.Windows.Forms.Label cELULAR_FORNECEDORLabel;
             System.Windows.Forms.Label eMAIL_FORNECEDORLabel;
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupComp = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
             this.rbtnCpf = new System.Windows.Forms.RadioButton();
             this.cmbUf = new System.Windows.Forms.ComboBox();
@@ -48,15 +48,15 @@
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
-            this.nOME_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
+            this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.FornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
-            this.rUA_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.nUMERO_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.bAIRRO_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.cIDADE_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.eMAIL_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
-            this.oBS_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.FornecedoresTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
             this.lblDataInfo = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fORNECEDORESDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +81,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
             nOME_FORNECEDORLabel = new System.Windows.Forms.Label();
             iDENTIDADE_FORNECEDORLabel = new System.Windows.Forms.Label();
             cEP_FORNECEDORLabel = new System.Windows.Forms.Label();
@@ -92,11 +93,11 @@
             tELEFONE_FORNECEDORLabel = new System.Windows.Forms.Label();
             cELULAR_FORNECEDORLabel = new System.Windows.Forms.Label();
             eMAIL_FORNECEDORLabel = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.groupComp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
             // nOME_FORNECEDORLabel
@@ -198,39 +199,39 @@
             eMAIL_FORNECEDORLabel.TabIndex = 22;
             eMAIL_FORNECEDORLabel.Text = "E-MAIL:";
             // 
-            // groupBox1
+            // groupComp
             // 
-            this.groupBox1.Controls.Add(this.rbtnCnpj);
-            this.groupBox1.Controls.Add(this.rbtnCpf);
-            this.groupBox1.Controls.Add(this.cmbUf);
-            this.groupBox1.Controls.Add(this.txtCep);
-            this.groupBox1.Controls.Add(this.txtCelular);
-            this.groupBox1.Controls.Add(this.txtTelefone);
-            this.groupBox1.Controls.Add(this.txtIdentidade);
-            this.groupBox1.Controls.Add(nOME_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(this.nOME_FORNECEDORTextBox);
-            this.groupBox1.Controls.Add(iDENTIDADE_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(cEP_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(rUA_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(this.rUA_FORNECEDORTextBox);
-            this.groupBox1.Controls.Add(nUMERO_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(this.nUMERO_FORNECEDORTextBox);
-            this.groupBox1.Controls.Add(bAIRRO_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(this.bAIRRO_FORNECEDORTextBox);
-            this.groupBox1.Controls.Add(cIDADE_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(this.cIDADE_FORNECEDORTextBox);
-            this.groupBox1.Controls.Add(eSTADO_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(tELEFONE_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(cELULAR_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(eMAIL_FORNECEDORLabel);
-            this.groupBox1.Controls.Add(this.eMAIL_FORNECEDORTextBox);
-            this.groupBox1.Controls.Add(this.oBS_FORNECEDORTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(808, 248);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fornecedor";
+            this.groupComp.Controls.Add(this.rbtnCnpj);
+            this.groupComp.Controls.Add(this.rbtnCpf);
+            this.groupComp.Controls.Add(this.cmbUf);
+            this.groupComp.Controls.Add(this.txtCep);
+            this.groupComp.Controls.Add(this.txtCelular);
+            this.groupComp.Controls.Add(this.txtTelefone);
+            this.groupComp.Controls.Add(this.txtIdentidade);
+            this.groupComp.Controls.Add(nOME_FORNECEDORLabel);
+            this.groupComp.Controls.Add(this.txtFornecedor);
+            this.groupComp.Controls.Add(iDENTIDADE_FORNECEDORLabel);
+            this.groupComp.Controls.Add(cEP_FORNECEDORLabel);
+            this.groupComp.Controls.Add(rUA_FORNECEDORLabel);
+            this.groupComp.Controls.Add(this.txtRua);
+            this.groupComp.Controls.Add(nUMERO_FORNECEDORLabel);
+            this.groupComp.Controls.Add(this.txtNumero);
+            this.groupComp.Controls.Add(bAIRRO_FORNECEDORLabel);
+            this.groupComp.Controls.Add(this.txtBairro);
+            this.groupComp.Controls.Add(cIDADE_FORNECEDORLabel);
+            this.groupComp.Controls.Add(this.txtCidade);
+            this.groupComp.Controls.Add(eSTADO_FORNECEDORLabel);
+            this.groupComp.Controls.Add(tELEFONE_FORNECEDORLabel);
+            this.groupComp.Controls.Add(cELULAR_FORNECEDORLabel);
+            this.groupComp.Controls.Add(eMAIL_FORNECEDORLabel);
+            this.groupComp.Controls.Add(this.txtEmail);
+            this.groupComp.Controls.Add(this.txtObs);
+            this.groupComp.Location = new System.Drawing.Point(12, 12);
+            this.groupComp.Name = "groupComp";
+            this.groupComp.Size = new System.Drawing.Size(808, 248);
+            this.groupComp.TabIndex = 0;
+            this.groupComp.TabStop = false;
+            this.groupComp.Text = "Fornecedor";
             // 
             // rbtnCnpj
             // 
@@ -241,6 +242,7 @@
             this.rbtnCnpj.TabIndex = 39;
             this.rbtnCnpj.Text = "CNPJ";
             this.rbtnCnpj.UseVisualStyleBackColor = true;
+            this.rbtnCnpj.CheckedChanged += new System.EventHandler(this.RbtnIden_CheckedChanged);
             // 
             // rbtnCpf
             // 
@@ -253,6 +255,7 @@
             this.rbtnCpf.TabStop = true;
             this.rbtnCpf.Text = "CPF";
             this.rbtnCpf.UseVisualStyleBackColor = true;
+            this.rbtnCpf.CheckedChanged += new System.EventHandler(this.RbtnIden_CheckedChanged);
             // 
             // cmbUf
             // 
@@ -320,16 +323,16 @@
             this.txtIdentidade.Location = new System.Drawing.Point(586, 23);
             this.txtIdentidade.Mask = "999,999,999-99";
             this.txtIdentidade.Name = "txtIdentidade";
-            this.txtIdentidade.Size = new System.Drawing.Size(107, 20);
+            this.txtIdentidade.Size = new System.Drawing.Size(83, 20);
             this.txtIdentidade.TabIndex = 34;
             // 
-            // nOME_FORNECEDORTextBox
+            // txtFornecedor
             // 
-            this.nOME_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "NOME_FORNECEDOR", true));
-            this.nOME_FORNECEDORTextBox.Location = new System.Drawing.Point(97, 23);
-            this.nOME_FORNECEDORTextBox.Name = "nOME_FORNECEDORTextBox";
-            this.nOME_FORNECEDORTextBox.Size = new System.Drawing.Size(402, 20);
-            this.nOME_FORNECEDORTextBox.TabIndex = 3;
+            this.txtFornecedor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "NOME_FORNECEDOR", true));
+            this.txtFornecedor.Location = new System.Drawing.Point(97, 23);
+            this.txtFornecedor.Name = "txtFornecedor";
+            this.txtFornecedor.Size = new System.Drawing.Size(402, 20);
+            this.txtFornecedor.TabIndex = 3;
             // 
             // FornecedoresBindingSource
             // 
@@ -341,54 +344,54 @@
             this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
             this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // rUA_FORNECEDORTextBox
+            // txtRua
             // 
-            this.rUA_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "RUA_FORNECEDOR", true));
-            this.rUA_FORNECEDORTextBox.Location = new System.Drawing.Point(146, 75);
-            this.rUA_FORNECEDORTextBox.Name = "rUA_FORNECEDORTextBox";
-            this.rUA_FORNECEDORTextBox.Size = new System.Drawing.Size(574, 20);
-            this.rUA_FORNECEDORTextBox.TabIndex = 9;
+            this.txtRua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "RUA_FORNECEDOR", true));
+            this.txtRua.Location = new System.Drawing.Point(146, 75);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(574, 20);
+            this.txtRua.TabIndex = 9;
             // 
-            // nUMERO_FORNECEDORTextBox
+            // txtNumero
             // 
-            this.nUMERO_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "NUMERO_FORNECEDOR", true));
-            this.nUMERO_FORNECEDORTextBox.Location = new System.Drawing.Point(754, 75);
-            this.nUMERO_FORNECEDORTextBox.Name = "nUMERO_FORNECEDORTextBox";
-            this.nUMERO_FORNECEDORTextBox.Size = new System.Drawing.Size(48, 20);
-            this.nUMERO_FORNECEDORTextBox.TabIndex = 11;
+            this.txtNumero.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "NUMERO_FORNECEDOR", true));
+            this.txtNumero.Location = new System.Drawing.Point(754, 75);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(48, 20);
+            this.txtNumero.TabIndex = 11;
             // 
-            // bAIRRO_FORNECEDORTextBox
+            // txtBairro
             // 
-            this.bAIRRO_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "BAIRRO_FORNECEDOR", true));
-            this.bAIRRO_FORNECEDORTextBox.Location = new System.Drawing.Point(63, 102);
-            this.bAIRRO_FORNECEDORTextBox.Name = "bAIRRO_FORNECEDORTextBox";
-            this.bAIRRO_FORNECEDORTextBox.Size = new System.Drawing.Size(310, 20);
-            this.bAIRRO_FORNECEDORTextBox.TabIndex = 13;
+            this.txtBairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "BAIRRO_FORNECEDOR", true));
+            this.txtBairro.Location = new System.Drawing.Point(63, 102);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(310, 20);
+            this.txtBairro.TabIndex = 13;
             // 
-            // cIDADE_FORNECEDORTextBox
+            // txtCidade
             // 
-            this.cIDADE_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "CIDADE_FORNECEDOR", true));
-            this.cIDADE_FORNECEDORTextBox.Location = new System.Drawing.Point(435, 103);
-            this.cIDADE_FORNECEDORTextBox.Name = "cIDADE_FORNECEDORTextBox";
-            this.cIDADE_FORNECEDORTextBox.Size = new System.Drawing.Size(278, 20);
-            this.cIDADE_FORNECEDORTextBox.TabIndex = 15;
+            this.txtCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "CIDADE_FORNECEDOR", true));
+            this.txtCidade.Location = new System.Drawing.Point(435, 103);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(278, 20);
+            this.txtCidade.TabIndex = 15;
             // 
-            // eMAIL_FORNECEDORTextBox
+            // txtEmail
             // 
-            this.eMAIL_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "EMAIL_FORNECEDOR", true));
-            this.eMAIL_FORNECEDORTextBox.Location = new System.Drawing.Point(57, 46);
-            this.eMAIL_FORNECEDORTextBox.Name = "eMAIL_FORNECEDORTextBox";
-            this.eMAIL_FORNECEDORTextBox.Size = new System.Drawing.Size(428, 20);
-            this.eMAIL_FORNECEDORTextBox.TabIndex = 23;
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "EMAIL_FORNECEDOR", true));
+            this.txtEmail.Location = new System.Drawing.Point(57, 46);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(428, 20);
+            this.txtEmail.TabIndex = 23;
             // 
-            // oBS_FORNECEDORTextBox
+            // txtObs
             // 
-            this.oBS_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "OBS_FORNECEDOR", true));
-            this.oBS_FORNECEDORTextBox.Location = new System.Drawing.Point(9, 129);
-            this.oBS_FORNECEDORTextBox.Multiline = true;
-            this.oBS_FORNECEDORTextBox.Name = "oBS_FORNECEDORTextBox";
-            this.oBS_FORNECEDORTextBox.Size = new System.Drawing.Size(793, 105);
-            this.oBS_FORNECEDORTextBox.TabIndex = 27;
+            this.txtObs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "OBS_FORNECEDOR", true));
+            this.txtObs.Location = new System.Drawing.Point(9, 129);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(793, 105);
+            this.txtObs.TabIndex = 27;
             // 
             // FornecedoresTableAdapter
             // 
@@ -410,7 +413,7 @@
             // 
             // lblDataInfo
             // 
-            this.lblDataInfo.Location = new System.Drawing.Point(823, 160);
+            this.lblDataInfo.Location = new System.Drawing.Point(823, 226);
             this.lblDataInfo.MaximumSize = new System.Drawing.Size(10000, 1000);
             this.lblDataInfo.Name = "lblDataInfo";
             this.lblDataInfo.Size = new System.Drawing.Size(100, 20);
@@ -427,6 +430,7 @@
             this.rbtnCnpjFiltro.TabIndex = 47;
             this.rbtnCnpjFiltro.Text = "CNPJ";
             this.rbtnCnpjFiltro.UseVisualStyleBackColor = true;
+            this.rbtnCnpjFiltro.CheckedChanged += new System.EventHandler(this.RbtnCpfFiltro_CheckedChanged);
             // 
             // rbtnCpfFiltro
             // 
@@ -439,14 +443,16 @@
             this.rbtnCpfFiltro.TabStop = true;
             this.rbtnCpfFiltro.Text = "CPF";
             this.rbtnCpfFiltro.UseVisualStyleBackColor = true;
+            this.rbtnCpfFiltro.CheckedChanged += new System.EventHandler(this.RbtnCpfFiltro_CheckedChanged);
             // 
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(826, 110);
             this.txtFiltro.Mask = "999,999,999-99";
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(107, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(85, 20);
             this.txtFiltro.TabIndex = 45;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
             // 
             // btnAlterar
             // 
@@ -456,6 +462,7 @@
             this.btnAlterar.TabIndex = 44;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -465,6 +472,7 @@
             this.btnExcluir.TabIndex = 43;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // btnCadastrar
             // 
@@ -474,23 +482,24 @@
             this.btnCadastrar.TabIndex = 42;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.fORNECEDORESDataGridView);
+            this.panel1.Controls.Add(this.dgvFornecedores);
             this.panel1.Location = new System.Drawing.Point(12, 266);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(954, 258);
             this.panel1.TabIndex = 48;
             // 
-            // fORNECEDORESDataGridView
+            // dgvFornecedores
             // 
-            this.fORNECEDORESDataGridView.AllowUserToAddRows = false;
-            this.fORNECEDORESDataGridView.AllowUserToDeleteRows = false;
-            this.fORNECEDORESDataGridView.AllowUserToOrderColumns = true;
-            this.fORNECEDORESDataGridView.AutoGenerateColumns = false;
-            this.fORNECEDORESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.fORNECEDORESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFornecedores.AllowUserToAddRows = false;
+            this.dgvFornecedores.AllowUserToDeleteRows = false;
+            this.dgvFornecedores.AllowUserToOrderColumns = true;
+            this.dgvFornecedores.AutoGenerateColumns = false;
+            this.dgvFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -504,13 +513,14 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn14});
-            this.fORNECEDORESDataGridView.DataSource = this.FornecedoresBindingSource;
-            this.fORNECEDORESDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fORNECEDORESDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.fORNECEDORESDataGridView.Name = "fORNECEDORESDataGridView";
-            this.fORNECEDORESDataGridView.ReadOnly = true;
-            this.fORNECEDORESDataGridView.Size = new System.Drawing.Size(954, 258);
-            this.fORNECEDORESDataGridView.TabIndex = 0;
+            this.dgvFornecedores.DataSource = this.FornecedoresBindingSource;
+            this.dgvFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFornecedores.Location = new System.Drawing.Point(0, 0);
+            this.dgvFornecedores.Name = "dgvFornecedores";
+            this.dgvFornecedores.ReadOnly = true;
+            this.dgvFornecedores.Size = new System.Drawing.Size(954, 258);
+            this.dgvFornecedores.TabIndex = 0;
+            this.dgvFornecedores.SelectionChanged += new System.EventHandler(this.FornecedoresDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -603,11 +613,22 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(826, 159);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 49;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // FrmFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 530);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDataInfo);
             this.Controls.Add(this.rbtnCnpjFiltro);
@@ -616,16 +637,16 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupComp);
             this.Name = "FrmFornecedor";
             this.Text = "FrmFornecedor";
             this.Load += new System.EventHandler(this.FrmFornecedor_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupComp.ResumeLayout(false);
+            this.groupComp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,18 +654,18 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupComp;
         private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
         private System.Windows.Forms.BindingSource FornecedoresBindingSource;
         private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter FornecedoresTableAdapter;
         private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox nOME_FORNECEDORTextBox;
-        private System.Windows.Forms.TextBox rUA_FORNECEDORTextBox;
-        private System.Windows.Forms.TextBox bAIRRO_FORNECEDORTextBox;
-        private System.Windows.Forms.TextBox cIDADE_FORNECEDORTextBox;
-        private System.Windows.Forms.TextBox eMAIL_FORNECEDORTextBox;
-        private System.Windows.Forms.TextBox oBS_FORNECEDORTextBox;
-        private System.Windows.Forms.TextBox nUMERO_FORNECEDORTextBox;
+        private System.Windows.Forms.TextBox txtFornecedor;
+        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.ComboBox cmbUf;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.MaskedTextBox txtCelular;
@@ -660,7 +681,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView fORNECEDORESDataGridView;
+        private System.Windows.Forms.DataGridView dgvFornecedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -674,5 +695,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

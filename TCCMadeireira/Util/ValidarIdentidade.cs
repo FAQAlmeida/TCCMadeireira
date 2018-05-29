@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TCCMadeireira.Model
@@ -9,8 +10,9 @@ namespace TCCMadeireira.Model
     /// <summary>
     /// Classe para validação dos documentos para registro no DB
     /// </summary>
-    class ValidarCpfCnpj
+    class ValidarIdentidade
     {
+        Regex regex;
         /// <summary>
         /// Método para validação de CPF
         /// <para>O método possui verificação em 3 etapas</para>
@@ -22,9 +24,10 @@ namespace TCCMadeireira.Model
         /// <returns></returns>
         public bool ValidarCpf(string cpf)
         {
+            regex = new Regex("[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{2}",
+                RegexOptions.None);
             try
             {
-                //TODO Regular expression comparission
                 string[] cpfError = new string[] {
                 "000.000.000-00", "111.111.111-11",
                 "222.222.222-22", "333.333.333-33",
@@ -33,7 +36,7 @@ namespace TCCMadeireira.Model
                 "888.888.888-88", "999.999.999-99"
             };
 
-                if (!cpfError.Contains(cpf))
+                if (!cpfError.Contains(cpf) && regex.Match(cpf).Success)
                 {
                     int PA = 10;
                     int calc = 0;
@@ -94,6 +97,9 @@ namespace TCCMadeireira.Model
         /// <returns></returns>
         public bool ValidarCnpj(string cnpj)
         {
+            regex = new Regex("[0-9]{2}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{4}[.,/-]?[0-9]{2}",
+                RegexOptions.None
+                );
             try
             {
                 //TODO Regular expression comparission
@@ -106,7 +112,7 @@ namespace TCCMadeireira.Model
                 };
                 List<int> dgVer = new List<int> { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
                 string[] dgError = new string[] { ".", "/", "-", "," };
-                if (!cnpjError.Contains(cnpj))
+                if (!cnpjError.Contains(cnpj) && regex.Match(cnpj).Success)
                 {
                     int calc = 0;
                     for (int i = 0; i <= cnpj.Length - 3; i++)

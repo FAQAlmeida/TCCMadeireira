@@ -444,7 +444,7 @@
             this.dvgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgClientes.Size = new System.Drawing.Size(923, 343);
             this.dvgClientes.TabIndex = 0;
-            this.dvgClientes.SelectionChanged += new System.EventHandler(this.CLIENTESDataGridView_SelectionChanged);
+            this.dvgClientes.SelectionChanged += new System.EventHandler(this.ClientesDataGridView_SelectionChanged);
             // 
             // cLIENTESBindingSource
             // 

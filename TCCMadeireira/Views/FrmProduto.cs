@@ -34,7 +34,6 @@ namespace TCCMadeireira.Views
             this.FornecedoresTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.PRODUTOS'. Você pode movê-la ou removê-la conforme necessário.
             this.ProdutosTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
-
         }
     }
 }

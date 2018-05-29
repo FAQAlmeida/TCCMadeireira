@@ -12,7 +12,7 @@ namespace TCCMadeireira.Models
         private int id;
         private string nome, identidade, cep, rua, numero, bairro, cidade, estado, telefone, celular, email, obs;
         private DateTime dataInfo;
-        private ValidarCpfCnpj cpfCnpj = new ValidarCpfCnpj();
+        private ValidarIdentidade cpfCnpj = new ValidarIdentidade();
 
         public int Id { get { return id; } set { id = value; }  }
         public string Nome { get { return nome; } set { nome = value.ToUpper().Trim(); } }

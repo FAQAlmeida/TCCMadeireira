@@ -21,7 +21,7 @@ namespace TCCMadeireira.Views
     {
         #region Atributes
         Banco banco = new Banco();
-        List<ProdVenda> produtos = new List<ProdVenda>();
+        List<ProdOper> produtos = new List<ProdOper>();
         Cliente cliente = null;
         Usuario usuario;
         decimal valor;
@@ -126,7 +126,7 @@ namespace TCCMadeireira.Views
         {
             if (dgvProdutos.SelectedRows.Count == 1)
             {
-                ProdVenda prodVenda = produtos.ElementAt(dgvProdutos.SelectedRows[0].Index);
+                ProdOper prodVenda = produtos.ElementAt(dgvProdutos.SelectedRows[0].Index);
                 if (MessageBox.Show(
                     String.Format("Deseja mesmo remover o produto {0} de código {1}?", prodVenda.Produto.Nome, prodVenda.Produto.Id),
                     "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
@@ -179,7 +179,7 @@ namespace TCCMadeireira.Views
         /// Insere os dados provinientes do FrmProdOper
         /// </summary>
         /// <param name="prodVenda"></param>
-        internal void InsertDataProd(ProdVenda prodVenda)
+        internal void InsertDataProd(ProdOper prodVenda)
         {
             produtos.Add(prodVenda);
             dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
@@ -222,6 +222,57 @@ namespace TCCMadeireira.Views
                 return "CPF";
             }
             return "CNPJ";
+        }
+        private void CheckEstoque()
+        {
+            Dictionary<int, decimal> estoqueReal = new Dictionary<int, decimal>();
+            foreach(int id in IdsRepetidosInRows(dgvProdutos.Rows))
+            {
+                estoqueReal.Add(id, 0);
+                foreach(ProdOper produto in this.produtos)
+                {
+                    if(id == produto.Produto.Id)
+                    {
+                        estoqueReal[id] += produto.Quantidade;
+                    }
+                }
+            }
+            foreach(int id in estoqueReal.Keys)
+            {
+                PRODUTOSDataTable produto = banco.SelectProduto(id);
+                string msg = String.Empty;
+                if(produto.Rows.Count == 1)
+                {
+                    if ((decimal)produto.Rows[0]["quantidade_produto"] < estoqueReal[id])
+                        msg += String.Format("\nQuantidade do produto {0} insuficiente para a venda",
+                            produto.Rows[0]["nome_produto"]);
+                    if((decimal)produto.Rows[0]["quantidade_produto"] == estoqueReal[id])
+                        msg += String.Format("\nQuantidade do produto {0} suficiente para a venda, " +
+                            "mas o estoque será zerado", produto.Rows[0]["nome_produto"]);
+                }
+                if(msg != String.Empty)
+                {
+                    throw new Exception(msg);
+                }
+            }
+        }
+        private List<int> IdsRepetidosInRows(DataGridViewRowCollection rows)
+        {
+            List<int> todos = new List<int>();
+            List<int> repetidos = new List<int>();
+            foreach(DataGridViewRow row in rows)
+            {
+                int id = (int)row.Cells["ID"].Value;
+                if (!todos.Contains(id))
+                {
+                    todos.Add(id);
+                }
+                else
+                {
+                    repetidos.Add(id);
+                }
+            }
+            return repetidos;
         }
         #endregion
         #region @event.FormClosing
