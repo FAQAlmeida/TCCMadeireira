@@ -186,6 +186,7 @@ namespace TCCMadeireira.Views
         }
         private void ValorSet()
         {
+            CheckEstoque();
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {
@@ -196,6 +197,7 @@ namespace TCCMadeireira.Views
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            CheckEstoque();
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {
@@ -206,6 +208,7 @@ namespace TCCMadeireira.Views
         }
         private void ValorSet(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            CheckEstoque();
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {
