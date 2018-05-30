@@ -42,5 +42,20 @@
     <Setting Name="nivelUsuario" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">desktop-fqa</Value>
+    </Setting>
+    <Setting Name="DBName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Madeireira</Value>
+    </Setting>
+    <Setting Name="LoginServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Otavio</Value>
+    </Setting>
+    <Setting Name="PwdServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Otavio@435</Value>
+    </Setting>
+    <Setting Name="ServerInstance" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">fqasqlserver</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

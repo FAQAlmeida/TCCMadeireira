@@ -130,5 +130,50 @@ namespace TCCMadeireira.Properties {
                 this["nivelUsuario"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("desktop-fqa")]
+        public string ServerName {
+            get {
+                return ((string)(this["ServerName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Madeireira")]
+        public string DBName {
+            get {
+                return ((string)(this["DBName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Otavio")]
+        public string LoginServer {
+            get {
+                return ((string)(this["LoginServer"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Otavio@435")]
+        public string PwdServer {
+            get {
+                return ((string)(this["PwdServer"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("fqasqlserver")]
+        public string ServerInstance {
+            get {
+                return ((string)(this["ServerInstance"]));
+            }
+        }
     }
 }

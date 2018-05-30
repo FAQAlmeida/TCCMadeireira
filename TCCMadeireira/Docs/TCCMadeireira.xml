@@ -514,12 +514,32 @@
               pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Model.ValidarCpfCnpj">
+        <member name="P:TCCMadeireira.Properties.Resources.Folder_Open_icon">
+            <summary>
+              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.Folder_Open_icon1">
+            <summary>
+              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.Refresh_icon">
+            <summary>
+              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.refresh_icon1">
+            <summary>
+              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Model.ValidarIdentidade">
             <summary>
             Classe para validação dos documentos para registro no DB
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Model.ValidarCpfCnpj.ValidarCpf(System.String)">
+        <member name="M:TCCMadeireira.Model.ValidarIdentidade.ValidarCpf(System.String)">
             <summary>
             Método para validação de CPF
             <para>O método possui verificação em 3 etapas</para>
@@ -530,7 +550,7 @@
             <param name="cpf">Parâmetro de entrada do CPF</param>
             <returns></returns>
         </member>
-        <member name="M:TCCMadeireira.Model.ValidarCpfCnpj.ValidarCnpj(System.String)">
+        <member name="M:TCCMadeireira.Model.ValidarIdentidade.ValidarCnpj(System.String)">
             <summary>
             Método para validação de CNPJ
             <para>Possui verificação em 3 etapas</para>
@@ -611,7 +631,7 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmCliente.CLIENTESDataGridView_SelectionChanged(System.Object,System.EventArgs)">
+        <member name="M:TCCMadeireira.Views.FrmCliente.ClientesDataGridView_SelectionChanged(System.Object,System.EventArgs)">
             <summary>
             Evento de SelectionChanged do DataGridView
             <para>Preenche todos os Controls da GroupBox com os dados da seleção</para>
@@ -685,6 +705,45 @@
             Inicializa o Form de Fornecedor
             </summary>
         </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.RbtnIden_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Ocorre quando o evento CheckedChanged é disparado no radioButton do CPF ou do CNPJ
+            <para>Se o RadioButton do CPF for ativado, ele muda a máscara da TextoBox da identidade para a máscara do CPF, 
+            o oposto também é verdade</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.RbtnCpfFiltro_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Ocorre quando o evento CheckedChanged é disparado no radioButton do CPF Filtro CNPJ Filtro
+            <para>Se o RadioButton do CPF Filtro for ativado, ele muda a máscara da TextoBox do filtro para a máscara do CPF
+            o oposto também é verdade</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.FornecedoresDataGridView_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento de SelectionChanged do DataGridView
+            <para>Preenche todos os Controls da GroupBox com os dados da seleção</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.ControlEnable(System.Boolean)">
+            <summary>
+            Define o status de todos os controles de entrada presentes no GroupBox baseado no parâmetro status
+            </summary>
+            <param name="status">Define se o status vai ser true ou false</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecedor.IdentidadeInput(System.String,System.String)">
+            <summary>
+            Atribui o valor da txtIdentidade e a mask baseado nos parametros
+            </summary>
+            <param name="identidade">Identidade a ser atribuida</param>
+            <param name="tipo">Tipo para mudar a mask</param>
+        </member>
         <member name="F:TCCMadeireira.Views.FrmFornecedor.components">
             <summary>
             Required designer variable.
@@ -721,13 +780,19 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmFornecimento.InsertDataProd(System.String,System.String,System.String)">
+        <member name="M:TCCMadeireira.Views.FrmFornecimento.InsertDataProd(System.String,System.String,System.String,System.String)">
             <summary>
-            Insere os dados provinientes do FrmProdVenda e atualiza a lblValorTotal
+            Insere os dados provinientes do FrmProdOper
             </summary>
             <param name="id"></param>
             <param name="produto"></param>
             <param name="quantidade"></param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmFornecimento.InsertDataProd(TCCMadeireira.Models.ProdOper)">
+            <summary>
+            Insere os dados provinientes do FrmProdOper
+            </summary>
+            <param name="prodVenda"></param>
         </member>
         <member name="F:TCCMadeireira.Views.FrmFornecimento.components">
             <summary>
@@ -860,6 +925,23 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:TCCMadeireira.Views.Sistema.FrmBackup.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.Sistema.FrmBackup.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.Sistema.FrmBackup.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Views.FrmMenuPrincipal">
             <summary>
             Formulário do menuPrincipal
@@ -933,7 +1015,7 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Views.FrmProdVenda">
+        <member name="T:TCCMadeireira.Views.FrmProdOper">
             <summary>
             Form responsavel por adicionar produtos a uma venda
             </summary>
@@ -941,41 +1023,41 @@
             Form responsavel por adicionar produtos a uma venda
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmProdVenda.#ctor(TCCMadeireira.Views.FrmVenda)">
+        <member name="M:TCCMadeireira.Views.FrmProdOper.#ctor(TCCMadeireira.Views.FrmVenda)">
             <summary>
             Inicializa o Form ProdVenda
             </summary>
             <param name="frmVenda"></param>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmProdVenda.#ctor(TCCMadeireira.Views.FrmFornecimento)">
+        <member name="M:TCCMadeireira.Views.FrmProdOper.#ctor(TCCMadeireira.Views.FrmFornecimento)">
             <summary>
             Inicializa o Form ProdVenda
             </summary>
             <param name="frmFornecimento"></param>
         </member>
-        <member name="F:TCCMadeireira.Views.FrmProdVenda.components">
+        <member name="F:TCCMadeireira.Views.FrmProdOper.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmProdVenda.Dispose(System.Boolean)">
+        <member name="M:TCCMadeireira.Views.FrmProdOper.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:TCCMadeireira.Views.FrmProdVenda.InitializeComponent">
+        <member name="M:TCCMadeireira.Views.FrmProdOper.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:TCCMadeireira.Views.FrmProdVenda.dvgProduto">
+        <member name="F:TCCMadeireira.Views.FrmProdOper.dvgProduto">
             <summary>
             Tabela com todos os produtos
             </summary>
         </member>
-        <member name="F:TCCMadeireira.Views.FrmProdVenda.numQuantidade">
+        <member name="F:TCCMadeireira.Views.FrmProdOper.numQuantidade">
             <summary>
             Valor correspondente a quantidade do produto a ser registrado
             </summary>
@@ -1033,6 +1115,12 @@
             <param name="id"></param>
             <param name="produto"></param>
             <param name="quantidade"></param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmVenda.InsertDataProd(TCCMadeireira.Models.ProdOper)">
+            <summary>
+            Insere os dados provinientes do FrmProdOper
+            </summary>
+            <param name="prodVenda"></param>
         </member>
         <member name="F:TCCMadeireira.Views.FrmVenda.components">
             <summary>

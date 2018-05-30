@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCCMadeireira.Views.Sistema;
 
 namespace TCCMadeireira.Views
 {
@@ -26,6 +27,7 @@ namespace TCCMadeireira.Views
         FrmVenda frmVenda;
         FrmFornecimento frmFornecimento;
         FrmUsuario frmUsuario;
+        FrmBackup frmBackup;
         #endregion
         #region Construtor
         /// <summary>
@@ -40,6 +42,28 @@ namespace TCCMadeireira.Views
         }
         #endregion
         #region toolStripMenu @event.Click
+        private void BackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmBackup"] == null)
+                {
+                    frmBackup = new FrmBackup
+                    {
+                        MdiParent = this
+                    };
+                    frmBackup.Show();
+                }
+                else
+                {
+                    Application.OpenForms["FrmBackup"].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         /// <summary>
         /// Evento CLICK do menuStrip Cliente
         /// <para>Instância e exibe o formulário do Cliente</para>
@@ -233,5 +257,7 @@ namespace TCCMadeireira.Views
             toolStripStatusLabelData.Text = DateTime.Now.ToString();
         }
         #endregion
+
+        
     }
 }
