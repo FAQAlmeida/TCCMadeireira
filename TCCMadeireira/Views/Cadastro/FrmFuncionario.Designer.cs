@@ -71,12 +71,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.fUNCIONARIOSDataGridView = new System.Windows.Forms.DataGridView();
-            this.fUNCIONARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetMadeireira = new TCCMadeireira.Bancos.DataSetMadeireira();
-            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.FORNECEDORESTableAdapter();
-            this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.TableAdapterManager();
-            this.fUNCIONARIOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.FUNCIONARIOSTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +86,12 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OBS_FUNCIONARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fUNCIONARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetMadeireira = new TCCMadeireira.Bancos.DataSetMadeireira();
+            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.FORNECEDORESTableAdapter();
+            this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.TableAdapterManager();
+            this.fUNCIONARIOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.FUNCIONARIOSTableAdapter();
             cIDADE_CLIENTELabel = new System.Windows.Forms.Label();
             bAIRRO_CLIENTELabel = new System.Windows.Forms.Label();
             eSTADO_CLIENTELabel = new System.Windows.Forms.Label();
@@ -519,42 +519,6 @@
             this.fUNCIONARIOSDataGridView.TabIndex = 0;
             this.fUNCIONARIOSDataGridView.SelectionChanged += new System.EventHandler(this.FUNCIONARIOSDataGridView_SelectionChanged);
             // 
-            // fUNCIONARIOSBindingSource
-            // 
-            this.fUNCIONARIOSBindingSource.DataMember = "FUNCIONARIOS";
-            this.fUNCIONARIOSBindingSource.DataSource = this.dataSetMadeireira;
-            // 
-            // dataSetMadeireira
-            // 
-            this.dataSetMadeireira.DataSetName = "DataSetMadeireira";
-            this.dataSetMadeireira.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fORNECEDORESBindingSource
-            // 
-            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
-            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireira;
-            // 
-            // fORNECEDORESTableAdapter
-            // 
-            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CLIENTESTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORESTableAdapter = this.fORNECEDORESTableAdapter;
-            this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
-            this.tableAdapterManager.FUNCIONARIOSTableAdapter = this.fUNCIONARIOSTableAdapter;
-            this.tableAdapterManager.PRODUTOSTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
-            this.tableAdapterManager.VENDASTableAdapter = null;
-            this.tableAdapterManager.VENDEDORES_USERSTableAdapter = null;
-            // 
-            // fUNCIONARIOSTableAdapter
-            // 
-            this.fUNCIONARIOSTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_FUNCIONARIO";
@@ -660,6 +624,42 @@
             this.OBS_FUNCIONARIO.Name = "OBS_FUNCIONARIO";
             this.OBS_FUNCIONARIO.ReadOnly = true;
             // 
+            // fUNCIONARIOSBindingSource
+            // 
+            this.fUNCIONARIOSBindingSource.DataMember = "FUNCIONARIOS";
+            this.fUNCIONARIOSBindingSource.DataSource = this.dataSetMadeireira;
+            // 
+            // dataSetMadeireira
+            // 
+            this.dataSetMadeireira.DataSetName = "DataSetMadeireira";
+            this.dataSetMadeireira.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fORNECEDORESBindingSource
+            // 
+            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
+            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireira;
+            // 
+            // fORNECEDORESTableAdapter
+            // 
+            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CLIENTESTableAdapter = null;
+            this.tableAdapterManager.FORNECEDORESTableAdapter = this.fORNECEDORESTableAdapter;
+            this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
+            this.tableAdapterManager.FUNCIONARIOSTableAdapter = this.fUNCIONARIOSTableAdapter;
+            this.tableAdapterManager.PRODUTOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
+            this.tableAdapterManager.VENDASTableAdapter = null;
+            this.tableAdapterManager.VENDEDORES_USERSTableAdapter = null;
+            // 
+            // fUNCIONARIOSTableAdapter
+            // 
+            this.fUNCIONARIOSTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,7 +675,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmFuncionario";
-            this.Text = "FrmFuncionario";
+            this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.FrmFuncionario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

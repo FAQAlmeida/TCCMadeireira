@@ -639,7 +639,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupComp);
             this.Name = "FrmFornecedor";
-            this.Text = "FrmFornecedor";
+            this.Text = "Fornecedor";
             this.Load += new System.EventHandler(this.FrmFornecedor_Load);
             this.groupComp.ResumeLayout(false);
             this.groupComp.PerformLayout();

@@ -328,7 +328,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmProduto";
-            this.Text = "FrmProduto";
+            this.Text = "Produto";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdutosBindingSource)).EndInit();

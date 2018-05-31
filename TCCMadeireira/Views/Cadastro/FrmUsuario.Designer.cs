@@ -159,7 +159,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.grbUsuario);
             this.Name = "FrmUsuario";
-            this.Text = "FrmUsuario";
+            this.Text = "Usuario";
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
             this.ResumeLayout(false);

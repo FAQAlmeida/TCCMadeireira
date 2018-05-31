@@ -242,7 +242,7 @@
             this.Controls.Add(this.numQuantidade);
             this.Controls.Add(this.panel1);
             this.Name = "FrmProdOper";
-            this.Text = "FrmProdVenda";
+            this.Text = "I.P.O";
             this.Load += new System.EventHandler(this.FrmProdVenda_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgProduto)).EndInit();

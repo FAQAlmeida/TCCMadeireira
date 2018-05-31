@@ -323,7 +323,7 @@
             this.Controls.Add(this.grbProdutos);
             this.Controls.Add(this.grbCliente);
             this.Name = "FrmVenda";
-            this.Text = "FrmVenda";
+            this.Text = "Vendas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVenda_FormClosing);
             this.Load += new System.EventHandler(this.FrmVenda_Load);
             this.grbCliente.ResumeLayout(false);

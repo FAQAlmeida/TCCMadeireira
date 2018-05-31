@@ -156,7 +156,7 @@
             this.Controls.Add(this.btnBackup);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmBackup";
-            this.Text = "FrmBackup";
+            this.Text = "Backup";
             this.Load += new System.EventHandler(this.FrmBackup_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

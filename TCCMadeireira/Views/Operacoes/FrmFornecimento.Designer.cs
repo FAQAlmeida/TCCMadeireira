@@ -280,7 +280,7 @@
             this.Controls.Add(this.grbProdutos);
             this.Controls.Add(this.grbFornecedor);
             this.Name = "FrmFornecimento";
-            this.Text = "FrmFornecimento";
+            this.Text = "Fornecimento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFornecimento_FormClosing);
             this.Load += new System.EventHandler(this.FrmFornecimento_Load);
             this.pnlVenda.ResumeLayout(false);

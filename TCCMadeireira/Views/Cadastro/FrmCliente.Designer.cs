@@ -59,6 +59,20 @@
             this.lblDataInfo = new System.Windows.Forms.Label();
             this.pnlDvg = new System.Windows.Forms.Panel();
             this.dvgClientes = new System.Windows.Forms.DataGridView();
+            this.iDCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEPCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rUACLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nUMEROCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bAIRROCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cIDADECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eSTADOCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tELEFONECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cELULARCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMAILCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATAINFOCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -75,20 +89,6 @@
             this.NOME_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlComp = new System.Windows.Forms.Panel();
-            this.iDCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEPCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rUACLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nUMEROCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bAIRROCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cIDADECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eSTADOCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tELEFONECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cELULARCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMAILCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dATAINFOCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oBSCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nOME_CLIENTELabel = new System.Windows.Forms.Label();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
             cEP_CLIENTELabel = new System.Windows.Forms.Label();
@@ -446,6 +446,104 @@
             this.dvgClientes.TabIndex = 0;
             this.dvgClientes.SelectionChanged += new System.EventHandler(this.ClientesDataGridView_SelectionChanged);
             // 
+            // iDCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.iDCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "ID_CLIENTE";
+            this.iDCLIENTEDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDCLIENTEDataGridViewTextBoxColumn.Name = "iDCLIENTEDataGridViewTextBoxColumn";
+            this.iDCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nOMECLIENTEDataGridViewTextBoxColumn
+            // 
+            this.nOMECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "NOME_CLIENTE";
+            this.nOMECLIENTEDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nOMECLIENTEDataGridViewTextBoxColumn.Name = "nOMECLIENTEDataGridViewTextBoxColumn";
+            this.nOMECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDENTIDADECLIENTEDataGridViewTextBoxColumn
+            // 
+            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "IDENTIDADE_CLIENTE";
+            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.HeaderText = "IDENTIDADE";
+            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.Name = "iDENTIDADECLIENTEDataGridViewTextBoxColumn";
+            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cEPCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.cEPCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CEP_CLIENTE";
+            this.cEPCLIENTEDataGridViewTextBoxColumn.HeaderText = "CEP";
+            this.cEPCLIENTEDataGridViewTextBoxColumn.Name = "cEPCLIENTEDataGridViewTextBoxColumn";
+            this.cEPCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rUACLIENTEDataGridViewTextBoxColumn
+            // 
+            this.rUACLIENTEDataGridViewTextBoxColumn.DataPropertyName = "RUA_CLIENTE";
+            this.rUACLIENTEDataGridViewTextBoxColumn.HeaderText = "RUA";
+            this.rUACLIENTEDataGridViewTextBoxColumn.Name = "rUACLIENTEDataGridViewTextBoxColumn";
+            this.rUACLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nUMEROCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.nUMEROCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "NUMERO_CLIENTE";
+            this.nUMEROCLIENTEDataGridViewTextBoxColumn.HeaderText = "NUMERO";
+            this.nUMEROCLIENTEDataGridViewTextBoxColumn.Name = "nUMEROCLIENTEDataGridViewTextBoxColumn";
+            this.nUMEROCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bAIRROCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.bAIRROCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "BAIRRO_CLIENTE";
+            this.bAIRROCLIENTEDataGridViewTextBoxColumn.HeaderText = "BAIRRO";
+            this.bAIRROCLIENTEDataGridViewTextBoxColumn.Name = "bAIRROCLIENTEDataGridViewTextBoxColumn";
+            this.bAIRROCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cIDADECLIENTEDataGridViewTextBoxColumn
+            // 
+            this.cIDADECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CIDADE_CLIENTE";
+            this.cIDADECLIENTEDataGridViewTextBoxColumn.HeaderText = "CIDADE";
+            this.cIDADECLIENTEDataGridViewTextBoxColumn.Name = "cIDADECLIENTEDataGridViewTextBoxColumn";
+            this.cIDADECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // eSTADOCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.eSTADOCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "ESTADO_CLIENTE";
+            this.eSTADOCLIENTEDataGridViewTextBoxColumn.HeaderText = "ESTADO";
+            this.eSTADOCLIENTEDataGridViewTextBoxColumn.Name = "eSTADOCLIENTEDataGridViewTextBoxColumn";
+            this.eSTADOCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tELEFONECLIENTEDataGridViewTextBoxColumn
+            // 
+            this.tELEFONECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "TELEFONE_CLIENTE";
+            this.tELEFONECLIENTEDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
+            this.tELEFONECLIENTEDataGridViewTextBoxColumn.Name = "tELEFONECLIENTEDataGridViewTextBoxColumn";
+            this.tELEFONECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cELULARCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.cELULARCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CELULAR_CLIENTE";
+            this.cELULARCLIENTEDataGridViewTextBoxColumn.HeaderText = "CELULAR";
+            this.cELULARCLIENTEDataGridViewTextBoxColumn.Name = "cELULARCLIENTEDataGridViewTextBoxColumn";
+            this.cELULARCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // eMAILCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.eMAILCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "EMAIL_CLIENTE";
+            this.eMAILCLIENTEDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.eMAILCLIENTEDataGridViewTextBoxColumn.Name = "eMAILCLIENTEDataGridViewTextBoxColumn";
+            this.eMAILCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dATAINFOCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "DATA_INFO_CLIENTE";
+            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.HeaderText = "DATA INFO";
+            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.Name = "dATAINFOCLIENTEDataGridViewTextBoxColumn";
+            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oBSCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.oBSCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "OBS_CLIENTE";
+            this.oBSCLIENTEDataGridViewTextBoxColumn.HeaderText = "OBS";
+            this.oBSCLIENTEDataGridViewTextBoxColumn.Name = "oBSCLIENTEDataGridViewTextBoxColumn";
+            this.oBSCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // cLIENTESBindingSource
             // 
             this.cLIENTESBindingSource.DataMember = "CLIENTES";
@@ -588,104 +686,6 @@
             this.pnlComp.Size = new System.Drawing.Size(233, 235);
             this.pnlComp.TabIndex = 42;
             // 
-            // iDCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.iDCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "ID_CLIENTE";
-            this.iDCLIENTEDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDCLIENTEDataGridViewTextBoxColumn.Name = "iDCLIENTEDataGridViewTextBoxColumn";
-            this.iDCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nOMECLIENTEDataGridViewTextBoxColumn
-            // 
-            this.nOMECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "NOME_CLIENTE";
-            this.nOMECLIENTEDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nOMECLIENTEDataGridViewTextBoxColumn.Name = "nOMECLIENTEDataGridViewTextBoxColumn";
-            this.nOMECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDENTIDADECLIENTEDataGridViewTextBoxColumn
-            // 
-            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "IDENTIDADE_CLIENTE";
-            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.HeaderText = "IDENTIDADE";
-            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.Name = "iDENTIDADECLIENTEDataGridViewTextBoxColumn";
-            this.iDENTIDADECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cEPCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.cEPCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CEP_CLIENTE";
-            this.cEPCLIENTEDataGridViewTextBoxColumn.HeaderText = "CEP";
-            this.cEPCLIENTEDataGridViewTextBoxColumn.Name = "cEPCLIENTEDataGridViewTextBoxColumn";
-            this.cEPCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rUACLIENTEDataGridViewTextBoxColumn
-            // 
-            this.rUACLIENTEDataGridViewTextBoxColumn.DataPropertyName = "RUA_CLIENTE";
-            this.rUACLIENTEDataGridViewTextBoxColumn.HeaderText = "RUA";
-            this.rUACLIENTEDataGridViewTextBoxColumn.Name = "rUACLIENTEDataGridViewTextBoxColumn";
-            this.rUACLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nUMEROCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.nUMEROCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "NUMERO_CLIENTE";
-            this.nUMEROCLIENTEDataGridViewTextBoxColumn.HeaderText = "NUMERO";
-            this.nUMEROCLIENTEDataGridViewTextBoxColumn.Name = "nUMEROCLIENTEDataGridViewTextBoxColumn";
-            this.nUMEROCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bAIRROCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.bAIRROCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "BAIRRO_CLIENTE";
-            this.bAIRROCLIENTEDataGridViewTextBoxColumn.HeaderText = "BAIRRO";
-            this.bAIRROCLIENTEDataGridViewTextBoxColumn.Name = "bAIRROCLIENTEDataGridViewTextBoxColumn";
-            this.bAIRROCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cIDADECLIENTEDataGridViewTextBoxColumn
-            // 
-            this.cIDADECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CIDADE_CLIENTE";
-            this.cIDADECLIENTEDataGridViewTextBoxColumn.HeaderText = "CIDADE";
-            this.cIDADECLIENTEDataGridViewTextBoxColumn.Name = "cIDADECLIENTEDataGridViewTextBoxColumn";
-            this.cIDADECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // eSTADOCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.eSTADOCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "ESTADO_CLIENTE";
-            this.eSTADOCLIENTEDataGridViewTextBoxColumn.HeaderText = "ESTADO";
-            this.eSTADOCLIENTEDataGridViewTextBoxColumn.Name = "eSTADOCLIENTEDataGridViewTextBoxColumn";
-            this.eSTADOCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tELEFONECLIENTEDataGridViewTextBoxColumn
-            // 
-            this.tELEFONECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "TELEFONE_CLIENTE";
-            this.tELEFONECLIENTEDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
-            this.tELEFONECLIENTEDataGridViewTextBoxColumn.Name = "tELEFONECLIENTEDataGridViewTextBoxColumn";
-            this.tELEFONECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cELULARCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.cELULARCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CELULAR_CLIENTE";
-            this.cELULARCLIENTEDataGridViewTextBoxColumn.HeaderText = "CELULAR";
-            this.cELULARCLIENTEDataGridViewTextBoxColumn.Name = "cELULARCLIENTEDataGridViewTextBoxColumn";
-            this.cELULARCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // eMAILCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.eMAILCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "EMAIL_CLIENTE";
-            this.eMAILCLIENTEDataGridViewTextBoxColumn.HeaderText = "EMAIL";
-            this.eMAILCLIENTEDataGridViewTextBoxColumn.Name = "eMAILCLIENTEDataGridViewTextBoxColumn";
-            this.eMAILCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dATAINFOCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "DATA_INFO_CLIENTE";
-            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.HeaderText = "DATA INFO";
-            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.Name = "dATAINFOCLIENTEDataGridViewTextBoxColumn";
-            this.dATAINFOCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oBSCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.oBSCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "OBS_CLIENTE";
-            this.oBSCLIENTEDataGridViewTextBoxColumn.HeaderText = "OBS";
-            this.oBSCLIENTEDataGridViewTextBoxColumn.Name = "oBSCLIENTEDataGridViewTextBoxColumn";
-            this.oBSCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,7 +696,7 @@
             this.Controls.Add(oBS__FORNECEDORLabel);
             this.Controls.Add(this.pnlComp);
             this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.groupComp.ResumeLayout(false);
             this.groupComp.PerformLayout();
