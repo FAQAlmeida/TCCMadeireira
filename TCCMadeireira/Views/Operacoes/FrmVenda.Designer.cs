@@ -55,7 +55,7 @@
             this.pnlVenda = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.clientesTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraTableAdapters.CLIENTESTableAdapter();
+            this.clientesTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
             this.grbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
@@ -363,7 +363,7 @@
         private System.Windows.Forms.Panel pnlVenda;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnFinalizar;
-        private Bancos.DataSetMadeireiraTableAdapters.CLIENTESTableAdapter clientesTableAdapter;
+        private Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter clientesTableAdapter;
         private System.Windows.Forms.RadioButton rbtnCnpj;
         private System.Windows.Forms.RadioButton rbtnCpf;
     }

@@ -38,8 +38,8 @@ namespace TCCMadeireira.Views
         /// <param name="e"></param>
         private void FrmFuncionario_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireira.FUNCIONARIOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.fUNCIONARIOSTableAdapter.Fill(this.dataSetMadeireira.FUNCIONARIOS);
+            // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.FUNCIONARIOS'. Você pode movê-la ou removê-la conforme necessário.
+            this.fUNCIONARIOSTableAdapter.Fill(this.dataSetMadeireiraV2.FUNCIONARIOS);
             this.rbtnCpf.Checked = true;
             this.rbtnCpfFiltro.Checked = true;
             this.ControlEnable(false);
@@ -73,6 +73,11 @@ namespace TCCMadeireira.Views
                     (ctrl as RadioButton).Enabled = status;
                 }
             }
+        }
+        private void TableRefresh()
+        {
+            fUNCIONARIOSTableAdapter.Fill(dataSetMadeireiraV2.FUNCIONARIOS);
+            fUNCIONARIOSDataGridView.Refresh();
         }
         #endregion
         #region @event.SelectChanged
@@ -193,7 +198,7 @@ namespace TCCMadeireira.Views
                 {
                     Funcionario funcionario = new Funcionario(txtNome.Text, txtIdentidade.Text,txtCargo.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.InsertFuncionario(funcionario);
-                    fUNCIONARIOSDataGridView.DataSource = dataSetMadeireira.CLIENTES;
+                    fUNCIONARIOSDataGridView.DataSource = dataSetMadeireiraV2.CLIENTES;
                     fUNCIONARIOSDataGridView.Update();
                     ControlEnable(false);
                     btnExcluir.Enabled = true;
@@ -204,6 +209,10 @@ namespace TCCMadeireira.Views
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                TableRefresh();
             }
         }
 
@@ -219,25 +228,29 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnExcluir.Text == "Excluir")
+                if (fUNCIONARIOSDataGridView.SelectedRows.Count == 1)
                 {
-                    txtIdentidade.Enabled = true;
-                    btnExcluir.Text = "Gravar";
+                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de identidade {0}?", fUNCIONARIOSDataGridView.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        Funcionario funcionario = new Funcionario(fUNCIONARIOSDataGridView.SelectedCells[2].Value.ToString());
+                        banco.DeleteFuncionario(funcionario);
+                        //log.WriteEntry(String.Format("Funcionário {0} excluido", funcionario.Identidade));
+                        BtnCancelar_Click(null, null);
+                    }
                 }
                 else
                 {
-                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de CPF {0}?", txtIdentidade.Text), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                    {
-                        Funcionario funcionario = new Funcionario(txtIdentidade.Text);
-                        fUNCIONARIOSTableAdapter.DeleteFuncionarioIdentidade(funcionario.Identidade);
-                        btnExcluir.Text = "Excluir";
-                        txtIdentidade.Enabled = false;
-                    }
+                    throw new Exception("Selecione uma e apenas uma linha na tabela para excluir");
                 }
             }
             catch (Exception ex)
             {
+                //log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                TableRefresh();
             }
         }
 
@@ -256,48 +269,80 @@ namespace TCCMadeireira.Views
             {
                 if (btnAlterar.Text == "Alterar")
                 {
-                    txtIdentidade.Enabled = true;
-                    btnExcluir.Enabled = false;
-                    btnCadastrar.Enabled = false;
-                    btnAlterar.Text = "Pesquisar";
-                }
-                else if (btnAlterar.Text == "Pesquisar")
-                {
-                    DataTable dt = new DataTable();
-                    Funcionario funcionario = new Funcionario(txtIdentidade.Text);
-                    dt = banco.SelectFuncionario(funcionario.Identidade);
-                    txtNome.Text = dt.Rows[0]["NOME_FUNCIONARIO"].ToString();
-                    txtIdentidade.Text = dt.Rows[0]["CPF/CNPJ_FUNCIONARIO"].ToString();
-                    txtCargo.Text = dt.Rows[0]["CARGO_FUNCIONARIO"].ToString();
-                    txtCep.Text = dt.Rows[0]["CEP_FUNCIONARIO"].ToString();
-                    txtRua.Text = dt.Rows[0]["RUA_FUNCIONARIO"].ToString();
-                    txtNumero.Text = dt.Rows[0]["NUMERO_FUNCIONARIO"].ToString();
-                    txtBairro.Text = dt.Rows[0]["BAIRRO_FUNCIONARIO"].ToString();
-                    txtCidade.Text = dt.Rows[0]["CIDADE_FUNCIONARIO"].ToString();
-                    cmbUf.Text = dt.Rows[0]["ESTADO_FUNCIONARIO"].ToString();
-                    txtTelefone.Text = dt.Rows[0]["TELEFONE_FUNCIONARIO"].ToString();
-                    txtCelular.Text = dt.Rows[0]["CELULAR_FUNCIONARIO"].ToString();
-                    txtEmail.Text = dt.Rows[0]["EMAIL_FUNCIONARIO"].ToString();
-                    lblDataInfo.Text = dt.Rows[0]["DATA_INFO_FUNCIONARIO"].ToString();
-                    txtObs.Text = dt.Rows[0]["OBS_FUNCIONARIO"].ToString();
-                    btnAlterar.Text = "Gravar";
+                    if(fUNCIONARIOSDataGridView.SelectedRows.Count == 1)
+                    {
+                        ControlEnable(true);
+                        btnCadastrar.Enabled = false;
+                        btnExcluir.Enabled = false;
+                        btnCancelar.Visible = true;
+                        DataTable dt = new DataTable();
+                        Funcionario funcionario = new Funcionario(txtIdentidade.Text);
+                        dt = banco.SelectFuncionario(funcionario.Identidade);
+                        txtNome.Text = dt.Rows[0]["NOME_FUNCIONARIO"].ToString();
+                        txtIdentidade.Text = dt.Rows[0]["CPF/CNPJ_FUNCIONARIO"].ToString();
+                        txtCargo.Text = dt.Rows[0]["CARGO_FUNCIONARIO"].ToString();
+                        txtCep.Text = dt.Rows[0]["CEP_FUNCIONARIO"].ToString();
+                        txtRua.Text = dt.Rows[0]["RUA_FUNCIONARIO"].ToString();
+                        txtNumero.Text = dt.Rows[0]["NUMERO_FUNCIONARIO"].ToString();
+                        txtBairro.Text = dt.Rows[0]["BAIRRO_FUNCIONARIO"].ToString();
+                        txtCidade.Text = dt.Rows[0]["CIDADE_FUNCIONARIO"].ToString();
+                        cmbUf.Text = dt.Rows[0]["ESTADO_FUNCIONARIO"].ToString();
+                        txtTelefone.Text = dt.Rows[0]["TELEFONE_FUNCIONARIO"].ToString();
+                        txtCelular.Text = dt.Rows[0]["CELULAR_FUNCIONARIO"].ToString();
+                        txtEmail.Text = dt.Rows[0]["EMAIL_FUNCIONARIO"].ToString();
+                        lblDataInfo.Text = dt.Rows[0]["DATA_INFO_FUNCIONARIO"].ToString();
+                        txtObs.Text = dt.Rows[0]["OBS_FUNCIONARIO"].ToString();
+                        btnAlterar.Text = "Gravar";
+                    }
+                    else
+                    {
+                        throw new Exception("Selecione uma e apenas uma linha na tabela para alterar");
+                    }
                 }
                 else
                 {
                     Funcionario funcionario = new Funcionario(txtNome.Text, txtIdentidade.Text,txtCargo.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.UpdateFuncionario(funcionario);
-                    fUNCIONARIOSDataGridView.DataSource = dataSetMadeireira.CLIENTES;
-                    fUNCIONARIOSDataGridView.Update();
                     ControlEnable(false);
-                    btnExcluir.Enabled = true;
-                    btnCadastrar.Enabled = true;
-                    btnCadastrar.Text = "Alterar";
+                    BtnCancelar_Click(null, null);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                TableRefresh();
+            }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in groupBox1.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    (ctrl as TextBox).Clear();
+                }
+                else if (ctrl is MaskedTextBox)
+                {
+                    (ctrl as MaskedTextBox).Clear();
+                }
+                else if (ctrl is ComboBox)
+                {
+                    (ctrl as ComboBox).SelectedItem = "SP";
+                }
+            }
+            btnCadastrar.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnCadastrar.Text = "Cadastrar";
+            btnAlterar.Text = "Alterar";
+            btnExcluir.Text = "Excluir";
+            btnCancelar.Visible = false;
+            ControlEnable(false);
+            txtFiltro.Clear();
         }
         #endregion
     }

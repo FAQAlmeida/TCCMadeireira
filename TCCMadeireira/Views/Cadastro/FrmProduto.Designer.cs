@@ -36,41 +36,41 @@
             System.Windows.Forms.Label lblQuantidade;
             System.Windows.Forms.Label vALOR_PRODUTOLabel;
             System.Windows.Forms.Label iD_FORNECEDOR_PRODUTOLabel;
-            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
-            this.ProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ProdutosTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
-            this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
-            this.FornecedoresTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.FornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numQuantidade = new System.Windows.Forms.NumericUpDown();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.oBS_PRODUTOTextBox = new System.Windows.Forms.TextBox();
             this.pRODUTOSDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDataInfo = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.MaskedTextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
+            this.pRODUTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
+            this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             lblNome = new System.Windows.Forms.Label();
             lblQuantidade = new System.Windows.Forms.Label();
             vALOR_PRODUTOLabel = new System.Windows.Forms.Label();
             iD_FORNECEDOR_PRODUTOLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProdutosBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -109,38 +109,6 @@
             iD_FORNECEDOR_PRODUTOLabel.TabIndex = 21;
             iD_FORNECEDOR_PRODUTOLabel.Text = "FORNECEDOR:";
             // 
-            // dataSetMadeireiraV2
-            // 
-            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
-            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ProdutosBindingSource
-            // 
-            this.ProdutosBindingSource.DataMember = "PRODUTOS";
-            this.ProdutosBindingSource.DataSource = this.dataSetMadeireiraV2;
-            // 
-            // ProdutosTableAdapter
-            // 
-            this.ProdutosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CLIENTESTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORESTableAdapter = this.FornecedoresTableAdapter;
-            this.tableAdapterManager.FORNECIMENTO_PRODUTOTableAdapter = null;
-            this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
-            this.tableAdapterManager.FUNCIONARIOSTableAdapter = null;
-            this.tableAdapterManager.PRODUTOSTableAdapter = this.ProdutosTableAdapter;
-            this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USERSTableAdapter = null;
-            this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
-            this.tableAdapterManager.VENDASTableAdapter = null;
-            // 
-            // FornecedoresTableAdapter
-            // 
-            this.FornecedoresTableAdapter.ClearBeforeFill = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -161,18 +129,16 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.FornecedoresBindingSource, "NOME_FORNECEDOR", true));
-            this.comboBox1.DataSource = this.FornecedoresBindingSource;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
+            this.comboBox1.DataSource = this.fORNECEDORESBindingSource;
+            this.comboBox1.DisplayMember = "NOME_FORNECEDOR";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(270, 53);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(252, 21);
             this.comboBox1.TabIndex = 26;
-            // 
-            // FornecedoresBindingSource
-            // 
-            this.FornecedoresBindingSource.DataMember = "FORNECEDORES";
-            this.FornecedoresBindingSource.DataSource = this.dataSetMadeireiraV2;
+            this.comboBox1.ValueMember = "NOME_FORNECEDOR";
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // numQuantidade
             // 
@@ -184,7 +150,6 @@
             // 
             // txtNome
             // 
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ProdutosBindingSource, "NOME_PRODUTO", true));
             this.txtNome.Location = new System.Drawing.Point(76, 27);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(225, 20);
@@ -192,7 +157,6 @@
             // 
             // txtValor
             // 
-            this.txtValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ProdutosBindingSource, "VALOR_PRODUTO", true));
             this.txtValor.Location = new System.Drawing.Point(60, 53);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(113, 20);
@@ -200,7 +164,6 @@
             // 
             // oBS_PRODUTOTextBox
             // 
-            this.oBS_PRODUTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ProdutosBindingSource, "OBS_PRODUTO", true));
             this.oBS_PRODUTOTextBox.Location = new System.Drawing.Point(9, 79);
             this.oBS_PRODUTOTextBox.Multiline = true;
             this.oBS_PRODUTOTextBox.Name = "oBS_PRODUTOTextBox";
@@ -215,53 +178,19 @@
             this.pRODUTOSDataGridView.AutoGenerateColumns = false;
             this.pRODUTOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pRODUTOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.pRODUTOSDataGridView.DataSource = this.ProdutosBindingSource;
+            this.iDPRODUTODataGridViewTextBoxColumn,
+            this.nOMEPRODUTODataGridViewTextBoxColumn,
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn,
+            this.vALORPRODUTODataGridViewTextBoxColumn,
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn,
+            this.oBSPRODUTODataGridViewTextBoxColumn});
+            this.pRODUTOSDataGridView.DataSource = this.pRODUTOSBindingSource;
             this.pRODUTOSDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pRODUTOSDataGridView.Location = new System.Drawing.Point(0, 0);
             this.pRODUTOSDataGridView.Name = "pRODUTOSDataGridView";
             this.pRODUTOSDataGridView.ReadOnly = true;
             this.pRODUTOSDataGridView.Size = new System.Drawing.Size(757, 215);
             this.pRODUTOSDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_PRODUTO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NOME_PRODUTO";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PRODUTO";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "QUANTIDADE_PRODUTO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "QUANTIDADE";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_FORNECEDOR_PRODUTO";
-            this.dataGridViewTextBoxColumn5.HeaderText = "FORNECEDOR";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "OBS_PRODUTO";
-            this.dataGridViewTextBoxColumn6.HeaderText = "OBS";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // panel1
             // 
@@ -315,6 +244,71 @@
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
+            // dataSetMadeireiraV2
+            // 
+            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
+            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pRODUTOSBindingSource
+            // 
+            this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
+            this.pRODUTOSBindingSource.DataSource = this.dataSetMadeireiraV2;
+            // 
+            // pRODUTOSTableAdapter
+            // 
+            this.pRODUTOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDPRODUTODataGridViewTextBoxColumn
+            // 
+            this.iDPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUTO";
+            this.iDPRODUTODataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDPRODUTODataGridViewTextBoxColumn.Name = "iDPRODUTODataGridViewTextBoxColumn";
+            this.iDPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nOMEPRODUTODataGridViewTextBoxColumn
+            // 
+            this.nOMEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "NOME_PRODUTO";
+            this.nOMEPRODUTODataGridViewTextBoxColumn.HeaderText = "PRODUTO";
+            this.nOMEPRODUTODataGridViewTextBoxColumn.Name = "nOMEPRODUTODataGridViewTextBoxColumn";
+            this.nOMEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qUANTIDADEPRODUTODataGridViewTextBoxColumn
+            // 
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE_PRODUTO";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.Name = "qUANTIDADEPRODUTODataGridViewTextBoxColumn";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vALORPRODUTODataGridViewTextBoxColumn
+            // 
+            this.vALORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "VALOR_PRODUTO";
+            this.vALORPRODUTODataGridViewTextBoxColumn.HeaderText = "VALOR";
+            this.vALORPRODUTODataGridViewTextBoxColumn.Name = "vALORPRODUTODataGridViewTextBoxColumn";
+            this.vALORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDFORNECEDORPRODUTODataGridViewTextBoxColumn
+            // 
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_FORNECEDOR_PRODUTO";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.HeaderText = "ID_FORNECEDOR";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.Name = "iDFORNECEDORPRODUTODataGridViewTextBoxColumn";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oBSPRODUTODataGridViewTextBoxColumn
+            // 
+            this.oBSPRODUTODataGridViewTextBoxColumn.DataPropertyName = "OBS_PRODUTO";
+            this.oBSPRODUTODataGridViewTextBoxColumn.HeaderText = "OBS";
+            this.oBSPRODUTODataGridViewTextBoxColumn.Name = "oBSPRODUTODataGridViewTextBoxColumn";
+            this.oBSPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fORNECEDORESBindingSource
+            // 
+            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
+            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireiraV2;
+            // 
+            // fORNECEDORESTableAdapter
+            // 
+            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,25 +324,20 @@
             this.Name = "FrmProduto";
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProdutosBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
-        private System.Windows.Forms.BindingSource ProdutosBindingSource;
-        private Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter ProdutosTableAdapter;
-        private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtValor;
@@ -361,14 +350,17 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.NumericUpDown numQuantidade;
-        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter FornecedoresTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource FornecedoresBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
+        private System.Windows.Forms.BindingSource pRODUTOSBindingSource;
+        private Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter pRODUTOSTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDFORNECEDORPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oBSPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource fORNECEDORESBindingSource;
+        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
     }
 }

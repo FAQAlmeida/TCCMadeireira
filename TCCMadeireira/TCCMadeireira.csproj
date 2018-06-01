@@ -152,11 +152,6 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Util\Banco.cs" />
-    <Compile Include="Bancos\DataSetMadeireira.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Bancos\DataSetMadeireiraV2.cs">
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
     </Compile>
@@ -281,17 +276,6 @@
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Bancos\DataSetMadeireira.xsc">
-      <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
-    </None>
-    <None Include="Bancos\DataSetMadeireira.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetMadeireira.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Bancos\DataSetMadeireira.xss">
-      <DependentUpon>DataSetMadeireira.xsd</DependentUpon>
     </None>
     <None Include="Bancos\DataSetMadeireiraV2.xsc">
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>

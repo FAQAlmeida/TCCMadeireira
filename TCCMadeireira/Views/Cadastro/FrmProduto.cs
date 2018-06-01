@@ -20,20 +20,18 @@ namespace TCCMadeireira.Views
             InitializeComponent();
         }
 
-        private void ProdutosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.ProdutosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSetMadeireiraV2);
-
-        }
-
         private void FrmProduto_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.FORNECEDORES'. Você pode movê-la ou removê-la conforme necessário.
-            this.FornecedoresTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
+            this.fORNECEDORESTableAdapter.Fill(this.dataSetMadeireiraV2.FORNECEDORES);
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.PRODUTOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.ProdutosTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
+            this.pRODUTOSTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            //comboBox1.DisplayMember = dataSetMadeireiraV2.FORNECEDORES.NOME_FORNECEDORColumn.ColumnName;
+            //comboBox1.Update();
         }
     }
 }

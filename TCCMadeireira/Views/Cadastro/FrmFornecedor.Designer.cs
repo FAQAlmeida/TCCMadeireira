@@ -516,8 +516,10 @@
             this.dgvFornecedores.DataSource = this.FornecedoresBindingSource;
             this.dgvFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFornecedores.Location = new System.Drawing.Point(0, 0);
+            this.dgvFornecedores.MultiSelect = false;
             this.dgvFornecedores.Name = "dgvFornecedores";
             this.dgvFornecedores.ReadOnly = true;
+            this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecedores.Size = new System.Drawing.Size(954, 258);
             this.dgvFornecedores.TabIndex = 0;
             this.dgvFornecedores.SelectionChanged += new System.EventHandler(this.FornecedoresDataGridView_SelectionChanged);

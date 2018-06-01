@@ -181,8 +181,18 @@ namespace TCCMadeireira.Views
         /// <param name="prodVenda"></param>
         internal void InsertDataProd(ProdOper prodVenda)
         {
-            produtos.Add(prodVenda);
-            dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+            bool existentId = FindRowById(prodVenda.Produto.Id, out DataGridViewRow row);
+            if (existentId)
+            {
+                produtos.Add(prodVenda);
+                dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+            }
+            else
+            {
+                produtos[produtos.IndexOf(FindProdById(prodVenda.Produto.Id))].Quantidade += prodVenda.Quantidade;
+                dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value = 
+                    (decimal)dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value + prodVenda.Quantidade;
+            }
         }
         private void ValorSet()
         {
@@ -261,7 +271,7 @@ namespace TCCMadeireira.Views
         }
         private List<int> IdsRepetidosInRows(DataGridViewRowCollection rows)
         {
-            List<int> todos = new List<int>();
+            List<int> todos =IdsDgv(rows);
             List<int> repetidos = new List<int>();
             foreach(DataGridViewRow row in rows)
             {
@@ -276,6 +286,42 @@ namespace TCCMadeireira.Views
                 }
             }
             return repetidos;
+        }
+        private List<int> IdsDgv(DataGridViewRowCollection rows)
+        {
+            List<int> todos = new List<int>();
+            foreach(DataGridViewRow row in dgvProdutos.Rows)
+            {
+                todos.Add((int) row.Cells["IdProduto"].Value);
+            }
+            return todos;
+        }
+        private bool FindRowById(int id, out DataGridViewRow row)
+        {
+            row = null;
+            if (IdsDgv(dgvProdutos.Rows).Contains(id))
+            {
+                foreach(DataGridViewRow r in dgvProdutos.Rows)
+                {
+                    if((int) r.Cells["idProduto"].Value == id)
+                    {
+                        row = r;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        private ProdOper FindProdById(int id)
+        {
+            foreach(ProdOper prod in produtos)
+            {
+                if(prod.Produto.Id == id)
+                {
+                    return prod;
+                }
+            }
+            return null;
         }
         #endregion
         #region @event.FormClosing

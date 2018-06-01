@@ -22,6 +22,7 @@ namespace TCCMadeireira.Views
         #region Atributes
         Log log = new Log();
         Bancos.Banco banco = new Bancos.Banco();
+        int id;
         #endregion
         #region Constructor
         /// <summary>
@@ -296,11 +297,12 @@ namespace TCCMadeireira.Views
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            Fornecedor fornecedor = null;
+
             try
             {
                 if (btnAlterar.Text == "Alterar")
                 {
+                    Fornecedor fornecedor = null;
                     if (dgvFornecedores.SelectedRows.Count == 1)
                     {
                         ControlEnable(true);
@@ -320,6 +322,7 @@ namespace TCCMadeireira.Views
                                 Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
                                 );
+                            id = fornecedor.Id;
                             txtFornecedor.Text = fornecedor.Nome;
                             txtIdentidade.Text = fornecedor.Identidade;
                             txtCep.Text = fornecedor.Cep;
@@ -348,8 +351,9 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    fornecedor = new Fornecedor(fornecedor.Id, txtFornecedor.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, txtObs.Text, DateTime.Now);
+                    Fornecedor fornecedor = new Fornecedor(id, txtFornecedor.Text, txtIdentidade.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, txtObs.Text, DateTime.Now);
                     banco.UpdateFornecedor(fornecedor);
+                    id = -1;
                     log.WriteEntry(String.Format("fornecedor {0} alterado", fornecedor.Identidade));
                     BtnCancelar_Click(null, null);
                 }

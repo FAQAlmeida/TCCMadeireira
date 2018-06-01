@@ -24,6 +24,7 @@ namespace TCCMadeireira.Model
         /// <returns></returns>
         public bool ValidarCpf(string cpf)
         {
+            //([0-9][.,/-]?){3}[0-9]{2} 
             regex = new Regex("[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{2}",
                 RegexOptions.None);
             try
@@ -97,6 +98,7 @@ namespace TCCMadeireira.Model
         /// <returns></returns>
         public bool ValidarCnpj(string cnpj)
         {
+            // [0-9]{2}[.,/-]?([0-9]{3}[.,/-]?){2}[0-9]{4}[.,/-]?[0-9]{2}
             regex = new Regex("[0-9]{2}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{4}[.,/-]?[0-9]{2}",
                 RegexOptions.None
                 );
