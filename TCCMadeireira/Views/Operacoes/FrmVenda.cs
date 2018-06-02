@@ -180,18 +180,17 @@ namespace TCCMadeireira.Views
         /// </summary>
         /// <param name="prodVenda"></param>
         internal void InsertDataProd(ProdOper prodVenda)
-        {
-            bool existentId = FindRowById(prodVenda.Produto.Id, out DataGridViewRow row);
-            if (existentId)
+        {            
+            if (!produtos.Exists(x => x.Produto.Id == prodVenda.Produto.Id))
             {
                 produtos.Add(prodVenda);
                 dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
             }
             else
             {
-                produtos[produtos.IndexOf(FindProdById(prodVenda.Produto.Id))].Quantidade += prodVenda.Quantidade;
-                dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value = 
-                    (decimal)dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value + prodVenda.Quantidade;
+                produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade += prodVenda.Quantidade;
+                DataGridViewRow row = dgvProdutos.Rows.Cast<DataGridViewRow>().Where(x => (int)x.Cells["IdProduto"].Value == prodVenda.Produto.Id).First();
+                dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value = produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade;
             }
         }
         private void ValorSet()

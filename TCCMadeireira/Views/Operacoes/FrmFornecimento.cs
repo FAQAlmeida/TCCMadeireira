@@ -34,7 +34,7 @@ namespace TCCMadeireira.Views
             InitializeComponent();
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             FrmProdOper frmProdVenda = new FrmProdOper(this);
             frmProdVenda.Show();
@@ -102,12 +102,7 @@ namespace TCCMadeireira.Views
                 txtIdentidade.Mask = "99,999,999/9999-99";
             }
         }
-        #endregion
-        private void BtnAdicionar_Click(object sender, EventArgs e)
-        {
-            FrmProdOper frmProdVenda = new FrmProdOper(this);
-            frmProdVenda.Show();
-        }
+        #endregion        
         #region Control.methods
         /// <summary>
         /// Insere os dados provinientes do FrmProdOper
@@ -126,8 +121,18 @@ namespace TCCMadeireira.Views
         /// <param name="prodVenda"></param>
         internal void InsertDataProd(ProdOper prodVenda)
         {
-            produtos.Add(prodVenda);
-            dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+            if (!produtos.Exists(x => x.Produto.Id == prodVenda.Produto.Id))
+            {
+                produtos.Add(prodVenda);
+                dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+            }
+            else
+            {
+                produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade += prodVenda.Quantidade;
+                dgvProdutos.Rows.Cast<DataGridViewRow>().Where(x => (int)x.Cells["IdProduto"].Value == prodVenda.Produto.Id).
+                    First().Cells["QuantidadeProduto"].Value = produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade;
+                ValorSet();
+            }
         }
         private void ValorSet()
         {

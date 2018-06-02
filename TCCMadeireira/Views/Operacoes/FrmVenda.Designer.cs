@@ -210,6 +210,7 @@
             this.ValorProduto});
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 16);
+            this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(531, 267);
