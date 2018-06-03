@@ -198,8 +198,6 @@ namespace TCCMadeireira.Views
                 {
                     Funcionario funcionario = new Funcionario(txtNome.Text, txtIdentidade.Text,txtCargo.Text, txtCep.Text, txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, cmbUf.Text, txtTelefone.Text, txtCelular.Text, txtEmail.Text, DateTime.Now, txtObs.Text);
                     banco.InsertFuncionario(funcionario);
-                    fUNCIONARIOSDataGridView.DataSource = dataSetMadeireiraV2.CLIENTES;
-                    fUNCIONARIOSDataGridView.Update();
                     ControlEnable(false);
                     btnExcluir.Enabled = true;
                     btnAlterar.Enabled = true;

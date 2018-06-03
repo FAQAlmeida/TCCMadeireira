@@ -69,7 +69,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDgv = new System.Windows.Forms.Panel();
             this.fUNCIONARIOSDataGridView = new System.Windows.Forms.DataGridView();
             this.iDFUNCIONARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEFUNCIONARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,7 +101,7 @@
             tELEFONE_CLIENTELabel = new System.Windows.Forms.Label();
             cELULAR_CLIENTELabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
@@ -208,7 +208,7 @@
             // 
             // lblDataInfo
             // 
-            this.lblDataInfo.Location = new System.Drawing.Point(708, 174);
+            this.lblDataInfo.Location = new System.Drawing.Point(702, 250);
             this.lblDataInfo.MaximumSize = new System.Drawing.Size(10000, 1000);
             this.lblDataInfo.Name = "lblDataInfo";
             this.lblDataInfo.Size = new System.Drawing.Size(100, 20);
@@ -247,6 +247,7 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(107, 20);
             this.txtFiltro.TabIndex = 46;
+            this.txtFiltro.TabStop = false;
             this.txtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
             // 
             // btnAlterar
@@ -254,7 +255,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(711, 81);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 45;
+            this.btnAlterar.TabIndex = 16;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
@@ -264,7 +265,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(711, 52);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 44;
+            this.btnExcluir.TabIndex = 15;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
@@ -274,7 +275,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(711, 23);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 43;
+            this.btnCadastrar.TabIndex = 14;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
@@ -329,7 +330,7 @@
             this.txtCargo.Location = new System.Drawing.Point(57, 70);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(370, 20);
-            this.txtCargo.TabIndex = 49;
+            this.txtCargo.TabIndex = 5;
             // 
             // rbtnCnpj
             // 
@@ -348,14 +349,14 @@
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(675, 102);
-            this.txtObs.TabIndex = 27;
+            this.txtObs.TabIndex = 13;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(418, 130);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(178, 20);
-            this.txtCidade.TabIndex = 15;
+            this.txtCidade.TabIndex = 11;
             // 
             // cmbUf
             // 
@@ -392,7 +393,7 @@
             this.cmbUf.Location = new System.Drawing.Point(632, 130);
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(52, 21);
-            this.cmbUf.TabIndex = 28;
+            this.cmbUf.TabIndex = 12;
             // 
             // txtCep
             // 
@@ -400,21 +401,21 @@
             this.txtCep.Mask = "99999-999";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(60, 20);
-            this.txtCep.TabIndex = 30;
+            this.txtCep.TabIndex = 7;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(63, 130);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(293, 20);
-            this.txtBairro.TabIndex = 13;
+            this.txtBairro.TabIndex = 10;
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(45, 101);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(553, 20);
-            this.txtRua.TabIndex = 9;
+            this.txtRua.TabIndex = 8;
             // 
             // txtCelular
             // 
@@ -422,7 +423,7 @@
             this.txtCelular.Mask = "(00)09999-9999";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(83, 20);
-            this.txtCelular.TabIndex = 32;
+            this.txtCelular.TabIndex = 6;
             // 
             // rbtnCpf
             // 
@@ -442,7 +443,7 @@
             this.txtNumero.Location = new System.Drawing.Point(632, 101);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(52, 20);
-            this.txtNumero.TabIndex = 11;
+            this.txtNumero.TabIndex = 9;
             // 
             // txtTelefone
             // 
@@ -450,37 +451,37 @@
             this.txtTelefone.Mask = "(00)09999-9999";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
-            this.txtTelefone.TabIndex = 31;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(54, 13);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(327, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             // 
             // txtIdentidade
             // 
             this.txtIdentidade.Location = new System.Drawing.Point(468, 13);
             this.txtIdentidade.Mask = "999,999,999-99";
             this.txtIdentidade.Name = "txtIdentidade";
-            this.txtIdentidade.Size = new System.Drawing.Size(107, 20);
-            this.txtIdentidade.TabIndex = 29;
+            this.txtIdentidade.Size = new System.Drawing.Size(83, 20);
+            this.txtIdentidade.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(57, 41);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(464, 20);
-            this.txtEmail.TabIndex = 23;
+            this.txtEmail.TabIndex = 3;
             // 
-            // panel1
+            // pnlDgv
             // 
-            this.panel1.Controls.Add(this.fUNCIONARIOSDataGridView);
-            this.panel1.Location = new System.Drawing.Point(12, 284);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(854, 355);
-            this.panel1.TabIndex = 49;
+            this.pnlDgv.Controls.Add(this.fUNCIONARIOSDataGridView);
+            this.pnlDgv.Location = new System.Drawing.Point(12, 284);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(854, 355);
+            this.pnlDgv.TabIndex = 49;
             // 
             // fUNCIONARIOSDataGridView
             // 
@@ -513,6 +514,7 @@
             this.fUNCIONARIOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fUNCIONARIOSDataGridView.Size = new System.Drawing.Size(854, 355);
             this.fUNCIONARIOSDataGridView.TabIndex = 0;
+            this.fUNCIONARIOSDataGridView.TabStop = false;
             this.fUNCIONARIOSDataGridView.SelectionChanged += new System.EventHandler(this.FUNCIONARIOSDataGridView_SelectionChanged);
             // 
             // iDFUNCIONARIODataGridViewTextBoxColumn
@@ -629,10 +631,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(711, 197);
+            this.btnCancelar.Location = new System.Drawing.Point(711, 161);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 50;
+            this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -643,7 +645,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 651);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.lblDataInfo);
             this.Controls.Add(this.rbtnCnpjFiltro);
             this.Controls.Add(this.rbtnCpfFiltro);
@@ -657,7 +659,7 @@
             this.Load += new System.EventHandler(this.FrmFuncionario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
@@ -691,7 +693,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.MaskedTextBox txtIdentidade;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDgv;
         private System.Windows.Forms.DataGridView fUNCIONARIOSDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;

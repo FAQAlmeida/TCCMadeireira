@@ -66,7 +66,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDgv = new System.Windows.Forms.Panel();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,7 +96,7 @@
             this.groupComp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,7 +175,7 @@
             // tELEFONE_FORNECEDORLabel
             // 
             tELEFONE_FORNECEDORLabel.AutoSize = true;
-            tELEFONE_FORNECEDORLabel.Location = new System.Drawing.Point(491, 50);
+            tELEFONE_FORNECEDORLabel.Location = new System.Drawing.Point(491, 52);
             tELEFONE_FORNECEDORLabel.Name = "tELEFONE_FORNECEDORLabel";
             tELEFONE_FORNECEDORLabel.Size = new System.Drawing.Size(66, 13);
             tELEFONE_FORNECEDORLabel.TabIndex = 18;
@@ -184,7 +184,7 @@
             // cELULAR_FORNECEDORLabel
             // 
             cELULAR_FORNECEDORLabel.AutoSize = true;
-            cELULAR_FORNECEDORLabel.Location = new System.Drawing.Point(654, 50);
+            cELULAR_FORNECEDORLabel.Location = new System.Drawing.Point(654, 51);
             cELULAR_FORNECEDORLabel.Name = "cELULAR_FORNECEDORLabel";
             cELULAR_FORNECEDORLabel.Size = new System.Drawing.Size(59, 13);
             cELULAR_FORNECEDORLabel.TabIndex = 20;
@@ -193,7 +193,7 @@
             // eMAIL_FORNECEDORLabel
             // 
             eMAIL_FORNECEDORLabel.AutoSize = true;
-            eMAIL_FORNECEDORLabel.Location = new System.Drawing.Point(6, 49);
+            eMAIL_FORNECEDORLabel.Location = new System.Drawing.Point(6, 51);
             eMAIL_FORNECEDORLabel.Name = "eMAIL_FORNECEDORLabel";
             eMAIL_FORNECEDORLabel.Size = new System.Drawing.Size(45, 13);
             eMAIL_FORNECEDORLabel.TabIndex = 22;
@@ -260,6 +260,7 @@
             // cmbUf
             // 
             this.cmbUf.FormattingEnabled = true;
+            this.cmbUf.ItemHeight = 13;
             this.cmbUf.Items.AddRange(new object[] {
             "",
             "AC",
@@ -292,7 +293,7 @@
             this.cmbUf.Location = new System.Drawing.Point(750, 102);
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(52, 21);
-            this.cmbUf.TabIndex = 33;
+            this.cmbUf.TabIndex = 11;
             // 
             // txtCep
             // 
@@ -300,23 +301,23 @@
             this.txtCep.Mask = "99999-999";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(60, 20);
-            this.txtCep.TabIndex = 35;
+            this.txtCep.TabIndex = 6;
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(719, 47);
+            this.txtCelular.Location = new System.Drawing.Point(719, 49);
             this.txtCelular.Mask = "(00)09999-9999";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(83, 20);
-            this.txtCelular.TabIndex = 37;
+            this.txtCelular.TabIndex = 5;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(563, 47);
+            this.txtTelefone.Location = new System.Drawing.Point(563, 49);
             this.txtTelefone.Mask = "(00)09999-9999";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
-            this.txtTelefone.TabIndex = 36;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtIdentidade
             // 
@@ -324,7 +325,7 @@
             this.txtIdentidade.Mask = "999,999,999-99";
             this.txtIdentidade.Name = "txtIdentidade";
             this.txtIdentidade.Size = new System.Drawing.Size(83, 20);
-            this.txtIdentidade.TabIndex = 34;
+            this.txtIdentidade.TabIndex = 2;
             // 
             // txtFornecedor
             // 
@@ -332,7 +333,7 @@
             this.txtFornecedor.Location = new System.Drawing.Point(97, 23);
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(402, 20);
-            this.txtFornecedor.TabIndex = 3;
+            this.txtFornecedor.TabIndex = 1;
             // 
             // FornecedoresBindingSource
             // 
@@ -350,7 +351,7 @@
             this.txtRua.Location = new System.Drawing.Point(146, 75);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(574, 20);
-            this.txtRua.TabIndex = 9;
+            this.txtRua.TabIndex = 7;
             // 
             // txtNumero
             // 
@@ -358,7 +359,7 @@
             this.txtNumero.Location = new System.Drawing.Point(754, 75);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(48, 20);
-            this.txtNumero.TabIndex = 11;
+            this.txtNumero.TabIndex = 8;
             // 
             // txtBairro
             // 
@@ -366,7 +367,7 @@
             this.txtBairro.Location = new System.Drawing.Point(63, 102);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(310, 20);
-            this.txtBairro.TabIndex = 13;
+            this.txtBairro.TabIndex = 9;
             // 
             // txtCidade
             // 
@@ -374,15 +375,15 @@
             this.txtCidade.Location = new System.Drawing.Point(435, 103);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(278, 20);
-            this.txtCidade.TabIndex = 15;
+            this.txtCidade.TabIndex = 10;
             // 
             // txtEmail
             // 
             this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FornecedoresBindingSource, "EMAIL_FORNECEDOR", true));
-            this.txtEmail.Location = new System.Drawing.Point(57, 46);
+            this.txtEmail.Location = new System.Drawing.Point(57, 48);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(428, 20);
-            this.txtEmail.TabIndex = 23;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtObs
             // 
@@ -391,7 +392,7 @@
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(793, 105);
-            this.txtObs.TabIndex = 27;
+            this.txtObs.TabIndex = 12;
             // 
             // FornecedoresTableAdapter
             // 
@@ -452,6 +453,7 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(85, 20);
             this.txtFiltro.TabIndex = 45;
+            this.txtFiltro.TabStop = false;
             this.txtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
             // 
             // btnAlterar
@@ -459,7 +461,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(826, 81);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 44;
+            this.btnAlterar.TabIndex = 15;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
@@ -469,7 +471,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(826, 51);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 43;
+            this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
@@ -479,18 +481,18 @@
             this.btnCadastrar.Location = new System.Drawing.Point(826, 23);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 42;
+            this.btnCadastrar.TabIndex = 13;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
-            // panel1
+            // pnlDgv
             // 
-            this.panel1.Controls.Add(this.dgvFornecedores);
-            this.panel1.Location = new System.Drawing.Point(12, 266);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 258);
-            this.panel1.TabIndex = 48;
+            this.pnlDgv.Controls.Add(this.dgvFornecedores);
+            this.pnlDgv.Location = new System.Drawing.Point(12, 266);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(954, 258);
+            this.pnlDgv.TabIndex = 48;
             // 
             // dgvFornecedores
             // 
@@ -522,6 +524,7 @@
             this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFornecedores.Size = new System.Drawing.Size(954, 258);
             this.dgvFornecedores.TabIndex = 0;
+            this.dgvFornecedores.TabStop = false;
             this.dgvFornecedores.SelectionChanged += new System.EventHandler(this.FornecedoresDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
@@ -620,7 +623,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(826, 159);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 49;
+            this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -631,7 +634,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 530);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.lblDataInfo);
             this.Controls.Add(this.rbtnCnpjFiltro);
             this.Controls.Add(this.rbtnCpfFiltro);
@@ -647,7 +650,7 @@
             this.groupComp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FornecedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -682,7 +685,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDgv;
         private System.Windows.Forms.DataGridView dgvFornecedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

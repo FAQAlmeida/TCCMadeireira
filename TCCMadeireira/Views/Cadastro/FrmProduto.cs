@@ -63,8 +63,8 @@ namespace TCCMadeireira.Views
                 {
                     txtNome.Text = (string)dgvProdutos.SelectedCells[1].Value;
                     numQuantidade.Value = (decimal)dgvProdutos.SelectedCells[2].Value;
-                    txtValor.Text = (string) dgvProdutos.SelectedCells[3].Value;
-                    comboBox1.SelectedValue = dgvProdutos.SelectedCells[4].Value;
+                    numValor.Value = (decimal) dgvProdutos.SelectedCells[3].Value;
+                    cmbFornecedores.SelectedValue = dgvProdutos.SelectedCells[4].Value;
                     txtObs.Text = (string)dgvProdutos.SelectedCells[5].Value;
                 }
             }
@@ -82,7 +82,7 @@ namespace TCCMadeireira.Views
         /// <param name="status">Define se o status vai ser true ou false</param>
         private void ControlEnable(bool status)
         {
-            foreach (Control ctrl in groupBox1.Controls)
+            foreach (Control ctrl in groupComp.Controls)
             {
                 if (ctrl is TextBox)
                 {
@@ -152,7 +152,7 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor((int) comboBox1.SelectedValue);
+                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor((int) cmbFornecedores.SelectedValue);
                     Fornecedor fornecedor = new Fornecedor(
                                 Convert.ToInt32(fornecedordt.Rows[0]["Id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
@@ -162,7 +162,7 @@ namespace TCCMadeireira.Views
                                 Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
                                 );
-                    Produto produto = new Produto(txtNome.Text, fornecedor, Convert.ToDecimal(txtValor.Text), numQuantidade.Value, txtObs.Text);
+                    Produto produto = new Produto(txtNome.Text, fornecedor, numValor.Value, numQuantidade.Value, txtObs.Text);
                     if (banco.SelectProduto(produto.Nome).Rows.Count == 0)
                     {
                         banco.InsertProduto(produto);
@@ -251,8 +251,8 @@ namespace TCCMadeireira.Views
                         dt = banco.SelectProduto(produto.Id);
                         txtNome.Text = dt.Rows[0]["NOME_PRODUTO"].ToString();
                         numQuantidade.Value = (decimal)dt.Rows[0]["QUANTIDADE_PRODUTO"];
-                        txtValor.Text = dt.Rows[0]["VALOR_PRODUTO"].ToString();
-                        comboBox1.SelectedValue = dt.Rows[0]["ID_FORNECEDOR_PRODUTO"];
+                        numValor.Value = (decimal) dt.Rows[0]["VALOR_PRODUTO"];
+                        cmbFornecedores.SelectedValue = dt.Rows[0]["ID_FORNECEDOR_PRODUTO"];
                         txtObs.Text = dt.Rows[0]["OBS_PRODUTO"].ToString();
                         btnAlterar.Text = "Gravar";
                     }
@@ -263,7 +263,7 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor((int) comboBox1.SelectedValue);
+                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor((int) cmbFornecedores.SelectedValue);
                     Fornecedor fornecedor = new Fornecedor(
                                 Convert.ToInt32(fornecedordt.Rows[0]["Id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
@@ -273,7 +273,7 @@ namespace TCCMadeireira.Views
                                 Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
                                 );
-                    Produto produto = new Produto(id, txtNome.Text, fornecedor, Convert.ToDecimal(txtValor.Text), numQuantidade.Value, txtObs.Text);
+                    Produto produto = new Produto(id, txtNome.Text, fornecedor, numValor.Value, numQuantidade.Value, txtObs.Text);
                     banco.UpdateProduto(produto);
                     //log.WriteEntry(String.Format("produto {0} alterado", produto.Nome));
                     BtnCancelar_Click(null, null);
@@ -298,7 +298,7 @@ namespace TCCMadeireira.Views
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             id = -1;
-            foreach (Control ctrl in groupBox1.Controls)
+            foreach (Control ctrl in groupComp.Controls)
             {
                 if (ctrl is TextBox)
                 {

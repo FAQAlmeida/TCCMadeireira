@@ -57,8 +57,8 @@
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
             this.rbtnCpf = new System.Windows.Forms.RadioButton();
             this.lblDataInfo = new System.Windows.Forms.Label();
-            this.pnlDvg = new System.Windows.Forms.Panel();
-            this.dvgClientes = new System.Windows.Forms.DataGridView();
+            this.pnlDgv = new System.Windows.Forms.Panel();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.iDCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDENTIDADECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,8 +102,8 @@
             eMAIL_CLIENTELabel = new System.Windows.Forms.Label();
             oBS__FORNECEDORLabel = new System.Windows.Forms.Label();
             this.groupComp.SuspendLayout();
-            this.pnlDvg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgClientes)).BeginInit();
+            this.pnlDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             this.pnlComp.SuspendLayout();
@@ -222,42 +222,42 @@
             this.txtNome.Location = new System.Drawing.Point(54, 13);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(327, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(146, 69);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(452, 20);
-            this.txtRua.TabIndex = 9;
+            this.txtRua.TabIndex = 7;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(632, 69);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(52, 20);
-            this.txtNumero.TabIndex = 11;
+            this.txtNumero.TabIndex = 8;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(63, 98);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(293, 20);
-            this.txtBairro.TabIndex = 13;
+            this.txtBairro.TabIndex = 9;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(418, 98);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(178, 20);
-            this.txtCidade.TabIndex = 15;
+            this.txtCidade.TabIndex = 10;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(57, 41);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(310, 20);
-            this.txtEmail.TabIndex = 23;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtObs
             // 
@@ -265,11 +265,12 @@
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(675, 102);
-            this.txtObs.TabIndex = 27;
+            this.txtObs.TabIndex = 12;
             // 
             // cmbUf
             // 
             this.cmbUf.FormattingEnabled = true;
+            this.cmbUf.ItemHeight = 13;
             this.cmbUf.Items.AddRange(new object[] {
             "",
             "AC",
@@ -310,7 +311,7 @@
             this.txtIdentidade.Mask = "999,999,999-99";
             this.txtIdentidade.Name = "txtIdentidade";
             this.txtIdentidade.Size = new System.Drawing.Size(85, 20);
-            this.txtIdentidade.TabIndex = 29;
+            this.txtIdentidade.TabIndex = 2;
             // 
             // txtCep
             // 
@@ -318,7 +319,7 @@
             this.txtCep.Mask = "99999-999";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(60, 20);
-            this.txtCep.TabIndex = 30;
+            this.txtCep.TabIndex = 6;
             // 
             // txtTelefone
             // 
@@ -326,7 +327,7 @@
             this.txtTelefone.Mask = "(00)09999-9999";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
-            this.txtTelefone.TabIndex = 31;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtCelular
             // 
@@ -334,7 +335,7 @@
             this.txtCelular.Mask = "(00)09999-9999";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(83, 20);
-            this.txtCelular.TabIndex = 32;
+            this.txtCelular.TabIndex = 5;
             // 
             // groupComp
             // 
@@ -405,22 +406,22 @@
             this.lblDataInfo.Text = "DATA_INFO";
             this.lblDataInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlDvg
+            // pnlDgv
             // 
-            this.pnlDvg.Controls.Add(this.dvgClientes);
-            this.pnlDvg.Location = new System.Drawing.Point(13, 254);
-            this.pnlDvg.Name = "pnlDvg";
-            this.pnlDvg.Size = new System.Drawing.Size(923, 343);
-            this.pnlDvg.TabIndex = 34;
+            this.pnlDgv.Controls.Add(this.dgvClientes);
+            this.pnlDgv.Location = new System.Drawing.Point(13, 254);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(923, 343);
+            this.pnlDgv.TabIndex = 34;
             // 
-            // dvgClientes
+            // dgvClientes
             // 
-            this.dvgClientes.AllowUserToAddRows = false;
-            this.dvgClientes.AllowUserToDeleteRows = false;
-            this.dvgClientes.AllowUserToOrderColumns = true;
-            this.dvgClientes.AutoGenerateColumns = false;
-            this.dvgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.AutoGenerateColumns = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDCLIENTEDataGridViewTextBoxColumn,
             this.nOMECLIENTEDataGridViewTextBoxColumn,
             this.iDENTIDADECLIENTEDataGridViewTextBoxColumn,
@@ -435,16 +436,17 @@
             this.eMAILCLIENTEDataGridViewTextBoxColumn,
             this.dATAINFOCLIENTEDataGridViewTextBoxColumn,
             this.oBSCLIENTEDataGridViewTextBoxColumn});
-            this.dvgClientes.DataSource = this.cLIENTESBindingSource;
-            this.dvgClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dvgClientes.Location = new System.Drawing.Point(0, 0);
-            this.dvgClientes.MultiSelect = false;
-            this.dvgClientes.Name = "dvgClientes";
-            this.dvgClientes.ReadOnly = true;
-            this.dvgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgClientes.Size = new System.Drawing.Size(923, 343);
-            this.dvgClientes.TabIndex = 0;
-            this.dvgClientes.SelectionChanged += new System.EventHandler(this.ClientesDataGridView_SelectionChanged);
+            this.dgvClientes.DataSource = this.cLIENTESBindingSource;
+            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvClientes.MultiSelect = false;
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(923, 343);
+            this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.TabStop = false;
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.ClientesDataGridView_SelectionChanged);
             // 
             // iDCLIENTEDataGridViewTextBoxColumn
             // 
@@ -559,7 +561,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(3, 3);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 35;
+            this.btnCadastrar.TabIndex = 13;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
@@ -569,7 +571,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(3, 32);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 36;
+            this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
@@ -579,7 +581,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(3, 61);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 37;
+            this.btnAlterar.TabIndex = 15;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
@@ -591,6 +593,7 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(85, 20);
             this.txtFiltro.TabIndex = 38;
+            this.txtFiltro.TabStop = false;
             this.txtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
             // 
             // rbtnCnpjFiltro
@@ -666,7 +669,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(3, 140);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -691,7 +694,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 610);
-            this.Controls.Add(this.pnlDvg);
+            this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.groupComp);
             this.Controls.Add(oBS__FORNECEDORLabel);
             this.Controls.Add(this.pnlComp);
@@ -700,8 +703,8 @@
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.groupComp.ResumeLayout(false);
             this.groupComp.PerformLayout();
-            this.pnlDvg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgClientes)).EndInit();
+            this.pnlDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             this.pnlComp.ResumeLayout(false);
@@ -728,8 +731,8 @@
         private System.Windows.Forms.GroupBox groupComp;
         private System.Windows.Forms.RadioButton rbtnCnpj;
         private System.Windows.Forms.RadioButton rbtnCpf;
-        private System.Windows.Forms.Panel pnlDvg;
-        private System.Windows.Forms.DataGridView dvgClientes;
+        private System.Windows.Forms.Panel pnlDgv;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;

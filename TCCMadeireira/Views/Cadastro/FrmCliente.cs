@@ -52,7 +52,7 @@ namespace TCCMadeireira.Views
                 // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireira1.CLIENTES'. Você pode movê-la ou removê-la conforme necessário.
                 this.cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
                 this.btnCancelar.Visible = false;
-                this.dvgClientes.DataSource = this.cLIENTESBindingSource;
+                this.dgvClientes.DataSource = this.cLIENTESBindingSource;
                 this.rbtnCpf.Checked = true;
                 this.rbtnCpfFiltro.Checked = true;
                 this.ControlEnable(false);
@@ -124,11 +124,11 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (dvgClientes.SelectedRows.Count == 1)
+                if (dgvClientes.SelectedRows.Count == 1)
                 {
-                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de identidade {0}?", dvgClientes.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de identidade {0}?", dgvClientes.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
-                        Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
+                        Cliente cliente = new Cliente(dgvClientes.SelectedCells[2].Value.ToString());
                         banco.DeleteCliente(cliente);
                         log.WriteEntry(String.Format("cliente {0} excluido", cliente.Identidade));
                         BtnCancelar_Click(null, null);
@@ -165,7 +165,7 @@ namespace TCCMadeireira.Views
             {                
                 if (btnAlterar.Text == "Alterar")
                 {
-                    if (dvgClientes.SelectedRows.Count == 1)
+                    if (dgvClientes.SelectedRows.Count == 1)
                     {
                         ControlEnable(true);
                         txtIdentidade.Enabled = false;
@@ -173,7 +173,7 @@ namespace TCCMadeireira.Views
                         btnExcluir.Enabled = false;
                         btnCancelar.Visible = true;
                         DataTable dt = new DataTable();
-                        Cliente cliente = new Cliente(dvgClientes.SelectedCells[2].Value.ToString());
+                        Cliente cliente = new Cliente(dgvClientes.SelectedCells[2].Value.ToString());
                         dt = banco.SelectCliente(cliente.Identidade);
                         txtNome.Text = dt.Rows[0]["NOME_CLIENTE"].ToString();
                         txtIdentidade.Text = dt.Rows[0]["IDENTIDADE_CLIENTE"].ToString();
@@ -258,21 +258,21 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (dvgClientes.SelectedCells.Count == 14)
+                if (dgvClientes.SelectedCells.Count == 14)
                 {
-                    txtNome.Text = dvgClientes.SelectedCells[1].Value.ToString().Trim();
-                    txtIdentidade.Text = dvgClientes.SelectedCells[2].Value.ToString().Trim();
-                    txtCep.Text = dvgClientes.SelectedCells[3].Value.ToString().Trim();
-                    txtRua.Text = dvgClientes.SelectedCells[4].Value.ToString().Trim();
-                    txtNumero.Text = dvgClientes.SelectedCells[5].Value.ToString().Trim();
-                    txtBairro.Text = dvgClientes.SelectedCells[6].Value.ToString().Trim();
-                    txtCidade.Text = dvgClientes.SelectedCells[7].Value.ToString().Trim();
-                    cmbUf.Text = dvgClientes.SelectedCells[8].Value.ToString().Trim();
-                    txtTelefone.Text = dvgClientes.SelectedCells[9].Value.ToString().Trim();
-                    txtCelular.Text = dvgClientes.SelectedCells[10].Value.ToString().Trim();
-                    txtEmail.Text = dvgClientes.SelectedCells[11].Value.ToString().Trim();
-                    lblDataInfo.Text = String.Concat("DATA INFO: ", dvgClientes.SelectedCells[12].Value.ToString().Trim());
-                    txtObs.Text = dvgClientes.SelectedCells[13].Value.ToString().Trim();
+                    txtNome.Text = dgvClientes.SelectedCells[1].Value.ToString().Trim();
+                    txtIdentidade.Text = dgvClientes.SelectedCells[2].Value.ToString().Trim();
+                    txtCep.Text = dgvClientes.SelectedCells[3].Value.ToString().Trim();
+                    txtRua.Text = dgvClientes.SelectedCells[4].Value.ToString().Trim();
+                    txtNumero.Text = dgvClientes.SelectedCells[5].Value.ToString().Trim();
+                    txtBairro.Text = dgvClientes.SelectedCells[6].Value.ToString().Trim();
+                    txtCidade.Text = dgvClientes.SelectedCells[7].Value.ToString().Trim();
+                    cmbUf.Text = dgvClientes.SelectedCells[8].Value.ToString().Trim();
+                    txtTelefone.Text = dgvClientes.SelectedCells[9].Value.ToString().Trim();
+                    txtCelular.Text = dgvClientes.SelectedCells[10].Value.ToString().Trim();
+                    txtEmail.Text = dgvClientes.SelectedCells[11].Value.ToString().Trim();
+                    lblDataInfo.Text = String.Concat("DATA INFO: ", dgvClientes.SelectedCells[12].Value.ToString().Trim());
+                    txtObs.Text = dgvClientes.SelectedCells[13].Value.ToString().Trim();
                 }
             }
             catch (Exception ex)
@@ -335,7 +335,7 @@ namespace TCCMadeireira.Views
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
             this.cLIENTESBindingSource.Filter = String.Format("{0} like '%{1}%'", "IDENTIDADE_CLIENTE", txtFiltro.Text);
-            if(dvgClientes.RowCount <= 0)
+            if(dgvClientes.RowCount <= 0)
             {
                 this.cLIENTESBindingSource.RemoveFilter();
             }
@@ -372,7 +372,7 @@ namespace TCCMadeireira.Views
         private void TableRefresh()
         {
             cLIENTESTableAdapter.Fill(this.dataSetMadeireiraV2.CLIENTES);
-            dvgClientes.Refresh();
+            dgvClientes.Refresh();
         }
 
         private string CharResearch(string statement)

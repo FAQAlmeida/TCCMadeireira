@@ -45,7 +45,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 55);
+            this.label2.Location = new System.Drawing.Point(6, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 8;
@@ -54,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 29);
+            this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
@@ -62,35 +62,36 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(107, 71);
+            this.txtSenha.Location = new System.Drawing.Point(56, 45);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 6;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(107, 45);
+            this.txtUsuario.Location = new System.Drawing.Point(58, 19);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 5;
+            this.txtUsuario.Size = new System.Drawing.Size(173, 20);
+            this.txtUsuario.TabIndex = 1;
             // 
             // cmbNivel
-            // 
+            //
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.Items.AddRange(new object[] {
             "ADMIN",
             "USER"});
-            this.cmbNivel.Location = new System.Drawing.Point(107, 98);
+            this.cmbNivel.Location = new System.Drawing.Point(46, 72);
             this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(121, 21);
-            this.cmbNivel.TabIndex = 9;
+            this.cmbNivel.Size = new System.Drawing.Size(100, 21);
+            this.cmbNivel.TabIndex = 3;
+            this.cmbNivel.SelectedItem = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 82);
+            this.label3.Location = new System.Drawing.Point(6, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 10;
@@ -98,28 +99,28 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(283, 29);
+            this.btnCadastrar.Location = new System.Drawing.Point(267, 22);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 11;
+            this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(283, 58);
+            this.btnExcluir.Location = new System.Drawing.Point(267, 51);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 12;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(283, 87);
+            this.btnAlterar.Location = new System.Drawing.Point(267, 80);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 13;
+            this.btnAlterar.TabIndex = 6;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +129,10 @@
             this.grbUsuario.Controls.Add(this.label2);
             this.grbUsuario.Controls.Add(this.label3);
             this.grbUsuario.Controls.Add(this.label1);
-            this.grbUsuario.Location = new System.Drawing.Point(28, 19);
+            this.grbUsuario.Controls.Add(this.txtUsuario);
+            this.grbUsuario.Controls.Add(this.cmbNivel);
+            this.grbUsuario.Controls.Add(this.txtSenha);
+            this.grbUsuario.Location = new System.Drawing.Point(12, 12);
             this.grbUsuario.Name = "grbUsuario";
             this.grbUsuario.Size = new System.Drawing.Size(237, 127);
             this.grbUsuario.TabIndex = 14;
@@ -137,10 +141,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(283, 116);
+            this.btnCancelar.Location = new System.Drawing.Point(267, 109);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -149,21 +153,17 @@
             this.AccessibleName = "FrmUsuario";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 178);
+            this.ClientSize = new System.Drawing.Size(359, 152);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.cmbNivel);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.grbUsuario);
             this.Name = "FrmUsuario";
             this.Text = "Usuario";
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
