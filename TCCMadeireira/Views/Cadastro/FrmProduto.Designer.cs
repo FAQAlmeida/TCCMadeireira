@@ -44,7 +44,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
-            this.pRODUTOSDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +130,6 @@
             // comboBox1
             // 
             this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
             this.comboBox1.DataSource = this.fORNECEDORESBindingSource;
             this.comboBox1.DisplayMember = "NOME_FORNECEDOR";
             this.comboBox1.FormattingEnabled = true;
@@ -181,27 +180,29 @@
             this.txtObs.Size = new System.Drawing.Size(513, 82);
             this.txtObs.TabIndex = 24;
             // 
-            // pRODUTOSDataGridView
+            // dgvProdutos
             // 
-            this.pRODUTOSDataGridView.AllowUserToAddRows = false;
-            this.pRODUTOSDataGridView.AllowUserToDeleteRows = false;
-            this.pRODUTOSDataGridView.AllowUserToOrderColumns = true;
-            this.pRODUTOSDataGridView.AutoGenerateColumns = false;
-            this.pRODUTOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pRODUTOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToOrderColumns = true;
+            this.dgvProdutos.AutoGenerateColumns = false;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDPRODUTODataGridViewTextBoxColumn,
             this.nOMEPRODUTODataGridViewTextBoxColumn,
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn,
             this.vALORPRODUTODataGridViewTextBoxColumn,
             this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn,
             this.oBSPRODUTODataGridViewTextBoxColumn});
-            this.pRODUTOSDataGridView.DataSource = this.pRODUTOSBindingSource;
-            this.pRODUTOSDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pRODUTOSDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.pRODUTOSDataGridView.Name = "pRODUTOSDataGridView";
-            this.pRODUTOSDataGridView.ReadOnly = true;
-            this.pRODUTOSDataGridView.Size = new System.Drawing.Size(757, 215);
-            this.pRODUTOSDataGridView.TabIndex = 1;
+            this.dgvProdutos.DataSource = this.pRODUTOSBindingSource;
+            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProdutos.Location = new System.Drawing.Point(0, 0);
+            this.dgvProdutos.MultiSelect = false;
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutos.Size = new System.Drawing.Size(757, 215);
+            this.dgvProdutos.TabIndex = 1;
             // 
             // iDPRODUTODataGridViewTextBoxColumn
             // 
@@ -252,7 +253,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pRODUTOSDataGridView);
+            this.panel1.Controls.Add(this.dgvProdutos);
             this.panel1.Location = new System.Drawing.Point(12, 200);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(757, 215);
@@ -333,7 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -346,7 +347,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtObs;
-        private System.Windows.Forms.DataGridView pRODUTOSDataGridView;
+        private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox txtFiltro;
         private System.Windows.Forms.Button btnAlterar;

@@ -42,5 +42,9 @@ namespace TCCMadeireira.Models
         {
             this.Nome = nome.ToUpper().Trim();
         }
+        public Produto(int id)
+        {
+            this.id = id;
+        }
     }
 }

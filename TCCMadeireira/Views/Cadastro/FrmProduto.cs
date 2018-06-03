@@ -15,7 +15,8 @@ namespace TCCMadeireira.Views
 {
     public partial class FrmProduto : Form
     {
-        Banco banco = new Banco(); 
+        Banco banco = new Banco();
+        int id;
         /// <summary>
         /// Inicializa o Form de Produtos
         /// </summary>
@@ -33,7 +34,7 @@ namespace TCCMadeireira.Views
                 // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.PRODUTOS'. Você pode movê-la ou removê-la conforme necessário.
                 this.pRODUTOSTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
                 this.btnCancelar.Visible = false;
-                this.pRODUTOSDataGridView.DataSource = this.pRODUTOSBindingSource;
+                this.dgvProdutos.DataSource = this.pRODUTOSBindingSource;
                 this.ControlEnable(false);
             }catch(Exception ex)
             {
@@ -58,13 +59,13 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (pRODUTOSDataGridView.SelectedRows.Count == 1)
+                if (dgvProdutos.SelectedRows.Count == 1)
                 {
-                    txtNome.Text = (string)pRODUTOSDataGridView.SelectedCells[1].Value;
-                    numQuantidade.Value = (decimal)pRODUTOSDataGridView.SelectedCells[2].Value;
-                    txtValor.Text = (string) pRODUTOSDataGridView.SelectedCells[3].Value;
-                    comboBox1.SelectedValue = pRODUTOSDataGridView.SelectedCells[4].Value;
-                    txtObs.Text = (string)pRODUTOSDataGridView.SelectedCells[5].Value;
+                    txtNome.Text = (string)dgvProdutos.SelectedCells[1].Value;
+                    numQuantidade.Value = (decimal)dgvProdutos.SelectedCells[2].Value;
+                    txtValor.Text = (string) dgvProdutos.SelectedCells[3].Value;
+                    comboBox1.SelectedValue = dgvProdutos.SelectedCells[4].Value;
+                    txtObs.Text = (string)dgvProdutos.SelectedCells[5].Value;
                 }
             }
             catch (Exception ex)
@@ -108,7 +109,7 @@ namespace TCCMadeireira.Views
         private void TableRefresh()
         {
             pRODUTOSTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
-            pRODUTOSDataGridView.Refresh();
+            dgvProdutos.Refresh();
         }
         #endregion
         #region @event.TextChanged
@@ -122,7 +123,7 @@ namespace TCCMadeireira.Views
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
             this.pRODUTOSBindingSource.Filter = String.Format("{0} like '%{1}%'", "IDENTIDADE_CLIENTE", txtFiltro.Text);
-            if (pRODUTOSDataGridView.RowCount <= 0)
+            if (dgvProdutos.RowCount <= 0)
             {
                 this.pRODUTOSBindingSource.RemoveFilter();
             }
@@ -151,7 +152,7 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor(1);
+                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor((int) comboBox1.SelectedValue);
                     Fornecedor fornecedor = new Fornecedor(
                                 Convert.ToInt32(fornecedordt.Rows[0]["Id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
@@ -197,11 +198,11 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (pRODUTOSDataGridView.SelectedRows.Count == 1)
+                if (dgvProdutos.SelectedRows.Count == 1)
                 {
-                    if (MessageBox.Show(String.Format("Você deseja excluir {0}?", (string)pRODUTOSDataGridView.SelectedCells[1].Value), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (MessageBox.Show(String.Format("Você deseja excluir {0}?", (string)dgvProdutos.SelectedCells[1].Value), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
-                        Produto produto = new Produto((string)pRODUTOSDataGridView.SelectedCells[1].Value);
+                        Produto produto = new Produto((int)dgvProdutos.SelectedCells[0].Value);
                         banco.DeleteProduto(produto);
                         //log.WriteEntry(String.Format("cliente {0} excluido", cliente.Identidade));
                         BtnCancelar_Click(null, null);
@@ -238,15 +239,16 @@ namespace TCCMadeireira.Views
             {
                 if (btnAlterar.Text == "Alterar")
                 {
-                    if (pRODUTOSDataGridView.SelectedRows.Count == 1)
+                    if (dgvProdutos.SelectedRows.Count == 1)
                     {
                         ControlEnable(true);
                         btnCadastrar.Enabled = false;
                         btnExcluir.Enabled = false;
                         btnCancelar.Visible = true;
                         PRODUTOSDataTable dt = new PRODUTOSDataTable();
-                        Produto produto = new Produto(pRODUTOSDataGridView.SelectedCells[1].Value.ToString());
-                        dt = banco.SelectProduto(produto.Nome);
+                        id = (int)dgvProdutos.SelectedCells[0].Value;
+                        Produto produto = new Produto(id);
+                        dt = banco.SelectProduto(produto.Id);
                         txtNome.Text = dt.Rows[0]["NOME_PRODUTO"].ToString();
                         numQuantidade.Value = (decimal)dt.Rows[0]["QUANTIDADE_PRODUTO"];
                         txtValor.Text = dt.Rows[0]["VALOR_PRODUTO"].ToString();
@@ -261,7 +263,7 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor(((FORNECEDORESRow)fORNECEDORESBindingSource.Current).ID_FORNECEDOR);
+                    FORNECEDORESDataTable fornecedordt = fORNECEDORESTableAdapter.GetDataFornecedor((int) comboBox1.SelectedValue);
                     Fornecedor fornecedor = new Fornecedor(
                                 Convert.ToInt32(fornecedordt.Rows[0]["Id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
@@ -271,7 +273,7 @@ namespace TCCMadeireira.Views
                                 Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
                                 Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
                                 );
-                    Produto produto = new Produto(txtNome.Text, fornecedor, Convert.ToDecimal(txtValor.Text), numQuantidade.Value, txtObs.Text);
+                    Produto produto = new Produto(id, txtNome.Text, fornecedor, Convert.ToDecimal(txtValor.Text), numQuantidade.Value, txtObs.Text);
                     banco.UpdateProduto(produto);
                     //log.WriteEntry(String.Format("produto {0} alterado", produto.Nome));
                     BtnCancelar_Click(null, null);
@@ -295,6 +297,7 @@ namespace TCCMadeireira.Views
         /// <param name="e"></param>
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
+            id = -1;
             foreach (Control ctrl in groupBox1.Controls)
             {
                 if (ctrl is TextBox)

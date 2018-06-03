@@ -168,6 +168,7 @@ namespace TCCMadeireira.Views
                     if (dvgClientes.SelectedRows.Count == 1)
                     {
                         ControlEnable(true);
+                        txtIdentidade.Enabled = false;
                         btnCadastrar.Enabled = false;
                         btnExcluir.Enabled = false;
                         btnCancelar.Visible = true;

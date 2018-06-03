@@ -172,6 +172,7 @@ namespace TCCMadeireira.Bancos
         }
         public void UpdateProduto(Produto produto)
         {
+            
             produtosTableAdapter.Update(produto.Nome, produto.Quantidade, produto.Valor, produto.Fornecedor.Id, produto.Obs, produto.Id);
         }
         public void InsertProduto(Produto produto)
