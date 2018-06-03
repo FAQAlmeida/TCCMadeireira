@@ -793,6 +793,67 @@
             Inicializa o Form de Produtos
             </summary>
         </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.ProdutosDataGridView_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento de SelectionChanged do DataGridView
+            <para>Preenche todos os Controls da GroupBox com os dados da seleção</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.ControlEnable(System.Boolean)">
+            <summary>
+            Define o status de todos os controles de entrada presentes no GroupBox baseado no parâmetro status
+            </summary>
+            <param name="status">Define se o status vai ser true ou false</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.TxtFiltro_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento do txtFiltro para seleção de registros especificos
+            <para>A seleção se dará por meio do número da identidade</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnCadastrar
+            <para>Possui 2 etapas:</para>
+            <para>1) Preparar o form para receber as informações</para>
+            <para>2) Registra as informações recebidas, enviados ao model Cliente depois ao objeto banco</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.BtnExcluir_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnExcluir
+            <para>Possui 2 etapas:</para>
+            <para>1) Preparar a txtIdentidade para receber a identidade</para>
+            <para>2) Pergunta se o usuário deseja realmente excluir o registro basedo na X identidade e, se sim, exclui o registro</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.BtnAlterar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnAlterar
+            <para>Possui 3 etapas:</para>
+            <para>1) Preparar a txtIdentidade para receber a identidade</para>
+            <para>2) Recebe a identidade para pesquisa do cliente</para>
+            <para>3) Armazena as informações recebidas se o usuário confirmar</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmProduto.BtnCancelar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnCancelar
+            <para>Retorna o form ao seu estado inicial</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:TCCMadeireira.Views.FrmProduto.components">
             <summary>
             Required designer variable.

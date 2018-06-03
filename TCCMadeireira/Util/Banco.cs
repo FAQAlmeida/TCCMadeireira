@@ -162,6 +162,10 @@ namespace TCCMadeireira.Bancos
         {
             return produtosTableAdapter.GetData();
         }
+        public PRODUTOSDataTable SelectProduto(string nome)
+        {
+            return produtosTableAdapter.GetDataProdNome(nome);
+        }
         public PRODUTOSDataTable SelectProduto(int id)
         {
             return produtosTableAdapter.GetDataProduto(id);

@@ -38,39 +38,39 @@
             System.Windows.Forms.Label iD_FORNECEDOR_PRODUTOLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
             this.numQuantidade = new System.Windows.Forms.NumericUpDown();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.oBS_PRODUTOTextBox = new System.Windows.Forms.TextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.pRODUTOSDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDataInfo = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.MaskedTextBox();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
-            this.pRODUTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oBSPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fORNECEDORESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pRODUTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFiltro = new System.Windows.Forms.MaskedTextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
+            this.btnCancelar = new System.Windows.Forms.Button();
             lblNome = new System.Windows.Forms.Label();
             lblQuantidade = new System.Windows.Forms.Label();
             vALOR_PRODUTOLabel = new System.Windows.Forms.Label();
             iD_FORNECEDOR_PRODUTOLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
@@ -119,7 +119,7 @@
             this.groupBox1.Controls.Add(vALOR_PRODUTOLabel);
             this.groupBox1.Controls.Add(this.txtValor);
             this.groupBox1.Controls.Add(iD_FORNECEDOR_PRODUTOLabel);
-            this.groupBox1.Controls.Add(this.oBS_PRODUTOTextBox);
+            this.groupBox1.Controls.Add(this.txtObs);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(536, 181);
@@ -129,6 +129,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
             this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.fORNECEDORESBindingSource, "NOME_FORNECEDOR", true));
             this.comboBox1.DataSource = this.fORNECEDORESBindingSource;
             this.comboBox1.DisplayMember = "NOME_FORNECEDOR";
@@ -137,8 +138,18 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(252, 21);
             this.comboBox1.TabIndex = 26;
-            this.comboBox1.ValueMember = "NOME_FORNECEDOR";
+            this.comboBox1.ValueMember = "ID_FORNECEDOR";
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
+            // 
+            // fORNECEDORESBindingSource
+            // 
+            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
+            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireiraV2;
+            // 
+            // dataSetMadeireiraV2
+            // 
+            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
+            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // numQuantidade
             // 
@@ -162,13 +173,13 @@
             this.txtValor.Size = new System.Drawing.Size(113, 20);
             this.txtValor.TabIndex = 20;
             // 
-            // oBS_PRODUTOTextBox
+            // txtObs
             // 
-            this.oBS_PRODUTOTextBox.Location = new System.Drawing.Point(9, 79);
-            this.oBS_PRODUTOTextBox.Multiline = true;
-            this.oBS_PRODUTOTextBox.Name = "oBS_PRODUTOTextBox";
-            this.oBS_PRODUTOTextBox.Size = new System.Drawing.Size(513, 82);
-            this.oBS_PRODUTOTextBox.TabIndex = 24;
+            this.txtObs.Location = new System.Drawing.Point(9, 79);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(513, 82);
+            this.txtObs.TabIndex = 24;
             // 
             // pRODUTOSDataGridView
             // 
@@ -191,72 +202,6 @@
             this.pRODUTOSDataGridView.ReadOnly = true;
             this.pRODUTOSDataGridView.Size = new System.Drawing.Size(757, 215);
             this.pRODUTOSDataGridView.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pRODUTOSDataGridView);
-            this.panel1.Location = new System.Drawing.Point(12, 200);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(757, 215);
-            this.panel1.TabIndex = 2;
-            // 
-            // lblDataInfo
-            // 
-            this.lblDataInfo.Location = new System.Drawing.Point(561, 173);
-            this.lblDataInfo.MaximumSize = new System.Drawing.Size(10000, 1000);
-            this.lblDataInfo.Name = "lblDataInfo";
-            this.lblDataInfo.Size = new System.Drawing.Size(100, 20);
-            this.lblDataInfo.TabIndex = 41;
-            this.lblDataInfo.Text = "DATA_INFO";
-            this.lblDataInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(554, 108);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(107, 20);
-            this.txtFiltro.TabIndex = 45;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(554, 79);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 44;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(554, 50);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 43;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(554, 21);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 42;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // dataSetMadeireiraV2
-            // 
-            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
-            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pRODUTOSBindingSource
-            // 
-            this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
-            this.pRODUTOSBindingSource.DataSource = this.dataSetMadeireiraV2;
-            // 
-            // pRODUTOSTableAdapter
-            // 
-            this.pRODUTOSTableAdapter.ClearBeforeFill = true;
             // 
             // iDPRODUTODataGridViewTextBoxColumn
             // 
@@ -300,21 +245,80 @@
             this.oBSPRODUTODataGridViewTextBoxColumn.Name = "oBSPRODUTODataGridViewTextBoxColumn";
             this.oBSPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // fORNECEDORESBindingSource
+            // pRODUTOSBindingSource
             // 
-            this.fORNECEDORESBindingSource.DataMember = "FORNECEDORES";
-            this.fORNECEDORESBindingSource.DataSource = this.dataSetMadeireiraV2;
+            this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
+            this.pRODUTOSBindingSource.DataSource = this.dataSetMadeireiraV2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pRODUTOSDataGridView);
+            this.panel1.Location = new System.Drawing.Point(12, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(757, 215);
+            this.panel1.TabIndex = 2;
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(554, 108);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(107, 20);
+            this.txtFiltro.TabIndex = 45;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(554, 79);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 44;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(554, 50);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 43;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(554, 21);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.TabIndex = 42;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
+            // 
+            // pRODUTOSTableAdapter
+            // 
+            this.pRODUTOSTableAdapter.ClearBeforeFill = true;
             // 
             // fORNECEDORESTableAdapter
             // 
             this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(554, 134);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 46;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 426);
-            this.Controls.Add(this.lblDataInfo);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
@@ -326,12 +330,12 @@
             this.Load += new System.EventHandler(this.FrmProduto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSDataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORESBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,10 +345,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.TextBox oBS_PRODUTOTextBox;
+        private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.DataGridView pRODUTOSDataGridView;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblDataInfo;
         private System.Windows.Forms.MaskedTextBox txtFiltro;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
@@ -362,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource fORNECEDORESBindingSource;
         private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

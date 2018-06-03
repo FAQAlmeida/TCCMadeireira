@@ -127,10 +127,9 @@ namespace TCCMadeireira.Views
                                     Convert.ToString(fornecedordt.Rows[0][12]), Convert.ToDateTime(fornecedordt.Rows[0][13])
                                 );
                                 Produto produto = new Produto(
-                                        Convert.ToInt32(produtosdt.Rows[0][0]), Convert.ToString(produtosdt.Rows[0][1]),
-                                        fornecedor, Convert.ToDecimal(produtosdt.Rows[0][0]),
-                                        Convert.ToDecimal(produtosdt.Rows[0][0]), Convert.ToDateTime(produtosdt.Rows[0][0]),
-                                        produtosdt.Rows[0]["obs_produto"].ToString()
+                                        Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
+                                        fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
+                                        Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
                                 );
                                 ProdOper prodVenda = new ProdOper(produto, numQuantidade.Value);
                                 venda.InsertDataProd(prodVenda);
@@ -155,11 +154,10 @@ namespace TCCMadeireira.Views
                                     Convert.ToString(fornecedordt.Rows[0][12]), Convert.ToDateTime(fornecedordt.Rows[0][13])
                                 );
                                 Produto produto = new Produto(
-                                        Convert.ToInt32(produtosdt.Rows[0][0]), Convert.ToString(produtosdt.Rows[0][1]),
-                                        fornecedor, Convert.ToDecimal(produtosdt.Rows[0][0]),
-                                        Convert.ToDecimal(produtosdt.Rows[0][0]), Convert.ToDateTime(produtosdt.Rows[0][0]),
-                                        produtosdt.Rows[0]["obs_produto"].ToString()
-                                );
+                                       Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
+                                       fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
+                                       Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
+                               );
                                 ProdOper prodVenda = new ProdOper(produto, numQuantidade.Value);
                                 fornecimento.InsertDataProd(prodVenda);
                             }
