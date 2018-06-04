@@ -23,7 +23,7 @@ namespace TCCMadeireira.Views
             InitializeComponent();
             ProgressWorker();
         }
-        async private void ProgressWorker(int progress= 1, int step = 1,  int maximum = 100, int delay = 30)
+        async private void ProgressWorker(int progress= 1, int step = 1,  int maximum = 100, int delay = 15)
         {
             ProgressUpdate(progress);
             if(progress != maximum)
@@ -34,12 +34,19 @@ namespace TCCMadeireira.Views
         }
         private void ProgressUpdate(int valor)
         {
-            progressBar.Value = valor;
-            if(valor == 100)
+            try
             {
-                Login frmLogin = new Login();
-                frmLogin.Show();
-                Hide();
+                progressBar.Value = valor;
+                if (progressBar.Value == 100)
+                {
+                    Login frmLogin = new Login();
+                    frmLogin.Show();
+                    Hide();
+                }
+            }
+            catch
+            {
+                
             }
         }
     }

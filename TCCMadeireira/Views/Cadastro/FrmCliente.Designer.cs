@@ -223,6 +223,8 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(327, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Click += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             // 
             // txtRua
             // 
@@ -230,6 +232,8 @@
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(452, 20);
             this.txtRua.TabIndex = 7;
+            this.txtRua.Click += new System.EventHandler(this.txtRua_Enter);
+            this.txtRua.Enter += new System.EventHandler(this.txtRua_Enter);
             // 
             // txtNumero
             // 
@@ -237,6 +241,8 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(52, 20);
             this.txtNumero.TabIndex = 8;
+            this.txtNumero.Click += new System.EventHandler(this.txtNumero_Enter);
+            this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
             // 
             // txtBairro
             // 
@@ -244,6 +250,8 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(293, 20);
             this.txtBairro.TabIndex = 9;
+            this.txtBairro.Click += new System.EventHandler(this.txtBairro_Enter);
+            this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
             // 
             // txtCidade
             // 
@@ -251,6 +259,8 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(178, 20);
             this.txtCidade.TabIndex = 10;
+            this.txtCidade.Click += new System.EventHandler(this.txtCidade_Enter);
+            this.txtCidade.Enter += new System.EventHandler(this.txtCidade_Enter);
             // 
             // txtEmail
             // 
@@ -258,6 +268,8 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(310, 20);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtObs
             // 
@@ -266,6 +278,8 @@
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(675, 102);
             this.txtObs.TabIndex = 12;
+            this.txtObs.Click += new System.EventHandler(this.txtObs_Enter);
+            this.txtObs.Enter += new System.EventHandler(this.txtObs_Enter);
             // 
             // cmbUf
             // 
@@ -304,6 +318,7 @@
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(52, 21);
             this.cmbUf.TabIndex = 28;
+            this.cmbUf.Enter += new System.EventHandler(this.cmbUf_Enter);
             // 
             // txtIdentidade
             // 
@@ -312,6 +327,8 @@
             this.txtIdentidade.Name = "txtIdentidade";
             this.txtIdentidade.Size = new System.Drawing.Size(85, 20);
             this.txtIdentidade.TabIndex = 2;
+            this.txtIdentidade.Click += new System.EventHandler(this.txtIdentidade_Enter);
+            this.txtIdentidade.Enter += new System.EventHandler(this.txtIdentidade_Enter);
             // 
             // txtCep
             // 
@@ -320,6 +337,8 @@
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(60, 20);
             this.txtCep.TabIndex = 6;
+            this.txtCep.Click += new System.EventHandler(this.txtCep_Enter);
+            this.txtCep.Enter += new System.EventHandler(this.txtCep_Enter);
             // 
             // txtTelefone
             // 
@@ -328,6 +347,8 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
             this.txtTelefone.TabIndex = 4;
+            this.txtTelefone.Click += new System.EventHandler(this.txtTelefone_Enter);
+            this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             // 
             // txtCelular
             // 
@@ -336,6 +357,8 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(83, 20);
             this.txtCelular.TabIndex = 5;
+            this.txtCelular.Click += new System.EventHandler(this.txtCelular_Enter);
+            this.txtCelular.Enter += new System.EventHandler(this.txtCelular_Enter);
             // 
             // groupComp
             // 
@@ -390,7 +413,6 @@
             this.rbtnCpf.Name = "rbtnCpf";
             this.rbtnCpf.Size = new System.Drawing.Size(45, 17);
             this.rbtnCpf.TabIndex = 30;
-            this.rbtnCpf.TabStop = true;
             this.rbtnCpf.Text = "CPF";
             this.rbtnCpf.UseVisualStyleBackColor = true;
             this.rbtnCpf.CheckedChanged += new System.EventHandler(this.RbtnIden_CheckedChanged);
@@ -615,7 +637,6 @@
             this.rbtnCpfFiltro.Name = "rbtnCpfFiltro";
             this.rbtnCpfFiltro.Size = new System.Drawing.Size(45, 17);
             this.rbtnCpfFiltro.TabIndex = 39;
-            this.rbtnCpfFiltro.TabStop = true;
             this.rbtnCpfFiltro.Text = "CPF";
             this.rbtnCpfFiltro.UseVisualStyleBackColor = true;
             this.rbtnCpfFiltro.CheckedChanged += new System.EventHandler(this.RbtnCpfFiltro_CheckedChanged);

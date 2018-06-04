@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -39,7 +40,19 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.grbUsuario = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter();
+            this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
+            this.uSERSDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -62,7 +75,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(56, 45);
+            this.txtSenha.Location = new System.Drawing.Point(58, 45);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
@@ -77,16 +90,15 @@
             this.txtUsuario.TabIndex = 1;
             // 
             // cmbNivel
-            //
+            // 
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.Items.AddRange(new object[] {
             "ADMIN",
             "USER"});
-            this.cmbNivel.Location = new System.Drawing.Point(46, 72);
+            this.cmbNivel.Location = new System.Drawing.Point(58, 72);
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(100, 21);
             this.cmbNivel.TabIndex = 3;
-            this.cmbNivel.SelectedItem = 1;
             // 
             // label3
             // 
@@ -99,7 +111,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(267, 22);
+            this.btnCadastrar.Location = new System.Drawing.Point(255, 12);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 4;
@@ -108,7 +120,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(267, 51);
+            this.btnExcluir.Location = new System.Drawing.Point(255, 41);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 5;
@@ -117,7 +129,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(267, 80);
+            this.btnAlterar.Location = new System.Drawing.Point(255, 70);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 6;
@@ -134,26 +146,98 @@
             this.grbUsuario.Controls.Add(this.txtSenha);
             this.grbUsuario.Location = new System.Drawing.Point(12, 12);
             this.grbUsuario.Name = "grbUsuario";
-            this.grbUsuario.Size = new System.Drawing.Size(237, 127);
+            this.grbUsuario.Size = new System.Drawing.Size(237, 110);
             this.grbUsuario.TabIndex = 14;
             this.grbUsuario.TabStop = false;
             this.grbUsuario.Text = "Usuario";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(267, 109);
+            this.btnCancelar.Location = new System.Drawing.Point(255, 99);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // dataSetMadeireiraV2
+            // 
+            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
+            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uSERSBindingSource
+            // 
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.dataSetMadeireiraV2;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CLIENTESTableAdapter = null;
+            this.tableAdapterManager.FORNECEDORESTableAdapter = null;
+            this.tableAdapterManager.FORNECIMENTO_PRODUTOTableAdapter = null;
+            this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
+            this.tableAdapterManager.FUNCIONARIOSTableAdapter = null;
+            this.tableAdapterManager.PRODUTOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USERSTableAdapter = this.uSERSTableAdapter;
+            this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
+            this.tableAdapterManager.VENDASTableAdapter = null;
+            // 
+            // uSERSDataGridView
+            // 
+            this.uSERSDataGridView.AllowUserToAddRows = false;
+            this.uSERSDataGridView.AllowUserToDeleteRows = false;
+            this.uSERSDataGridView.AutoGenerateColumns = false;
+            this.uSERSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uSERSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.uSERSDataGridView.DataSource = this.uSERSBindingSource;
+            this.uSERSDataGridView.Location = new System.Drawing.Point(12, 128);
+            this.uSERSDataGridView.Name = "uSERSDataGridView";
+            this.uSERSDataGridView.ReadOnly = true;
+            this.uSERSDataGridView.Size = new System.Drawing.Size(444, 220);
+            this.uSERSDataGridView.TabIndex = 15;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_USUARIO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_USUARIO";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "LOGIN_USUARIO";
+            this.dataGridViewTextBoxColumn2.HeaderText = "LOGIN_USUARIO";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SENHA_USUARIO";
+            this.dataGridViewTextBoxColumn3.HeaderText = "SENHA_USUARIO";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NIVEL_USUARIO";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NIVEL_USUARIO";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // FrmUsuario
             // 
             this.AccessibleName = "FrmUsuario";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 152);
+            this.ClientSize = new System.Drawing.Size(467, 355);
+            this.Controls.Add(this.uSERSDataGridView);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
@@ -161,8 +245,12 @@
             this.Controls.Add(this.grbUsuario);
             this.Name = "FrmUsuario";
             this.Text = "Usuario";
+            this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +268,14 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.GroupBox grbUsuario;
         private System.Windows.Forms.Button btnCancelar;
+        private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
+        private System.Windows.Forms.BindingSource uSERSBindingSource;
+        private Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter uSERSTableAdapter;
+        private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView uSERSDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

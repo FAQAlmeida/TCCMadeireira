@@ -167,6 +167,7 @@ namespace TCCMadeireira.Views
                 {
                     if (dgvClientes.SelectedRows.Count == 1)
                     {
+                        dgvClientes.Enabled = false;
                         ControlEnable(true);
                         txtIdentidade.Enabled = false;
                         btnCadastrar.Enabled = false;
@@ -245,6 +246,7 @@ namespace TCCMadeireira.Views
             btnCancelar.Visible = false;
             ControlEnable(false);
             txtFiltro.Clear();
+            dgvClientes.Enabled = true;
         }
         #endregion
         #region @event.SelectChanged
@@ -416,6 +418,69 @@ namespace TCCMadeireira.Views
             {
                 throw ex;
             }
+        }
+        #endregion
+        #region @event.Enter and @event.Click_in_Txts
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            txtNome.SelectAll();
+        }
+        private void txtIdentidade_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((MethodInvoker)delegate ()
+            {
+                txtIdentidade.SelectAll();
+            });
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.SelectAll();
+        }
+
+        private void txtTelefone_Enter(object sender, EventArgs e)
+        {
+            txtTelefone.SelectAll();
+        }
+
+        private void txtCelular_Enter(object sender, EventArgs e)
+        {
+            txtCelular.SelectAll();
+        }
+
+        private void txtCep_Enter(object sender, EventArgs e)
+        {
+            txtCep.SelectAll();
+        }
+
+        private void txtRua_Enter(object sender, EventArgs e)
+        {
+            txtRua.SelectAll();
+        }
+
+        private void txtNumero_Enter(object sender, EventArgs e)
+        {
+            txtNumero.SelectAll();
+        }
+
+        private void txtBairro_Enter(object sender, EventArgs e)
+        {
+            txtBairro.SelectAll();
+        }
+
+        private void txtCidade_Enter(object sender, EventArgs e)
+        {
+            txtCidade.SelectAll();
+        }
+
+        private void cmbUf_Enter(object sender, EventArgs e)
+        {
+            cmbUf.DroppedDown = true;
+        }
+
+        private void txtObs_Enter(object sender, EventArgs e)
+        {
+            txtObs.SelectAll();
         }
         #endregion
     }

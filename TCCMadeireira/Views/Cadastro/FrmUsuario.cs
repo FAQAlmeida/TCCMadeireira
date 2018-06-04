@@ -22,5 +22,11 @@ namespace TCCMadeireira.Views
         {
             InitializeComponent();
         }
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSetMadeireiraV2.USERS' table. You can move, or remove it, as needed.
+            this.uSERSTableAdapter.Fill(this.dataSetMadeireiraV2.USERS);
+
+        }
     }
 }

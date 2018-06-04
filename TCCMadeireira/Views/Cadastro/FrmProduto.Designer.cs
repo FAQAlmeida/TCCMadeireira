@@ -1,4 +1,6 @@
-﻿namespace TCCMadeireira.Views
+﻿using System;
+
+namespace TCCMadeireira.Views
 {
     /// <summary>
     /// Form responsavel pelo CRUD de Produtos
@@ -132,6 +134,11 @@
             // 
             this.numValor.DecimalPlaces = 2;
             this.numValor.Location = new System.Drawing.Point(59, 46);
+            this.numValor.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
             this.numValor.Name = "numValor";
             this.numValor.Size = new System.Drawing.Size(115, 20);
             this.numValor.TabIndex = 3;
@@ -164,6 +171,11 @@
             // 
             this.numQuantidade.DecimalPlaces = 4;
             this.numQuantidade.Location = new System.Drawing.Point(395, 19);
+            this.numQuantidade.Maximum = new decimal(new int[] {
+            1316134912,
+            2328,
+            0,
+            0});
             this.numQuantidade.Name = "numQuantidade";
             this.numQuantidade.Size = new System.Drawing.Size(128, 20);
             this.numQuantidade.TabIndex = 2;
