@@ -246,6 +246,7 @@
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.numQuantidade);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProdOper";
             this.Text = "I.P.O";

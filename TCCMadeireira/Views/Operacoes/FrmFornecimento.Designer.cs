@@ -282,6 +282,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grbProdutos);
             this.Controls.Add(this.grbFornecedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFornecimento";
             this.Text = "Fornecimento";

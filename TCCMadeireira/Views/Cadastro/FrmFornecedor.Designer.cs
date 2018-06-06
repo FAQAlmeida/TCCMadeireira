@@ -461,9 +461,9 @@
             // 
             this.btnAlterar.Location = new System.Drawing.Point(826, 81);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(85, 23);
             this.btnAlterar.TabIndex = 15;
-            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
@@ -471,9 +471,9 @@
             // 
             this.btnExcluir.Location = new System.Drawing.Point(826, 51);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(85, 23);
             this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
@@ -481,9 +481,9 @@
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(826, 23);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(85, 23);
             this.btnCadastrar.TabIndex = 13;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
@@ -623,9 +623,9 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(826, 159);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(85, 23);
             this.btnCancelar.TabIndex = 16;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
@@ -644,6 +644,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupComp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFornecedor";
             this.Text = "Fornecedor";

@@ -28,5 +28,10 @@ namespace TCCMadeireira.Views
             this.uSERSTableAdapter.Fill(this.dataSetMadeireiraV2.USERS);
 
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

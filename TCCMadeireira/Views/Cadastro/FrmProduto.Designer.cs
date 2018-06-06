@@ -48,12 +48,6 @@ namespace TCCMadeireira.Views
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oBSPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRODUTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pvlDgv = new System.Windows.Forms.Panel();
             this.txtFiltro = new System.Windows.Forms.MaskedTextBox();
@@ -63,6 +57,12 @@ namespace TCCMadeireira.Views
             this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblNome = new System.Windows.Forms.Label();
             lblQuantidade = new System.Windows.Forms.Label();
             vALOR_PRODUTOLabel = new System.Windows.Forms.Label();
@@ -222,6 +222,75 @@ namespace TCCMadeireira.Views
             this.dgvProdutos.TabIndex = 1;
             this.dgvProdutos.TabStop = false;
             // 
+            // pRODUTOSBindingSource
+            // 
+            this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
+            this.pRODUTOSBindingSource.DataSource = this.dataSetMadeireiraV2;
+            // 
+            // pvlDgv
+            // 
+            this.pvlDgv.Controls.Add(this.dgvProdutos);
+            this.pvlDgv.Location = new System.Drawing.Point(12, 181);
+            this.pvlDgv.Name = "pvlDgv";
+            this.pvlDgv.Size = new System.Drawing.Size(757, 234);
+            this.pvlDgv.TabIndex = 2;
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(554, 108);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(107, 20);
+            this.txtFiltro.TabIndex = 9;
+            this.txtFiltro.TabStop = false;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(554, 79);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(84, 23);
+            this.btnAlterar.TabIndex = 8;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(554, 50);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(84, 23);
+            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(554, 21);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(84, 23);
+            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
+            // 
+            // pRODUTOSTableAdapter
+            // 
+            this.pRODUTOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // fORNECEDORESTableAdapter
+            // 
+            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(554, 134);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // iDPRODUTODataGridViewTextBoxColumn
             // 
             this.iDPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUTO";
@@ -253,7 +322,7 @@ namespace TCCMadeireira.Views
             // iDFORNECEDORPRODUTODataGridViewTextBoxColumn
             // 
             this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_FORNECEDOR_PRODUTO";
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.HeaderText = "ID_FORNECEDOR";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.HeaderText = "ID DO FORNECEDOR";
             this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.Name = "iDFORNECEDORPRODUTODataGridViewTextBoxColumn";
             this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -263,75 +332,6 @@ namespace TCCMadeireira.Views
             this.oBSPRODUTODataGridViewTextBoxColumn.HeaderText = "OBS";
             this.oBSPRODUTODataGridViewTextBoxColumn.Name = "oBSPRODUTODataGridViewTextBoxColumn";
             this.oBSPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRODUTOSBindingSource
-            // 
-            this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
-            this.pRODUTOSBindingSource.DataSource = this.dataSetMadeireiraV2;
-            // 
-            // pvlDgv
-            // 
-            this.pvlDgv.Controls.Add(this.dgvProdutos);
-            this.pvlDgv.Location = new System.Drawing.Point(12, 181);
-            this.pvlDgv.Name = "pvlDgv";
-            this.pvlDgv.Size = new System.Drawing.Size(757, 234);
-            this.pvlDgv.TabIndex = 2;
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(554, 108);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(107, 20);
-            this.txtFiltro.TabIndex = 9;
-            this.txtFiltro.TabStop = false;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(554, 79);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 8;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(554, 50);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 7;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(554, 21);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 6;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
-            // 
-            // pRODUTOSTableAdapter
-            // 
-            this.pRODUTOSTableAdapter.ClearBeforeFill = true;
-            // 
-            // fORNECEDORESTableAdapter
-            // 
-            this.fORNECEDORESTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(554, 134);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // FrmProduto
             // 
@@ -345,6 +345,7 @@ namespace TCCMadeireira.Views
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pvlDgv);
             this.Controls.Add(this.groupComp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProduto";
             this.Text = "Produto";
@@ -378,15 +379,15 @@ namespace TCCMadeireira.Views
         private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
         private System.Windows.Forms.BindingSource pRODUTOSBindingSource;
         private Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter pRODUTOSTableAdapter;
+        private System.Windows.Forms.BindingSource fORNECEDORESBindingSource;
+        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.NumericUpDown numValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDFORNECEDORPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSPRODUTODataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource fORNECEDORESBindingSource;
-        private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.NumericUpDown numValor;
     }
 }

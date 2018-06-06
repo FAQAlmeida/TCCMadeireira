@@ -255,9 +255,9 @@
             // 
             this.btnAlterar.Location = new System.Drawing.Point(711, 81);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(83, 23);
             this.btnAlterar.TabIndex = 16;
-            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
@@ -265,9 +265,9 @@
             // 
             this.btnExcluir.Location = new System.Drawing.Point(711, 52);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(83, 23);
             this.btnExcluir.TabIndex = 15;
-            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
@@ -275,9 +275,9 @@
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(711, 23);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(83, 23);
             this.btnCadastrar.TabIndex = 14;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
@@ -481,7 +481,7 @@
             this.pnlDgv.Controls.Add(this.fUNCIONARIOSDataGridView);
             this.pnlDgv.Location = new System.Drawing.Point(12, 284);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(854, 355);
+            this.pnlDgv.Size = new System.Drawing.Size(854, 287);
             this.pnlDgv.TabIndex = 49;
             // 
             // fUNCIONARIOSDataGridView
@@ -513,7 +513,7 @@
             this.fUNCIONARIOSDataGridView.Name = "fUNCIONARIOSDataGridView";
             this.fUNCIONARIOSDataGridView.ReadOnly = true;
             this.fUNCIONARIOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.fUNCIONARIOSDataGridView.Size = new System.Drawing.Size(854, 355);
+            this.fUNCIONARIOSDataGridView.Size = new System.Drawing.Size(854, 287);
             this.fUNCIONARIOSDataGridView.TabIndex = 0;
             this.fUNCIONARIOSDataGridView.TabStop = false;
             this.fUNCIONARIOSDataGridView.SelectionChanged += new System.EventHandler(this.FUNCIONARIOSDataGridView_SelectionChanged);
@@ -634,9 +634,9 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(711, 161);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(83, 23);
             this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
@@ -644,7 +644,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 651);
+            this.ClientSize = new System.Drawing.Size(878, 582);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.lblDataInfo);
@@ -655,6 +655,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFuncionario";
             this.Text = "Funcionario";
