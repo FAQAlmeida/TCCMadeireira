@@ -757,52 +757,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Views.FrmMenuPrincipal">
-            <summary>
-            Formulário do menuPrincipal
-            </summary>
-            <seealso cref="T:System.Windows.Forms.Form" />
-            TODO Edit XML Comment Template for FrmMenuPrincipal
-        </member>
-        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.#ctor">
-            <summary>
-            Método construtor do <see cref="T:TCCMadeireira.Views.FrmMenuPrincipal"/>.
-            </summary>
-            TODO Edit XML Comment Template for #ctor
-        </member>
-        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.ClienteToolStripMenuItem_Click(System.Object,System.EventArgs)">
-            <summary>
-            Evento CLICK do menuStrip Cliente
-            <para>Instância e exibe o formulário do Cliente</para>
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.FuncionarioToolStripMenuItem_Click(System.Object,System.EventArgs)">
-            <summary>
-            Evento CLICK do menuStrip Funcionário
-            <para>Instância e exibe o formulário do funcionário</para>
-            </summary>
-            <param name="sender">The source of the event.</param>
-            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="F:TCCMadeireira.Views.FrmMenuPrincipal.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Views.FrmProduto">
             <summary>
             Form responsavel pelo CRUD de Produtos
@@ -1037,6 +991,52 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:TCCMadeireira.Views.Login.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Views.FrmMenuPrincipal">
+            <summary>
+            Formulário do menuPrincipal
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Form" />
+            TODO Edit XML Comment Template for FrmMenuPrincipal
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.#ctor">
+            <summary>
+            Método construtor do <see cref="T:TCCMadeireira.Views.FrmMenuPrincipal"/>.
+            </summary>
+            TODO Edit XML Comment Template for #ctor
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.ClienteToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento CLICK do menuStrip Cliente
+            <para>Instância e exibe o formulário do Cliente</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.FuncionarioToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento CLICK do menuStrip Funcionário
+            <para>Instância e exibe o formulário do funcionário</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:TCCMadeireira.Views.FrmMenuPrincipal.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmMenuPrincipal.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

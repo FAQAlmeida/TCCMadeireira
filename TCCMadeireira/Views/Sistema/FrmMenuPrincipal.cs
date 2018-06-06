@@ -35,10 +35,8 @@ namespace TCCMadeireira.Views
         /// </summary>
         /// TODO Edit XML Comment Template for #ctor
         public FrmMenuPrincipal()
-        {            
+        {
             InitializeComponent();
-            toolStripStatusLabelData.Text = DateTime.Now.ToString();
-            timer.Start();
         }
         #endregion
         #region toolStripMenu @event.Click
@@ -73,7 +71,7 @@ namespace TCCMadeireira.Views
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
                 if (Application.OpenForms["FrmCliente"] == null)
                 {
                     frmCliente = new FrmCliente
@@ -124,7 +122,8 @@ namespace TCCMadeireira.Views
 
         private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 if (Application.OpenForms["FrmFornecedor"] == null)
                 {
                     frmFornecedor = new FrmFornecedor
@@ -256,8 +255,19 @@ namespace TCCMadeireira.Views
         {
             toolStripStatusLabelData.Text = DateTime.Now.ToString();
         }
+
         #endregion
 
-        
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabelData.Text = DateTime.Now.ToString();
+            toolStripStatusLabelUser.Text = Properties.Settings.Default.nomeUsuario;
+            timer.Start();
+        }
     }
 }

@@ -191,12 +191,6 @@
     <Compile Include="Views\Sistema\FrmBackup.Designer.cs">
       <DependentUpon>FrmBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Sistema\FrmMenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Sistema\FrmMenuPrincipal.Designer.cs">
-      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Cadastro\FrmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +221,12 @@
     <Compile Include="Views\Sistema\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Sistema\FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sistema\FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sistema\FrmSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,9 +253,6 @@
     <EmbeddedResource Include="Views\Sistema\FrmBackup.resx">
       <DependentUpon>FrmBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Sistema\FrmMenuPrincipal.resx">
-      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Cadastro\FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sistema\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sistema\FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sistema\FrmSplashScreen.resx">
       <DependentUpon>FrmSplashScreen.cs</DependentUpon>
