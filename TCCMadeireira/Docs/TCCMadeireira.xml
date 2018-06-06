@@ -295,38 +295,58 @@
         </member>
         <member name="T:TCCMadeireira.Properties.Resources">
             <summary>
-              Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.ResourceManager">
             <summary>
-              Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.Culture">
             <summary>
-              Substitui a propriedade CurrentUICulture do thread atual para todas as
-              pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.Folder_Open_icon">
             <summary>
-              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+              Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.Folder_Open_icon1">
             <summary>
-              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.icon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.LogoMoldSplash">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.LogoMoldSplash1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:TCCMadeireira.Properties.Resources.LogoSMold">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.Refresh_icon">
             <summary>
-              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+              Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
         <member name="P:TCCMadeireira.Properties.Resources.refresh_icon1">
             <summary>
-              Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+              Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
         <member name="T:TCCMadeireira.Model.ValidarIdentidade">

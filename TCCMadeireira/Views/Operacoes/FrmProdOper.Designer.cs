@@ -211,6 +211,7 @@
             // 
             // btnIncluir
             // 
+            this.btnIncluir.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnIncluir.Location = new System.Drawing.Point(484, 4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(75, 23);
@@ -221,6 +222,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(565, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -231,8 +233,10 @@
             // 
             // FrmProdOper
             // 
+            this.AcceptButton = this.btnIncluir;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(652, 350);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIncluir);

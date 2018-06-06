@@ -216,6 +216,7 @@
             this.rbtnCnpj.TabStop = true;
             this.rbtnCnpj.Text = "CNPJ";
             this.rbtnCnpj.UseVisualStyleBackColor = true;
+            this.rbtnCnpj.CheckedChanged += new System.EventHandler(this.RbtnIden_CheckedChanged);
             // 
             // rbtnCpf
             // 
@@ -226,6 +227,7 @@
             this.rbtnCpf.TabIndex = 36;
             this.rbtnCpf.Text = "CPF";
             this.rbtnCpf.UseVisualStyleBackColor = true;
+            this.rbtnCpf.CheckedChanged += new System.EventHandler(this.RbtnIden_CheckedChanged);
             // 
             // lblEndereco
             // 
@@ -248,9 +250,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 33;
-            this.label2.Text = "ENDERECO";
+            this.label2.Text = "ENDEREÇO:";
             // 
             // label1
             // 
@@ -264,9 +266,9 @@
             // txtIdentidade
             // 
             this.txtIdentidade.Location = new System.Drawing.Point(87, 13);
-            this.txtIdentidade.Mask = "999,999,999-99";
+            this.txtIdentidade.Mask = "00,000,000/0000-00";
             this.txtIdentidade.Name = "txtIdentidade";
-            this.txtIdentidade.Size = new System.Drawing.Size(85, 20);
+            this.txtIdentidade.Size = new System.Drawing.Size(106, 20);
             this.txtIdentidade.TabIndex = 31;
             this.txtIdentidade.Leave += new System.EventHandler(this.TxtIdentidade_Leave);
             // 

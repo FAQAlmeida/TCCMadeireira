@@ -137,9 +137,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 33;
-            this.label2.Text = "ENDERECO";
+            this.label2.Text = "ENDEREÇO:";
             // 
             // label1
             // 

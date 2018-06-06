@@ -25,6 +25,7 @@ namespace TCCMadeireira.Views
         Cliente cliente = null;
         Usuario usuario;
         decimal valor;
+        FrmProdOper frmProdOper;
         #endregion
         #region Constructor
         /// <summary>
@@ -88,6 +89,7 @@ namespace TCCMadeireira.Views
                 Convert.ToInt32(usersdt.Rows[0]["id_usuario"]), Convert.ToString(usersdt.Rows[0]["login_usuario"]),
                 Convert.ToString(usersdt.Rows[0]["nivel_usuario"])
             );
+             frmProdOper = new FrmProdOper(this);
         }
         #endregion
         #region @event.Click
@@ -119,8 +121,12 @@ namespace TCCMadeireira.Views
         }
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-            FrmProdOper frmProdVenda = new FrmProdOper(this);
-            frmProdVenda.Show();
+            frmProdOper.ShowDialog();
+            if (frmProdOper.DialogResult == DialogResult.OK)
+            {
+                ProdOper prodOper = frmProdOper.ProdOper;
+                InsertDataProd(prodOper);
+            }
         }
         private void BtnRemover_Click(object sender, EventArgs e)
         {
@@ -199,32 +205,18 @@ namespace TCCMadeireira.Views
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
+                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2].Value) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3].Value);
             }
             valor = valorTotal;
             lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            CheckEstoque();
-            decimal valorTotal = 0;
-            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
-            {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
-            }
-            valor = valorTotal;
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
+            ValorSet();
         }
         private void ValorSet(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            CheckEstoque();
-            decimal valorTotal = 0;
-            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
-            {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
-            }
-            valor = valorTotal;
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
+            ValorSet();
         }
 
         private string SelectedRadioButton()
@@ -274,7 +266,7 @@ namespace TCCMadeireira.Views
             List<int> repetidos = new List<int>();
             foreach(DataGridViewRow row in rows)
             {
-                int id = (int)row.Cells["ID"].Value;
+                int id = (int)row.Cells["IdProduto"].Value;
                 if (!todos.Contains(id))
                 {
                     todos.Add(id);

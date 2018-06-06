@@ -34,18 +34,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(81, 16);
+            this.txtUsuario.Location = new System.Drawing.Point(66, 16);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(81, 42);
+            this.txtSenha.Location = new System.Drawing.Point(66, 42);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
@@ -55,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 19);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 3;
@@ -64,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 45);
+            this.label2.Location = new System.Drawing.Point(12, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 4;
@@ -72,7 +74,8 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(30, 82);
+            this.btnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSair.Location = new System.Drawing.Point(15, 82);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 5;
@@ -82,7 +85,7 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(111, 82);
+            this.btnEntrar.Location = new System.Drawing.Point(96, 82);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 6;
@@ -90,11 +93,24 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TCCMadeireira.Properties.Resources.LogoMoldSplash;
+            this.pictureBox1.Location = new System.Drawing.Point(186, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
+            this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 138);
+            this.CancelButton = this.btnSair;
+            this.ClientSize = new System.Drawing.Size(362, 119);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.label2);
@@ -105,6 +121,8 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +136,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -248,6 +248,14 @@ namespace TCCMadeireira.Bancos
         {
             return usersTableAdapter.GetDataUsuario(id);
         }
+        public int SelectUsuario(string login, string senha)
+        {
+            return (int) usersTableAdapter.LoginValidation(login, senha);
+        }
+        public USERSDataTable SelectUser(string login, string senha)
+        {
+            return usersTableAdapter.GetDataUserLogin(login, senha);
+        }
         public void InsertUsuario(Usuario usuario)
         {
             usersTableAdapter.Insert(usuario.Nome, usuario.Senha, usuario.Nivel);

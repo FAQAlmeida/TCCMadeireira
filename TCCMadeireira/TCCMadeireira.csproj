@@ -221,20 +221,20 @@
     <Compile Include="Views\Operacoes\FrmVenda.Designer.cs">
       <DependentUpon>FrmVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Sistema\Login.cs">
+    <Compile Include="Views\Sistema\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Sistema\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Views\Sistema\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Sistema\SplashScreen.cs">
+    <Compile Include="Views\Sistema\FrmSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Sistema\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
+    <Compile Include="Views\Sistema\FrmSplashScreen.Designer.cs">
+      <DependentUpon>FrmSplashScreen.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -268,11 +268,11 @@
     <EmbeddedResource Include="Views\Operacoes\FrmVenda.resx">
       <DependentUpon>FrmVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Sistema\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Sistema\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Sistema\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Sistema\FrmSplashScreen.resx">
+      <DependentUpon>FrmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
@@ -304,7 +304,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Docs\Figuras\LogoMold.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Folder-Open-icon.png" />
   </ItemGroup>
@@ -316,6 +318,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Folder-Open-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\Figuras\LogoMoldSplash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoMoldSplash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoSMold.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

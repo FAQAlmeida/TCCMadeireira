@@ -25,6 +25,7 @@ namespace TCCMadeireira.Views
         Fornecedor fornecedor = null;
         Usuario usuario;
         decimal valor;
+        FrmProdOper frmProdOper;
         #endregion
         /// <summary>
         /// Inicializa o Form de Fornecimento
@@ -36,8 +37,16 @@ namespace TCCMadeireira.Views
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-            FrmProdOper frmProdVenda = new FrmProdOper(this);
-            frmProdVenda.Show();
+            frmProdOper.ShowDialog();
+            if (frmProdOper.DialogResult == DialogResult.OK)
+            {
+                ProdOper prodOper = frmProdOper.ProdOper;
+                InsertDataProd(prodOper);
+                if (MessageBox.Show("Deseja adicionar mais produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
+                {
+                    BtnAdicionar_Click(sender, e);
+                }
+            }
         }
         private void TxtIdentidade_Leave(object sender, EventArgs e)
         {
@@ -139,30 +148,18 @@ namespace TCCMadeireira.Views
             decimal valorTotal = 0;
             for (int i = 0; i < dgvProdutos.Rows.Count; i++)
             {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
+                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2].Value) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3].Value);
             }
             valor = valorTotal;
             lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            decimal valorTotal = 0;
-            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
-            {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
-            }
-            valor = valorTotal;
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
+            ValorSet();
         }
         private void ValorSet(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            decimal valorTotal = 0;
-            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
-            {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2]) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3]);
-            }
-            valor = valorTotal;
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
+            ValorSet();
         }
         private string SelectedRadioButton()
         {
@@ -189,6 +186,8 @@ namespace TCCMadeireira.Views
                 Convert.ToInt32(usersdt.Rows[0]["id_usuario"]), Convert.ToString(usersdt.Rows[0]["login_usuario"]),
                 Convert.ToString(usersdt.Rows[0]["nivel_usuario"])
             );
+            rbtnCnpj.Checked = true;
+            frmProdOper = new FrmProdOper(this);
         }
 
         private void btnRemover_Click(object sender, EventArgs e)

@@ -20,6 +20,10 @@ namespace TCCMadeireira.Views
         private FrmVenda venda;
         private FrmFornecimento fornecimento;
         private Bancos.Banco banco = new Bancos.Banco();
+        private ProdOper prodOper;
+
+        internal ProdOper ProdOper { get => prodOper; set => prodOper = value; }
+
         /// <summary>
         /// Inicializa o Form ProdVenda
         /// </summary>
@@ -44,6 +48,45 @@ namespace TCCMadeireira.Views
             // TODO: esta linha de código carrega dados na tabela 'dataSetMadeireiraV2.PRODUTOS'. Você pode movê-la ou removê-la conforme necessário.
             this.produtosTableAdapter.Fill(this.dataSetMadeireiraV2.PRODUTOS);
             cmbFiltro.SelectedIndex = 0;
+            try
+            {
+                //TODO trocar o index dos datatables para o nome da coluna
+                if (dvgProduto.SelectedRows.Count > 0)
+                {
+                    PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dvgProduto.SelectedCells[0].Value));
+                    if (produtosdt.Count > 0)
+                    {
+                        FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor(produtosdt.Rows[0]["id_fornecedor_produto"].ToString());
+                        if (fornecedordt.Count > 0)
+                        {
+                            Fornecedor fornecedor = new Fornecedor(
+                                Convert.ToInt32(fornecedordt.Rows[0][0]), Convert.ToString(fornecedordt.Rows[0][1]),
+                                Convert.ToString(fornecedordt.Rows[0][2]), Convert.ToString(fornecedordt.Rows[0][3]),
+                                Convert.ToString(fornecedordt.Rows[0][4]), Convert.ToString(fornecedordt.Rows[0][5]),
+                                Convert.ToString(fornecedordt.Rows[0][6]), Convert.ToString(fornecedordt.Rows[0][7]),
+                                Convert.ToString(fornecedordt.Rows[0][8]), Convert.ToString(fornecedordt.Rows[0][9]),
+                                Convert.ToString(fornecedordt.Rows[0][10]), Convert.ToString(fornecedordt.Rows[0][11]),
+                                Convert.ToString(fornecedordt.Rows[0][12]), Convert.ToDateTime(fornecedordt.Rows[0][13])
+                            );
+                            Produto produto = new Produto(
+                                   Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
+                                   fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
+                                   Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
+                           );
+                            ProdOper = new ProdOper(produto, numQuantidade.Value);
+                            MessageBox.Show("ProdOper feito");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um produto na tabela");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
@@ -109,70 +152,39 @@ namespace TCCMadeireira.Views
                 //TODO trocar o index dos datatables para o nome da coluna
                 if (dvgProduto.SelectedRows.Count > 0)
                 {
-                    if (!(venda is null))
+                    PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dvgProduto.SelectedCells[0].Value));
+                    if (produtosdt.Count > 0)
                     {
-                        PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dvgProduto.SelectedCells[0]));
-                        if (produtosdt.Count > 0)
+                        MessageBox.Show(produtosdt.Rows[0]["id_fornecedor_produto"].ToString());
+                        FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor((int) produtosdt.Rows[0]["id_fornecedor_produto"]);
+                        if (fornecedordt.Count > 0)
                         {
-                            FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor(produtosdt.Rows[0]["id_fornecedor"].ToString());
-                            if (fornecedordt.Count > 0)
-                            {
-                                Fornecedor fornecedor = new Fornecedor(
-                                    Convert.ToInt32(fornecedordt.Rows[0][0]), Convert.ToString(fornecedordt.Rows[0][1]),
-                                    Convert.ToString(fornecedordt.Rows[0][2]), Convert.ToString(fornecedordt.Rows[0][3]),
-                                    Convert.ToString(fornecedordt.Rows[0][4]), Convert.ToString(fornecedordt.Rows[0][5]),
-                                    Convert.ToString(fornecedordt.Rows[0][6]), Convert.ToString(fornecedordt.Rows[0][7]),
-                                    Convert.ToString(fornecedordt.Rows[0][8]), Convert.ToString(fornecedordt.Rows[0][9]),
-                                    Convert.ToString(fornecedordt.Rows[0][10]), Convert.ToString(fornecedordt.Rows[0][11]),
-                                    Convert.ToString(fornecedordt.Rows[0][12]), Convert.ToDateTime(fornecedordt.Rows[0][13])
-                                );
-                                Produto produto = new Produto(
-                                        Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
-                                        fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
-                                        Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
-                                );
-                                ProdOper prodVenda = new ProdOper(produto, numQuantidade.Value);
-                                venda.InsertDataProd(prodVenda);
-                            }
+
+                            Fornecedor fornecedor = new Fornecedor(
+                                Convert.ToInt32(fornecedordt.Rows[0]["id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
+                                Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
+                                Convert.ToString(fornecedordt.Rows[0]["rua_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["numero_fornecedor"]),
+                                Convert.ToString(fornecedordt.Rows[0]["bairro_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cidade_fornecedor"]),
+                                Convert.ToString(fornecedordt.Rows[0]["estado_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["telefone_fornecedor"]),
+                                Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
+                                Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
+                            );
+                            Produto produto = new Produto(
+                                   Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
+                                   fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
+                                   Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
+                           );
+                            ProdOper = new ProdOper(produto, numQuantidade.Value);
+                            MessageBox.Show(ProdOper.ToString());
                         }
-                    }
-                    else if (!(fornecimento is null))
-                    {
-                        PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dvgProduto.SelectedCells[0]));
-                        if (produtosdt.Count > 0)
+                        else
                         {
-                            FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor(produtosdt.Rows[0]["id_fornecedor"].ToString());
-                            if (fornecedordt.Count > 0)
-                            {
-                                Fornecedor fornecedor = new Fornecedor(
-                                    Convert.ToInt32(fornecedordt.Rows[0][0]), Convert.ToString(fornecedordt.Rows[0][1]),
-                                    Convert.ToString(fornecedordt.Rows[0][2]), Convert.ToString(fornecedordt.Rows[0][3]),
-                                    Convert.ToString(fornecedordt.Rows[0][4]), Convert.ToString(fornecedordt.Rows[0][5]),
-                                    Convert.ToString(fornecedordt.Rows[0][6]), Convert.ToString(fornecedordt.Rows[0][7]),
-                                    Convert.ToString(fornecedordt.Rows[0][8]), Convert.ToString(fornecedordt.Rows[0][9]),
-                                    Convert.ToString(fornecedordt.Rows[0][10]), Convert.ToString(fornecedordt.Rows[0][11]),
-                                    Convert.ToString(fornecedordt.Rows[0][12]), Convert.ToDateTime(fornecedordt.Rows[0][13])
-                                );
-                                Produto produto = new Produto(
-                                       Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
-                                       fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
-                                       Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
-                               );
-                                ProdOper prodVenda = new ProdOper(produto, numQuantidade.Value);
-                                fornecimento.InsertDataProd(prodVenda);
-                            }
+                            MessageBox.Show("Forn não encontrado");
                         }
                     }
                     else
                     {
-                        throw new Exception("Formulário chamado sem nenhum parent a espera");
-                    }
-
-                    Close();
-                    if (MessageBox.Show("Deseja adicionar mais produtos?", "Dialogo", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
-                    {
-                        FrmProdOper frmProdVenda = new FrmProdOper(venda);
-                        frmProdVenda.Show();
+                        MessageBox.Show("Produto não encontrado");
                     }
                 }
                 else
@@ -180,7 +192,7 @@ namespace TCCMadeireira.Views
                     MessageBox.Show("Selecione um produto na tabela");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -188,7 +200,7 @@ namespace TCCMadeireira.Views
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            Close();
+            //Close();
         }
 
         private void DvgProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)

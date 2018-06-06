@@ -15,39 +15,65 @@ namespace TCCMadeireira.Models
         private DateTime dataInfo;
 
         public int Id { get => id; set => id = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Senha { get => senha; set => senha = value; }
-        public string Nivel { get => nivel; set => nivel = value; }
+        public string Nome { get => nome; set => nome = value.ToUpper().Trim(); }
+        public string Senha { get => senha; set => senha = value.ToUpper().Trim(); }
+        public string Nivel { get => nivel; set => nivel = value.ToUpper().Trim(); }
         public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
+
+
 
         public Usuario(int id, string nome, string senha, string nivel, DateTime dataInfo)
         {
-            this.Id = id;
-            this.Nome = nome;
-            this.Senha = senha;
-            this.Nivel = nivel;
-            this.DataInfo = dataInfo;
+            Id = id;
+            Nome = nome;
+            Senha = senha;
+            Nivel = nivel;
+            DataInfo = dataInfo;
         }
         public Usuario(int id, string nome, string nivel, DateTime dataInfo)
         {
-            this.Id = id;
-            this.Nome = nome;
-            this.Nivel = nivel;
-            this.DataInfo = dataInfo;
+            Id = id;
+            Nome = nome;
+            Nivel = nivel;
+            DataInfo = dataInfo;
         }
         public Usuario(int id, string nome, string nivel)
         {
-            this.Id = id;
-            this.Nome = nome;
-            this.Nivel = nivel;
+            Id = id;
+            Nome = nome;
+            Nivel = nivel;
+        }
+        public Usuario(string nome, string senha)
+        {
+            Nome = nome;
+            Senha = senha;
         }
 
         public Usuario(string nome, string senha, string nivel, DateTime dataInfo)
         {
-            this.Nome = nome;
-            this.Senha = senha;
-            this.Nivel = nivel;
-            this.DataInfo = dataInfo;
+            Nome = nome;
+            Senha = senha;
+            Nivel = nivel;
+            DataInfo = dataInfo;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(
+                "ID: {0}\n" +
+                "LOGIN: {1}\n" +
+                "SENHA: {2}\n" +
+                "NIVEL: {3}", Id, Nome, Senha, Nivel);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

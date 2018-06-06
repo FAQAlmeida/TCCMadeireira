@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBackup));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnChange = new System.Windows.Forms.Button();
             this.txtFileName = new System.Windows.Forms.TextBox();
@@ -104,7 +105,7 @@
             // 
             // btnChangePath
             // 
-            this.btnChangePath.Image = global::TCCMadeireira.Properties.Resources.Folder_Open_icon1;
+            this.btnChangePath.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePath.Image")));
             this.btnChangePath.Location = new System.Drawing.Point(330, 89);
             this.btnChangePath.Name = "btnChangePath";
             this.btnChangePath.Size = new System.Drawing.Size(27, 27);
