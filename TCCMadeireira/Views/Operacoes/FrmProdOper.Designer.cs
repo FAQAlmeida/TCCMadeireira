@@ -32,6 +32,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdOper));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dvgProduto = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -245,6 +246,7 @@
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.numQuantidade);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProdOper";
             this.Text = "I.P.O";
             this.Load += new System.EventHandler(this.FrmProdVenda_Load);

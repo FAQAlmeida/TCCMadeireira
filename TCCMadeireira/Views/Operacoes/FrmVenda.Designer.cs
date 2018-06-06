@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label cPF_CNPJ_CLIENTELabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenda));
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
             this.rbtnCpf = new System.Windows.Forms.RadioButton();
@@ -323,6 +324,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grbProdutos);
             this.Controls.Add(this.grbCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVenda";
             this.Text = "Vendas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVenda_FormClosing);

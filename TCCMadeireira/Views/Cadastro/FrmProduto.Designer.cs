@@ -38,6 +38,7 @@ namespace TCCMadeireira.Views
             System.Windows.Forms.Label lblQuantidade;
             System.Windows.Forms.Label vALOR_PRODUTOLabel;
             System.Windows.Forms.Label iD_FORNECEDOR_PRODUTOLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
             this.groupComp = new System.Windows.Forms.GroupBox();
             this.numValor = new System.Windows.Forms.NumericUpDown();
             this.cmbFornecedores = new System.Windows.Forms.ComboBox();
@@ -344,6 +345,7 @@ namespace TCCMadeireira.Views
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pvlDgv);
             this.Controls.Add(this.groupComp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProduto";
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.FrmProduto_Load);

@@ -41,6 +41,7 @@
             System.Windows.Forms.Label cELULAR_CLIENTELabel;
             System.Windows.Forms.Label eMAIL_CLIENTELabel;
             System.Windows.Forms.Label oBS__FORNECEDORLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
@@ -413,6 +414,7 @@
             this.rbtnCpf.Name = "rbtnCpf";
             this.rbtnCpf.Size = new System.Drawing.Size(45, 17);
             this.rbtnCpf.TabIndex = 30;
+            this.rbtnCpf.TabStop = true;
             this.rbtnCpf.Text = "CPF";
             this.rbtnCpf.UseVisualStyleBackColor = true;
             this.rbtnCpf.CheckedChanged += new System.EventHandler(this.RbtnIden_CheckedChanged);
@@ -637,6 +639,7 @@
             this.rbtnCpfFiltro.Name = "rbtnCpfFiltro";
             this.rbtnCpfFiltro.Size = new System.Drawing.Size(45, 17);
             this.rbtnCpfFiltro.TabIndex = 39;
+            this.rbtnCpfFiltro.TabStop = true;
             this.rbtnCpfFiltro.Text = "CPF";
             this.rbtnCpfFiltro.UseVisualStyleBackColor = true;
             this.rbtnCpfFiltro.CheckedChanged += new System.EventHandler(this.RbtnCpfFiltro_CheckedChanged);
@@ -719,6 +722,7 @@
             this.Controls.Add(this.groupComp);
             this.Controls.Add(oBS__FORNECEDORLabel);
             this.Controls.Add(this.pnlComp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);

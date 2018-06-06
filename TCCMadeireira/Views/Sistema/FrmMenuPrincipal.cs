@@ -267,6 +267,13 @@ namespace TCCMadeireira.Views
         {
             toolStripStatusLabelData.Text = DateTime.Now.ToString();
             toolStripStatusLabelUser.Text = Properties.Settings.Default.nomeUsuario;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is MdiClient)
+                {
+                    ctrl.BackColor = Color.White;
+                }
+            }
             timer.Start();
         }
     }

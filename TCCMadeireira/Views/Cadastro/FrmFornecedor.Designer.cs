@@ -40,6 +40,7 @@
             System.Windows.Forms.Label tELEFONE_FORNECEDORLabel;
             System.Windows.Forms.Label cELULAR_FORNECEDORLabel;
             System.Windows.Forms.Label eMAIL_FORNECEDORLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFornecedor));
             this.groupComp = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
             this.rbtnCpf = new System.Windows.Forms.RadioButton();
@@ -643,6 +644,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupComp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFornecedor";
             this.Text = "Fornecedor";
             this.Load += new System.EventHandler(this.FrmFornecedor_Load);

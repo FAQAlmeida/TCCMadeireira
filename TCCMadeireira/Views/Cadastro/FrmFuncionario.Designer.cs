@@ -45,6 +45,7 @@
             System.Windows.Forms.Label eMAIL_CLIENTELabel;
             System.Windows.Forms.Label tELEFONE_CLIENTELabel;
             System.Windows.Forms.Label cELULAR_CLIENTELabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFuncionario));
             this.lblDataInfo = new System.Windows.Forms.Label();
             this.rbtnCnpjFiltro = new System.Windows.Forms.RadioButton();
             this.rbtnCpfFiltro = new System.Windows.Forms.RadioButton();
@@ -654,6 +655,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFuncionario";
             this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.FrmFuncionario_Load);
