@@ -57,7 +57,7 @@ namespace TCCMadeireira.Views
                     Convert.ToDateTime(dt.Rows[0]["data_info_cliente"]), Convert.ToString(dt.Rows[0]["obs_cliente"])
                     );
                     lblNome.Text = dt.Rows[0][1].ToString();
-                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1} BAIRRO: {2} CIDADE: {3} UF: {4}",
+                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1}\nBAIRRO: {2} CIDADE: {3} UF: {4}",
                         dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(),
                         dt.Rows[0][6].ToString(), dt.Rows[0][7].ToString(), dt.Rows[0][8].ToString());
                 }

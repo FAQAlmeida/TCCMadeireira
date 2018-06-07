@@ -655,8 +655,10 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmFuncionario";
             this.Text = "Funcionario";
             this.Load += new System.EventHandler(this.FrmFuncionario_Load);

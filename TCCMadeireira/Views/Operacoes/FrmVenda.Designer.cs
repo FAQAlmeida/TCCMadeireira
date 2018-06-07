@@ -78,6 +78,8 @@
             // 
             // grbCliente
             // 
+            this.grbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCliente.Controls.Add(this.rbtnCnpj);
             this.grbCliente.Controls.Add(this.rbtnCpf);
             this.grbCliente.Controls.Add(this.lblEndereco);
@@ -88,7 +90,7 @@
             this.grbCliente.Controls.Add(this.txtIdentidade);
             this.grbCliente.Location = new System.Drawing.Point(12, 12);
             this.grbCliente.Name = "grbCliente";
-            this.grbCliente.Size = new System.Drawing.Size(784, 84);
+            this.grbCliente.Size = new System.Drawing.Size(710, 101);
             this.grbCliente.TabIndex = 44;
             this.grbCliente.TabStop = false;
             this.grbCliente.Text = "Cliente";
@@ -191,9 +193,9 @@
             // grbProdutos
             // 
             this.grbProdutos.Controls.Add(this.dgvProdutos);
-            this.grbProdutos.Location = new System.Drawing.Point(12, 103);
+            this.grbProdutos.Location = new System.Drawing.Point(12, 119);
             this.grbProdutos.Name = "grbProdutos";
-            this.grbProdutos.Size = new System.Drawing.Size(537, 286);
+            this.grbProdutos.Size = new System.Drawing.Size(537, 270);
             this.grbProdutos.TabIndex = 45;
             this.grbProdutos.TabStop = false;
             this.grbProdutos.Text = "Produtos";
@@ -203,18 +205,20 @@
             this.dgvProdutos.AllowUserToAddRows = false;
             this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.AllowUserToOrderColumns = true;
+            this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProduto,
             this.NomeProduto,
             this.QuantidadeProduto,
             this.ValorProduto});
-            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 16);
             this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
-            this.dgvProdutos.Size = new System.Drawing.Size(531, 267);
+            this.dgvProdutos.Size = new System.Drawing.Size(531, 251);
             this.dgvProdutos.TabIndex = 0;
             this.dgvProdutos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ValorSet);
             this.dgvProdutos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ValorSet);
@@ -245,12 +249,13 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lblValorTotal);
             this.panel1.Controls.Add(this.btnRemover);
             this.panel1.Controls.Add(this.btnAdicionar);
-            this.panel1.Location = new System.Drawing.Point(555, 103);
+            this.panel1.Location = new System.Drawing.Point(555, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(241, 145);
+            this.panel1.Size = new System.Drawing.Size(167, 144);
             this.panel1.TabIndex = 46;
             // 
             // lblValorTotal
@@ -264,7 +269,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(6, 45);
+            this.btnRemover.Location = new System.Drawing.Point(3, 45);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
             this.btnRemover.TabIndex = 1;
@@ -274,7 +279,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(6, 16);
+            this.btnAdicionar.Location = new System.Drawing.Point(3, 16);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 0;
@@ -284,11 +289,12 @@
             // 
             // pnlVenda
             // 
+            this.pnlVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlVenda.Controls.Add(this.btnCancelar);
             this.pnlVenda.Controls.Add(this.btnFinalizar);
-            this.pnlVenda.Location = new System.Drawing.Point(555, 255);
+            this.pnlVenda.Location = new System.Drawing.Point(555, 269);
             this.pnlVenda.Name = "pnlVenda";
-            this.pnlVenda.Size = new System.Drawing.Size(241, 131);
+            this.pnlVenda.Size = new System.Drawing.Size(167, 77);
             this.pnlVenda.TabIndex = 47;
             // 
             // btnCancelar
@@ -319,13 +325,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 409);
+            this.ClientSize = new System.Drawing.Size(734, 401);
             this.Controls.Add(this.pnlVenda);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grbProdutos);
             this.Controls.Add(this.grbCliente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmVenda";
             this.Text = "Vendas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVenda_FormClosing);

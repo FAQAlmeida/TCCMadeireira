@@ -48,6 +48,12 @@ namespace TCCMadeireira.Views
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRODUTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pvlDgv = new System.Windows.Forms.Panel();
             this.txtFiltro = new System.Windows.Forms.MaskedTextBox();
@@ -57,12 +63,6 @@ namespace TCCMadeireira.Views
             this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.iDPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oBSPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblNome = new System.Windows.Forms.Label();
             lblQuantidade = new System.Windows.Forms.Label();
             vALOR_PRODUTOLabel = new System.Windows.Forms.Label();
@@ -222,6 +222,48 @@ namespace TCCMadeireira.Views
             this.dgvProdutos.TabIndex = 1;
             this.dgvProdutos.TabStop = false;
             // 
+            // iDPRODUTODataGridViewTextBoxColumn
+            // 
+            this.iDPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUTO";
+            this.iDPRODUTODataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDPRODUTODataGridViewTextBoxColumn.Name = "iDPRODUTODataGridViewTextBoxColumn";
+            this.iDPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nOMEPRODUTODataGridViewTextBoxColumn
+            // 
+            this.nOMEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "NOME_PRODUTO";
+            this.nOMEPRODUTODataGridViewTextBoxColumn.HeaderText = "PRODUTO";
+            this.nOMEPRODUTODataGridViewTextBoxColumn.Name = "nOMEPRODUTODataGridViewTextBoxColumn";
+            this.nOMEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qUANTIDADEPRODUTODataGridViewTextBoxColumn
+            // 
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE_PRODUTO";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.Name = "qUANTIDADEPRODUTODataGridViewTextBoxColumn";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vALORPRODUTODataGridViewTextBoxColumn
+            // 
+            this.vALORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "VALOR_PRODUTO";
+            this.vALORPRODUTODataGridViewTextBoxColumn.HeaderText = "VALOR";
+            this.vALORPRODUTODataGridViewTextBoxColumn.Name = "vALORPRODUTODataGridViewTextBoxColumn";
+            this.vALORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDFORNECEDORPRODUTODataGridViewTextBoxColumn
+            // 
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_FORNECEDOR_PRODUTO";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.HeaderText = "ID DO FORNECEDOR";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.Name = "iDFORNECEDORPRODUTODataGridViewTextBoxColumn";
+            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oBSPRODUTODataGridViewTextBoxColumn
+            // 
+            this.oBSPRODUTODataGridViewTextBoxColumn.DataPropertyName = "OBS_PRODUTO";
+            this.oBSPRODUTODataGridViewTextBoxColumn.HeaderText = "OBS";
+            this.oBSPRODUTODataGridViewTextBoxColumn.Name = "oBSPRODUTODataGridViewTextBoxColumn";
+            this.oBSPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // pRODUTOSBindingSource
             // 
             this.pRODUTOSBindingSource.DataMember = "PRODUTOS";
@@ -291,48 +333,6 @@ namespace TCCMadeireira.Views
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // iDPRODUTODataGridViewTextBoxColumn
-            // 
-            this.iDPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUTO";
-            this.iDPRODUTODataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDPRODUTODataGridViewTextBoxColumn.Name = "iDPRODUTODataGridViewTextBoxColumn";
-            this.iDPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nOMEPRODUTODataGridViewTextBoxColumn
-            // 
-            this.nOMEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "NOME_PRODUTO";
-            this.nOMEPRODUTODataGridViewTextBoxColumn.HeaderText = "PRODUTO";
-            this.nOMEPRODUTODataGridViewTextBoxColumn.Name = "nOMEPRODUTODataGridViewTextBoxColumn";
-            this.nOMEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // qUANTIDADEPRODUTODataGridViewTextBoxColumn
-            // 
-            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE_PRODUTO";
-            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
-            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.Name = "qUANTIDADEPRODUTODataGridViewTextBoxColumn";
-            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vALORPRODUTODataGridViewTextBoxColumn
-            // 
-            this.vALORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "VALOR_PRODUTO";
-            this.vALORPRODUTODataGridViewTextBoxColumn.HeaderText = "VALOR";
-            this.vALORPRODUTODataGridViewTextBoxColumn.Name = "vALORPRODUTODataGridViewTextBoxColumn";
-            this.vALORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDFORNECEDORPRODUTODataGridViewTextBoxColumn
-            // 
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "ID_FORNECEDOR_PRODUTO";
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.HeaderText = "ID DO FORNECEDOR";
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.Name = "iDFORNECEDORPRODUTODataGridViewTextBoxColumn";
-            this.iDFORNECEDORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oBSPRODUTODataGridViewTextBoxColumn
-            // 
-            this.oBSPRODUTODataGridViewTextBoxColumn.DataPropertyName = "OBS_PRODUTO";
-            this.oBSPRODUTODataGridViewTextBoxColumn.HeaderText = "OBS";
-            this.oBSPRODUTODataGridViewTextBoxColumn.Name = "oBSPRODUTODataGridViewTextBoxColumn";
-            this.oBSPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,8 +345,10 @@ namespace TCCMadeireira.Views
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pvlDgv);
             this.Controls.Add(this.groupComp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmProduto";
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.FrmProduto_Load);

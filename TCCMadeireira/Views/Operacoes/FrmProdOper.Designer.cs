@@ -61,10 +61,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dvgProduto);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Location = new System.Drawing.Point(12, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(652, 280);
+            this.panel1.Size = new System.Drawing.Size(628, 268);
             this.panel1.TabIndex = 0;
             // 
             // dvgProduto
@@ -88,7 +87,7 @@
             this.dvgProduto.Name = "dvgProduto";
             this.dvgProduto.ReadOnly = true;
             this.dvgProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgProduto.Size = new System.Drawing.Size(652, 280);
+            this.dvgProduto.Size = new System.Drawing.Size(628, 268);
             this.dvgProduto.TabIndex = 0;
             this.dvgProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgProduto_CellContentClick);
             // 
@@ -246,10 +245,12 @@
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.numQuantidade);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmProdOper";
-            this.Text = "I.P.O";
+            this.Text = "Inserir Produtos";
             this.Load += new System.EventHandler(this.FrmProdVenda_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgProduto)).EndInit();

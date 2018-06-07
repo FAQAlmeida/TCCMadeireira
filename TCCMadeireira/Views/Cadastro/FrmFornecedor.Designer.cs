@@ -644,8 +644,10 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupComp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmFornecedor";
             this.Text = "Fornecedor";
             this.Load += new System.EventHandler(this.FrmFornecedor_Load);

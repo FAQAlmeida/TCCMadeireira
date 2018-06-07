@@ -727,8 +727,10 @@
             this.Controls.Add(this.groupComp);
             this.Controls.Add(oBS__FORNECEDORLabel);
             this.Controls.Add(this.pnlComp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);

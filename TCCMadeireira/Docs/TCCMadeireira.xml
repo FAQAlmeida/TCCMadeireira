@@ -54,6 +54,11 @@
             Represents the strongly named DataTable class.
             </summary>
         </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.RELATORIO_VENDADataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESRow">
              <summary>
             Represents strongly named DataRow class.
@@ -95,6 +100,11 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.RELATORIO_VENDARow">
              <summary>
             Represents strongly named DataRow class.
             </summary>
@@ -144,6 +154,11 @@
             Row event argument class
             </summary>
         </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.RELATORIO_VENDARowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
@@ -185,6 +200,11 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDA_PRODUTOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.RELATORIO_VENDATableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
             </summary>
@@ -740,6 +760,23 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:TCCMadeireira.Views.Relatorios.FrmRelatorioVendas.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.Relatorios.FrmRelatorioVendas.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.Relatorios.FrmRelatorioVendas.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="F:TCCMadeireira.Views.Sistema.FrmBackup.components">
             <summary>
             Required designer variable.
@@ -1068,6 +1105,20 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
+        </member>
+        <member name="T:SqlServerTypes.Utilities">
+            <summary>
+            Utility methods related to CLR Types for SQL Server 
+            </summary>
+        </member>
+        <member name="M:SqlServerTypes.Utilities.LoadNativeAssemblies(System.String)">
+            <summary>
+            Loads the required native assemblies for the current architecture (x86 or x64)
+            </summary>
+            <param name="rootApplicationPath">
+            Root path of the current application. Use Server.MapPath(".") for ASP.NET applications
+            and AppDomain.CurrentDomain.BaseDirectory for desktop applications.
+            </param>
         </member>
     </members>
 </doc>

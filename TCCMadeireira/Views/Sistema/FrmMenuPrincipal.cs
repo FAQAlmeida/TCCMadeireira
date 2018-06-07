@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCCMadeireira.Views.Relatorios;
 using TCCMadeireira.Views.Sistema;
 
 namespace TCCMadeireira.Views
@@ -28,6 +29,7 @@ namespace TCCMadeireira.Views
         FrmFornecimento frmFornecimento;
         FrmUsuario frmUsuario;
         FrmBackup frmBackup;
+        FrmRelatorioVendas frmRelatorioVendas;
         #endregion
         #region Construtor
         /// <summary>
@@ -234,6 +236,35 @@ namespace TCCMadeireira.Views
                 MessageBox.Show(ex.Message);
             }
         }
+        #region Relatorios
+        private void VendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmRelatorioVendas"] == null)
+                {
+                    frmRelatorioVendas = new FrmRelatorioVendas
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendas.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmRelatorioVendas.Name].Close();
+                    frmRelatorioVendas = new FrmRelatorioVendas
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendas.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
         #endregion
         #region Test
         private void MdiParentSetter(Form[] forms)
@@ -255,14 +286,8 @@ namespace TCCMadeireira.Views
         {
             toolStripStatusLabelData.Text = DateTime.Now.ToString();
         }
-
         #endregion
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region @event.Load
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             toolStripStatusLabelData.Text = DateTime.Now.ToString();
@@ -276,5 +301,8 @@ namespace TCCMadeireira.Views
             }
             timer.Start();
         }
+        #endregion
+
+        
     }
 }

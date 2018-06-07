@@ -67,10 +67,9 @@ namespace TCCMadeireira.Views
                     Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
                     Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
                     );
-                    lblNome.Text = fornecedordt.Rows[0][1].ToString();
-                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1} BAIRRO: {2} CIDADE: {3} UF: {4}",
-                        fornecedordt.Rows[0][3].ToString(), fornecedordt.Rows[0][4].ToString(), fornecedordt.Rows[0][5].ToString(),
-                        fornecedordt.Rows[0][6].ToString(), fornecedordt.Rows[0][7].ToString(), fornecedordt.Rows[0][8].ToString());
+                    lblNome.Text = fornecedor.Nome;
+                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1}\nBAIRRO: {2} CIDADE: {3} UF: {4}",
+                        fornecedor.Cep, fornecedor.Rua, fornecedor.Numero, fornecedor.Bairro, fornecedor.Cidade, fornecedor.Estado);
                 }
                 else
                 {

@@ -72,9 +72,9 @@
             // 
             this.pnlVenda.Controls.Add(this.btnCancelar);
             this.pnlVenda.Controls.Add(this.btnFinalizar);
-            this.pnlVenda.Location = new System.Drawing.Point(555, 255);
+            this.pnlVenda.Location = new System.Drawing.Point(555, 269);
             this.pnlVenda.Name = "pnlVenda";
-            this.pnlVenda.Size = new System.Drawing.Size(241, 131);
+            this.pnlVenda.Size = new System.Drawing.Size(167, 77);
             this.pnlVenda.TabIndex = 51;
             // 
             // btnCancelar
@@ -101,9 +101,9 @@
             this.panel1.Controls.Add(this.lblValorTotal);
             this.panel1.Controls.Add(this.btnRemover);
             this.panel1.Controls.Add(this.btnAdicionar);
-            this.panel1.Location = new System.Drawing.Point(555, 103);
+            this.panel1.Location = new System.Drawing.Point(555, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(241, 145);
+            this.panel1.Size = new System.Drawing.Size(167, 144);
             this.panel1.TabIndex = 50;
             // 
             // lblValorTotal
@@ -138,7 +138,7 @@
             // grbProdutos
             // 
             this.grbProdutos.Controls.Add(this.dgvProdutos);
-            this.grbProdutos.Location = new System.Drawing.Point(12, 103);
+            this.grbProdutos.Location = new System.Drawing.Point(12, 119);
             this.grbProdutos.Name = "grbProdutos";
             this.grbProdutos.Size = new System.Drawing.Size(537, 286);
             this.grbProdutos.TabIndex = 49;
@@ -201,7 +201,7 @@
             this.grbFornecedor.Controls.Add(this.txtIdentidade);
             this.grbFornecedor.Location = new System.Drawing.Point(12, 12);
             this.grbFornecedor.Name = "grbFornecedor";
-            this.grbFornecedor.Size = new System.Drawing.Size(784, 84);
+            this.grbFornecedor.Size = new System.Drawing.Size(710, 101);
             this.grbFornecedor.TabIndex = 48;
             this.grbFornecedor.TabStop = false;
             this.grbFornecedor.Text = "Fornecedor";
@@ -277,13 +277,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 401);
+            this.ClientSize = new System.Drawing.Size(734, 401);
             this.Controls.Add(this.pnlVenda);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grbProdutos);
             this.Controls.Add(this.grbFornecedor);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmFornecimento";
             this.Text = "Fornecimento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFornecimento_FormClosing);

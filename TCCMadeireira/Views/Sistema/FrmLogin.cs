@@ -33,7 +33,6 @@ namespace TCCMadeireira.Views
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario(txtUsuario.Text, txtSenha.Text);
-            MessageBox.Show(usuario.ToString());
             if (banco.SelectUsuario(usuario.Nome, usuario.Senha) >= 1)
             {
                 USERSDataTable usersdt = banco.SelectUser(usuario.Nome, usuario.Senha);

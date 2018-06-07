@@ -37,6 +37,21 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\140\DTS\Tasks\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
@@ -117,6 +132,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files\Microsoft SQL Server\130\SDK\Assemblies\Microsoft.SqlServer.SString.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.WmiEnum, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files\Microsoft SQL Server\130\SDK\Assemblies\Microsoft.SqlServer.WmiEnum.dll</HintPath>
@@ -151,6 +169,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Util\Banco.cs" />
     <Compile Include="Bancos\DataSetMadeireiraV2.cs">
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
@@ -184,6 +203,12 @@
     </Compile>
     <Compile Include="Views\Cadastro\FrmFuncionario.Designer.cs">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\Views\FrmRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\Views\FrmRelatorioVendas.Designer.cs">
+      <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Sistema\FrmBackup.cs">
       <SubType>Form</SubType>
@@ -250,6 +275,10 @@
     <EmbeddedResource Include="Views\Cadastro\FrmFuncionario.resx">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\Reports\VendasReport.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\Views\FrmRelatorioVendas.resx">
+      <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Sistema\FrmBackup.resx">
       <DependentUpon>FrmBackup.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +318,7 @@
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
     </None>
     <None Include="Diagramas\DiagramaDeClasse.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -330,6 +360,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoSMold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
