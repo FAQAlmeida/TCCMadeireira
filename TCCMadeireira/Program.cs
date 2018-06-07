@@ -17,6 +17,7 @@ namespace TCCMadeireira
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             Application.Run(new SplashScreen());
         }
     }

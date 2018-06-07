@@ -19,9 +19,8 @@ namespace TCCMadeireira.Views.Relatorios
 
         private void FrmRelatorioVendas_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetMadeireiraV2.RELATORIO_VENDA' table. You can move, or remove it, as needed.
-            this.relatorioVendaTableAdapter.Fill(this.dataSetMadeireiraV2.RELATORIO_VENDA);
-
+            // TODO: This line of code loads data into the 'dataSetReport.DataTable1' table. You can move, or remove it, as needed.
+            this.dataTable1TableAdapter.Fill(this.dataSetReport.DataTable1);
             this.reportViewer1.RefreshReport();
         }
     }

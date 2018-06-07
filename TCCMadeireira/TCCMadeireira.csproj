@@ -157,6 +157,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Bancos\DataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\Fornecimento.cs" />
     <Compile Include="Models\Produto.cs" />
@@ -316,6 +321,17 @@
     </None>
     <None Include="Bancos\DataSetMadeireiraV2.xss">
       <DependentUpon>DataSetMadeireiraV2.xsd</DependentUpon>
+    </None>
+    <None Include="Bancos\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Bancos\DataSetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Bancos\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
     </None>
     <None Include="Diagramas\DiagramaDeClasse.cd" />
     <None Include="packages.config" />

@@ -54,11 +54,6 @@
             Represents the strongly named DataTable class.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.RELATORIO_VENDADataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.CLIENTESRow">
              <summary>
             Represents strongly named DataRow class.
@@ -100,11 +95,6 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.RELATORIO_VENDARow">
              <summary>
             Represents strongly named DataRow class.
             </summary>
@@ -154,11 +144,6 @@
             Row event argument class
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.RELATORIO_VENDARowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
@@ -204,11 +189,6 @@
             Represents the connection and commands used to retrieve and save data.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.RELATORIO_VENDATableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager">
              <summary>
             TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
@@ -245,6 +225,71 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable1DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable1Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable1RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.UpdateUpdatedRows(TCCMadeireira.Bancos.DataSetReport,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.UpdateInsertedRows(TCCMadeireira.Bancos.DataSetReport,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.UpdateDeletedRows(TCCMadeireira.Bancos.DataSetReport,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.UpdateAll(TCCMadeireira.Bancos.DataSetReport)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReportTableAdapters.TableAdapterManager.SelfReferenceComparer">
              <summary>
             Used to sort self-referenced table's rows
             </summary>

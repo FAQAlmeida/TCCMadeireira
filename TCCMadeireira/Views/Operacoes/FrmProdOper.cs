@@ -74,7 +74,6 @@ namespace TCCMadeireira.Views
                                    Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
                            );
                             ProdOper = new ProdOper(produto, numQuantidade.Value);
-                            MessageBox.Show("ProdOper feito");
                         }
                     }
                 }
@@ -155,7 +154,6 @@ namespace TCCMadeireira.Views
                     PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dvgProduto.SelectedCells[0].Value));
                     if (produtosdt.Count > 0)
                     {
-                        MessageBox.Show(produtosdt.Rows[0]["id_fornecedor_produto"].ToString());
                         FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor((int) produtosdt.Rows[0]["id_fornecedor_produto"]);
                         if (fornecedordt.Count > 0)
                         {
@@ -175,11 +173,10 @@ namespace TCCMadeireira.Views
                                    Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
                            );
                             ProdOper = new ProdOper(produto, numQuantidade.Value);
-                            MessageBox.Show(ProdOper.ToString());
                         }
                         else
                         {
-                            MessageBox.Show("Forn não encontrado");
+                            MessageBox.Show("Fornecedor não encontrado");
                         }
                     }
                     else

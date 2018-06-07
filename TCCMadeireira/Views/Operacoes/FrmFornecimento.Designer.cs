@@ -140,7 +140,7 @@
             this.grbProdutos.Controls.Add(this.dgvProdutos);
             this.grbProdutos.Location = new System.Drawing.Point(12, 119);
             this.grbProdutos.Name = "grbProdutos";
-            this.grbProdutos.Size = new System.Drawing.Size(537, 286);
+            this.grbProdutos.Size = new System.Drawing.Size(537, 270);
             this.grbProdutos.TabIndex = 49;
             this.grbProdutos.TabStop = false;
             this.grbProdutos.Text = "Produtos";
@@ -160,7 +160,7 @@
             this.dgvProdutos.Location = new System.Drawing.Point(3, 16);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
-            this.dgvProdutos.Size = new System.Drawing.Size(531, 267);
+            this.dgvProdutos.Size = new System.Drawing.Size(531, 251);
             this.dgvProdutos.TabIndex = 0;
             this.dgvProdutos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ValorSet);
             this.dgvProdutos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ValorSet);

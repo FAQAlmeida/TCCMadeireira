@@ -52,36 +52,39 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                fornecedor = new Fornecedor(txtIdentidade.Text);
-                FORNECEDORESDataTable fornecedordt = new FORNECEDORESDataTable();
-                fornecedordt = banco.SelectFornecedor(fornecedor.Identidade);                
-                //TODO arrumar lbls
-                if (fornecedordt.Rows.Count == 1)
+                if (!txtIdentidade.Text.EndsWith("_"))
                 {
-                    fornecedor = new Fornecedor(
-                    Convert.ToInt32(fornecedordt.Rows[0]["Id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
-                    Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
-                    Convert.ToString(fornecedordt.Rows[0]["rua_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["numero_fornecedor"]),
-                    Convert.ToString(fornecedordt.Rows[0]["bairro_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cidade_fornecedor"]),
-                    Convert.ToString(fornecedordt.Rows[0]["estado_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["telefone_fornecedor"]),
-                    Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
-                    Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
-                    );
-                    lblNome.Text = fornecedor.Nome;
-                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1}\nBAIRRO: {2} CIDADE: {3} UF: {4}",
-                        fornecedor.Cep, fornecedor.Rua, fornecedor.Numero, fornecedor.Bairro, fornecedor.Cidade, fornecedor.Estado);
-                }
-                else
-                {
-                    FrmFornecedor frmFornecedor = new FrmFornecedor();
-                    frmFornecedor.Show();
-                    frmFornecedor.IdentidadeInput(txtIdentidade.Text, SelectedRadioButton());
-                }
-                //TODO Rever este erro
-                if (fornecedordt.Rows.Count > 1)
-                {                    
-                    throw new Exception("Há um erro no DB, há mais de uma identidade registrada com esses digitos\n" +
-                        "Contate a central para reparar o DB");
+                    fornecedor = new Fornecedor(txtIdentidade.Text);
+                    FORNECEDORESDataTable fornecedordt = new FORNECEDORESDataTable();
+                    fornecedordt = banco.SelectFornecedor(fornecedor.Identidade);
+                    //TODO arrumar lbls
+                    if (fornecedordt.Rows.Count == 1)
+                    {
+                        fornecedor = new Fornecedor(
+                        Convert.ToInt32(fornecedordt.Rows[0]["Id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["rua_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["numero_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["bairro_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cidade_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["estado_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["telefone_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
+                        );
+                        lblNome.Text = fornecedor.Nome;
+                        lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1}\nBAIRRO: {2} CIDADE: {3} UF: {4}",
+                            fornecedor.Cep, fornecedor.Rua, fornecedor.Numero, fornecedor.Bairro, fornecedor.Cidade, fornecedor.Estado);
+                    }
+                    else
+                    {
+                        FrmFornecedor frmFornecedor = new FrmFornecedor();
+                        frmFornecedor.Show();
+                        frmFornecedor.IdentidadeInput(txtIdentidade.Text, SelectedRadioButton());
+                    }
+                    //TODO Rever este erro
+                    if (fornecedordt.Rows.Count > 1)
+                    {
+                        throw new Exception("Há um erro no DB, há mais de uma identidade registrada com esses digitos\n" +
+                            "Contate a central para reparar o DB");
+                    }
                 }
             }
             catch (Exception ex)

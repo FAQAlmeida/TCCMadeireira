@@ -115,7 +115,7 @@ namespace TCCMadeireira.Bancos
         }
         public void InsertFornecimento(Fornecimento fornecimento)
         {
-            fornecimento.Id = (int) fornecimentosTableAdapter.InsertFornecimento(fornecimento.DataInfo, fornecimento.Valor, fornecimento.Fornecedor.Id, fornecimento.Obs);
+            fornecimento.Id = Convert.ToInt32(fornecimentosTableAdapter.InsertFornecimento(fornecimento.DataInfo, fornecimento.Valor, fornecimento.Fornecedor.Id, fornecimento.Obs));
             InsertMultProdForn(fornecimento);
         }
         public void UpdateFornecimento(Fornecimento fornecimento)
@@ -276,7 +276,7 @@ namespace TCCMadeireira.Bancos
         /// <param name="venda"> Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void InsertVenda(Venda venda)
         {
-            venda.Id = (int) vendasTableAdapter.InsertVenda(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor);
+            venda.Id = Convert.ToInt32(vendasTableAdapter.InsertVenda(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor));
             InsertMultProdVenda(venda);
         }
         /// <summary>

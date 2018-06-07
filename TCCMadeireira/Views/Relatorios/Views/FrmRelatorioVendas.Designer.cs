@@ -30,29 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
-            this.relatorioVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.relatorioVendaTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.RELATORIO_VENDATableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.relatorioVendaBindingSource)).BeginInit();
+            this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1TableAdapter = new TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataSetMadeireiraV2
-            // 
-            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
-            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // relatorioVendaBindingSource
-            // 
-            this.relatorioVendaBindingSource.DataMember = "RELATORIO_VENDA";
-            this.relatorioVendaBindingSource.DataSource = this.dataSetMadeireiraV2;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.relatorioVendaBindingSource;
+            reportDataSource1.Name = "DataSetVendasReport";
+            reportDataSource1.Value = this.dataTable1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.VendasReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -61,9 +51,19 @@
             this.reportViewer1.Size = new System.Drawing.Size(984, 461);
             this.reportViewer1.TabIndex = 0;
             // 
-            // relatorioVendaTableAdapter
+            // dataSetReport
             // 
-            this.relatorioVendaTableAdapter.ClearBeforeFill = true;
+            this.dataSetReport.DataSetName = "DataSetReport";
+            this.dataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.dataSetReport;
+            // 
+            // dataTable1TableAdapter
+            // 
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
             // FrmRelatorioVendas
             // 
@@ -76,17 +76,17 @@
             this.Name = "FrmRelatorioVendas";
             this.Text = "Relatório de Vendas";
             this.Load += new System.EventHandler(this.FrmRelatorioVendas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.relatorioVendaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
-        private System.Windows.Forms.BindingSource relatorioVendaBindingSource;
         private Bancos.DataSetMadeireiraV2TableAdapters.RELATORIO_VENDATableAdapter relatorioVendaTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Bancos.DataSetReport dataSetReport;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private Bancos.DataSetReportTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
     }
 }

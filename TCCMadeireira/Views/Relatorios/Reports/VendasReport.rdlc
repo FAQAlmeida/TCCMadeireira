@@ -6,18 +6,18 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.73813cm</Width>
+              <Width>2.98286cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.94979cm</Width>
+              <Width>2.79766cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.24203cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.18208cm</Height>
+              <Height>1.26146cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -28,11 +28,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>PRODUTOS</Value>
+                              <Value>PRODUTO</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -70,7 +69,6 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -108,7 +106,6 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -136,21 +133,20 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.235cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NOMEPRODUTO">
+                    <Textbox Name="NOME_PRODUTO">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NOMEPRODUTO.Value</Value>
+                              <Value>=Fields!NOME_PRODUTO.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -159,7 +155,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NOMEPRODUTO</rd:DefaultName>
+                      <rd:DefaultName>NOME_PRODUTO</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -176,18 +172,16 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QUANTIDADEPRODUTOOPER">
+                    <Textbox Name="QUANTIDADE_PRODUTO1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QUANTIDADEPRODUTOOPER.Value</Value>
+                              <Value>=Fields!QUANTIDADE_PRODUTO1.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Format>f4</Format>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -196,7 +190,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QUANTIDADEPRODUTOOPER</rd:DefaultName>
+                      <rd:DefaultName>QUANTIDADE_PRODUTO1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -213,18 +207,16 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="VALORPRODUTO">
+                    <Textbox Name="VALOR_PRODUTO">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!VALORPRODUTO.Value</Value>
+                              <Value>=Fields!VALOR_PRODUTO.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Format>f2</Format>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -233,7 +225,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>VALORPRODUTO</rd:DefaultName>
+                      <rd:DefaultName>VALOR_PRODUTO</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -263,7 +255,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.02375cm</Size>
+                <Size>1.61396cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox15">
                     <CanGrow>true</CanGrow>
@@ -276,7 +268,6 @@
                             <Style>
                               <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>#666666</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -304,7 +295,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.22625cm</Size>
+                    <Size>2.37432cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox13">
                         <CanGrow>true</CanGrow>
@@ -317,7 +308,6 @@
                                 <Style>
                                   <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>#666666</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -332,7 +322,6 @@
                                 <Style>
                                   <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>#666666</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -360,7 +349,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.73812cm</Size>
+                        <Size>2.61245cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox11">
                             <CanGrow>true</CanGrow>
@@ -369,11 +358,10 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>IDENTIDADE</Value>
+                                    <Value>DATA</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>#666666</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -384,11 +372,10 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>CLIENTE</Value>
+                                    <Value>VENDA</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>#666666</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -416,7 +403,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>3.11516cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox9">
                                 <CanGrow>true</CanGrow>
@@ -425,11 +412,24 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>VENDEDOR</Value>
+                                        <Value>IDENTIDADE</Value>
                                         <Style>
                                           <FontSize>11pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
-                                          <Color>#666666</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
+                                  </Paragraph>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>CLIENTE</Value>
+                                        <Style>
+                                          <FontSize>11pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -457,7 +457,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.4537cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox7">
                                     <CanGrow>true</CanGrow>
@@ -466,26 +466,10 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>DATA</Value>
+                                            <Value>VENDEDOR</Value>
                                             <Style>
                                               <FontSize>11pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
-                                              <Color>#666666</Color>
-                                            </Style>
-                                          </TextRun>
-                                        </TextRuns>
-                                        <Style>
-                                          <TextAlign>Center</TextAlign>
-                                        </Style>
-                                      </Paragraph>
-                                      <Paragraph>
-                                        <TextRuns>
-                                          <TextRun>
-                                            <Value>VENDA</Value>
-                                            <Style>
-                                              <FontSize>11pt</FontSize>
-                                              <FontWeight>Bold</FontWeight>
-                                              <Color>#666666</Color>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -524,31 +508,29 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="IDVENDA">
+              <Group Name="ID_VENDA">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!IDVENDA.Value</GroupExpression>
+                  <GroupExpression>=Fields!ID_VENDA.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!IDVENDA.Value</Value>
+                  <Value>=Fields!ID_VENDA.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.02375cm</Size>
+                <Size>1.61396cm</Size>
                 <CellContents>
-                  <Textbox Name="IDVENDA">
+                  <Textbox Name="ID_VENDA1">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!IDVENDA.Value</Value>
+                            <Value>=Fields!ID_VENDA1.Value</Value>
                             <Style>
                               <FontWeight>Normal</FontWeight>
-                              <Format>f0</Format>
-                              <Color>#333333</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -557,7 +539,7 @@
                         </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>IDVENDA</rd:DefaultName>
+                    <rd:DefaultName>ID_VENDA1</rd:DefaultName>
                     <Style>
                       <Border>
                         <Style>Solid</Style>
@@ -574,32 +556,29 @@
               </TablixHeader>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="VALORVENDA">
+                  <Group Name="VALOR_VENDA">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!VALORVENDA.Value</GroupExpression>
+                      <GroupExpression>=Fields!VALOR_VENDA.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!VALORVENDA.Value</Value>
+                      <Value>=Fields!VALOR_VENDA.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.22625cm</Size>
+                    <Size>2.37432cm</Size>
                     <CellContents>
-                      <Textbox Name="VALORVENDA">
+                      <Textbox Name="VALOR_VENDA">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!VALORVENDA.Value</Value>
+                                <Value>=Fields!VALOR_VENDA.Value</Value>
                                 <Style>
                                   <FontWeight>Normal</FontWeight>
-                                  <Format>'R$'0.00</Format>
-                                  <Color>#333333</Color>
-                                  <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -608,7 +587,7 @@
                             </Style>
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>VALORVENDA</rd:DefaultName>
+                        <rd:DefaultName>VALOR_VENDA</rd:DefaultName>
                         <Style>
                           <Border>
                             <Style>Solid</Style>
@@ -619,37 +598,35 @@
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
                           <PaddingBottom>2pt</PaddingBottom>
-                          <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                         </Style>
                       </Textbox>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="IDENCLIENTE">
+                      <Group Name="DATA_VENDA">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!IDENCLIENTE.Value</GroupExpression>
+                          <GroupExpression>=Fields!DATA_VENDA.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!IDENCLIENTE.Value</Value>
+                          <Value>=Fields!DATA_VENDA.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.73812cm</Size>
+                        <Size>2.61245cm</Size>
                         <CellContents>
-                          <Textbox Name="IDENCLIENTE">
+                          <Textbox Name="DATA_VENDA">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!IDENCLIENTE.Value</Value>
+                                    <Value>=Fields!DATA_VENDA.Value</Value>
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
-                                      <Color>#333333</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -658,7 +635,7 @@
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>IDENCLIENTE</rd:DefaultName>
+                            <rd:DefaultName>DATA_VENDA</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Style>Solid</Style>
@@ -675,30 +652,29 @@
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="LOGINUSUARIO">
+                          <Group Name="IDENTIDADE_CLIENTE">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!LOGINUSUARIO.Value</GroupExpression>
+                              <GroupExpression>=Fields!IDENTIDADE_CLIENTE.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!LOGINUSUARIO.Value</Value>
+                              <Value>=Fields!IDENTIDADE_CLIENTE.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>3.11516cm</Size>
                             <CellContents>
-                              <Textbox Name="LOGINUSUARIO">
+                              <Textbox Name="IDENTIDADE_CLIENTE">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!LOGINUSUARIO.Value</Value>
+                                        <Value>=Fields!IDENTIDADE_CLIENTE.Value</Value>
                                         <Style>
                                           <FontWeight>Normal</FontWeight>
-                                          <Color>#333333</Color>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -707,7 +683,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>LOGINUSUARIO</rd:DefaultName>
+                                <rd:DefaultName>IDENTIDADE_CLIENTE</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -724,31 +700,29 @@
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
-                              <Group Name="DATAVENDA">
+                              <Group Name="LOGIN_USUARIO">
                                 <GroupExpressions>
-                                  <GroupExpression>=Fields!DATAVENDA.Value</GroupExpression>
+                                  <GroupExpression>=Fields!LOGIN_USUARIO.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=Fields!DATAVENDA.Value</Value>
+                                  <Value>=Fields!LOGIN_USUARIO.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.4537cm</Size>
                                 <CellContents>
-                                  <Textbox Name="DATAVENDA">
+                                  <Textbox Name="LOGIN_USUARIO">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!DATAVENDA.Value</Value>
+                                            <Value>=Fields!LOGIN_USUARIO.Value</Value>
                                             <Style>
                                               <FontWeight>Normal</FontWeight>
-                                              <Format>g</Format>
-                                              <Color>#333333</Color>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -757,7 +731,7 @@
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>DATAVENDA</rd:DefaultName>
+                                    <rd:DefaultName>LOGIN_USUARIO</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Style>Solid</Style>
@@ -788,37 +762,20 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <SortExpressions>
-          <SortExpression>
-            <Value>=Fields!DATAVENDA.Value</Value>
-          </SortExpression>
-        </SortExpressions>
-        <Top>0.17639cm</Top>
+        <DataSetName>DataSetVendasReport</DataSetName>
+        <Top>0.05cm</Top>
         <Left>0.5cm</Left>
-        <Height>2.41708cm</Height>
-        <Width>20.17604cm</Width>
+        <Height>1.86146cm</Height>
+        <Width>20.19214cm</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
         </Style>
       </Tablix>
     </ReportItems>
     <Height>247mm</Height>
-    <Style>
-      <Border>
-        <Style>None</Style>
-      </Border>
-      <LeftBorder>
-        <Style>Solid</Style>
-        <Width>2pt</Width>
-      </LeftBorder>
-      <RightBorder>
-        <Style>Solid</Style>
-        <Width>2pt</Width>
-      </RightBorder>
-    </Style>
+    <Style />
   </Body>
   <Width>210mm</Width>
   <Page>
@@ -827,7 +784,22 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
+        <Image Name="Logo">
+          <Source>Embedded</Source>
+          <Value>LogoSMold</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.70625cm</Top>
+          <Left>0.5cm</Left>
+          <Height>1.5cm</Height>
+          <Width>3.4cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox17">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -847,19 +819,17 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.5cm</Top>
-          <Left>4.75cm</Left>
-          <Height>2cm</Height>
-          <Width>15.92604cm</Width>
+          <rd:DefaultName>Textbox17</rd:DefaultName>
+          <Top>0.70625cm</Top>
+          <Left>3.9cm</Left>
+          <Height>1.5cm</Height>
+          <Width>16.79214cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
               <Width>2pt</Width>
             </Border>
-            <LeftBorder>
-              <Style>None</Style>
-            </LeftBorder>
             <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -867,39 +837,11 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Logo">
-          <Source>Embedded</Source>
-          <Value>LogoSMold</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.5cm</Top>
-          <Left>0.5cm</Left>
-          <Height>2cm</Height>
-          <Width>4.25cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-              <Width>2pt</Width>
-            </Border>
-          </Style>
-        </Image>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
-        <TopBorder>
-          <Style>Solid</Style>
-          <Width>2pt</Width>
-        </TopBorder>
-        <LeftBorder>
-          <Style>Solid</Style>
-          <Width>2pt</Width>
-        </LeftBorder>
-        <RightBorder>
-          <Style>Solid</Style>
-          <Width>2pt</Width>
-        </RightBorder>
       </Style>
     </PageHeader>
     <PageFooter>
@@ -907,9 +849,8 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="PageNumber">
+        <Textbox Name="Textbox18">
           <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
@@ -924,11 +865,11 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.68662cm</Top>
-          <Left>14.89521cm</Left>
+          <rd:DefaultName>Textbox18</rd:DefaultName>
+          <Top>0.73458cm</Top>
+          <Left>18.19214cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.78083cm</Width>
+          <Width>2.5cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -945,18 +886,6 @@
         <Border>
           <Style>None</Style>
         </Border>
-        <BottomBorder>
-          <Style>Solid</Style>
-          <Width>2pt</Width>
-        </BottomBorder>
-        <LeftBorder>
-          <Style>Solid</Style>
-          <Width>2pt</Width>
-        </LeftBorder>
-        <RightBorder>
-          <Style>Solid</Style>
-          <Width>2pt</Width>
-        </RightBorder>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
@@ -970,93 +899,161 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSetMadeireiraV2">
+    <DataSource Name="DataSetReport">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ddcedb03-d94f-49bf-9bfc-59fd48643f49</rd:DataSourceID>
+      <rd:DataSourceID>5770a9d0-ed23-4f8c-a446-9de5081db883</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSetVendasReport">
       <Query>
-        <DataSourceName>DataSetMadeireiraV2</DataSourceName>
+        <DataSourceName>DataSetReport</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="IDCLIENTE">
-          <DataField>IDCLIENTE</DataField>
+        <Field Name="ID_CLIENTE">
+          <DataField>ID_CLIENTE</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NOMECLIENTE">
-          <DataField>NOMECLIENTE</DataField>
+        <Field Name="NOME_CLIENTE">
+          <DataField>NOME_CLIENTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDENCLIENTE">
-          <DataField>IDENCLIENTE</DataField>
+        <Field Name="IDENTIDADE_CLIENTE">
+          <DataField>IDENTIDADE_CLIENTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDPRODUTO">
-          <DataField>IDPRODUTO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NOMEPRODUTO">
-          <DataField>NOMEPRODUTO</DataField>
+        <Field Name="CEP_CLIENTE">
+          <DataField>CEP_CLIENTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="VALORPRODUTO">
-          <DataField>VALORPRODUTO</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="IDUSUARIO">
-          <DataField>IDUSUARIO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="LOGINUSUARIO">
-          <DataField>LOGINUSUARIO</DataField>
+        <Field Name="RUA_CLIENTE">
+          <DataField>RUA_CLIENTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDVENDAOPER">
-          <DataField>IDVENDAOPER</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="NUMERO_CLIENTE">
+          <DataField>NUMERO_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDPRODUTOOPER">
-          <DataField>IDPRODUTOOPER</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="BAIRRO_CLIENTE">
+          <DataField>BAIRRO_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="QUANTIDADEPRODUTOOPER">
-          <DataField>QUANTIDADEPRODUTOOPER</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="CIDADE_CLIENTE">
+          <DataField>CIDADE_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDVENDA">
-          <DataField>IDVENDA</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="ESTADO_CLIENTE">
+          <DataField>ESTADO_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDVENDEDOR">
-          <DataField>IDVENDEDOR</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="TELEFONE_CLIENTE">
+          <DataField>TELEFONE_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DATAVENDA">
-          <DataField>DATAVENDA</DataField>
+        <Field Name="CELULAR_CLIENTE">
+          <DataField>CELULAR_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EMAIL_CLIENTE">
+          <DataField>EMAIL_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DATA_INFO_CLIENTE">
+          <DataField>DATA_INFO_CLIENTE</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="VALORVENDA">
-          <DataField>VALORVENDA</DataField>
+        <Field Name="OBS_CLIENTE">
+          <DataField>OBS_CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID_PRODUTO">
+          <DataField>ID_PRODUTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NOME_PRODUTO">
+          <DataField>NOME_PRODUTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QUANTIDADE_PRODUTO">
+          <DataField>QUANTIDADE_PRODUTO</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="IDCLIENTEVENDA">
-          <DataField>IDCLIENTEVENDA</DataField>
+        <Field Name="VALOR_PRODUTO">
+          <DataField>VALOR_PRODUTO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ID_FORNECEDOR_PRODUTO">
+          <DataField>ID_FORNECEDOR_PRODUTO</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OBS_PRODUTO">
+          <DataField>OBS_PRODUTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID_USUARIO">
+          <DataField>ID_USUARIO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LOGIN_USUARIO">
+          <DataField>LOGIN_USUARIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SENHA_USUARIO">
+          <DataField>SENHA_USUARIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NIVEL_USUARIO">
+          <DataField>NIVEL_USUARIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID_VENDA_PRODUTO">
+          <DataField>ID_VENDA_PRODUTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_VENDA">
+          <DataField>ID_VENDA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_PRODUTO1">
+          <DataField>ID_PRODUTO1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QUANTIDADE_PRODUTO1">
+          <DataField>QUANTIDADE_PRODUTO1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ID_VENDA1">
+          <DataField>ID_VENDA1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_CLIENTE1">
+          <DataField>ID_CLIENTE1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_VENDEDOR">
+          <DataField>ID_VENDEDOR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DATA_VENDA">
+          <DataField>DATA_VENDA</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="VALOR_VENDA">
+          <DataField>VALOR_VENDA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSetMadeireiraV2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\otavi\OneDrive\Documentos\Projetos\CSHARP\TCCMadeireira\TCCMadeireira\Bancos\DataSetMadeireiraV2.xsd</rd:SchemaPath>
-        <rd:TableName>RELATORIO_VENDA</rd:TableName>
+        <rd:DataSetName>DataSetReport</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\otavi\OneDrive\Documentos\Projetos\CSHARP\TCCMadeireira\TCCMadeireira\Bancos\DataSetReport.xsd</rd:SchemaPath>
+        <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>RELATORIO_VENDATableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>DataTable1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -1122,5 +1119,5 @@ KtlXSgMydzOQ+ZtW+PkRUvvyXbK9KjoA2By5Fvsj117x5waFn72ROa0jW5l9C5C5n4sEIWcj1/Ic5HyY
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>eb9820bb-3f57-426c-a207-24212c252132</rd:ReportID>
+  <rd:ReportID>ab9e44ce-ce9c-4e41-942e-7c1536a32d84</rd:ReportID>
 </Report>

@@ -112,7 +112,7 @@ namespace TCCMadeireira.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void BtnCancelar_Click(object sender, EventArgs e)
