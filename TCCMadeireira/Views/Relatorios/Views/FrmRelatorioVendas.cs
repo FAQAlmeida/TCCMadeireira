@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,14 @@ namespace TCCMadeireira.Views.Relatorios
         {
             // TODO: This line of code loads data into the 'dataSetReport.DataTable1' table. You can move, or remove it, as needed.
             this.dataTable1TableAdapter.Fill(this.dataSetReport.DataTable1);
-            this.reportViewer1.RefreshReport();
+            this.reportViewer.RefreshReport();
+            PageSizeConfig();
+        }
+        private void PageSizeConfig()
+        {
+            PageSettings pageSettings = new PageSettings();
+            pageSettings.Margins = new Margins(0, 0, 0, 0);
+            this.reportViewer.SetPageSettings(pageSettings);
         }
     }
 }
