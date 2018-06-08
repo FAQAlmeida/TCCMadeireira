@@ -37,35 +37,37 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnChangePath = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.btnBackup = new System.Windows.Forms.Button();
-            this.btnRestore = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.btnBackup = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnRestore = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnChange);
+            this.groupBox1.Controls.Add(this.btnChangePath);
             this.groupBox1.Controls.Add(this.txtFileName);
             this.groupBox1.Controls.Add(this.lblPath);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 71);
+            this.groupBox1.Size = new System.Drawing.Size(557, 89);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Infomações";
             // 
             // btnChange
             // 
+            this.btnChange.BackColor = System.Drawing.Color.Transparent;
             this.btnChange.Image = global::TCCMadeireira.Properties.Resources.refresh_icon1;
-            this.btnChange.Location = new System.Drawing.Point(318, 19);
+            this.btnChange.Location = new System.Drawing.Point(509, 19);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(27, 27);
             this.btnChange.TabIndex = 4;
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.BtnChange_Click);
             // 
             // txtFileName
@@ -73,13 +75,13 @@
             this.txtFileName.Enabled = false;
             this.txtFileName.Location = new System.Drawing.Point(66, 23);
             this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(246, 20);
+            this.txtFileName.Size = new System.Drawing.Size(437, 20);
             this.txtFileName.TabIndex = 3;
             // 
             // lblPath
             // 
             this.lblPath.AutoSize = true;
-            this.lblPath.Location = new System.Drawing.Point(63, 48);
+            this.lblPath.Location = new System.Drawing.Point(63, 52);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(29, 13);
             this.lblPath.TabIndex = 2;
@@ -88,7 +90,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 48);
+            this.label2.Location = new System.Drawing.Point(6, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 1;
@@ -105,58 +107,57 @@
             // 
             // btnChangePath
             // 
+            this.btnChangePath.BackColor = System.Drawing.Color.Transparent;
             this.btnChangePath.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePath.Image")));
-            this.btnChangePath.Location = new System.Drawing.Point(330, 89);
+            this.btnChangePath.Location = new System.Drawing.Point(509, 52);
             this.btnChangePath.Name = "btnChangePath";
             this.btnChangePath.Size = new System.Drawing.Size(27, 27);
             this.btnChangePath.TabIndex = 5;
-            this.btnChangePath.UseVisualStyleBackColor = true;
+            this.btnChangePath.UseVisualStyleBackColor = false;
             this.btnChangePath.Click += new System.EventHandler(this.BtnChangePath_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // btnBackup
             // 
-            this.btnBackup.Location = new System.Drawing.Point(21, 89);
+            this.btnBackup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBackup.Depth = 0;
+            this.btnBackup.Icon = null;
+            this.btnBackup.Location = new System.Drawing.Point(12, 171);
+            this.btnBackup.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Primary = true;
             this.btnBackup.Size = new System.Drawing.Size(75, 23);
-            this.btnBackup.TabIndex = 1;
+            this.btnBackup.TabIndex = 6;
             this.btnBackup.Text = "Backup";
             this.btnBackup.UseVisualStyleBackColor = true;
             this.btnBackup.Click += new System.EventHandler(this.BtnBackup_Click);
             // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(102, 89);
+            this.btnRestore.Depth = 0;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Icon = null;
+            this.btnRestore.Location = new System.Drawing.Point(93, 171);
+            this.btnRestore.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(75, 23);
-            this.btnRestore.TabIndex = 2;
+            this.btnRestore.Primary = true;
+            this.btnRestore.Size = new System.Drawing.Size(86, 23);
+            this.btnRestore.TabIndex = 7;
             this.btnRestore.Text = "Restaurar";
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.BtnRestore_Click);
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // progressBar
-            // 
-            this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar.Location = new System.Drawing.Point(0, 117);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(375, 20);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar.TabIndex = 6;
             // 
             // FrmBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 137);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.btnChangePath);
+            this.ClientSize = new System.Drawing.Size(581, 202);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnBackup);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -179,10 +180,9 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Button btnChange;
-        private System.Windows.Forms.Button btnBackup;
-        private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Button btnChangePath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.ProgressBar progressBar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBackup;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRestore;
     }
 }

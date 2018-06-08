@@ -157,8 +157,8 @@ namespace TCCMadeireira.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-fqa\\fqasqlserver;Initial Catalog=Madeireira;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-fqa\\fqasqlserver;Initial Catalog=Madeireira;User ID=Otavio;Pa" +
+            "ssword=Otavio@435")]
         public string MadeireiraConnectionString {
             get {
                 return ((string)(this["MadeireiraConnectionString"]));

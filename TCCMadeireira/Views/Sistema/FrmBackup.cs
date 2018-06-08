@@ -10,10 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.SqlServer.Management.Common;
+using MaterialSkin.Controls;
 
 namespace TCCMadeireira.Views.Sistema
 {
-    public partial class FrmBackup : Form
+    public partial class FrmBackup : MaterialForm
     {
         string path = Application.StartupPath;
         string filename = "Backup.bak";
@@ -114,9 +115,7 @@ namespace TCCMadeireira.Views.Sistema
             progressBar.Value = 10;
             Cursor = Cursors.WaitCursor;
             tabelaServidores = SmoApplication.EnumAvailableSqlServers(true);
-            progressBar.Value = 50;
             servidor = SelectServidor();
-            progressBar.Value = 80;
             if (servidor != null)
             {
                 try
@@ -138,7 +137,6 @@ namespace TCCMadeireira.Views.Sistema
                     BackupDeviceItem bkpDevice = new BackupDeviceItem(String.Format("{0}\\{1}", path, filename), DeviceType.File);
                     bkpDatabase.Devices.Add(bkpDevice);
                     bkpDatabase.SqlBackup(servidor);
-                    progressBar.Value = 100;
                     MessageBox.Show("Backup do Database " + dbName + " criado com sucesso", "Servidor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception x)
@@ -147,7 +145,6 @@ namespace TCCMadeireira.Views.Sistema
                 }
                 finally
                 {
-                    progressBar.Value = 0;
                     this.Cursor = Cursors.Arrow;
                     btnBackup.Enabled = true;
                     btnRestore.Enabled = true;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,9 @@ namespace TCCMadeireira.Views
     /// <summary>
     /// Form para fazer login no sistema
     /// </summary>
-    public partial class Login : Form
+    public partial class Login : MaterialForm
     {
-    Banco banco = new Banco();
+        Banco banco = new Banco();
         /// <summary>
         /// Inicializa o Form
         /// </summary>
@@ -32,7 +33,9 @@ namespace TCCMadeireira.Views
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+
             Usuario usuario = new Usuario(txtUsuario.Text, txtSenha.Text);
+
             if (banco.SelectUsuario(usuario.Nome, usuario.Senha) >= 1)
             {
                 USERSDataTable usersdt = banco.SelectUser(usuario.Nome, usuario.Senha);
@@ -45,6 +48,11 @@ namespace TCCMadeireira.Views
                 frmMenuPrincipal.Show();
                 Hide();
             }
+            else
+            {
+                MessageBox.Show("Usuário ou Senha inválidos");
+            }
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -54,10 +62,14 @@ namespace TCCMadeireira.Views
 
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                btnEntrar.Focus();
-                btnEntrar_Click(null, null);
+                if (!txtUsuario.Text.Equals(String.Empty) && !txtSenha.Text.Equals(String.Empty))
+                {
+                    btnLogin.Focus();
+                    btnEntrar_Click(null, null);
+                    e.Handled = true;
+                }
             }
         }
     }
