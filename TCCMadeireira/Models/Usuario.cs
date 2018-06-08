@@ -43,6 +43,12 @@ namespace TCCMadeireira.Models
             Nome = nome;
             Nivel = nivel;
         }
+        public Usuario(string nome, string senha, string nivel)
+        {
+            Senha = senha;
+            Nome = nome;
+            Nivel = nivel;
+        }
         public Usuario(string nome, string senha)
         {
             Nome = nome;
@@ -55,6 +61,10 @@ namespace TCCMadeireira.Models
             Senha = senha;
             Nivel = nivel;
             DataInfo = dataInfo;
+        }
+        public Usuario(int id)
+        {
+            Id = id;
         }
 
         public override string ToString()

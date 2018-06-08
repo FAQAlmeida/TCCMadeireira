@@ -984,6 +984,51 @@
             Inicializa o Form de Usuário
             </summary>
         </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnCadastrar
+            <para>Possui 2 etapas:</para>
+            <para>1) Preparar o form para receber as informações</para>
+            <para>2) Registra as informações recebidas, enviados ao model Cliente depois ao objeto banco</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.BtnExcluir_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnExcluir
+            <para>Possui 2 etapas:</para>
+            <para>1) Preparar a txtIdentidade para receber a identidade</para>
+            <para>2) Pergunta se o usuário deseja realmente excluir o registro basedo na X identidade e, se sim, exclui o registro</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.BtnAlterar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnAlterar
+            <para>Possui 3 etapas:</para>
+            <para>1) Preparar a txtIdentidade para receber a identidade</para>
+            <para>2) Recebe a identidade para pesquisa do cliente</para>
+            <para>3) Armazena as informações recebidas se o usuário confirmar</para>
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.BtnCancelar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento de CLICK do btnCancelar
+            <para>Retorna o form ao seu estado inicial</para>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TCCMadeireira.Views.FrmUsuario.ControlEnable(System.Boolean)">
+            <summary>
+            Define o status de todos os controles de entrada presentes no GroupBox baseado no parâmetro status
+            </summary>
+            <param name="status">Define se o status vai ser true ou false</param>
+        </member>
         <member name="F:TCCMadeireira.Views.FrmUsuario.components">
             <summary>
             Required designer variable.
@@ -1051,28 +1096,28 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Views.Login">
+        <member name="T:TCCMadeireira.Views.FrmLogin">
             <summary>
             Form para fazer login no sistema
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.Login.#ctor">
+        <member name="M:TCCMadeireira.Views.FrmLogin.#ctor">
             <summary>
             Inicializa o Form
             </summary>
         </member>
-        <member name="F:TCCMadeireira.Views.Login.components">
+        <member name="F:TCCMadeireira.Views.FrmLogin.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.Login.Dispose(System.Boolean)">
+        <member name="M:TCCMadeireira.Views.FrmLogin.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:TCCMadeireira.Views.Login.InitializeComponent">
+        <member name="M:TCCMadeireira.Views.FrmLogin.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
@@ -1124,28 +1169,28 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Views.SplashScreen">
+        <member name="T:TCCMadeireira.Views.FrmSplashScreen">
             <summary>
             Splash Screen do Projeto
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.SplashScreen.#ctor">
+        <member name="M:TCCMadeireira.Views.FrmSplashScreen.#ctor">
             <summary>
             Inicializa a Splash Screen
             </summary>
         </member>
-        <member name="F:TCCMadeireira.Views.SplashScreen.components">
+        <member name="F:TCCMadeireira.Views.FrmSplashScreen.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.SplashScreen.Dispose(System.Boolean)">
+        <member name="M:TCCMadeireira.Views.FrmSplashScreen.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:TCCMadeireira.Views.SplashScreen.InitializeComponent">
+        <member name="M:TCCMadeireira.Views.FrmSplashScreen.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

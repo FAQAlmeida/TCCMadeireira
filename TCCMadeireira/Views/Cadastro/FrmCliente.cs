@@ -78,13 +78,13 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnCadastrar.Text == "Cadastrar")
+                if (btnCadastrar.Text.ToUpper() == "Cadastrar".ToUpper())
                 {
                     ControlEnable(true);
                     btnCancelar.Visible = true;
                     btnExcluir.Enabled = false;
                     btnAlterar.Enabled = false;
-                    btnCadastrar.Text = "Gravar";
+                    btnCadastrar.Text = "Gravar".ToUpper();
                 }
                 else
                 {
@@ -94,6 +94,7 @@ namespace TCCMadeireira.Views
                         banco.InsertCliente(cliente);
                         BtnCancelar_Click(null, null);
                         log.WriteEntry(String.Format("cliente {0} cadastrado", cliente.Identidade));
+                        TableRefresh();
                     }
                     else
                     {
@@ -105,10 +106,6 @@ namespace TCCMadeireira.Views
             {
                 log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                TableRefresh();
             }
         }
 
@@ -132,6 +129,7 @@ namespace TCCMadeireira.Views
                         banco.DeleteCliente(cliente);
                         log.WriteEntry(String.Format("cliente {0} excluido", cliente.Identidade));
                         BtnCancelar_Click(null, null);
+                        TableRefresh();
                     }
                 }
                 else
@@ -143,10 +141,6 @@ namespace TCCMadeireira.Views
             {
                 log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                TableRefresh();
             }
         }
 
@@ -163,11 +157,10 @@ namespace TCCMadeireira.Views
         {
             try
             {                
-                if (btnAlterar.Text == "Alterar")
+                if (btnAlterar.Text.ToUpper() == "Alterar".ToUpper())
                 {
                     if (dgvClientes.SelectedRows.Count == 1)
                     {
-                        dgvClientes.Enabled = false;
                         ControlEnable(true);
                         txtIdentidade.Enabled = false;
                         btnCadastrar.Enabled = false;
@@ -189,7 +182,7 @@ namespace TCCMadeireira.Views
                         txtEmail.Text = dt.Rows[0]["EMAIL_CLIENTE"].ToString();
                         lblDataInfo.Text = "DATA INFO: " + dt.Rows[0]["DATA_INFO_CLIENTE"].ToString();
                         txtObs.Text = dt.Rows[0]["OBS_CLIENTE"].ToString();
-                        btnAlterar.Text = "Gravar";
+                        btnAlterar.Text = "Gravar".ToUpper();
                     }
                     else
                     {
@@ -202,16 +195,13 @@ namespace TCCMadeireira.Views
                     banco.UpdateCliente(cliente);
                     log.WriteEntry(String.Format("cliente {0} alterado", cliente.Identidade));
                     BtnCancelar_Click(null, null);
+                    TableRefresh();
                 }
             }
             catch (Exception ex)
             {
                 log.WriteEntry(ex);
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                TableRefresh();
             }
         }
         /// <summary>
@@ -240,9 +230,9 @@ namespace TCCMadeireira.Views
             btnCadastrar.Enabled = true;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
-            btnCadastrar.Text = "Cadastrar";
-            btnAlterar.Text = "Alterar";
-            btnExcluir.Text = "Excluir";
+            btnCadastrar.Text = "Cadastrar".ToUpper();
+            btnAlterar.Text = "Alterar".ToUpper();
+            btnExcluir.Text = "Excluir".ToUpper();
             btnCancelar.Visible = false;
             ControlEnable(false);
             txtFiltro.Clear();

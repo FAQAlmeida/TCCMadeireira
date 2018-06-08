@@ -4,6 +4,10 @@
 
     partial class DataSetMadeireiraV2
     {
+        partial class USERSDataTable
+        {
+        }
+
         partial class RELATORIO_VENDADataTable
         {
         }
@@ -16,6 +20,10 @@
 
 namespace TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters
 {
+    partial class USERSTableAdapter
+    {
+    }
+
     partial class RELATORIO_VENDATableAdapter
     {
     }

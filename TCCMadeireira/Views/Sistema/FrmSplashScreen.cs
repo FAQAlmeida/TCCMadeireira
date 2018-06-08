@@ -13,12 +13,12 @@ namespace TCCMadeireira.Views
     /// <summary>
     /// Splash Screen do Projeto
     /// </summary>
-    public partial class SplashScreen : Form
+    public partial class FrmSplashScreen : Form
     {
         /// <summary>
         /// Inicializa a Splash Screen
         /// </summary>
-        public SplashScreen()
+        public FrmSplashScreen()
         {
             InitializeComponent();
             ProgressWorker();
@@ -39,7 +39,7 @@ namespace TCCMadeireira.Views
                 progressBar.Value = valor;
                 if (progressBar.Value == 100)
                 {
-                    Login frmLogin = new Login();
+                    FrmLogin frmLogin = new FrmLogin();
                     frmLogin.Show();
                     Hide();
                 }

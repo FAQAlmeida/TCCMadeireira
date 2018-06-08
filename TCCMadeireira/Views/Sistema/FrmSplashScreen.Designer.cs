@@ -1,6 +1,6 @@
 ﻿namespace TCCMadeireira.Views
 {
-    partial class SplashScreen
+    partial class FrmSplashScreen
     {
         /// <summary>
         /// Required designer variable.

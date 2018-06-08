@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Views;
+using TCCMadeireira.Views.Sistema;
 
 namespace TCCMadeireira
 {
@@ -18,7 +19,7 @@ namespace TCCMadeireira
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
-            Application.Run(new SplashScreen());
+            Application.Run(new FrmLogin());
         }
     }
 }

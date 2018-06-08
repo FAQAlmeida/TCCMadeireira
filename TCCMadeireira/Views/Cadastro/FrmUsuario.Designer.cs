@@ -96,6 +96,7 @@
             // 
             // cmbNivel
             // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.Items.AddRange(new object[] {
             "ADMIN",
@@ -122,6 +123,7 @@
             this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // btnExcluir
             // 
@@ -131,6 +133,7 @@
             this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -140,7 +143,7 @@
             this.btnAlterar.TabIndex = 6;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
             // grbUsuario
             // 
@@ -165,6 +168,8 @@
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // dataSetMadeireiraV2
             // 
@@ -216,28 +221,28 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_USUARIO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_USUARIO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "LOGIN_USUARIO";
-            this.dataGridViewTextBoxColumn2.HeaderText = "LOGIN_USUARIO";
+            this.dataGridViewTextBoxColumn2.HeaderText = "LOGIN";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "SENHA_USUARIO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "SENHA_USUARIO";
+            this.dataGridViewTextBoxColumn3.HeaderText = "SENHA";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "NIVEL_USUARIO";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NIVEL_USUARIO";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NÍVEL";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -309,11 +314,11 @@
         private Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter uSERSTableAdapter;
         private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.Panel pnlDgv;
+        private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.Panel pnlButtons;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TCCMadeireira.Views
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.

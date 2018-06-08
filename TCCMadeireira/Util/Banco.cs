@@ -262,6 +262,7 @@ namespace TCCMadeireira.Bancos
         }
         public void UpdateUsuario(Usuario usuario)
         {
+            usuario.Id = (int) SelectUser(usuario.Nome, usuario.Senha).Rows[0]["ID_USUARIO"];
             usersTableAdapter.Update(usuario.Nome, usuario.Senha, usuario.Nivel, usuario.Id);
         }
         public void DeleteUSuario(Usuario usuario)
