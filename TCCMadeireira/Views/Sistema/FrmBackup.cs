@@ -112,7 +112,6 @@ namespace TCCMadeireira.Views.Sistema
 
         private void BtnBackup_Click(object sender, EventArgs e)
         {
-            progressBar.Value = 10;
             Cursor = Cursors.WaitCursor;
             tabelaServidores = SmoApplication.EnumAvailableSqlServers(true);
             servidor = SelectServidor();
