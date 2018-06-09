@@ -15,7 +15,7 @@
       <Value Profile="(Default)">Data Source=192.168.15.2\FQASQLSERVER;Initial Catalog=Madeireira;User ID=Otavio;Password=Otavio@435</Value>
     </Setting>
     <Setting Name="NoteConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=NOTE-FQA\FQASQLSERVER;Initial Catalog=Madeireira;User ID=FQA;Password=Otavio@435</Value>
+      <Value Profile="(Default)">Data Source=NOTE-FQA\FQASQLSERVER;Initial Catalog=Madeireira;Integrated Security=True</Value>
     </Setting>
     <Setting Name="idUsuario" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
@@ -27,7 +27,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">desktop-fqa</Value>
+      <Value Profile="(Default)">note-fqa</Value>
     </Setting>
     <Setting Name="DBName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Madeireira</Value>

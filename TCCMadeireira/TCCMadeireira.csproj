@@ -215,6 +215,12 @@
     <Compile Include="Views\Cadastro\FrmFuncionario.Designer.cs">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Relatorios\Views\FrmRelatorioMovimentoEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\Views\FrmRelatorioMovimentoEstoque.Designer.cs">
+      <DependentUpon>FrmRelatorioMovimentoEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Relatorios\Views\FrmRelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,7 +292,11 @@
     <EmbeddedResource Include="Views\Cadastro\FrmFuncionario.resx">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\Reports\VendasDataReport.rdlc" />
     <EmbeddedResource Include="Views\Relatorios\Reports\VendasReport.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\Views\FrmRelatorioMovimentoEstoque.resx">
+      <DependentUpon>FrmRelatorioMovimentoEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\Views\FrmRelatorioVendas.resx">
       <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
     </EmbeddedResource>

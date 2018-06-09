@@ -65,8 +65,8 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;User ID=FQA;Password" +
-            "=Otavio@435")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;Integrated Security=" +
+            "True")]
         public string NoteConnectionString {
             get {
                 return ((string)(this["NoteConnectionString"]));
@@ -111,7 +111,7 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("desktop-fqa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("note-fqa")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));

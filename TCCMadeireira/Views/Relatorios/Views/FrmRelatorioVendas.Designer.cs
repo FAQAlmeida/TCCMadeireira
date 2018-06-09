@@ -34,8 +34,10 @@
             this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTable1TableAdapter = new TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter();
+            this.dataSetMadeireiraV21 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV21)).BeginInit();
             this.SuspendLayout();
             // 
             // dataTable1BindingSource
@@ -65,6 +67,11 @@
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
+            // dataSetMadeireiraV21
+            // 
+            this.dataSetMadeireiraV21.DataSetName = "DataSetMadeireiraV2";
+            this.dataSetMadeireiraV21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FrmRelatorioVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,6 +85,7 @@
             this.Load += new System.EventHandler(this.FrmRelatorioVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV21)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -88,5 +96,6 @@
         private Bancos.DataSetReport dataSetReport;
         private System.Windows.Forms.BindingSource dataTable1BindingSource;
         private Bancos.DataSetReportTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV21;
     }
 }
