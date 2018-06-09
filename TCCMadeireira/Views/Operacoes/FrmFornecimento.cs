@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Bancos;
@@ -52,7 +53,14 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (!txtIdentidade.Text.EndsWith("_"))
+                Regex regex;
+                if (rbtnCnpj.Checked)
+                    regex = new Regex("[0-9]{2}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{4}[.,/-]?[0-9]{2}", 
+                        RegexOptions.None);
+                else
+                    regex = new Regex("[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{2}",
+                        RegexOptions.None);
+                if (regex.Match(txtIdentidade.Text).Success)
                 {
                     fornecedor = new Fornecedor(txtIdentidade.Text);
                     FORNECEDORESDataTable fornecedordt = new FORNECEDORESDataTable();

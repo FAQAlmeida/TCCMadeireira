@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Bancos;
@@ -39,43 +40,55 @@ namespace TCCMadeireira.Views
         #region @event.Leave
         private void TxtIdentidade_Leave(object sender, EventArgs e)
         {
-            try
+            Regex regex;
+            if (rbtnCnpj.Checked)
+                regex = new Regex("[0-9]{2}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{4}[.,/-]?[0-9]{2}",
+                    RegexOptions.None);
+            else
+                regex = new Regex("[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{3}[.,/-]?[0-9]{2}",
+                    RegexOptions.None);
+            if (regex.Match(txtIdentidade.Text).Success)
             {
-                cliente = new Cliente(txtIdentidade.Text);
-                CLIENTESDataTable dt = new CLIENTESDataTable();
-                dt = banco.SelectCliente(cliente.Identidade);
-                //TODO arruamar lbls
-                if (dt.Rows.Count == 1)
+                try
                 {
-                    cliente = new Cliente(
-                    Convert.ToInt32(dt.Rows[0]["Id_cliente"]), Convert.ToString(dt.Rows[0]["nome_cliente"]),
-                    Convert.ToString(dt.Rows[0]["identidade_cliente"]), Convert.ToString(dt.Rows[0]["cep_cliente"]),
-                    Convert.ToString(dt.Rows[0]["rua_cliente"]), Convert.ToString(dt.Rows[0]["numero_cliente"]),
-                    Convert.ToString(dt.Rows[0]["bairro_cliente"]), Convert.ToString(dt.Rows[0]["cidade_cliente"]),
-                    Convert.ToString(dt.Rows[0]["estado_cliente"]), Convert.ToString(dt.Rows[0]["telefone_cliente"]),
-                    Convert.ToString(dt.Rows[0]["celular_cliente"]), Convert.ToString(dt.Rows[0]["email_cliente"]),
-                    Convert.ToDateTime(dt.Rows[0]["data_info_cliente"]), Convert.ToString(dt.Rows[0]["obs_cliente"])
-                    );
-                    lblNome.Text = dt.Rows[0][1].ToString();
-                    lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {1}\nBAIRRO: {2} CIDADE: {3} UF: {4}",
-                        dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(),
-                        dt.Rows[0][6].ToString(), dt.Rows[0][7].ToString(), dt.Rows[0][8].ToString());
+                    cliente = new Cliente(txtIdentidade.Text);
+                    CLIENTESDataTable dt = new CLIENTESDataTable();
+                    dt = banco.SelectCliente(cliente.Identidade);
+                    //TODO arruamar lbls
+                    if (dt.Rows.Count == 1)
+                    {
+                        cliente = new Cliente(
+                        Convert.ToInt32(dt.Rows[0]["Id_cliente"]), Convert.ToString(dt.Rows[0]["nome_cliente"]),
+                        Convert.ToString(dt.Rows[0]["identidade_cliente"]), Convert.ToString(dt.Rows[0]["cep_cliente"]),
+                        Convert.ToString(dt.Rows[0]["rua_cliente"]), Convert.ToString(dt.Rows[0]["numero_cliente"]),
+                        Convert.ToString(dt.Rows[0]["bairro_cliente"]), Convert.ToString(dt.Rows[0]["cidade_cliente"]),
+                        Convert.ToString(dt.Rows[0]["estado_cliente"]), Convert.ToString(dt.Rows[0]["telefone_cliente"]),
+                        Convert.ToString(dt.Rows[0]["celular_cliente"]), Convert.ToString(dt.Rows[0]["email_cliente"]),
+                        Convert.ToDateTime(dt.Rows[0]["data_info_cliente"]), Convert.ToString(dt.Rows[0]["obs_cliente"])
+                        );
+                        lblNome.Text = dt.Rows[0][1].ToString();
+                        lblEndereco.Text = String.Format("CEP: {0} RUA: {1} Nº: {2}\nBAIRRO: {3} CIDADE: {4} UF: {5}",
+                            dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(),
+                            dt.Rows[0][6].ToString(), dt.Rows[0][7].ToString(), dt.Rows[0][8].ToString());
+                    }
+                    else
+                    {
+                        FrmCliente frmCliente = new FrmCliente();
+                        frmCliente.Show();
+                        frmCliente.IdentidadeInput(txtIdentidade.Text, SelectedRadioButton());
+                    }
+                    //TODO Rever este erro
+                    if (dt.Rows.Count > 1)
+                    {
+                        throw new Exception("Há um erro no DB, há mais de uma identidade registrada com esses digitos\n" +
+                            "Contate a central para reparar o DB");
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    FrmCliente frmCliente = new FrmCliente();
-                    frmCliente.Show();
-                    frmCliente.IdentidadeInput(txtIdentidade.Text, SelectedRadioButton());
+                    MessageBox.Show(ex.Message);
                 }
-                //TODO Rever este erro
-                if (dt.Rows.Count > 1)
-                {
-                    throw new Exception("Há um erro no DB, há mais de uma identidade registrada com esses digitos\n" +
-                        "Contate a central para reparar o DB");
-                }
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
         #endregion
@@ -101,11 +114,12 @@ namespace TCCMadeireira.Views
                 {
                     throw new Exception("Um cliente deve ser informado");
                 }
-                if (dgvProdutos.Rows.Count <= 0)
+                if (dgvProdutos.Rows.Count <= 1)
                 {
                     throw new Exception("A venda não pode conter nenhum produto");
                 }
                 Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
+                MessageBox.Show(venda.ToString());
                 banco.InsertVenda(venda);
                 MessageBox.Show("Venda efetuada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
@@ -130,15 +144,20 @@ namespace TCCMadeireira.Views
         }
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            if (dgvProdutos.SelectedRows.Count == 1)
+            if (dgvProdutos.SelectedCells.Count == 1)
             {
-                ProdOper prodVenda = produtos.ElementAt(dgvProdutos.SelectedRows[0].Index);
-                if (MessageBox.Show(
-                    String.Format("Deseja mesmo remover o produto {0} de código {1}?", prodVenda.Produto.Nome, prodVenda.Produto.Id),
-                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
+                ProdOper prodVenda = produtos.Find(x => x.Produto.Id == Convert.ToInt32(dgvProdutos["IdProduto", dgvProdutos.SelectedCells[0].RowIndex].Value));
+                if (prodVenda is null)
+                    MessageBox.Show("Selecione um produto na tabela para remover");
+                else
                 {
-                    produtos.Remove(prodVenda);
-                    dgvProdutos.Rows.Remove(dgvProdutos.SelectedRows[0]);
+                    if (MessageBox.Show(
+                        String.Format("Deseja mesmo remover o produto {0} de código {1}?", prodVenda.Produto.Nome, prodVenda.Produto.Id),
+                        "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
+                    {
+                        produtos.Remove(prodVenda);
+                        dgvProdutos.Rows.Remove(dgvProdutos.Rows[dgvProdutos.SelectedCells[0].RowIndex]);
+                    }
                 }
             }
             else
@@ -201,14 +220,16 @@ namespace TCCMadeireira.Views
         }
         private void ValorSet()
         {
-            CheckEstoque();
-            decimal valorTotal = 0;
-            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
-            {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2].Value) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3].Value);
-            }
-            valor = valorTotal;
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
+            
+                CheckEstoque();
+                decimal valorTotal = 0;
+                foreach (ProdOper prod in produtos)
+                {
+                    valorTotal += (prod.Quantidade * prod.Produto.Valor);
+                }
+                valor = valorTotal;
+                lblValorTotal.Text = String.Format("Valor Total: R$ {0:f2}", valor);
+            
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -262,11 +283,11 @@ namespace TCCMadeireira.Views
         }
         private List<int> IdsRepetidosInRows(DataGridViewRowCollection rows)
         {
-            List<int> todos =IdsDgv(rows);
+            List<int> todos = IdsDgv(rows);
             List<int> repetidos = new List<int>();
-            foreach(DataGridViewRow row in rows)
+            foreach (DataGridViewRow row in rows)
             {
-                int id = (int)row.Cells["IdProduto"].Value;
+                int id = Convert.ToInt32(row.Cells["IdProduto"].Value);
                 if (!todos.Contains(id))
                 {
                     todos.Add(id);
@@ -283,7 +304,7 @@ namespace TCCMadeireira.Views
             List<int> todos = new List<int>();
             foreach(DataGridViewRow row in dgvProdutos.Rows)
             {
-                todos.Add((int) row.Cells["IdProduto"].Value);
+                todos.Add(Convert.ToInt32(row.Cells["IdProduto"].Value));
             }
             return todos;
         }
@@ -324,8 +345,122 @@ namespace TCCMadeireira.Views
                 throw new Exception("O formulário para inserir produtos deve ser fechado primeiro");
             }
         }
+
         #endregion
 
-        
+        private void dgvProdutos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter || e.KeyChar == (char)Keys.Tab)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvProdutos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProdutos.Columns[e.ColumnIndex].HeaderText.Equals("ID"))
+            {
+                dgvProdutos.Rows[e.RowIndex].ReadOnly = true;
+                dgvProdutos.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = false;
+                dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+                dgvProdutos.CurrentCell = dgvProdutos[e.ColumnIndex, e.RowIndex];
+            }
+        }
+
+        private void dgvProdutos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void dgvProdutos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProdutos.Columns[e.ColumnIndex].HeaderText.Equals("ID"))
+            {
+                PRODUTOSDataTable prodsdt = banco.SelectProduto(Convert.ToInt32(dgvProdutos[e.ColumnIndex, e.RowIndex].Value));
+                if (prodsdt.Rows.Count == 1)
+                {
+                    dgvProdutos[e.ColumnIndex + 1, e.RowIndex].Value = prodsdt.Rows[0]["Nome_Produto"];
+                    dgvProdutos[e.ColumnIndex + 3, e.RowIndex].Value = prodsdt.Rows[0]["Valor_Produto"];
+                    dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = true;
+                    dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightGray;
+                    BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        dgvProdutos.CurrentCell = dgvProdutos[e.ColumnIndex + 2, e.RowIndex];
+                        dgvProdutos.CurrentCell.ReadOnly = false;
+                        dgvProdutos.CurrentCell.ToolTipText = "Quantidade Máxima " + prodsdt.Rows[0]["Quantidade_Produto"].ToString();
+                        dgvProdutos.CurrentCell.Style.BackColor = Color.White;
+                    }
+                    );
+                }
+                else
+                {
+                    MessageBox.Show("ID não encontrado");
+                    BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = false;
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+                        dgvProdutos.CurrentCell = dgvProdutos[e.ColumnIndex, e.RowIndex];
+                    });
+                }
+            }
+            if (dgvProdutos.Columns[e.ColumnIndex].HeaderText.Equals("QUANTIDADE"))
+            {
+                try
+                {
+                    PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dgvProdutos["IdProduto", e.RowIndex].Value));
+                    FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor(Convert.ToInt32(produtosdt.Rows[0]["id_fornecedor_produto"]));
+                    Fornecedor fornecedor = new Fornecedor(
+                        Convert.ToInt32(fornecedordt.Rows[0]["id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["rua_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["numero_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["bairro_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cidade_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["estado_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["telefone_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
+                    );
+                    Produto produto = new Produto(
+                           Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
+                           fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
+                           Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
+                    );
+                    ProdOper prodOper = new ProdOper(produto, Convert.ToDecimal(dgvProdutos[e.ColumnIndex, e.RowIndex].Value));
+                    produtos.Add(prodOper);
+                    ValorSet();
+                    BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightGray;
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = true;
+                        dgvProdutos.CurrentCell = dgvProdutos["IdProduto", dgvProdutos.NewRowIndex];
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    PRODUTOSDataTable prodsdt = banco.SelectProduto(Convert.ToInt32(dgvProdutos["IdProduto", e.RowIndex].Value));
+                    dgvProdutos.CurrentCell.Value = prodsdt.Rows[0]["Quantidade_Produto"];
+                }
+            }
+        }
+
+        private void dgvProdutos_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void dgvProdutos_MouseHover(object sender, EventArgs e)
+        {
+            //if(!(dgvProdutos.CurrentCell is null))
+            //    if(dgvProdutos.Columns[dgvProdutos.CurrentCell.ColumnIndex].HeaderText.Equals("QUANTIDADE"))
+            //        toolTip.Show("Quantidade Máxima" + dgvProdutos.CurrentCell.Value.ToString(), this);
+        }
     }
 }

@@ -42,5 +42,20 @@ namespace TCCMadeireira.Models
             this.Valor = valor;
         }
 
+        public override string ToString()
+        {
+            StringBuilder @string = new StringBuilder();
+            foreach(ProdOper prod in Produtos)
+            {
+                @string.AppendFormat("\t{0}\n\t{1}", prod.Produto.Nome, prod.Quantidade);
+            }
+            return
+                String.Format("Venda: {0}\n" +
+                "Cliente: {1}\n" +
+                "Produtos: \n{2}\n" +
+                "Data: {3}\n" +
+                "Vendedor: {4}\n" +
+                "Valor: R${5}", Id, Cliente.Nome, @string, DataInfo, Usuario.Nome, Valor);
+        }
     }
 }

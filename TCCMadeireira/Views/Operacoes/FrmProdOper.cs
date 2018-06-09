@@ -74,6 +74,7 @@ namespace TCCMadeireira.Views
                                    Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
                            );
                             ProdOper = new ProdOper(produto, numQuantidade.Value);
+                            
                         }
                     }
                 }

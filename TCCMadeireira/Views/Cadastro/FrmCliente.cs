@@ -85,6 +85,7 @@ namespace TCCMadeireira.Views
                     btnExcluir.Enabled = false;
                     btnAlterar.Enabled = false;
                     btnCadastrar.Text = "Gravar".ToUpper();
+                    LimparCampos();
                 }
                 else
                 {
@@ -212,21 +213,7 @@ namespace TCCMadeireira.Views
         /// <param name="e"></param>
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in groupComp.Controls)
-            {
-                if (ctrl is TextBox)
-                {
-                    (ctrl as TextBox).Clear();
-                }
-                else if (ctrl is MaskedTextBox)
-                {
-                    (ctrl as MaskedTextBox).Clear();
-                }
-                else if (ctrl is ComboBox)
-                {
-                    (ctrl as ComboBox).SelectedItem = "SP";
-                }
-            }
+            LimparCampos();
             btnCadastrar.Enabled = true;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
@@ -391,6 +378,7 @@ namespace TCCMadeireira.Views
         /// <param name="tipo">Tipo para mudar a mask</param>
         public void IdentidadeInput(string identidade, string tipo)
         {
+            BtnCadastrar_Click(null, null);
             try
             {
                 if (tipo.Equals("CPF"))
@@ -407,6 +395,24 @@ namespace TCCMadeireira.Views
             catch(Exception ex)
             {
                 throw ex;
+            }
+        }
+        private void LimparCampos()
+        {
+            foreach (Control ctrl in groupComp.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    (ctrl as TextBox).Clear();
+                }
+                else if (ctrl is MaskedTextBox)
+                {
+                    (ctrl as MaskedTextBox).Clear();
+                }
+                else if (ctrl is ComboBox)
+                {
+                    (ctrl as ComboBox).SelectedItem = "SP";
+                }
             }
         }
         #endregion

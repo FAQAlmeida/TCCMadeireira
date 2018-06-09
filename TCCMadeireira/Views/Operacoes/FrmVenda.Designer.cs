@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label cPF_CNPJ_CLIENTELabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenda));
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
@@ -57,6 +60,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.clientesTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
             this.grbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
@@ -202,50 +206,54 @@
             // 
             // dgvProdutos
             // 
-            this.dgvProdutos.AllowUserToAddRows = false;
-            this.dgvProdutos.AllowUserToDeleteRows = false;
-            this.dgvProdutos.AllowUserToOrderColumns = true;
-            this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProduto,
             this.NomeProduto,
             this.QuantidadeProduto,
             this.ValorProduto});
+            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 16);
             this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvProdutos.Size = new System.Drawing.Size(531, 251);
             this.dgvProdutos.TabIndex = 0;
-            this.dgvProdutos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ValorSet);
-            this.dgvProdutos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ValorSet);
+            this.dgvProdutos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellEndEdit);
+            this.dgvProdutos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellEnter);
+            this.dgvProdutos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProdutos_KeyDown);
+            this.dgvProdutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvProdutos_KeyPress);
+            this.dgvProdutos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProdutos_KeyUp);
+            this.dgvProdutos.MouseHover += new System.EventHandler(this.dgvProdutos_MouseHover);
             // 
             // IdProduto
             // 
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.IdProduto.DefaultCellStyle = dataGridViewCellStyle4;
             this.IdProduto.HeaderText = "ID";
             this.IdProduto.Name = "IdProduto";
-            this.IdProduto.ReadOnly = true;
             // 
             // NomeProduto
             // 
             this.NomeProduto.HeaderText = "NOME";
             this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
             // 
             // QuantidadeProduto
             // 
+            dataGridViewCellStyle5.Format = "N4";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.QuantidadeProduto.DefaultCellStyle = dataGridViewCellStyle5;
             this.QuantidadeProduto.HeaderText = "QUANTIDADE";
             this.QuantidadeProduto.Name = "QuantidadeProduto";
-            this.QuantidadeProduto.ReadOnly = true;
             // 
             // ValorProduto
             // 
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.ValorProduto.DefaultCellStyle = dataGridViewCellStyle6;
             this.ValorProduto.HeaderText = "VALOR";
             this.ValorProduto.Name = "ValorProduto";
-            this.ValorProduto.ReadOnly = true;
             // 
             // panel1
             // 
@@ -364,10 +372,6 @@
         private Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox grbProdutos;
         private System.Windows.Forms.DataGridView dgvProdutos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnAdicionar;
@@ -378,5 +382,10 @@
         private Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter clientesTableAdapter;
         private System.Windows.Forms.RadioButton rbtnCnpj;
         private System.Windows.Forms.RadioButton rbtnCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

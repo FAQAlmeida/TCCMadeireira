@@ -62,7 +62,7 @@ namespace TCCMadeireira.Model
         }
         public Cliente(string identidade)
         {
-            if (cpfCnpj.ValidarCpf(identidade))
+            if (cpfCnpj.ValidarCpf(identidade) || cpfCnpj.ValidarCnpj(identidade))
             {
                 this.identidade = identidade.Trim();
             }
