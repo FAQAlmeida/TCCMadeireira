@@ -34,11 +34,6 @@
             Represents the strongly named DataTable class.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSDataTable">
-             <summary>
-            Represents the strongly named DataTable class.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSDataTable">
              <summary>
             Represents the strongly named DataTable class.
@@ -50,6 +45,11 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTODataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSDataTable">
              <summary>
             Represents the strongly named DataTable class.
             </summary>
@@ -79,11 +79,6 @@
             Represents strongly named DataRow class.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRow">
-             <summary>
-            Represents strongly named DataRow class.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRow">
              <summary>
             Represents strongly named DataRow class.
@@ -95,6 +90,11 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRow">
              <summary>
             Represents strongly named DataRow class.
             </summary>
@@ -124,11 +124,6 @@
             Row event argument class
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRowChangeEvent">
-             <summary>
-            Row event argument class
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.PRODUTOSRowChangeEvent">
              <summary>
             Row event argument class
@@ -140,6 +135,11 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.VENDA_PRODUTORowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2.USERSRowChangeEvent">
              <summary>
             Row event argument class
             </summary>
@@ -169,11 +169,6 @@
             Represents the connection and commands used to retrieve and save data.
             </summary>
         </member>
-        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter">
-             <summary>
-            Represents the connection and commands used to retrieve and save data.
-            </summary>
-        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
@@ -185,6 +180,11 @@
             </summary>
         </member>
         <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.VENDA_PRODUTOTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
             </summary>
@@ -805,18 +805,18 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:TCCMadeireira.Views.Relatorios.Views.FrmRelatorioMovimentoEstoque.components">
+        <member name="F:TCCMadeireira.Views.Relatorios.Views.FrmFiltrarVendasData.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:TCCMadeireira.Views.Relatorios.Views.FrmRelatorioMovimentoEstoque.Dispose(System.Boolean)">
+        <member name="M:TCCMadeireira.Views.Relatorios.Views.FrmFiltrarVendasData.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:TCCMadeireira.Views.Relatorios.Views.FrmRelatorioMovimentoEstoque.InitializeComponent">
+        <member name="M:TCCMadeireira.Views.Relatorios.Views.FrmFiltrarVendasData.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

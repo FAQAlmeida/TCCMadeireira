@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Data Source=192.168.15.2\FQASQLSERVER;Initial Catalog=Madeireira;User ID=Otavio;Password=Otavio@435</Value>
     </Setting>
     <Setting Name="CasaConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=desktop-fqa\fqasqlserver;Initial Catalog=Madeireira;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=desktop-fqa\fqasqlserver;Initial Catalog=Madeireira;User ID=Otavio;Password=Otavio@435</Value>
     </Setting>
     <Setting Name="CasaPWDConnectionString" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=192.168.15.2\FQASQLSERVER;Initial Catalog=Madeireira;User ID=Otavio;Password=Otavio@435</Value>
@@ -27,13 +27,13 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">note-fqa</Value>
+      <Value Profile="(Default)">desktop-fqa</Value>
     </Setting>
     <Setting Name="DBName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Madeireira</Value>
     </Setting>
     <Setting Name="LoginServer" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">FQA</Value>
+      <Value Profile="(Default)">Otavio</Value>
     </Setting>
     <Setting Name="PwdServer" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Otavio@435</Value>
@@ -44,10 +44,18 @@
     <Setting Name="MadeireiraConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=NOTE-FQA\FQASQLSERVER;Initial Catalog=Madeireira;User ID=FQA;Password=Otavio@435&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=desktop-fqa\fqasqlserver;Initial Catalog=Madeireira;User ID=Otavio;Password=Otavio@435&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=NOTE-FQA\FQASQLSERVER;Initial Catalog=Madeireira;User ID=FQA;Password=Otavio@435</Value>
+      <Value Profile="(Default)">Data Source=desktop-fqa\fqasqlserver;Initial Catalog=Madeireira;User ID=Otavio;Password=Otavio@435</Value>
+    </Setting>
+    <Setting Name="MadeireiraConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=desktop-fqa\fqasqlserver;Initial Catalog=Madeireira;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=desktop-fqa\fqasqlserver;Initial Catalog=Madeireira;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

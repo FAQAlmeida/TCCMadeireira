@@ -41,23 +41,23 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.grbUsuario = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
-            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uSERSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter();
-            this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.pnlDgv = new System.Windows.Forms.Panel();
+            this.pnlButtons = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlDgv = new System.Windows.Forms.Panel();
-            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
+            this.uSERSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter();
+            this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
             this.grbUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.pnlDgv.SuspendLayout();
             this.pnlButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -171,34 +171,6 @@
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // dataSetMadeireiraV2
-            // 
-            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
-            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uSERSBindingSource
-            // 
-            this.uSERSBindingSource.DataMember = "USERS";
-            this.uSERSBindingSource.DataSource = this.dataSetMadeireiraV2;
-            // 
-            // uSERSTableAdapter
-            // 
-            this.uSERSTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CLIENTESTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORESTableAdapter = null;
-            this.tableAdapterManager.FORNECIMENTO_PRODUTOTableAdapter = null;
-            this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
-            this.tableAdapterManager.FUNCIONARIOSTableAdapter = null;
-            this.tableAdapterManager.PRODUTOSTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USERSTableAdapter = this.uSERSTableAdapter;
-            this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
-            this.tableAdapterManager.VENDASTableAdapter = null;
-            // 
             // dgvUsers
             // 
             this.dgvUsers.AllowUserToAddRows = false;
@@ -217,6 +189,29 @@
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.Size = new System.Drawing.Size(446, 136);
             this.dgvUsers.TabIndex = 15;
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDgv.Controls.Add(this.dgvUsers);
+            this.pnlDgv.Location = new System.Drawing.Point(12, 137);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(446, 136);
+            this.pnlDgv.TabIndex = 16;
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlButtons.Controls.Add(this.btnCadastrar);
+            this.pnlButtons.Controls.Add(this.btnExcluir);
+            this.pnlButtons.Controls.Add(this.btnCancelar);
+            this.pnlButtons.Controls.Add(this.btnAlterar);
+            this.pnlButtons.Location = new System.Drawing.Point(257, 12);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(200, 119);
+            this.pnlButtons.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -246,28 +241,33 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // pnlDgv
+            // uSERSBindingSource
             // 
-            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDgv.Controls.Add(this.dgvUsers);
-            this.pnlDgv.Location = new System.Drawing.Point(12, 137);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(446, 136);
-            this.pnlDgv.TabIndex = 16;
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.dataSetMadeireiraV2;
             // 
-            // pnlButtons
+            // dataSetMadeireiraV2
             // 
-            this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlButtons.Controls.Add(this.btnCadastrar);
-            this.pnlButtons.Controls.Add(this.btnExcluir);
-            this.pnlButtons.Controls.Add(this.btnCancelar);
-            this.pnlButtons.Controls.Add(this.btnAlterar);
-            this.pnlButtons.Location = new System.Drawing.Point(257, 12);
-            this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(200, 119);
-            this.pnlButtons.TabIndex = 16;
+            this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
+            this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CLIENTESTableAdapter = null;
+            this.tableAdapterManager.FORNECEDORESTableAdapter = null;
+            this.tableAdapterManager.FORNECIMENTO_PRODUTOTableAdapter = null;
+            this.tableAdapterManager.FORNECIMENTOSTableAdapter = null;
+            this.tableAdapterManager.FUNCIONARIOSTableAdapter = null;
+            this.tableAdapterManager.PRODUTOSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USERSTableAdapter = this.uSERSTableAdapter;
+            this.tableAdapterManager.VENDA_PRODUTOTableAdapter = null;
+            this.tableAdapterManager.VENDASTableAdapter = null;
             // 
             // FrmUsuario
             // 
@@ -287,11 +287,11 @@
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.pnlDgv.ResumeLayout(false);
             this.pnlButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             this.ResumeLayout(false);
 
         }

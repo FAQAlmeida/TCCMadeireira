@@ -59,7 +59,7 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    Usuario user = new Usuario(txtUsuario.Text, txtSenha.Text, Convert.ToString(cmbNivel.Text));
+                    Usuario user = new Usuario(txtUsuario.Text, txtSenha.Text, Convert.ToString(cmbNivel.SelectedItem));
                     if (banco.SelectUser(user.Nome, user.Senha).Rows.Count == 0)
                     {
                         banco.InsertUsuario(user);
@@ -154,8 +154,7 @@ namespace TCCMadeireira.Views
                 }
                 else
                 {
-                    MessageBox.Show((string) cmbNivel.SelectedItem);
-                    Usuario user = new Usuario(txtUsuario.Text, txtSenha.Text, Convert.ToString(cmbNivel.Text));
+                    Usuario user = new Usuario(txtUsuario.Text, txtSenha.Text, Convert.ToString(cmbNivel.SelectedItem));
                     banco.UpdateUsuario(user);
                     log.WriteEntry(String.Format("usuario {0} alterado", user.Nome));
                     BtnCancelar_Click(null, null);
