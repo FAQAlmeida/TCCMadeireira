@@ -90,6 +90,7 @@
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
             this.fUNCIONARIOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FUNCIONARIOSTableAdapter();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             cIDADE_CLIENTELabel = new System.Windows.Forms.Label();
             bAIRRO_CLIENTELabel = new System.Windows.Forms.Label();
             eSTADO_CLIENTELabel = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cIDADE_CLIENTELabel
@@ -209,7 +211,7 @@
             // 
             // lblDataInfo
             // 
-            this.lblDataInfo.Location = new System.Drawing.Point(702, 250);
+            this.lblDataInfo.Location = new System.Drawing.Point(6, 203);
             this.lblDataInfo.MaximumSize = new System.Drawing.Size(10000, 1000);
             this.lblDataInfo.Name = "lblDataInfo";
             this.lblDataInfo.Size = new System.Drawing.Size(100, 20);
@@ -220,7 +222,7 @@
             // rbtnCnpjFiltro
             // 
             this.rbtnCnpjFiltro.AutoSize = true;
-            this.rbtnCnpjFiltro.Location = new System.Drawing.Point(762, 138);
+            this.rbtnCnpjFiltro.Location = new System.Drawing.Point(54, 118);
             this.rbtnCnpjFiltro.Name = "rbtnCnpjFiltro";
             this.rbtnCnpjFiltro.Size = new System.Drawing.Size(52, 17);
             this.rbtnCnpjFiltro.TabIndex = 48;
@@ -232,7 +234,7 @@
             // 
             this.rbtnCpfFiltro.AutoSize = true;
             this.rbtnCpfFiltro.Checked = true;
-            this.rbtnCpfFiltro.Location = new System.Drawing.Point(711, 138);
+            this.rbtnCpfFiltro.Location = new System.Drawing.Point(3, 118);
             this.rbtnCpfFiltro.Name = "rbtnCpfFiltro";
             this.rbtnCpfFiltro.Size = new System.Drawing.Size(45, 17);
             this.rbtnCpfFiltro.TabIndex = 47;
@@ -243,7 +245,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(711, 110);
+            this.txtFiltro.Location = new System.Drawing.Point(3, 90);
             this.txtFiltro.Mask = "999,999,999-99";
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(107, 20);
@@ -253,7 +255,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(711, 81);
+            this.btnAlterar.Location = new System.Drawing.Point(3, 61);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(83, 23);
             this.btnAlterar.TabIndex = 16;
@@ -263,7 +265,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(711, 52);
+            this.btnExcluir.Location = new System.Drawing.Point(3, 32);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(83, 23);
             this.btnExcluir.TabIndex = 15;
@@ -273,7 +275,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(711, 23);
+            this.btnCadastrar.Location = new System.Drawing.Point(3, 3);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(83, 23);
             this.btnCadastrar.TabIndex = 14;
@@ -283,6 +285,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCargo);
             this.groupBox1.Controls.Add(this.rbtnCnpj);
@@ -310,9 +313,9 @@
             this.groupBox1.Controls.Add(eMAIL_CLIENTELabel);
             this.groupBox1.Controls.Add(tELEFONE_CLIENTELabel);
             this.groupBox1.Controls.Add(cELULAR_CLIENTELabel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(690, 265);
+            this.groupBox1.Size = new System.Drawing.Size(690, 233);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
@@ -349,7 +352,7 @@
             this.txtObs.Location = new System.Drawing.Point(9, 156);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(675, 102);
+            this.txtObs.Size = new System.Drawing.Size(675, 67);
             this.txtObs.TabIndex = 13;
             // 
             // txtCidade
@@ -479,9 +482,9 @@
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.fUNCIONARIOSDataGridView);
-            this.pnlDgv.Location = new System.Drawing.Point(12, 284);
+            this.pnlDgv.Location = new System.Drawing.Point(12, 313);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(854, 287);
+            this.pnlDgv.Size = new System.Drawing.Size(854, 177);
             this.pnlDgv.TabIndex = 49;
             // 
             // fUNCIONARIOSDataGridView
@@ -513,7 +516,7 @@
             this.fUNCIONARIOSDataGridView.Name = "fUNCIONARIOSDataGridView";
             this.fUNCIONARIOSDataGridView.ReadOnly = true;
             this.fUNCIONARIOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.fUNCIONARIOSDataGridView.Size = new System.Drawing.Size(854, 287);
+            this.fUNCIONARIOSDataGridView.Size = new System.Drawing.Size(854, 177);
             this.fUNCIONARIOSDataGridView.TabIndex = 0;
             this.fUNCIONARIOSDataGridView.TabStop = false;
             this.fUNCIONARIOSDataGridView.SelectionChanged += new System.EventHandler(this.FUNCIONARIOSDataGridView_SelectionChanged);
@@ -632,7 +635,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(711, 161);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 141);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 23);
             this.btnCancelar.TabIndex = 17;
@@ -640,27 +643,35 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnCadastrar);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.lblDataInfo);
+            this.panel1.Controls.Add(this.btnAlterar);
+            this.panel1.Controls.Add(this.rbtnCnpjFiltro);
+            this.panel1.Controls.Add(this.txtFiltro);
+            this.panel1.Controls.Add(this.rbtnCpfFiltro);
+            this.panel1.Location = new System.Drawing.Point(709, 74);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(157, 233);
+            this.panel1.TabIndex = 50;
+            // 
             // FrmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 582);
-            this.Controls.Add(this.btnCancelar);
+            this.ClientSize = new System.Drawing.Size(878, 502);
             this.Controls.Add(this.pnlDgv);
-            this.Controls.Add(this.lblDataInfo);
-            this.Controls.Add(this.rbtnCnpjFiltro);
-            this.Controls.Add(this.rbtnCpfFiltro);
-            this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmFuncionario";
-            this.Text = "Funcionario";
+            this.Text = "Funcionário";
             this.Load += new System.EventHandler(this.FrmFuncionario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -668,8 +679,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -719,5 +731,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn eMAILFUNCIONARIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSFUNCIONARIODataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

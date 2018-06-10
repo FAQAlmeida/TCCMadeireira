@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using TCCMadeireira.Models;
 
 namespace TCCMadeireira.Views
 {
-    public partial class FrmFuncionario : Form
+    public partial class FrmFuncionario : MaterialForm
     {
         #region @Atributos
         /// <summary>

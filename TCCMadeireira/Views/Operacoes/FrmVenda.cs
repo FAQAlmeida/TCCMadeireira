@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace TCCMadeireira.Views
     /// <summary>
     /// Form responsavel por registrar uma venda
     /// </summary>
-    public partial class FrmVenda : Form
+    public partial class FrmVenda : MaterialForm
     {
         #region Atributes
         Banco banco = new Banco();

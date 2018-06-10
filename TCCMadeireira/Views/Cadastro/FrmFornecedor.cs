@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace TCCMadeireira.Views
     /// <summary>
     /// Form responsável por manter o CRUD de Fornecedor
     /// </summary>
-    public partial class FrmFornecedor : Form
+    public partial class FrmFornecedor : MaterialForm
     {
         #region Atributes
         Log log = new Log();

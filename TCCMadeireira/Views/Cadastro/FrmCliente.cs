@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace TCCMadeireira.Views
     /// <para>Responsável por toda a funcionalidade do Form</para>
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Form" />
-    public partial class FrmCliente : Form
+    public partial class FrmCliente : MaterialForm
     {    
         #region @Atributos
         /// <summary>

@@ -36,51 +36,40 @@ namespace TCCMadeireira.Model
                 "666.666.666-66", "777.777.777-77",
                 "888.888.888-88", "999.999.999-99"
             };
-
+                List<int> dgVer = new List<int> { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+                string[] dgError = new string[] { ".", "/", "-", "," };
                 if (!cpfError.Contains(cpf) && regex.Match(cpf).Success)
                 {
-                    int PA = 10;
                     int calc = 0;
-                    for (int i = 0; i <= 10; i++)
+                    for (int i = 0; i <= cpf.Length - 3; i++)
                     {
-                        if (cpf[i].ToString() != "." && cpf[i].ToString() != "-")
+                        if (!dgError.Contains(cpf[i].ToString()))
                         {
-                            calc = calc + (int.Parse(cpf[i].ToString()) * PA);
-                            PA--;
+                            calc = calc + (Convert.ToInt32(cpf[i].ToString()) * dgVer[0]);
+                            dgVer.RemoveAt(0);
                         }
                     }
-                    calc = (calc * 10) % 11;
-                    if (calc == int.Parse(cpf[12].ToString()))
+                    calc = calc % 11 >= 2 ? 11 - calc % 11 : 0;
+                    if (calc == Convert.ToInt32(cpf[cpf.Length - 2].ToString()))
                     {
-                        PA = 11;
+                        dgVer = new List<int> { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
                         calc = 0;
-                        for (int i = 0; i <= 12; i++)
+                        for (int i = 0; i <= cpf.Length - 2; i++)
                         {
-                            if (cpf[i].ToString() != "." && cpf[i].ToString() != "-")
+                            if (!dgError.Contains(cpf[i].ToString()))
                             {
-                                calc = calc + (int.Parse(cpf[i].ToString()) * PA);
-                                PA--;
+                                calc = calc + (Convert.ToInt32(cpf[i].ToString()) * dgVer[0]);
+                                dgVer.RemoveAt(0);
                             }
                         }
-                        calc = (calc * 10) % 11;
-                        if (calc == int.Parse(cpf[13].ToString()))
+                        calc = calc % 11 >= 2 ? 11 - calc % 11 : 0;
+                        if (calc == Convert.ToInt32(cpf[cpf.Length - 1].ToString()))
                         {
                             return true;
                         }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        return false;
                     }
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
             catch
             {
@@ -125,15 +114,7 @@ namespace TCCMadeireira.Model
                             dgVer.RemoveAt(0);
                         }
                     }
-                    calc %= 11;
-                    if (calc >= 2)
-                    {
-                        calc = 11 - calc;
-                    }
-                    else
-                    {
-                        calc = 0;
-                    }
+                    calc = calc % 11 >= 2 ? 11 - calc % 11 : 0;
                     if (calc == Convert.ToInt32(cnpj[cnpj.Length - 2].ToString()))
                     {
                         dgVer = new List<int> { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -146,33 +127,14 @@ namespace TCCMadeireira.Model
                                 dgVer.RemoveAt(0);
                             }
                         }
-                        calc %= 11;
-                        if (calc >= 2)
-                        {
-                            calc = 11 - calc;
-                        }
-                        else
-                        {
-                            calc = 0;
-                        }
+                        calc = calc % 11 >= 2 ? 11 - calc % 11 : 0;
                         if (calc == Convert.ToInt32(cnpj[cnpj.Length - 1].ToString()))
                         {
                             return true;
                         }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        return false;
                     }
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
             catch
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ using static TCCMadeireira.Bancos.DataSetMadeireiraV2;
 
 namespace TCCMadeireira.Views
 {
-    public partial class FrmProduto : Form
+    public partial class FrmProduto : MaterialForm
     {
         Banco banco = new Banco();
         int id;
@@ -237,7 +238,7 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnAlterar.Text == "Alterar")
+                if (btnAlterar.Text.ToUpper() == "Alterar".ToUpper())
                 {
                     if (dgvProdutos.SelectedRows.Count == 1)
                     {
@@ -245,6 +246,7 @@ namespace TCCMadeireira.Views
                         btnCadastrar.Enabled = false;
                         btnExcluir.Enabled = false;
                         btnCancelar.Visible = true;
+                        numQuantidade.Enabled = false;
                         PRODUTOSDataTable dt = new PRODUTOSDataTable();
                         id = (int)dgvProdutos.SelectedCells[0].Value;
                         Produto produto = new Produto(id);

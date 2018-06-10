@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace TCCMadeireira.Views
     /// <summary>
     /// Form responsavel por adicionar e excluir Usuarios do sistema
     /// </summary>
-    public partial class FrmUsuario : Form
+    public partial class FrmUsuario : MaterialForm
     {
         private Banco banco = new Banco();
         private Log log = new Log();

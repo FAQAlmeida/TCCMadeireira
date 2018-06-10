@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTable1TableAdapter = new TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter();
-            this.dataSetMadeireiraV21 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
+            this.pnlReportViewer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV21)).BeginInit();
+            this.pnlReportViewer.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataTable1BindingSource
@@ -53,31 +53,34 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetVendasReport";
-            reportDataSource1.Value = this.dataTable1BindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSetVendasReport";
+            reportDataSource2.Value = this.dataTable1BindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.VendasReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(984, 461);
+            this.reportViewer.Size = new System.Drawing.Size(898, 452);
             this.reportViewer.TabIndex = 0;
             // 
             // dataTable1TableAdapter
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
-            // dataSetMadeireiraV21
+            // pnlReportViewer
             // 
-            this.dataSetMadeireiraV21.DataSetName = "DataSetMadeireiraV2";
-            this.dataSetMadeireiraV21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.pnlReportViewer.Controls.Add(this.reportViewer);
+            this.pnlReportViewer.Location = new System.Drawing.Point(-1, 64);
+            this.pnlReportViewer.Name = "pnlReportViewer";
+            this.pnlReportViewer.Size = new System.Drawing.Size(898, 452);
+            this.pnlReportViewer.TabIndex = 1;
             // 
             // FrmRelatorioVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.reportViewer);
+            this.ClientSize = new System.Drawing.Size(897, 515);
+            this.Controls.Add(this.pnlReportViewer);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmRelatorioVendas";
@@ -85,7 +88,7 @@
             this.Load += new System.EventHandler(this.FrmRelatorioVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV21)).EndInit();
+            this.pnlReportViewer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -96,6 +99,6 @@
         private Bancos.DataSetReport dataSetReport;
         private System.Windows.Forms.BindingSource dataTable1BindingSource;
         private Bancos.DataSetReportTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
-        private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV21;
+        private System.Windows.Forms.Panel pnlReportViewer;
     }
 }

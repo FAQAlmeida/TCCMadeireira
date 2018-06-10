@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace TCCMadeireira.Views.Relatorios
 {
-    public partial class FrmRelatorioVendas : Form
+    public partial class FrmRelatorioVendas : MaterialForm
     {
         public FrmRelatorioVendas()
         {

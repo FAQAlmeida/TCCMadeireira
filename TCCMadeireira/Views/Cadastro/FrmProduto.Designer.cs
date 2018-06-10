@@ -63,6 +63,7 @@ namespace TCCMadeireira.Views
             this.pRODUTOSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.PRODUTOSTableAdapter();
             this.fORNECEDORESTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             lblNome = new System.Windows.Forms.Label();
             lblQuantidade = new System.Windows.Forms.Label();
             vALOR_PRODUTOLabel = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@ namespace TCCMadeireira.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).BeginInit();
             this.pvlDgv.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNome
@@ -115,6 +117,7 @@ namespace TCCMadeireira.Views
             // 
             // groupComp
             // 
+            this.groupComp.BackColor = System.Drawing.Color.White;
             this.groupComp.Controls.Add(this.numValor);
             this.groupComp.Controls.Add(this.cmbFornecedores);
             this.groupComp.Controls.Add(this.numQuantidade);
@@ -124,7 +127,7 @@ namespace TCCMadeireira.Views
             this.groupComp.Controls.Add(vALOR_PRODUTOLabel);
             this.groupComp.Controls.Add(iD_FORNECEDOR_PRODUTOLabel);
             this.groupComp.Controls.Add(this.txtObs);
-            this.groupComp.Location = new System.Drawing.Point(12, 12);
+            this.groupComp.Location = new System.Drawing.Point(12, 70);
             this.groupComp.Name = "groupComp";
             this.groupComp.Size = new System.Drawing.Size(536, 163);
             this.groupComp.TabIndex = 0;
@@ -218,7 +221,7 @@ namespace TCCMadeireira.Views
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(757, 234);
+            this.dgvProdutos.Size = new System.Drawing.Size(712, 176);
             this.dgvProdutos.TabIndex = 1;
             this.dgvProdutos.TabStop = false;
             // 
@@ -272,14 +275,14 @@ namespace TCCMadeireira.Views
             // pvlDgv
             // 
             this.pvlDgv.Controls.Add(this.dgvProdutos);
-            this.pvlDgv.Location = new System.Drawing.Point(12, 181);
+            this.pvlDgv.Location = new System.Drawing.Point(12, 239);
             this.pvlDgv.Name = "pvlDgv";
-            this.pvlDgv.Size = new System.Drawing.Size(757, 234);
+            this.pvlDgv.Size = new System.Drawing.Size(712, 176);
             this.pvlDgv.TabIndex = 2;
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(554, 108);
+            this.txtFiltro.Location = new System.Drawing.Point(3, 90);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(107, 20);
             this.txtFiltro.TabIndex = 9;
@@ -287,7 +290,7 @@ namespace TCCMadeireira.Views
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(554, 79);
+            this.btnAlterar.Location = new System.Drawing.Point(3, 61);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(84, 23);
             this.btnAlterar.TabIndex = 8;
@@ -297,7 +300,7 @@ namespace TCCMadeireira.Views
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(554, 50);
+            this.btnExcluir.Location = new System.Drawing.Point(3, 32);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(84, 23);
             this.btnExcluir.TabIndex = 7;
@@ -307,7 +310,7 @@ namespace TCCMadeireira.Views
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(554, 21);
+            this.btnCadastrar.Location = new System.Drawing.Point(3, 3);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(84, 23);
             this.btnCadastrar.TabIndex = 6;
@@ -325,7 +328,7 @@ namespace TCCMadeireira.Views
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(554, 134);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 116);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 23);
             this.btnCancelar.TabIndex = 10;
@@ -333,19 +336,27 @@ namespace TCCMadeireira.Views
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnCadastrar);
+            this.panel1.Controls.Add(this.txtFiltro);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.btnAlterar);
+            this.panel1.Location = new System.Drawing.Point(554, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(170, 163);
+            this.panel1.TabIndex = 11;
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 426);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnCadastrar);
+            this.ClientSize = new System.Drawing.Size(738, 426);
             this.Controls.Add(this.pvlDgv);
             this.Controls.Add(this.groupComp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -361,8 +372,9 @@ namespace TCCMadeireira.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRODUTOSBindingSource)).EndInit();
             this.pvlDgv.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -391,5 +403,6 @@ namespace TCCMadeireira.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDFORNECEDORPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSPRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
     }
 }

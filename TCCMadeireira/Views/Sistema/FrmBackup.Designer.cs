@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBackup));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnChange = new System.Windows.Forms.Button();
+            this.btnChangePath = new System.Windows.Forms.Button();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.lblPath = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnChangePath = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnBackup = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -69,6 +69,17 @@
             this.btnChange.TabIndex = 4;
             this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.BtnChange_Click);
+            // 
+            // btnChangePath
+            // 
+            this.btnChangePath.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangePath.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePath.Image")));
+            this.btnChangePath.Location = new System.Drawing.Point(509, 52);
+            this.btnChangePath.Name = "btnChangePath";
+            this.btnChangePath.Size = new System.Drawing.Size(27, 27);
+            this.btnChangePath.TabIndex = 5;
+            this.btnChangePath.UseVisualStyleBackColor = false;
+            this.btnChangePath.Click += new System.EventHandler(this.BtnChangePath_Click);
             // 
             // txtFileName
             // 
@@ -105,23 +116,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Backup:";
             // 
-            // btnChangePath
-            // 
-            this.btnChangePath.BackColor = System.Drawing.Color.Transparent;
-            this.btnChangePath.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePath.Image")));
-            this.btnChangePath.Location = new System.Drawing.Point(509, 52);
-            this.btnChangePath.Name = "btnChangePath";
-            this.btnChangePath.Size = new System.Drawing.Size(27, 27);
-            this.btnChangePath.TabIndex = 5;
-            this.btnChangePath.UseVisualStyleBackColor = false;
-            this.btnChangePath.Click += new System.EventHandler(this.BtnChangePath_Click);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
             // btnBackup
             // 
+            this.btnBackup.AutoSize = true;
             this.btnBackup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBackup.Depth = 0;
             this.btnBackup.Icon = null;
@@ -129,7 +130,7 @@
             this.btnBackup.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Primary = true;
-            this.btnBackup.Size = new System.Drawing.Size(75, 23);
+            this.btnBackup.Size = new System.Drawing.Size(74, 36);
             this.btnBackup.TabIndex = 6;
             this.btnBackup.Text = "Backup";
             this.btnBackup.UseVisualStyleBackColor = true;
@@ -137,6 +138,8 @@
             // 
             // btnRestore
             // 
+            this.btnRestore.AutoSize = true;
+            this.btnRestore.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRestore.Depth = 0;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestore.Icon = null;
@@ -144,7 +147,7 @@
             this.btnRestore.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Primary = true;
-            this.btnRestore.Size = new System.Drawing.Size(86, 23);
+            this.btnRestore.Size = new System.Drawing.Size(98, 36);
             this.btnRestore.TabIndex = 7;
             this.btnRestore.Text = "Restaurar";
             this.btnRestore.UseVisualStyleBackColor = true;
@@ -154,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 202);
+            this.ClientSize = new System.Drawing.Size(581, 211);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnBackup);
             this.Controls.Add(this.groupBox1);
@@ -168,6 +171,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

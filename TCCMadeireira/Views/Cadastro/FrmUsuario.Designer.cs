@@ -42,22 +42,22 @@
             this.grbUsuario = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.pnlDgv = new System.Windows.Forms.Panel();
-            this.pnlButtons = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetMadeireiraV2 = new TCCMadeireira.Bancos.DataSetMadeireiraV2();
+            this.pnlDgv = new System.Windows.Forms.Panel();
+            this.pnlButtons = new System.Windows.Forms.Panel();
             this.uSERSTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.USERSTableAdapter();
             this.tableAdapterManager = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.TableAdapterManager();
             this.grbUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
-            this.pnlDgv.SuspendLayout();
-            this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
+            this.pnlDgv.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -147,13 +147,14 @@
             // 
             // grbUsuario
             // 
+            this.grbUsuario.BackColor = System.Drawing.Color.White;
             this.grbUsuario.Controls.Add(this.label2);
             this.grbUsuario.Controls.Add(this.label3);
             this.grbUsuario.Controls.Add(this.label1);
             this.grbUsuario.Controls.Add(this.txtUsuario);
             this.grbUsuario.Controls.Add(this.cmbNivel);
             this.grbUsuario.Controls.Add(this.txtSenha);
-            this.grbUsuario.Location = new System.Drawing.Point(12, 12);
+            this.grbUsuario.Location = new System.Drawing.Point(12, 68);
             this.grbUsuario.Name = "grbUsuario";
             this.grbUsuario.Size = new System.Drawing.Size(237, 119);
             this.grbUsuario.TabIndex = 14;
@@ -187,31 +188,8 @@
             this.dgvUsers.Location = new System.Drawing.Point(0, 0);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
-            this.dgvUsers.Size = new System.Drawing.Size(446, 136);
+            this.dgvUsers.Size = new System.Drawing.Size(446, 160);
             this.dgvUsers.TabIndex = 15;
-            // 
-            // pnlDgv
-            // 
-            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDgv.Controls.Add(this.dgvUsers);
-            this.pnlDgv.Location = new System.Drawing.Point(12, 137);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(446, 136);
-            this.pnlDgv.TabIndex = 16;
-            // 
-            // pnlButtons
-            // 
-            this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlButtons.Controls.Add(this.btnCadastrar);
-            this.pnlButtons.Controls.Add(this.btnExcluir);
-            this.pnlButtons.Controls.Add(this.btnCancelar);
-            this.pnlButtons.Controls.Add(this.btnAlterar);
-            this.pnlButtons.Location = new System.Drawing.Point(257, 12);
-            this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(200, 119);
-            this.pnlButtons.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -251,6 +229,30 @@
             this.dataSetMadeireiraV2.DataSetName = "DataSetMadeireiraV2";
             this.dataSetMadeireiraV2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pnlDgv
+            // 
+            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDgv.Controls.Add(this.dgvUsers);
+            this.pnlDgv.Location = new System.Drawing.Point(12, 193);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(446, 160);
+            this.pnlDgv.TabIndex = 16;
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlButtons.BackColor = System.Drawing.Color.White;
+            this.pnlButtons.Controls.Add(this.btnCadastrar);
+            this.pnlButtons.Controls.Add(this.btnExcluir);
+            this.pnlButtons.Controls.Add(this.btnCancelar);
+            this.pnlButtons.Controls.Add(this.btnAlterar);
+            this.pnlButtons.Location = new System.Drawing.Point(257, 68);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(200, 119);
+            this.pnlButtons.TabIndex = 16;
+            // 
             // uSERSTableAdapter
             // 
             this.uSERSTableAdapter.ClearBeforeFill = true;
@@ -274,11 +276,10 @@
             this.AccessibleName = "FrmUsuario";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 285);
+            this.ClientSize = new System.Drawing.Size(469, 365);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.grbUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -288,10 +289,10 @@
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
-            this.pnlDgv.ResumeLayout(false);
-            this.pnlButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
+            this.pnlDgv.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

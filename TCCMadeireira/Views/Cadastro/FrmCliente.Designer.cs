@@ -277,7 +277,7 @@
             this.txtObs.Location = new System.Drawing.Point(9, 124);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(675, 102);
+            this.txtObs.Size = new System.Drawing.Size(675, 77);
             this.txtObs.TabIndex = 12;
             this.txtObs.Click += new System.EventHandler(this.txtObs_Enter);
             this.txtObs.Enter += new System.EventHandler(this.txtObs_Enter);
@@ -363,6 +363,7 @@
             // 
             // groupComp
             // 
+            this.groupComp.BackColor = System.Drawing.Color.White;
             this.groupComp.Controls.Add(this.rbtnCnpj);
             this.groupComp.Controls.Add(cIDADE_CLIENTELabel);
             this.groupComp.Controls.Add(this.txtObs);
@@ -388,9 +389,9 @@
             this.groupComp.Controls.Add(eMAIL_CLIENTELabel);
             this.groupComp.Controls.Add(tELEFONE_CLIENTELabel);
             this.groupComp.Controls.Add(cELULAR_CLIENTELabel);
-            this.groupComp.Location = new System.Drawing.Point(12, 12);
+            this.groupComp.Location = new System.Drawing.Point(12, 73);
             this.groupComp.Name = "groupComp";
-            this.groupComp.Size = new System.Drawing.Size(690, 235);
+            this.groupComp.Size = new System.Drawing.Size(690, 211);
             this.groupComp.TabIndex = 33;
             this.groupComp.TabStop = false;
             this.groupComp.Text = "Cliente";
@@ -422,7 +423,7 @@
             // lblDataInfo
             // 
             this.lblDataInfo.AutoSize = true;
-            this.lblDataInfo.Location = new System.Drawing.Point(5, 212);
+            this.lblDataInfo.Location = new System.Drawing.Point(3, 187);
             this.lblDataInfo.MaximumSize = new System.Drawing.Size(10000, 1000);
             this.lblDataInfo.Name = "lblDataInfo";
             this.lblDataInfo.Size = new System.Drawing.Size(67, 13);
@@ -436,9 +437,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDgv.Controls.Add(this.dgvClientes);
-            this.pnlDgv.Location = new System.Drawing.Point(13, 254);
+            this.pnlDgv.Location = new System.Drawing.Point(13, 290);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(923, 343);
+            this.pnlDgv.Size = new System.Drawing.Size(923, 188);
             this.pnlDgv.TabIndex = 34;
             // 
             // dgvClientes
@@ -470,7 +471,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(923, 343);
+            this.dgvClientes.Size = new System.Drawing.Size(923, 188);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.TabStop = false;
             this.dgvClientes.SelectionChanged += new System.EventHandler(this.ClientesDataGridView_SelectionChanged);
@@ -704,6 +705,7 @@
             // pnlComp
             // 
             this.pnlComp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlComp.BackColor = System.Drawing.Color.White;
             this.pnlComp.Controls.Add(this.btnCancelar);
             this.pnlComp.Controls.Add(this.btnAlterar);
             this.pnlComp.Controls.Add(this.lblDataInfo);
@@ -712,9 +714,9 @@
             this.pnlComp.Controls.Add(this.btnExcluir);
             this.pnlComp.Controls.Add(this.rbtnCpfFiltro);
             this.pnlComp.Controls.Add(this.txtFiltro);
-            this.pnlComp.Location = new System.Drawing.Point(703, 13);
+            this.pnlComp.Location = new System.Drawing.Point(703, 74);
             this.pnlComp.Name = "pnlComp";
-            this.pnlComp.Size = new System.Drawing.Size(233, 235);
+            this.pnlComp.Size = new System.Drawing.Size(233, 210);
             this.pnlComp.TabIndex = 42;
             // 
             // FrmCliente
@@ -722,12 +724,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(948, 610);
+            this.ClientSize = new System.Drawing.Size(948, 490);
             this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.groupComp);
             this.Controls.Add(oBS__FORNECEDORLabel);
             this.Controls.Add(this.pnlComp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

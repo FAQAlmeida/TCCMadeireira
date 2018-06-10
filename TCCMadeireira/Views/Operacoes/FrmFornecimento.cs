@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace TCCMadeireira.Views
     /// <summary>
     /// Form responsavel por Registrar o consultar Fornecimentos
     /// </summary>
-    public partial class FrmFornecimento : Form
+    public partial class FrmFornecimento : MaterialForm
     {
         #region Atributes
         Banco banco = new Banco();
@@ -241,6 +242,11 @@ namespace TCCMadeireira.Views
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
