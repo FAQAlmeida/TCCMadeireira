@@ -1,0 +1,6 @@
+Um dos grandes problemas das atuais empresas que não conseguem se desenvolver, é o fato delas não possuírem um sistema informatizado para gerenciar os processos de rotina.
+O projeto apresentado pela Ratio Corporation, visa sanar essa necessidade da empresa Madeireira São José, criando assim, um sistema que contenha um fluxo de caixa e o controle de estoque das mercadorias vendidas.
+Nós iremos desenvolver um software de controle de estoque, que irá registrar todas as rotinas a empresa, como entrada e saída de registro de funcionários, vendas, estoque, clientes entre outros.
+
+O nosso objetivo foi atingido e superou nossas expectativas, com muito trabalho e dedicação de todos os integrantes conseguimos fazer o nosso sistema e deixando a todos do grupo e o nosso cliente muito satisfeito.
+O sistema desenvolvido conseguiu suprir todas as necessidades do nosso cliente e o agradou em todos os aspectos. Saindo do controle de estoque de papel e agora informatizado e com uma maior tranquilidade, conforto e segurança.
