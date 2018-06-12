@@ -10217,7 +10217,7 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TCCMadeireira.Properties.Settings.Default.MadeireiraConnectionString1;
+            this._connection.ConnectionString = global::TCCMadeireira.Properties.Settings.Default.MadeireiraConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

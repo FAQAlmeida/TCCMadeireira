@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,11 @@ namespace TCCMadeireira.Views
         public FrmLogin()
         {
             InitializeComponent();
+            MaterialSkinManager manager = MaterialSkinManager.Instance;
+            manager.AddFormToManage(this);
+            manager.Theme = MaterialSkinManager.Themes.LIGHT;
+            manager.ColorScheme = new ColorScheme
+                (Primary.Blue900, Primary.Grey900, Primary.LightBlue700 ,Accent.DeepPurple700, TextShade.WHITE);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
