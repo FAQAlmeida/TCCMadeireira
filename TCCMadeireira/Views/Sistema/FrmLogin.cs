@@ -34,7 +34,8 @@ namespace TCCMadeireira.Views
             manager.AddFormToManage(this);
             manager.Theme = MaterialSkinManager.Themes.LIGHT;
             manager.ColorScheme = new ColorScheme
-                (Primary.Blue900, Primary.Grey900, Primary.LightBlue700 ,Accent.DeepPurple700, TextShade.WHITE);
+                (Primary.Blue900, Primary.Blue700, Primary.Red900 , 
+                Accent.DeepPurple700, TextShade.WHITE);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

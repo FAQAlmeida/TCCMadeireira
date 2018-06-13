@@ -93,13 +93,15 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLogin.Depth = 0;
             this.btnLogin.Icon = null;
             this.btnLogin.Location = new System.Drawing.Point(93, 131);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
-            this.btnLogin.Size = new System.Drawing.Size(75, 22);
+            this.btnLogin.Size = new System.Drawing.Size(73, 36);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "ENTRAR";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -107,19 +109,21 @@
             // 
             // btnExit
             // 
+            this.btnExit.AutoSize = true;
+            this.btnExit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnExit.Depth = 0;
             this.btnExit.Icon = null;
             this.btnExit.Location = new System.Drawing.Point(12, 131);
             this.btnExit.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnExit.Name = "btnExit";
             this.btnExit.Primary = true;
-            this.btnExit.Size = new System.Drawing.Size(75, 22);
+            this.btnExit.Size = new System.Drawing.Size(51, 36);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "SAIR";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // Login
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +136,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
-            this.Name = "Login";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
