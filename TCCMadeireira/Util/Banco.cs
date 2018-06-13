@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TCCMadeireira.Bancos;
 using TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters;
 using TCCMadeireira.Model;
@@ -92,6 +93,9 @@ namespace TCCMadeireira.Bancos
         /// <param name="funcionario">Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void UpdateFuncionario(Funcionario funcionario)
         {
+            FUNCIONARIOSDataTable fdt = funcionariosTableAdapter.GetDataFuncionario(funcionario.Identidade);
+            funcionario.Id = Convert.ToInt32(fdt[0]["id_funcionario"]);
+            MessageBox.Show(funcionario.Id.ToString());
             funcionariosTableAdapter.Update(funcionario.Nome,funcionario.Identidade, funcionario.Cargo, funcionario.Cep, funcionario.Rua, funcionario.Numero, funcionario.Bairro, funcionario.Cidade, funcionario.Estado, funcionario.Telefone, funcionario.Celular, funcionario.Email, funcionario.DataInfo, funcionario.Obs, funcionario.Id);
         }
         public FUNCIONARIOSDataTable SelectFuncionario()

@@ -120,7 +120,6 @@ namespace TCCMadeireira.Views
                     throw new Exception("A venda não pode conter nenhum produto");
                 }
                 Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
-                MessageBox.Show(venda.ToString());
                 banco.InsertVenda(venda);
                 MessageBox.Show("Venda efetuada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
@@ -206,31 +205,29 @@ namespace TCCMadeireira.Views
         /// </summary>
         /// <param name="prodVenda"></param>
         internal void InsertDataProd(ProdOper prodVenda)
-        {            
+        {
             if (!produtos.Exists(x => x.Produto.Id == prodVenda.Produto.Id))
             {
                 produtos.Add(prodVenda);
-                dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+                //dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
             }
             else
             {
-                produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade += prodVenda.Quantidade;
-                DataGridViewRow row = dgvProdutos.Rows.Cast<DataGridViewRow>().Where(x => (int)x.Cells["IdProduto"].Value == prodVenda.Produto.Id).First();
-                dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value = produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade;
+                produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade = prodVenda.Quantidade;
+                //DataGridViewRow row = dgvProdutos.Rows.Cast<DataGridViewRow>().Where(x => (int)x.Cells["IdProduto"].Value == prodVenda.Produto.Id).First();
+                //dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value = produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade;
             }
         }
         private void ValorSet()
         {
-            
-                CheckEstoque();
-                decimal valorTotal = 0;
-                foreach (ProdOper prod in produtos)
-                {
-                    valorTotal += (prod.Quantidade * prod.Produto.Valor);
-                }
-                valor = valorTotal;
-                lblValorTotal.Text = String.Format("Valor Total: R$ {0:f2}", valor);
-            
+            CheckEstoque();
+            decimal valorTotal = 0;
+            foreach (ProdOper prod in produtos)
+            {
+                valorTotal += (prod.Quantidade * prod.Produto.Valor);
+            }
+            valor = valorTotal;
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:f2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -430,7 +427,7 @@ namespace TCCMadeireira.Views
                            Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
                     );
                     ProdOper prodOper = new ProdOper(produto, Convert.ToDecimal(dgvProdutos[e.ColumnIndex, e.RowIndex].Value));
-                    produtos.Add(prodOper);
+                    InsertDataProd(prodOper);
                     ValorSet();
                     BeginInvoke((MethodInvoker)delegate ()
                     {

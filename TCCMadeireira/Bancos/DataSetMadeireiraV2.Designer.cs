@@ -8429,9 +8429,9 @@ SELECT ID_FUNCIONARIO, NOME_FUNCIONARIO, IDENTIDADE_FUNCIONARIO, CARGO_FUNCIONAR
             this._adapter.UpdateCommand.CommandText = @"UPDATE       FUNCIONARIOS
 SET                NOME_FUNCIONARIO = @NOME_FUNCIONARIO, IDENTIDADE_FUNCIONARIO = @IDENTIDADE_FUNCIONARIO, CARGO_FUNCIONARIO = @CARGO_FUNCIONARIO, CEP_FUNCIONARIO = @CEP_FUNCIONARIO, 
                          RUA_FUNCIONARIO = @RUA_FUNCIONARIO, NUMERO_FUNCIONARIO = @NUMERO_FUNCIONARIO, BAIRRO_FUNCIONARIO = @BAIRRO_FUNCIONARIO, CIDADE_FUNCIONARIO = @CIDADE_FUNCIONARIO, 
-                         ESTADO_FUNCIONARIO = @ESTADO_FUNCIONARIO, TELEFONE_FUNCIONARIO = @TELEFONE_FUNCIONARIO, CELULAR_FUNCIONARIO = @CELULAR_FUNCIONARIO, 
-                         EMAIL_FUNCIONARIO = @EMAIL_FUNCIONARIO, DATA_INFO_FUNCIONARIO = @DATA_INFO_FUNCIONARIO, OBS_FUNCIONARIO = @OBS_FUNCIONARIO
-WHERE        (ID_FUNCIONARIO = @Original_ID_FUNCIONARIO); 
+                         ESTADO_FUNCIONARIO = @ESTADO_FUNCIONARIO, TELEFONE_FUNCIONARIO = @TELEFONE_FUNCIONARIO, CELULAR_FUNCIONARIO = @CELULAR_FUNCIONARIO, EMAIL_FUNCIONARIO = @EMAIL_FUNCIONARIO, 
+                         DATA_INFO_FUNCIONARIO = @DATA_INFO_FUNCIONARIO, OBS_FUNCIONARIO = @OBS_FUNCIONARIO
+WHERE        (ID_FUNCIONARIO = @ID_FUNCIONARIO);  
 SELECT ID_FUNCIONARIO, NOME_FUNCIONARIO, IDENTIDADE_FUNCIONARIO, CARGO_FUNCIONARIO, CEP_FUNCIONARIO, RUA_FUNCIONARIO, NUMERO_FUNCIONARIO, BAIRRO_FUNCIONARIO, CIDADE_FUNCIONARIO, ESTADO_FUNCIONARIO, TELEFONE_FUNCIONARIO, CELULAR_FUNCIONARIO, EMAIL_FUNCIONARIO, DATA_INFO_FUNCIONARIO, OBS_FUNCIONARIO FROM FUNCIONARIOS WHERE (ID_FUNCIONARIO = @ID_FUNCIONARIO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FUNCIONARIO", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FUNCIONARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8448,7 +8448,7 @@ SELECT ID_FUNCIONARIO, NOME_FUNCIONARIO, IDENTIDADE_FUNCIONARIO, CARGO_FUNCIONAR
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FUNCIONARIO", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FUNCIONARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DATA_INFO_FUNCIONARIO", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DATA_INFO_FUNCIONARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OBS_FUNCIONARIO", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "OBS_FUNCIONARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FUNCIONARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FUNCIONARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FUNCIONARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FUNCIONARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8675,7 +8675,7 @@ WHERE IDENTIDADE_FUNCIONARIO = @IDENTIDADE_FUNCIONARIO";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NOME_FUNCIONARIO, string IDENTIDADE_FUNCIONARIO, string CARGO_FUNCIONARIO, string CEP_FUNCIONARIO, string RUA_FUNCIONARIO, string NUMERO_FUNCIONARIO, string BAIRRO_FUNCIONARIO, string CIDADE_FUNCIONARIO, string ESTADO_FUNCIONARIO, string TELEFONE_FUNCIONARIO, string CELULAR_FUNCIONARIO, string EMAIL_FUNCIONARIO, global::System.Nullable<global::System.DateTime> DATA_INFO_FUNCIONARIO, string OBS_FUNCIONARIO, int Original_ID_FUNCIONARIO) {
+        public virtual int Update(string NOME_FUNCIONARIO, string IDENTIDADE_FUNCIONARIO, string CARGO_FUNCIONARIO, string CEP_FUNCIONARIO, string RUA_FUNCIONARIO, string NUMERO_FUNCIONARIO, string BAIRRO_FUNCIONARIO, string CIDADE_FUNCIONARIO, string ESTADO_FUNCIONARIO, string TELEFONE_FUNCIONARIO, string CELULAR_FUNCIONARIO, string EMAIL_FUNCIONARIO, global::System.Nullable<global::System.DateTime> DATA_INFO_FUNCIONARIO, string OBS_FUNCIONARIO, int ID_FUNCIONARIO) {
             if ((NOME_FUNCIONARIO == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8760,7 +8760,7 @@ WHERE IDENTIDADE_FUNCIONARIO = @IDENTIDADE_FUNCIONARIO";
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(OBS_FUNCIONARIO));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ID_FUNCIONARIO));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(ID_FUNCIONARIO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -71,7 +71,7 @@
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.pnlDgv = new System.Windows.Forms.Panel();
-            this.fUNCIONARIOSDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
             this.iDFUNCIONARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEFUNCIONARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDENTIDADEFUNCIONARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,7 +104,7 @@
             cELULAR_CLIENTELabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pnlDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -248,7 +248,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(3, 90);
             this.txtFiltro.Mask = "999,999,999-99";
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(107, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(83, 20);
             this.txtFiltro.TabIndex = 46;
             this.txtFiltro.TabStop = false;
             this.txtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
@@ -481,20 +481,20 @@
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.fUNCIONARIOSDataGridView);
+            this.pnlDgv.Controls.Add(this.dgvFuncionarios);
             this.pnlDgv.Location = new System.Drawing.Point(12, 313);
             this.pnlDgv.Name = "pnlDgv";
             this.pnlDgv.Size = new System.Drawing.Size(854, 177);
             this.pnlDgv.TabIndex = 49;
             // 
-            // fUNCIONARIOSDataGridView
+            // dgvFuncionarios
             // 
-            this.fUNCIONARIOSDataGridView.AllowUserToAddRows = false;
-            this.fUNCIONARIOSDataGridView.AllowUserToDeleteRows = false;
-            this.fUNCIONARIOSDataGridView.AllowUserToOrderColumns = true;
-            this.fUNCIONARIOSDataGridView.AutoGenerateColumns = false;
-            this.fUNCIONARIOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.fUNCIONARIOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFuncionarios.AllowUserToAddRows = false;
+            this.dgvFuncionarios.AllowUserToDeleteRows = false;
+            this.dgvFuncionarios.AllowUserToOrderColumns = true;
+            this.dgvFuncionarios.AutoGenerateColumns = false;
+            this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDFUNCIONARIODataGridViewTextBoxColumn,
             this.nOMEFUNCIONARIODataGridViewTextBoxColumn,
             this.iDENTIDADEFUNCIONARIODataGridViewTextBoxColumn,
@@ -509,17 +509,17 @@
             this.cELULARFUNCIONARIODataGridViewTextBoxColumn,
             this.eMAILFUNCIONARIODataGridViewTextBoxColumn,
             this.oBSFUNCIONARIODataGridViewTextBoxColumn});
-            this.fUNCIONARIOSDataGridView.DataSource = this.fUNCIONARIOSBindingSource;
-            this.fUNCIONARIOSDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fUNCIONARIOSDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.fUNCIONARIOSDataGridView.MultiSelect = false;
-            this.fUNCIONARIOSDataGridView.Name = "fUNCIONARIOSDataGridView";
-            this.fUNCIONARIOSDataGridView.ReadOnly = true;
-            this.fUNCIONARIOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.fUNCIONARIOSDataGridView.Size = new System.Drawing.Size(854, 177);
-            this.fUNCIONARIOSDataGridView.TabIndex = 0;
-            this.fUNCIONARIOSDataGridView.TabStop = false;
-            this.fUNCIONARIOSDataGridView.SelectionChanged += new System.EventHandler(this.FUNCIONARIOSDataGridView_SelectionChanged);
+            this.dgvFuncionarios.DataSource = this.fUNCIONARIOSBindingSource;
+            this.dgvFuncionarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFuncionarios.Location = new System.Drawing.Point(0, 0);
+            this.dgvFuncionarios.MultiSelect = false;
+            this.dgvFuncionarios.Name = "dgvFuncionarios";
+            this.dgvFuncionarios.ReadOnly = true;
+            this.dgvFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFuncionarios.Size = new System.Drawing.Size(854, 177);
+            this.dgvFuncionarios.TabIndex = 0;
+            this.dgvFuncionarios.TabStop = false;
+            this.dgvFuncionarios.SelectionChanged += new System.EventHandler(this.FUNCIONARIOSDataGridView_SelectionChanged);
             // 
             // iDFUNCIONARIODataGridViewTextBoxColumn
             // 
@@ -641,6 +641,7 @@
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // panel1
@@ -676,7 +677,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fUNCIONARIOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -711,7 +712,7 @@
         private System.Windows.Forms.MaskedTextBox txtIdentidade;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.DataGridView fUNCIONARIOSDataGridView;
+        private System.Windows.Forms.DataGridView dgvFuncionarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Bancos.DataSetMadeireiraV2 dataSetMadeireiraV2;
         private System.Windows.Forms.BindingSource fUNCIONARIOSBindingSource;

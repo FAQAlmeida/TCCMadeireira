@@ -45,6 +45,7 @@ namespace TCCMadeireira.Views.Sistema
             {
                 path = folderBrowserDialog.SelectedPath;
                 lblPath.Text = path;
+                FileStartName();
             }
         }
         private void FileStartName()
@@ -175,13 +176,14 @@ namespace TCCMadeireira.Views.Sistema
                     Login = Properties.Settings.Default.LoginServer,
                     Password = Properties.Settings.Default.PwdServer,
                 };
-                
+
                 Server servidor = new Server(srvConn);
                 return servidor;
-            }catch(SqlServerManagementException ex)
+            }
+            catch (SqlServerManagementException ex)
             {
                 throw ex;
-            }            
+            }
         }
 
         private void BtnRestore_Click(object sender, EventArgs e)
@@ -198,7 +200,7 @@ namespace TCCMadeireira.Views.Sistema
 
                 tabelaServidores = SmoApplication.EnumAvailableSqlServers(true);
                 servidor = SelectServidor();
-                
+
                 if (servidor != null)
                 {
                     try

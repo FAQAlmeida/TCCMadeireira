@@ -123,7 +123,7 @@ namespace TCCMadeireira.Views
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
-            this.pRODUTOSBindingSource.Filter = String.Format("{0} like '%{1}%'", "IDENTIDADE_CLIENTE", txtFiltro.Text);
+            this.pRODUTOSBindingSource.Filter = String.Format("{0} like '%{1}%'", "NOME_PRODUTO", txtFiltro.Text);
             if (dgvProdutos.RowCount <= 0)
             {
                 this.pRODUTOSBindingSource.RemoveFilter();
@@ -143,13 +143,13 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnCadastrar.Text == "Cadastrar")
+                if (btnCadastrar.Text.ToUpper() == "Cadastrar".ToUpper())
                 {
                     ControlEnable(true);
                     btnCancelar.Visible = true;
                     btnExcluir.Enabled = false;
                     btnAlterar.Enabled = false;
-                    btnCadastrar.Text = "Gravar";
+                    btnCadastrar.Text = "Gravar".ToUpper();
                 }
                 else
                 {
@@ -256,7 +256,7 @@ namespace TCCMadeireira.Views
                         numValor.Value = (decimal) dt.Rows[0]["VALOR_PRODUTO"];
                         cmbFornecedores.SelectedValue = dt.Rows[0]["ID_FORNECEDOR_PRODUTO"];
                         txtObs.Text = dt.Rows[0]["OBS_PRODUTO"].ToString();
-                        btnAlterar.Text = "Gravar";
+                        btnAlterar.Text = "Gravar".ToUpper();
                     }
                     else
                     {
@@ -310,10 +310,6 @@ namespace TCCMadeireira.Views
                 {
                     (ctrl as MaskedTextBox).Clear();
                 }
-                else if (ctrl is ComboBox)
-                {
-                    (ctrl as ComboBox).SelectedIndex = 0;
-                }
                 else if (ctrl is NumericUpDown)
                 {
                     (ctrl as NumericUpDown).Value = 1;
@@ -322,9 +318,9 @@ namespace TCCMadeireira.Views
             btnCadastrar.Enabled = true;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
-            btnCadastrar.Text = "Cadastrar";
-            btnAlterar.Text = "Alterar";
-            btnExcluir.Text = "Excluir";
+            btnCadastrar.Text = "Cadastrar".ToUpper();
+            btnAlterar.Text = "Alterar".ToUpper();
+            btnExcluir.Text = "Excluir".ToUpper();
             btnCancelar.Visible = false;
             ControlEnable(false);
             txtFiltro.Clear();

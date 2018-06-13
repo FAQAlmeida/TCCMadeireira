@@ -144,25 +144,24 @@ namespace TCCMadeireira.Views
             if (!produtos.Exists(x => x.Produto.Id == prodVenda.Produto.Id))
             {
                 produtos.Add(prodVenda);
-                dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
+                //dgvProdutos.Rows.Add(prodVenda.Produto.Id, prodVenda.Produto.Nome, prodVenda.Quantidade, prodVenda.Produto.Valor);
             }
             else
             {
-                produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade += prodVenda.Quantidade;
-                dgvProdutos.Rows.Cast<DataGridViewRow>().Where(x => (int)x.Cells["IdProduto"].Value == prodVenda.Produto.Id).
-                    First().Cells["QuantidadeProduto"].Value = produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade;
-                ValorSet();
+                produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade = prodVenda.Quantidade;
+                //DataGridViewRow row = dgvProdutos.Rows.Cast<DataGridViewRow>().Where(x => (int)x.Cells["IdProduto"].Value == prodVenda.Produto.Id).First();
+                //dgvProdutos.Rows[row.Index].Cells["QuantidadeProduto"].Value = produtos.Find(x => x.Produto.Id == prodVenda.Produto.Id).Quantidade;
             }
         }
         private void ValorSet()
         {
             decimal valorTotal = 0;
-            for (int i = 0; i < dgvProdutos.Rows.Count; i++)
+            foreach (ProdOper prod in produtos)
             {
-                valorTotal += Convert.ToDecimal(dgvProdutos.Rows[i].Cells[2].Value) * Convert.ToDecimal(dgvProdutos.Rows[i].Cells[3].Value);
+                valorTotal += (prod.Quantidade * prod.Produto.Valor);
             }
             valor = valorTotal;
-            lblValorTotal.Text = String.Format("Valor Total: R$ {0:.2}", valor);
+            lblValorTotal.Text = String.Format("Valor Total: R$ {0:f2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -179,6 +178,66 @@ namespace TCCMadeireira.Views
                 return "CPF";
             }
             return "CNPJ";
+        }
+        private void CheckEstoque()
+        {
+            Dictionary<int, decimal> estoqueReal = new Dictionary<int, decimal>();
+            foreach (int id in IdsRepetidosInRows(dgvProdutos.Rows))
+            {
+                estoqueReal.Add(id, 0);
+                foreach (ProdOper produto in this.produtos)
+                {
+                    if (id == produto.Produto.Id)
+                    {
+                        estoqueReal[id] += produto.Quantidade;
+                    }
+                }
+            }
+            foreach (int id in estoqueReal.Keys)
+            {
+                PRODUTOSDataTable produto = banco.SelectProduto(id);
+                string msg = String.Empty;
+                if (produto.Rows.Count == 1)
+                {
+                    if ((decimal)produto.Rows[0]["quantidade_produto"] < estoqueReal[id])
+                        msg += String.Format("\nQuantidade do produto {0} insuficiente para a venda",
+                            produto.Rows[0]["nome_produto"]);
+                    if ((decimal)produto.Rows[0]["quantidade_produto"] == estoqueReal[id])
+                        msg += String.Format("\nQuantidade do produto {0} suficiente para a venda, " +
+                            "mas o estoque será zerado", produto.Rows[0]["nome_produto"]);
+                }
+                if (msg != String.Empty)
+                {
+                    throw new Exception(msg);
+                }
+            }
+        }
+        private List<int> IdsRepetidosInRows(DataGridViewRowCollection rows)
+        {
+            List<int> todos = IdsDgv(rows);
+            List<int> repetidos = new List<int>();
+            foreach (DataGridViewRow row in rows)
+            {
+                int id = Convert.ToInt32(row.Cells["IdProduto"].Value);
+                if (!todos.Contains(id))
+                {
+                    todos.Add(id);
+                }
+                else
+                {
+                    repetidos.Add(id);
+                }
+            }
+            return repetidos;
+        }
+        private List<int> IdsDgv(DataGridViewRowCollection rows)
+        {
+            List<int> todos = new List<int>();
+            foreach (DataGridViewRow row in dgvProdutos.Rows)
+            {
+                todos.Add(Convert.ToInt32(row.Cells["IdProduto"].Value));
+            }
+            return todos;
         }
         #endregion
         private void FrmFornecimento_FormClosing(object sender, FormClosingEventArgs e)
@@ -247,6 +306,123 @@ namespace TCCMadeireira.Views
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void dgvProdutos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProdutos.Columns[e.ColumnIndex].HeaderText.Equals("ID"))
+            {
+                dgvProdutos.Rows[e.RowIndex].ReadOnly = true;
+                dgvProdutos.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = false;
+                dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+                dgvProdutos.CurrentCell = dgvProdutos[e.ColumnIndex, e.RowIndex];
+            }
+        }
+
+        private void dgvProdutos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void dgvProdutos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProdutos.Columns[e.ColumnIndex].HeaderText.Equals("ID"))
+            {
+                PRODUTOSDataTable prodsdt = banco.SelectProduto(Convert.ToInt32(dgvProdutos[e.ColumnIndex, e.RowIndex].Value));
+                if (prodsdt.Rows.Count == 1)
+                {
+                    dgvProdutos[e.ColumnIndex + 1, e.RowIndex].Value = prodsdt.Rows[0]["Nome_Produto"];
+                    dgvProdutos[e.ColumnIndex + 3, e.RowIndex].Value = prodsdt.Rows[0]["Valor_Produto"];
+                    dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = true;
+                    dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightGray;
+                    BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        dgvProdutos.CurrentCell = dgvProdutos[e.ColumnIndex + 2, e.RowIndex];
+                        dgvProdutos.CurrentCell.ReadOnly = false;
+                        dgvProdutos.CurrentCell.Style.BackColor = Color.White;
+                    }
+                    );
+                }
+                else
+                {
+                    MessageBox.Show("ID não encontrado");
+                    BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = false;
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+                        dgvProdutos.CurrentCell = dgvProdutos[e.ColumnIndex, e.RowIndex];
+                    });
+                }
+            }
+            if (dgvProdutos.Columns[e.ColumnIndex].HeaderText.Equals("QUANTIDADE"))
+            {
+                try
+                {
+                    PRODUTOSDataTable produtosdt = banco.SelectProduto(Convert.ToInt32(dgvProdutos["IdProduto", e.RowIndex].Value));
+                    FORNECEDORESDataTable fornecedordt = banco.SelectFornecedor(Convert.ToInt32(produtosdt.Rows[0]["id_fornecedor_produto"]));
+                    Fornecedor fornecedor = new Fornecedor(
+                        Convert.ToInt32(fornecedordt.Rows[0]["id_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["nome_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["identidade_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cep_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["rua_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["numero_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["bairro_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["cidade_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["estado_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["telefone_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["celular_fornecedor"]), Convert.ToString(fornecedordt.Rows[0]["email_fornecedor"]),
+                        Convert.ToString(fornecedordt.Rows[0]["obs_fornecedor"]), Convert.ToDateTime(fornecedordt.Rows[0]["data_info_fornecedor"])
+                    );
+                    Produto produto = new Produto(
+                           Convert.ToInt32(produtosdt.Rows[0]["id_produto"]), Convert.ToString(produtosdt.Rows[0]["nome_produto"]),
+                           fornecedor, Convert.ToDecimal(produtosdt.Rows[0]["valor_produto"]),
+                           Convert.ToDecimal(produtosdt.Rows[0]["quantidade_produto"]), produtosdt.Rows[0]["obs_produto"].ToString()
+                    );
+                    ProdOper prodOper = new ProdOper(produto, Convert.ToDecimal(dgvProdutos[e.ColumnIndex, e.RowIndex].Value));
+                    InsertDataProd(prodOper);
+                    ValorSet();
+                    BeginInvoke((MethodInvoker)delegate ()
+                    {
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightGray;
+                        dgvProdutos[e.ColumnIndex, e.RowIndex].ReadOnly = true;
+                        dgvProdutos.CurrentCell = dgvProdutos["IdProduto", dgvProdutos.NewRowIndex];
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    PRODUTOSDataTable prodsdt = banco.SelectProduto(Convert.ToInt32(dgvProdutos["IdProduto", e.RowIndex].Value));
+                    dgvProdutos.CurrentCell.Value = prodsdt.Rows[0]["Quantidade_Produto"];
+                }
+            }
+        }
+
+        private void dgvProdutos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter || e.KeyChar == (char)Keys.Tab)
+            {
+                e.Handled = true;
+            }
+            if(e.KeyChar == (char)Keys.Delete)
+            {
+                int rowIndex = dgvProdutos.SelectedCells[0].RowIndex;
+                if (MessageBox.Show(String.Format("Deseja mesmo excluir o produto {0}", dgvProdutos["NomeProduto", rowIndex].Value)) == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dgvProdutos["NomeProduto", rowIndex].Value);
+                    produtos.Remove(produtos.Find(x => x.Produto.Id == id));
+                    dgvProdutos.Rows.RemoveAt(rowIndex);
+                }
+                e.Handled = true;
+            }
+        }
+
+        private void dgvProdutos_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
 }

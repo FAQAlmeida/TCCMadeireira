@@ -16,6 +16,7 @@ namespace TCCMadeireira
         [STAThread]
         static void Main()
         {
+            Application.CurrentCulture = new System.Globalization.CultureInfo("pt-BR", false);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);

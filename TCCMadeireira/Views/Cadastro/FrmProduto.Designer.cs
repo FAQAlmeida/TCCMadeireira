@@ -38,6 +38,8 @@ namespace TCCMadeireira.Views
             System.Windows.Forms.Label lblQuantidade;
             System.Windows.Forms.Label vALOR_PRODUTOLabel;
             System.Windows.Forms.Label iD_FORNECEDOR_PRODUTOLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
             this.groupComp = new System.Windows.Forms.GroupBox();
             this.numValor = new System.Windows.Forms.NumericUpDown();
@@ -242,6 +244,9 @@ namespace TCCMadeireira.Views
             // qUANTIDADEPRODUTODataGridViewTextBoxColumn
             // 
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE_PRODUTO";
+            dataGridViewCellStyle1.Format = "N4";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.Name = "qUANTIDADEPRODUTODataGridViewTextBoxColumn";
             this.qUANTIDADEPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
@@ -249,6 +254,9 @@ namespace TCCMadeireira.Views
             // vALORPRODUTODataGridViewTextBoxColumn
             // 
             this.vALORPRODUTODataGridViewTextBoxColumn.DataPropertyName = "VALOR_PRODUTO";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.vALORPRODUTODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.vALORPRODUTODataGridViewTextBoxColumn.HeaderText = "VALOR";
             this.vALORPRODUTODataGridViewTextBoxColumn.Name = "vALORPRODUTODataGridViewTextBoxColumn";
             this.vALORPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
@@ -287,6 +295,7 @@ namespace TCCMadeireira.Views
             this.txtFiltro.Size = new System.Drawing.Size(107, 20);
             this.txtFiltro.TabIndex = 9;
             this.txtFiltro.TabStop = false;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
             // 
             // btnAlterar
             // 
@@ -397,12 +406,12 @@ namespace TCCMadeireira.Views
         private Bancos.DataSetMadeireiraV2TableAdapters.FORNECEDORESTableAdapter fORNECEDORESTableAdapter;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.NumericUpDown numValor;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDFORNECEDORPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSPRODUTODataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel1;
     }
 }

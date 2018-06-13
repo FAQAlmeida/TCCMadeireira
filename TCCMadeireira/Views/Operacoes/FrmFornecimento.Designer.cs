@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label cPF_CNPJ_CLIENTELabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFornecimento));
             this.pnlVenda = new System.Windows.Forms.Panel();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnFinalizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.grbProdutos = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbFornecedor = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
             this.rbtnCpf = new System.Windows.Forms.RadioButton();
@@ -49,18 +52,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnFinalizar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
             this.pnlVenda.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.grbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbFornecedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // cPF_CNPJ_CLIENTELabel
@@ -77,10 +79,42 @@
             this.pnlVenda.BackColor = System.Drawing.Color.White;
             this.pnlVenda.Controls.Add(this.btnCancelar);
             this.pnlVenda.Controls.Add(this.btnFinalizar);
-            this.pnlVenda.Location = new System.Drawing.Point(555, 326);
+            this.pnlVenda.Location = new System.Drawing.Point(555, 327);
             this.pnlVenda.Name = "pnlVenda";
-            this.pnlVenda.Size = new System.Drawing.Size(195, 119);
+            this.pnlVenda.Size = new System.Drawing.Size(195, 117);
             this.pnlVenda.TabIndex = 51;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Icon = null;
+            this.btnCancelar.Location = new System.Drawing.Point(101, 78);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = true;
+            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.AutoSize = true;
+            this.btnFinalizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnFinalizar.Depth = 0;
+            this.btnFinalizar.Icon = null;
+            this.btnFinalizar.Location = new System.Drawing.Point(6, 78);
+            this.btnFinalizar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Primary = true;
+            this.btnFinalizar.Size = new System.Drawing.Size(89, 36);
+            this.btnFinalizar.TabIndex = 4;
+            this.btnFinalizar.Text = "FINALIZAR";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // panel1
             // 
@@ -89,15 +123,44 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Controls.Add(this.lblValorTotal);
-            this.panel1.Location = new System.Drawing.Point(555, 176);
+            this.panel1.Location = new System.Drawing.Point(555, 177);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 144);
             this.panel1.TabIndex = 50;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "DESCONTO:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "%",
+            "R$"});
+            this.comboBox1.Location = new System.Drawing.Point(126, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(36, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Location = new System.Drawing.Point(6, 32);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
+            this.numericUpDown1.TabIndex = 6;
+            // 
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(3, 104);
+            this.lblValorTotal.Location = new System.Drawing.Point(3, 121);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(84, 13);
             this.lblValorTotal.TabIndex = 2;
@@ -129,9 +192,9 @@
             // 
             this.grbProdutos.BackColor = System.Drawing.Color.White;
             this.grbProdutos.Controls.Add(this.dgvProdutos);
-            this.grbProdutos.Location = new System.Drawing.Point(12, 176);
+            this.grbProdutos.Location = new System.Drawing.Point(12, 177);
             this.grbProdutos.Name = "grbProdutos";
-            this.grbProdutos.Size = new System.Drawing.Size(537, 272);
+            this.grbProdutos.Size = new System.Drawing.Size(537, 270);
             this.grbProdutos.TabIndex = 49;
             this.grbProdutos.TabStop = false;
             this.grbProdutos.Text = "Produtos";
@@ -147,31 +210,16 @@
             this.ValorProduto});
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 16);
+            this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(531, 253);
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvProdutos.Size = new System.Drawing.Size(531, 251);
             this.dgvProdutos.TabIndex = 0;
-            this.dgvProdutos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ValorSet);
-            this.dgvProdutos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.ValorSet);
-            // 
-            // IdProduto
-            // 
-            this.IdProduto.HeaderText = "ID";
-            this.IdProduto.Name = "IdProduto";
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.HeaderText = "NOME";
-            this.NomeProduto.Name = "NomeProduto";
-            // 
-            // QuantidadeProduto
-            // 
-            this.QuantidadeProduto.HeaderText = "QUANTIDADE";
-            this.QuantidadeProduto.Name = "QuantidadeProduto";
-            // 
-            // ValorProduto
-            // 
-            this.ValorProduto.HeaderText = "VALOR";
-            this.ValorProduto.Name = "ValorProduto";
+            this.dgvProdutos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellEndEdit);
+            this.dgvProdutos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellEnter);
+            this.dgvProdutos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProdutos_KeyDown);
+            this.dgvProdutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvProdutos_KeyPress);
+            this.dgvProdutos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProdutos_KeyUp);
             // 
             // grbFornecedor
             // 
@@ -186,7 +234,7 @@
             this.grbFornecedor.Controls.Add(this.label1);
             this.grbFornecedor.Controls.Add(cPF_CNPJ_CLIENTELabel);
             this.grbFornecedor.Controls.Add(this.txtIdentidade);
-            this.grbFornecedor.Location = new System.Drawing.Point(12, 69);
+            this.grbFornecedor.Location = new System.Drawing.Point(12, 70);
             this.grbFornecedor.Name = "grbFornecedor";
             this.grbFornecedor.Size = new System.Drawing.Size(738, 101);
             this.grbFornecedor.TabIndex = 48;
@@ -260,66 +308,31 @@
             this.txtIdentidade.TabIndex = 31;
             this.txtIdentidade.Leave += new System.EventHandler(this.TxtIdentidade_Leave);
             // 
-            // label3
+            // IdProduto
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "DESCONTO:";
+            this.IdProduto.HeaderText = "ID";
+            this.IdProduto.Name = "IdProduto";
             // 
-            // comboBox1
+            // NomeProduto
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "%",
-            "R$"});
-            this.comboBox1.Location = new System.Drawing.Point(126, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(36, 21);
-            this.comboBox1.TabIndex = 7;
+            this.NomeProduto.HeaderText = "NOME";
+            this.NomeProduto.Name = "NomeProduto";
             // 
-            // numericUpDown1
+            // QuantidadeProduto
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 71);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
-            this.numericUpDown1.TabIndex = 6;
+            dataGridViewCellStyle1.Format = "N4";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.QuantidadeProduto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.QuantidadeProduto.HeaderText = "QUANTIDADE";
+            this.QuantidadeProduto.Name = "QuantidadeProduto";
             // 
-            // btnCancelar
+            // ValorProduto
             // 
-            this.btnCancelar.AutoSize = true;
-            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelar.Depth = 0;
-            this.btnCancelar.Icon = null;
-            this.btnCancelar.Location = new System.Drawing.Point(98, 80);
-            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Primary = true;
-            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.AutoSize = true;
-            this.btnFinalizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnFinalizar.Depth = 0;
-            this.btnFinalizar.Icon = null;
-            this.btnFinalizar.Location = new System.Drawing.Point(3, 80);
-            this.btnFinalizar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Primary = true;
-            this.btnFinalizar.Size = new System.Drawing.Size(89, 36);
-            this.btnFinalizar.TabIndex = 4;
-            this.btnFinalizar.Text = "FINALIZAR";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.ValorProduto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ValorProduto.HeaderText = "VALOR";
+            this.ValorProduto.Name = "ValorProduto";
             // 
             // FrmFornecimento
             // 
@@ -341,11 +354,11 @@
             this.pnlVenda.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.grbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.grbFornecedor.ResumeLayout(false);
             this.grbFornecedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,10 +372,6 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.GroupBox grbProdutos;
         private System.Windows.Forms.DataGridView dgvProdutos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
         private System.Windows.Forms.GroupBox grbFornecedor;
         private System.Windows.Forms.RadioButton rbtnCnpj;
         private System.Windows.Forms.RadioButton rbtnCpf;
@@ -376,5 +385,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
         private MaterialSkin.Controls.MaterialRaisedButton btnFinalizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
     }
 }

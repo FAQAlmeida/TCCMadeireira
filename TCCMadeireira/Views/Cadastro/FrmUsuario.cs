@@ -159,7 +159,7 @@ namespace TCCMadeireira.Views
                     banco.UpdateUsuario(user);
                     log.WriteEntry(String.Format("usuario {0} alterado", user.Nome));
                     BtnCancelar_Click(null, null);
-                TableRefresh();
+                    TableRefresh();
                 }
             }
             catch (Exception ex)

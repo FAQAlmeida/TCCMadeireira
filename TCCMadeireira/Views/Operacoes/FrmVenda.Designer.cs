@@ -302,7 +302,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 68);
+            this.label3.Location = new System.Drawing.Point(3, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 5;
@@ -315,7 +315,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "%",
             "R$"});
-            this.comboBox1.Location = new System.Drawing.Point(126, 83);
+            this.comboBox1.Location = new System.Drawing.Point(126, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(36, 21);
             this.comboBox1.TabIndex = 4;
@@ -323,7 +323,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 84);
+            this.numericUpDown1.Location = new System.Drawing.Point(6, 32);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
             this.numericUpDown1.TabIndex = 3;
@@ -331,7 +331,7 @@
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(3, 118);
+            this.lblValorTotal.Location = new System.Drawing.Point(3, 121);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(84, 13);
             this.lblValorTotal.TabIndex = 2;

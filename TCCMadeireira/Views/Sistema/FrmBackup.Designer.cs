@@ -91,10 +91,9 @@
             // 
             // lblPath
             // 
-            this.lblPath.AutoSize = true;
             this.lblPath.Location = new System.Drawing.Point(63, 52);
             this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(29, 13);
+            this.lblPath.Size = new System.Drawing.Size(440, 27);
             this.lblPath.TabIndex = 2;
             this.lblPath.Text = "Path";
             // 

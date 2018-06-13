@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Models;
+using static TCCMadeireira.Bancos.DataSetMadeireiraV2;
 
 namespace TCCMadeireira.Views
 {
@@ -78,7 +79,7 @@ namespace TCCMadeireira.Views
         private void TableRefresh()
         {
             fUNCIONARIOSTableAdapter.Fill(dataSetMadeireiraV2.FUNCIONARIOS);
-            fUNCIONARIOSDataGridView.Refresh();
+            dgvFuncionarios.Refresh();
         }
         #endregion
         #region @event.SelectChanged
@@ -92,22 +93,22 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (fUNCIONARIOSDataGridView.SelectedCells.Count == 15)
+                if (dgvFuncionarios.SelectedCells.Count == 15)
                 {
-                    txtNome.Text = fUNCIONARIOSDataGridView.SelectedCells[1].Value.ToString().Trim();
-                    txtIdentidade.Text = fUNCIONARIOSDataGridView.SelectedCells[2].Value.ToString().Trim();
-                    txtCargo.Text = fUNCIONARIOSDataGridView.SelectedCells[3].Value.ToString().Trim();
-                    txtCep.Text = fUNCIONARIOSDataGridView.SelectedCells[4].Value.ToString().Trim();
-                    txtRua.Text = fUNCIONARIOSDataGridView.SelectedCells[5].Value.ToString().Trim();
-                    txtNumero.Text = fUNCIONARIOSDataGridView.SelectedCells[6].Value.ToString().Trim();
-                    txtBairro.Text = fUNCIONARIOSDataGridView.SelectedCells[7].Value.ToString().Trim();
-                    txtCidade.Text = fUNCIONARIOSDataGridView.SelectedCells[8].Value.ToString().Trim();
-                    cmbUf.Text = fUNCIONARIOSDataGridView.SelectedCells[9].Value.ToString().Trim();
-                    txtTelefone.Text = fUNCIONARIOSDataGridView.SelectedCells[10].Value.ToString().Trim();
-                    txtCelular.Text = fUNCIONARIOSDataGridView.SelectedCells[11].Value.ToString().Trim();
-                    txtEmail.Text = fUNCIONARIOSDataGridView.SelectedCells[12].Value.ToString().Trim();
-                    lblDataInfo.Text = fUNCIONARIOSDataGridView.SelectedCells[13].Value.ToString().Trim();
-                    txtObs.Text = fUNCIONARIOSDataGridView.SelectedCells[14].Value.ToString().Trim();                    
+                    txtNome.Text = dgvFuncionarios.SelectedCells[1].Value.ToString().Trim();
+                    txtIdentidade.Text = dgvFuncionarios.SelectedCells[2].Value.ToString().Trim();
+                    txtCargo.Text = dgvFuncionarios.SelectedCells[3].Value.ToString().Trim();
+                    txtCep.Text = dgvFuncionarios.SelectedCells[4].Value.ToString().Trim();
+                    txtRua.Text = dgvFuncionarios.SelectedCells[5].Value.ToString().Trim();
+                    txtNumero.Text = dgvFuncionarios.SelectedCells[6].Value.ToString().Trim();
+                    txtBairro.Text = dgvFuncionarios.SelectedCells[7].Value.ToString().Trim();
+                    txtCidade.Text = dgvFuncionarios.SelectedCells[8].Value.ToString().Trim();
+                    cmbUf.Text = dgvFuncionarios.SelectedCells[9].Value.ToString().Trim();
+                    txtTelefone.Text = dgvFuncionarios.SelectedCells[10].Value.ToString().Trim();
+                    txtCelular.Text = dgvFuncionarios.SelectedCells[11].Value.ToString().Trim();
+                    txtEmail.Text = dgvFuncionarios.SelectedCells[12].Value.ToString().Trim();
+                    lblDataInfo.Text = dgvFuncionarios.SelectedCells[13].Value.ToString().Trim();
+                    txtObs.Text = dgvFuncionarios.SelectedCells[14].Value.ToString().Trim();                    
                 }
             }
             catch (Exception ex)
@@ -172,7 +173,11 @@ namespace TCCMadeireira.Views
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
-            fUNCIONARIOSBindingSource.Filter = String.Format("{0} like '%{1}%'", "[CPF/CNPJ_FUNCIONARIO]", txtFiltro.Text);
+            fUNCIONARIOSBindingSource.Filter = String.Format("{0} like '%{1}%'", "[IDENTIDADE_FUNCIONARIO]", txtFiltro.Text);
+            if(dgvFuncionarios.Rows.Count == 0)
+            {
+                fUNCIONARIOSBindingSource.RemoveFilter();
+            }
         }
         #endregion
         #region @event.Click
@@ -188,12 +193,12 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnCadastrar.Text == "Cadastrar")
+                if (btnCadastrar.Text.ToUpper() == "Cadastrar".ToUpper())
                 {
                     ControlEnable(true);
                     btnExcluir.Enabled = false;
                     btnAlterar.Enabled = false;
-                    btnCadastrar.Text = "Gravar";
+                    btnCadastrar.Text = "Gravar".ToUpper();
                 }
                 else
                 {
@@ -202,7 +207,7 @@ namespace TCCMadeireira.Views
                     ControlEnable(false);
                     btnExcluir.Enabled = true;
                     btnAlterar.Enabled = true;
-                    btnCadastrar.Text = "Cadastrar";
+                    btnCadastrar.Text = "Cadastrar".ToUpper();
                 }
             }
             catch (Exception ex)
@@ -227,11 +232,11 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (fUNCIONARIOSDataGridView.SelectedRows.Count == 1)
+                if (dgvFuncionarios.SelectedRows.Count == 1)
                 {
-                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de identidade {0}?", fUNCIONARIOSDataGridView.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (MessageBox.Show(String.Format("Você deseja excluir o cliente de identidade {0}?", dgvFuncionarios.SelectedCells[2].Value.ToString()), "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
-                        Funcionario funcionario = new Funcionario(fUNCIONARIOSDataGridView.SelectedCells[2].Value.ToString());
+                        Funcionario funcionario = new Funcionario(dgvFuncionarios.SelectedCells[2].Value.ToString());
                         banco.DeleteFuncionario(funcionario);
                         //log.WriteEntry(String.Format("Funcionário {0} excluido", funcionario.Identidade));
                         BtnCancelar_Click(null, null);
@@ -266,19 +271,19 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (btnAlterar.Text == "Alterar")
+                if (btnAlterar.Text.ToUpper() == "Alterar".ToUpper())
                 {
-                    if(fUNCIONARIOSDataGridView.SelectedRows.Count == 1)
+                    if(dgvFuncionarios.SelectedRows.Count == 1)
                     {
                         ControlEnable(true);
                         btnCadastrar.Enabled = false;
                         btnExcluir.Enabled = false;
                         btnCancelar.Visible = true;
-                        DataTable dt = new DataTable();
-                        Funcionario funcionario = new Funcionario(txtIdentidade.Text);
+                        FUNCIONARIOSDataTable dt = new FUNCIONARIOSDataTable();
+                        Funcionario funcionario = new Funcionario(dgvFuncionarios.SelectedCells[2].Value.ToString());
                         dt = banco.SelectFuncionario(funcionario.Identidade);
                         txtNome.Text = dt.Rows[0]["NOME_FUNCIONARIO"].ToString();
-                        txtIdentidade.Text = dt.Rows[0]["CPF/CNPJ_FUNCIONARIO"].ToString();
+                        txtIdentidade.Text = dt.Rows[0]["IDENTIDADE_FUNCIONARIO"].ToString();
                         txtCargo.Text = dt.Rows[0]["CARGO_FUNCIONARIO"].ToString();
                         txtCep.Text = dt.Rows[0]["CEP_FUNCIONARIO"].ToString();
                         txtRua.Text = dt.Rows[0]["RUA_FUNCIONARIO"].ToString();
@@ -289,9 +294,9 @@ namespace TCCMadeireira.Views
                         txtTelefone.Text = dt.Rows[0]["TELEFONE_FUNCIONARIO"].ToString();
                         txtCelular.Text = dt.Rows[0]["CELULAR_FUNCIONARIO"].ToString();
                         txtEmail.Text = dt.Rows[0]["EMAIL_FUNCIONARIO"].ToString();
-                        lblDataInfo.Text = dt.Rows[0]["DATA_INFO_FUNCIONARIO"].ToString();
+                        lblDataInfo.Text = "DATA INFO: " + dt.Rows[0]["DATA_INFO_FUNCIONARIO"].ToString();
                         txtObs.Text = dt.Rows[0]["OBS_FUNCIONARIO"].ToString();
-                        btnAlterar.Text = "Gravar";
+                        btnAlterar.Text = "Gravar".ToUpper();
                     }
                     else
                     {
@@ -336,9 +341,9 @@ namespace TCCMadeireira.Views
             btnCadastrar.Enabled = true;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
-            btnCadastrar.Text = "Cadastrar";
-            btnAlterar.Text = "Alterar";
-            btnExcluir.Text = "Excluir";
+            btnCadastrar.Text = "Cadastrar".ToUpper();
+            btnAlterar.Text = "Alterar".ToUpper();
+            btnExcluir.Text = "Excluir".ToUpper();
             btnCancelar.Visible = false;
             ControlEnable(false);
             txtFiltro.Clear();

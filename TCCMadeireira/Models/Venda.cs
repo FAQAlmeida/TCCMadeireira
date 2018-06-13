@@ -47,10 +47,10 @@ namespace TCCMadeireira.Models
             StringBuilder @string = new StringBuilder();
             foreach(ProdOper prod in Produtos)
             {
-                @string.AppendFormat("\t{0}\n\t{1}", prod.Produto.Nome, prod.Quantidade);
+                @string.AppendFormat("\t{0}\t{1}\n", prod.Produto.Nome, prod.Quantidade);
             }
-            return
-                String.Format("Venda: {0}\n" +
+            return String.Format(
+                "Venda: {0}\n" +
                 "Cliente: {1}\n" +
                 "Produtos: \n{2}\n" +
                 "Data: {3}\n" +
