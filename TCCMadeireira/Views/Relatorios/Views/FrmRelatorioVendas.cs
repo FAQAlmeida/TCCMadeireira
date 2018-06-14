@@ -28,8 +28,11 @@ namespace TCCMadeireira.Views.Relatorios
         }
         private void PageSizeConfig()
         {
-            PageSettings pageSettings = new PageSettings();
-            pageSettings.Margins = new Margins(0, 0, 0, 0);
+            PageSettings pageSettings = new PageSettings
+            {
+                Margins = new Margins(0, 0, 0, 0),
+                Landscape = true
+            };
             this.reportViewer.SetPageSettings(pageSettings);
         }
     }

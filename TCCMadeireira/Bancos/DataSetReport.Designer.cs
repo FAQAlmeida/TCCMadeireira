@@ -331,19 +331,19 @@ namespace TCCMadeireira.Bancos {
             
             private global::System.Data.DataColumn columnID_VENDA;
             
-            private global::System.Data.DataColumn columnID_PRODUTO1;
-            
-            private global::System.Data.DataColumn columnQUANTIDADE_PRODUTO1;
-            
-            private global::System.Data.DataColumn columnID_VENDA1;
-            
-            private global::System.Data.DataColumn columnID_CLIENTE1;
-            
             private global::System.Data.DataColumn columnID_VENDEDOR;
             
             private global::System.Data.DataColumn columnDATA_VENDA;
             
             private global::System.Data.DataColumn columnVALOR_VENDA;
+            
+            private global::System.Data.DataColumn columnID_VENDA_VENDA_PRODUTO;
+            
+            private global::System.Data.DataColumn columnID_PRODUTO_VENDA_PRODUTO;
+            
+            private global::System.Data.DataColumn columnQUANTIDADE_PRODUTO_VENDA_PRODUTO;
+            
+            private global::System.Data.DataColumn columnID_CLIENTE_VENDAS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -588,38 +588,6 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_PRODUTO1Column {
-                get {
-                    return this.columnID_PRODUTO1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn QUANTIDADE_PRODUTO1Column {
-                get {
-                    return this.columnQUANTIDADE_PRODUTO1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_VENDA1Column {
-                get {
-                    return this.columnID_VENDA1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ID_CLIENTE1Column {
-                get {
-                    return this.columnID_CLIENTE1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ID_VENDEDORColumn {
                 get {
                     return this.columnID_VENDEDOR;
@@ -639,6 +607,38 @@ namespace TCCMadeireira.Bancos {
             public global::System.Data.DataColumn VALOR_VENDAColumn {
                 get {
                     return this.columnVALOR_VENDA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID_VENDA_VENDA_PRODUTOColumn {
+                get {
+                    return this.columnID_VENDA_VENDA_PRODUTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID_PRODUTO_VENDA_PRODUTOColumn {
+                get {
+                    return this.columnID_PRODUTO_VENDA_PRODUTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn QUANTIDADE_PRODUTO_VENDA_PRODUTOColumn {
+                get {
+                    return this.columnQUANTIDADE_PRODUTO_VENDA_PRODUTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID_CLIENTE_VENDASColumn {
+                get {
+                    return this.columnID_CLIENTE_VENDAS;
                 }
             }
             
@@ -702,12 +702,13 @@ namespace TCCMadeireira.Bancos {
                         string SENHA_USUARIO, 
                         string NIVEL_USUARIO, 
                         int ID_VENDA, 
-                        int ID_PRODUTO1, 
-                        decimal QUANTIDADE_PRODUTO1, 
-                        int ID_CLIENTE1, 
                         int ID_VENDEDOR, 
                         System.DateTime DATA_VENDA, 
-                        decimal VALOR_VENDA) {
+                        decimal VALOR_VENDA, 
+                        int ID_VENDA_VENDA_PRODUTO, 
+                        int ID_PRODUTO_VENDA_PRODUTO, 
+                        decimal QUANTIDADE_PRODUTO_VENDA_PRODUTO, 
+                        int ID_CLIENTE_VENDAS) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -736,13 +737,13 @@ namespace TCCMadeireira.Bancos {
                         NIVEL_USUARIO,
                         null,
                         ID_VENDA,
-                        ID_PRODUTO1,
-                        QUANTIDADE_PRODUTO1,
-                        null,
-                        ID_CLIENTE1,
                         ID_VENDEDOR,
                         DATA_VENDA,
-                        VALOR_VENDA};
+                        VALOR_VENDA,
+                        ID_VENDA_VENDA_PRODUTO,
+                        ID_PRODUTO_VENDA_PRODUTO,
+                        QUANTIDADE_PRODUTO_VENDA_PRODUTO,
+                        ID_CLIENTE_VENDAS};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -750,13 +751,13 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row FindByID_CLIENTEID_PRODUTOID_USUARIOID_VENDA_PRODUTOID_VENDA1(int ID_CLIENTE, int ID_PRODUTO, int ID_USUARIO, int ID_VENDA_PRODUTO, int ID_VENDA1) {
+            public DataTable1Row FindByID_CLIENTEID_PRODUTOID_USUARIOID_VENDA_PRODUTOID_VENDA(int ID_CLIENTE, int ID_PRODUTO, int ID_USUARIO, int ID_VENDA_PRODUTO, int ID_VENDA) {
                 return ((DataTable1Row)(this.Rows.Find(new object[] {
                             ID_CLIENTE,
                             ID_PRODUTO,
                             ID_USUARIO,
                             ID_VENDA_PRODUTO,
-                            ID_VENDA1})));
+                            ID_VENDA})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -802,13 +803,13 @@ namespace TCCMadeireira.Bancos {
                 this.columnNIVEL_USUARIO = base.Columns["NIVEL_USUARIO"];
                 this.columnID_VENDA_PRODUTO = base.Columns["ID_VENDA_PRODUTO"];
                 this.columnID_VENDA = base.Columns["ID_VENDA"];
-                this.columnID_PRODUTO1 = base.Columns["ID_PRODUTO1"];
-                this.columnQUANTIDADE_PRODUTO1 = base.Columns["QUANTIDADE_PRODUTO1"];
-                this.columnID_VENDA1 = base.Columns["ID_VENDA1"];
-                this.columnID_CLIENTE1 = base.Columns["ID_CLIENTE1"];
                 this.columnID_VENDEDOR = base.Columns["ID_VENDEDOR"];
                 this.columnDATA_VENDA = base.Columns["DATA_VENDA"];
                 this.columnVALOR_VENDA = base.Columns["VALOR_VENDA"];
+                this.columnID_VENDA_VENDA_PRODUTO = base.Columns["ID_VENDA_VENDA_PRODUTO"];
+                this.columnID_PRODUTO_VENDA_PRODUTO = base.Columns["ID_PRODUTO_VENDA_PRODUTO"];
+                this.columnQUANTIDADE_PRODUTO_VENDA_PRODUTO = base.Columns["QUANTIDADE_PRODUTO_VENDA_PRODUTO"];
+                this.columnID_CLIENTE_VENDAS = base.Columns["ID_CLIENTE_VENDAS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -866,26 +867,26 @@ namespace TCCMadeireira.Bancos {
                 base.Columns.Add(this.columnID_VENDA_PRODUTO);
                 this.columnID_VENDA = new global::System.Data.DataColumn("ID_VENDA", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_VENDA);
-                this.columnID_PRODUTO1 = new global::System.Data.DataColumn("ID_PRODUTO1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_PRODUTO1);
-                this.columnQUANTIDADE_PRODUTO1 = new global::System.Data.DataColumn("QUANTIDADE_PRODUTO1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQUANTIDADE_PRODUTO1);
-                this.columnID_VENDA1 = new global::System.Data.DataColumn("ID_VENDA1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_VENDA1);
-                this.columnID_CLIENTE1 = new global::System.Data.DataColumn("ID_CLIENTE1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_CLIENTE1);
                 this.columnID_VENDEDOR = new global::System.Data.DataColumn("ID_VENDEDOR", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_VENDEDOR);
                 this.columnDATA_VENDA = new global::System.Data.DataColumn("DATA_VENDA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDATA_VENDA);
                 this.columnVALOR_VENDA = new global::System.Data.DataColumn("VALOR_VENDA", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVALOR_VENDA);
+                this.columnID_VENDA_VENDA_PRODUTO = new global::System.Data.DataColumn("ID_VENDA_VENDA_PRODUTO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_VENDA_VENDA_PRODUTO);
+                this.columnID_PRODUTO_VENDA_PRODUTO = new global::System.Data.DataColumn("ID_PRODUTO_VENDA_PRODUTO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_PRODUTO_VENDA_PRODUTO);
+                this.columnQUANTIDADE_PRODUTO_VENDA_PRODUTO = new global::System.Data.DataColumn("QUANTIDADE_PRODUTO_VENDA_PRODUTO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQUANTIDADE_PRODUTO_VENDA_PRODUTO);
+                this.columnID_CLIENTE_VENDAS = new global::System.Data.DataColumn("ID_CLIENTE_VENDAS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_CLIENTE_VENDAS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_CLIENTE,
                                 this.columnID_PRODUTO,
                                 this.columnID_USUARIO,
                                 this.columnID_VENDA_PRODUTO,
-                                this.columnID_VENDA1}, true));
+                                this.columnID_VENDA}, true));
                 this.columnID_CLIENTE.AutoIncrement = true;
                 this.columnID_CLIENTE.AutoIncrementSeed = -1;
                 this.columnID_CLIENTE.AutoIncrementStep = -1;
@@ -927,11 +928,7 @@ namespace TCCMadeireira.Bancos {
                 this.columnID_VENDA_PRODUTO.AutoIncrementStep = -1;
                 this.columnID_VENDA_PRODUTO.AllowDBNull = false;
                 this.columnID_VENDA_PRODUTO.ReadOnly = true;
-                this.columnID_VENDA1.AutoIncrement = true;
-                this.columnID_VENDA1.AutoIncrementSeed = -1;
-                this.columnID_VENDA1.AutoIncrementStep = -1;
-                this.columnID_VENDA1.AllowDBNull = false;
-                this.columnID_VENDA1.ReadOnly = true;
+                this.columnID_VENDA.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1436,74 +1433,10 @@ namespace TCCMadeireira.Bancos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int ID_VENDA {
                 get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.ID_VENDAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_VENDA\' in table \'DataTable1\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableDataTable1.ID_VENDAColumn]));
                 }
                 set {
                     this[this.tableDataTable1.ID_VENDAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_PRODUTO1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.ID_PRODUTO1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_PRODUTO1\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.ID_PRODUTO1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal QUANTIDADE_PRODUTO1 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableDataTable1.QUANTIDADE_PRODUTO1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTIDADE_PRODUTO1\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.QUANTIDADE_PRODUTO1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_VENDA1 {
-                get {
-                    return ((int)(this[this.tableDataTable1.ID_VENDA1Column]));
-                }
-                set {
-                    this[this.tableDataTable1.ID_VENDA1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID_CLIENTE1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.ID_CLIENTE1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_CLIENTE1\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.ID_CLIENTE1Column] = value;
                 }
             }
             
@@ -1552,6 +1485,71 @@ namespace TCCMadeireira.Bancos {
                 }
                 set {
                     this[this.tableDataTable1.VALOR_VENDAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID_VENDA_VENDA_PRODUTO {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.ID_VENDA_VENDA_PRODUTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_VENDA_VENDA_PRODUTO\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.ID_VENDA_VENDA_PRODUTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID_PRODUTO_VENDA_PRODUTO {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.ID_PRODUTO_VENDA_PRODUTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_PRODUTO_VENDA_PRODUTO\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.ID_PRODUTO_VENDA_PRODUTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal QUANTIDADE_PRODUTO_VENDA_PRODUTO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataTable1.QUANTIDADE_PRODUTO_VENDA_PRODUTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTIDADE_PRODUTO_VENDA_PRODUTO\' in table \'DataTable1\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.QUANTIDADE_PRODUTO_VENDA_PRODUTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID_CLIENTE_VENDAS {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.ID_CLIENTE_VENDASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_CLIENTE_VENDAS\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.ID_CLIENTE_VENDASColumn] = value;
                 }
             }
             
@@ -1761,54 +1759,6 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsID_VENDANull() {
-                return this.IsNull(this.tableDataTable1.ID_VENDAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetID_VENDANull() {
-                this[this.tableDataTable1.ID_VENDAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsID_PRODUTO1Null() {
-                return this.IsNull(this.tableDataTable1.ID_PRODUTO1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetID_PRODUTO1Null() {
-                this[this.tableDataTable1.ID_PRODUTO1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsQUANTIDADE_PRODUTO1Null() {
-                return this.IsNull(this.tableDataTable1.QUANTIDADE_PRODUTO1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetQUANTIDADE_PRODUTO1Null() {
-                this[this.tableDataTable1.QUANTIDADE_PRODUTO1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsID_CLIENTE1Null() {
-                return this.IsNull(this.tableDataTable1.ID_CLIENTE1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetID_CLIENTE1Null() {
-                this[this.tableDataTable1.ID_CLIENTE1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsID_VENDEDORNull() {
                 return this.IsNull(this.tableDataTable1.ID_VENDEDORColumn);
             }
@@ -1841,6 +1791,54 @@ namespace TCCMadeireira.Bancos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetVALOR_VENDANull() {
                 this[this.tableDataTable1.VALOR_VENDAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsID_VENDA_VENDA_PRODUTONull() {
+                return this.IsNull(this.tableDataTable1.ID_VENDA_VENDA_PRODUTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetID_VENDA_VENDA_PRODUTONull() {
+                this[this.tableDataTable1.ID_VENDA_VENDA_PRODUTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsID_PRODUTO_VENDA_PRODUTONull() {
+                return this.IsNull(this.tableDataTable1.ID_PRODUTO_VENDA_PRODUTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetID_PRODUTO_VENDA_PRODUTONull() {
+                this[this.tableDataTable1.ID_PRODUTO_VENDA_PRODUTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsQUANTIDADE_PRODUTO_VENDA_PRODUTONull() {
+                return this.IsNull(this.tableDataTable1.QUANTIDADE_PRODUTO_VENDA_PRODUTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetQUANTIDADE_PRODUTO_VENDA_PRODUTONull() {
+                this[this.tableDataTable1.QUANTIDADE_PRODUTO_VENDA_PRODUTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsID_CLIENTE_VENDASNull() {
+                return this.IsNull(this.tableDataTable1.ID_CLIENTE_VENDASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetID_CLIENTE_VENDASNull() {
+                this[this.tableDataTable1.ID_CLIENTE_VENDASColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2029,13 +2027,13 @@ namespace TCCMadeireira.Bancos.DataSetReportTableAdapters {
             tableMapping.ColumnMappings.Add("NIVEL_USUARIO", "NIVEL_USUARIO");
             tableMapping.ColumnMappings.Add("ID_VENDA_PRODUTO", "ID_VENDA_PRODUTO");
             tableMapping.ColumnMappings.Add("ID_VENDA", "ID_VENDA");
-            tableMapping.ColumnMappings.Add("ID_PRODUTO1", "ID_PRODUTO1");
-            tableMapping.ColumnMappings.Add("QUANTIDADE_PRODUTO1", "QUANTIDADE_PRODUTO1");
-            tableMapping.ColumnMappings.Add("ID_VENDA1", "ID_VENDA1");
-            tableMapping.ColumnMappings.Add("ID_CLIENTE1", "ID_CLIENTE1");
             tableMapping.ColumnMappings.Add("ID_VENDEDOR", "ID_VENDEDOR");
             tableMapping.ColumnMappings.Add("DATA_VENDA", "DATA_VENDA");
             tableMapping.ColumnMappings.Add("VALOR_VENDA", "VALOR_VENDA");
+            tableMapping.ColumnMappings.Add("ID_VENDA_VENDA_PRODUTO", "ID_VENDA_VENDA_PRODUTO");
+            tableMapping.ColumnMappings.Add("ID_PRODUTO_VENDA_PRODUTO", "ID_PRODUTO_VENDA_PRODUTO");
+            tableMapping.ColumnMappings.Add("QUANTIDADE_PRODUTO_VENDA_PRODUTO", "QUANTIDADE_PRODUTO_VENDA_PRODUTO");
+            tableMapping.ColumnMappings.Add("ID_CLIENTE_VENDAS", "ID_CLIENTE_VENDAS");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2052,7 +2050,12 @@ namespace TCCMadeireira.Bancos.DataSetReportTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CLIENTES.*, PRODUTOS.*, USERS.*, VENDA_PRODUTO.*, VENDAS.*
+            this._commandCollection[0].CommandText = @"SELECT        CLIENTES.ID_CLIENTE, CLIENTES.NOME_CLIENTE, CLIENTES.IDENTIDADE_CLIENTE, CLIENTES.CEP_CLIENTE, CLIENTES.RUA_CLIENTE, CLIENTES.NUMERO_CLIENTE, CLIENTES.BAIRRO_CLIENTE, 
+                         CLIENTES.CIDADE_CLIENTE, CLIENTES.ESTADO_CLIENTE, CLIENTES.TELEFONE_CLIENTE, CLIENTES.CELULAR_CLIENTE, CLIENTES.EMAIL_CLIENTE, CLIENTES.DATA_INFO_CLIENTE, CLIENTES.OBS_CLIENTE, 
+                         PRODUTOS.ID_PRODUTO, PRODUTOS.NOME_PRODUTO, PRODUTOS.QUANTIDADE_PRODUTO, PRODUTOS.VALOR_PRODUTO, PRODUTOS.ID_FORNECEDOR_PRODUTO, PRODUTOS.OBS_PRODUTO, USERS.ID_USUARIO, 
+                         USERS.LOGIN_USUARIO, USERS.SENHA_USUARIO, USERS.NIVEL_USUARIO, VENDA_PRODUTO.ID_VENDA_PRODUTO, VENDA_PRODUTO.ID_VENDA AS ID_VENDA_VENDA_PRODUTO, 
+                         VENDA_PRODUTO.ID_PRODUTO AS ID_PRODUTO_VENDA_PRODUTO, VENDA_PRODUTO.QUANTIDADE_PRODUTO AS QUANTIDADE_PRODUTO_VENDA_PRODUTO, VENDAS.ID_VENDA, 
+                         VENDAS.ID_CLIENTE AS ID_CLIENTE_VENDAS, VENDAS.ID_VENDEDOR, VENDAS.DATA_VENDA, VENDAS.VALOR_VENDA
 FROM            VENDA_PRODUTO INNER JOIN
                          PRODUTOS ON VENDA_PRODUTO.ID_PRODUTO = PRODUTOS.ID_PRODUTO INNER JOIN
                          VENDAS ON VENDA_PRODUTO.ID_VENDA = VENDAS.ID_VENDA INNER JOIN

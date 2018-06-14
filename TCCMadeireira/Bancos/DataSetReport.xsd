@@ -12,7 +12,12 @@
               <DbSource ConnectionRef="MadeireiraConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CLIENTES.*, PRODUTOS.*, USERS.*, VENDA_PRODUTO.*, VENDAS.*
+                    <CommandText>SELECT        CLIENTES.ID_CLIENTE, CLIENTES.NOME_CLIENTE, CLIENTES.IDENTIDADE_CLIENTE, CLIENTES.CEP_CLIENTE, CLIENTES.RUA_CLIENTE, CLIENTES.NUMERO_CLIENTE, CLIENTES.BAIRRO_CLIENTE, 
+                         CLIENTES.CIDADE_CLIENTE, CLIENTES.ESTADO_CLIENTE, CLIENTES.TELEFONE_CLIENTE, CLIENTES.CELULAR_CLIENTE, CLIENTES.EMAIL_CLIENTE, CLIENTES.DATA_INFO_CLIENTE, CLIENTES.OBS_CLIENTE, 
+                         PRODUTOS.ID_PRODUTO, PRODUTOS.NOME_PRODUTO, PRODUTOS.QUANTIDADE_PRODUTO, PRODUTOS.VALOR_PRODUTO, PRODUTOS.ID_FORNECEDOR_PRODUTO, PRODUTOS.OBS_PRODUTO, USERS.ID_USUARIO, 
+                         USERS.LOGIN_USUARIO, USERS.SENHA_USUARIO, USERS.NIVEL_USUARIO, VENDA_PRODUTO.ID_VENDA_PRODUTO, VENDA_PRODUTO.ID_VENDA AS ID_VENDA_VENDA_PRODUTO, 
+                         VENDA_PRODUTO.ID_PRODUTO AS ID_PRODUTO_VENDA_PRODUTO, VENDA_PRODUTO.QUANTIDADE_PRODUTO AS QUANTIDADE_PRODUTO_VENDA_PRODUTO, VENDAS.ID_VENDA, 
+                         VENDAS.ID_CLIENTE AS ID_CLIENTE_VENDAS, VENDAS.ID_VENDEDOR, VENDAS.DATA_VENDA, VENDAS.VALOR_VENDA
 FROM            VENDA_PRODUTO INNER JOIN
                          PRODUTOS ON VENDA_PRODUTO.ID_PRODUTO = PRODUTOS.ID_PRODUTO INNER JOIN
                          VENDAS ON VENDA_PRODUTO.ID_VENDA = VENDAS.ID_VENDA INNER JOIN
@@ -50,13 +55,13 @@ FROM            VENDA_PRODUTO INNER JOIN
               <Mapping SourceColumn="NIVEL_USUARIO" DataSetColumn="NIVEL_USUARIO" />
               <Mapping SourceColumn="ID_VENDA_PRODUTO" DataSetColumn="ID_VENDA_PRODUTO" />
               <Mapping SourceColumn="ID_VENDA" DataSetColumn="ID_VENDA" />
-              <Mapping SourceColumn="ID_PRODUTO1" DataSetColumn="ID_PRODUTO1" />
-              <Mapping SourceColumn="QUANTIDADE_PRODUTO1" DataSetColumn="QUANTIDADE_PRODUTO1" />
-              <Mapping SourceColumn="ID_VENDA1" DataSetColumn="ID_VENDA1" />
-              <Mapping SourceColumn="ID_CLIENTE1" DataSetColumn="ID_CLIENTE1" />
               <Mapping SourceColumn="ID_VENDEDOR" DataSetColumn="ID_VENDEDOR" />
               <Mapping SourceColumn="DATA_VENDA" DataSetColumn="DATA_VENDA" />
               <Mapping SourceColumn="VALOR_VENDA" DataSetColumn="VALOR_VENDA" />
+              <Mapping SourceColumn="ID_VENDA_VENDA_PRODUTO" DataSetColumn="ID_VENDA_VENDA_PRODUTO" />
+              <Mapping SourceColumn="ID_PRODUTO_VENDA_PRODUTO" DataSetColumn="ID_PRODUTO_VENDA_PRODUTO" />
+              <Mapping SourceColumn="QUANTIDADE_PRODUTO_VENDA_PRODUTO" DataSetColumn="QUANTIDADE_PRODUTO_VENDA_PRODUTO" />
+              <Mapping SourceColumn="ID_CLIENTE_VENDAS" DataSetColumn="ID_CLIENTE_VENDAS" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -68,7 +73,7 @@ FROM            VENDA_PRODUTO INNER JOIN
   <xs:element name="DataSetReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReport" msprop:Generator_UserDSName="DataSetReport">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_CLIENTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_CLIENTE" msprop:Generator_ColumnPropNameInRow="ID_CLIENTE" msprop:Generator_ColumnPropNameInTable="ID_CLIENTEColumn" msprop:Generator_UserColumnName="ID_CLIENTE" type="xs:int" />
@@ -198,14 +203,14 @@ FROM            VENDA_PRODUTO INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_VENDA_PRODUTO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInRow="ID_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInTable="ID_VENDA_PRODUTOColumn" msprop:Generator_UserColumnName="ID_VENDA_PRODUTO" type="xs:int" />
-              <xs:element name="ID_VENDA" msprop:Generator_ColumnVarNameInTable="columnID_VENDA" msprop:Generator_ColumnPropNameInRow="ID_VENDA" msprop:Generator_ColumnPropNameInTable="ID_VENDAColumn" msprop:Generator_UserColumnName="ID_VENDA" type="xs:int" minOccurs="0" />
-              <xs:element name="ID_PRODUTO1" msprop:Generator_ColumnVarNameInTable="columnID_PRODUTO1" msprop:Generator_ColumnPropNameInRow="ID_PRODUTO1" msprop:Generator_ColumnPropNameInTable="ID_PRODUTO1Column" msprop:Generator_UserColumnName="ID_PRODUTO1" type="xs:int" minOccurs="0" />
-              <xs:element name="QUANTIDADE_PRODUTO1" msprop:Generator_ColumnVarNameInTable="columnQUANTIDADE_PRODUTO1" msprop:Generator_ColumnPropNameInRow="QUANTIDADE_PRODUTO1" msprop:Generator_ColumnPropNameInTable="QUANTIDADE_PRODUTO1Column" msprop:Generator_UserColumnName="QUANTIDADE_PRODUTO1" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ID_VENDA1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_VENDA1" msprop:Generator_ColumnPropNameInRow="ID_VENDA1" msprop:Generator_ColumnPropNameInTable="ID_VENDA1Column" msprop:Generator_UserColumnName="ID_VENDA1" type="xs:int" />
-              <xs:element name="ID_CLIENTE1" msprop:Generator_ColumnVarNameInTable="columnID_CLIENTE1" msprop:Generator_ColumnPropNameInRow="ID_CLIENTE1" msprop:Generator_ColumnPropNameInTable="ID_CLIENTE1Column" msprop:Generator_UserColumnName="ID_CLIENTE1" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_VENDA" msprop:Generator_ColumnVarNameInTable="columnID_VENDA" msprop:Generator_ColumnPropNameInRow="ID_VENDA" msprop:Generator_ColumnPropNameInTable="ID_VENDAColumn" msprop:Generator_UserColumnName="ID_VENDA" type="xs:int" />
               <xs:element name="ID_VENDEDOR" msprop:Generator_ColumnVarNameInTable="columnID_VENDEDOR" msprop:Generator_ColumnPropNameInRow="ID_VENDEDOR" msprop:Generator_ColumnPropNameInTable="ID_VENDEDORColumn" msprop:Generator_UserColumnName="ID_VENDEDOR" type="xs:int" minOccurs="0" />
               <xs:element name="DATA_VENDA" msprop:Generator_ColumnVarNameInTable="columnDATA_VENDA" msprop:Generator_ColumnPropNameInRow="DATA_VENDA" msprop:Generator_ColumnPropNameInTable="DATA_VENDAColumn" msprop:Generator_UserColumnName="DATA_VENDA" type="xs:dateTime" minOccurs="0" />
               <xs:element name="VALOR_VENDA" msprop:Generator_ColumnVarNameInTable="columnVALOR_VENDA" msprop:Generator_ColumnPropNameInRow="VALOR_VENDA" msprop:Generator_ColumnPropNameInTable="VALOR_VENDAColumn" msprop:Generator_UserColumnName="VALOR_VENDA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_VENDA_VENDA_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnID_VENDA_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInRow="ID_VENDA_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInTable="ID_VENDA_VENDA_PRODUTOColumn" msprop:Generator_UserColumnName="ID_VENDA_VENDA_PRODUTO" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_PRODUTO_VENDA_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnID_PRODUTO_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInRow="ID_PRODUTO_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInTable="ID_PRODUTO_VENDA_PRODUTOColumn" msprop:Generator_UserColumnName="ID_PRODUTO_VENDA_PRODUTO" type="xs:int" minOccurs="0" />
+              <xs:element name="QUANTIDADE_PRODUTO_VENDA_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnQUANTIDADE_PRODUTO_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInRow="QUANTIDADE_PRODUTO_VENDA_PRODUTO" msprop:Generator_ColumnPropNameInTable="QUANTIDADE_PRODUTO_VENDA_PRODUTOColumn" msprop:Generator_UserColumnName="QUANTIDADE_PRODUTO_VENDA_PRODUTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_CLIENTE_VENDAS" msprop:Generator_ColumnVarNameInTable="columnID_CLIENTE_VENDAS" msprop:Generator_ColumnPropNameInRow="ID_CLIENTE_VENDAS" msprop:Generator_ColumnPropNameInTable="ID_CLIENTE_VENDASColumn" msprop:Generator_UserColumnName="ID_CLIENTE_VENDAS" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -217,7 +222,7 @@ FROM            VENDA_PRODUTO INNER JOIN
       <xs:field xpath="mstns:ID_PRODUTO" />
       <xs:field xpath="mstns:ID_USUARIO" />
       <xs:field xpath="mstns:ID_VENDA_PRODUTO" />
-      <xs:field xpath="mstns:ID_VENDA1" />
+      <xs:field xpath="mstns:ID_VENDA" />
     </xs:unique>
   </xs:element>
 </xs:schema>

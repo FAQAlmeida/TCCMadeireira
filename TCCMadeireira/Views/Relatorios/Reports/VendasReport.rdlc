@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.98286cm</Width>
+              <Width>5.57578cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.79766cm</Width>
+              <Width>3.19454cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.24203cm</Width>
+              <Width>2.82411cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -151,7 +151,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -179,14 +179,14 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QUANTIDADE_PRODUTO1.Value</Value>
+                              <Value>=Fields!QUANTIDADE_PRODUTO_VENDA_PRODUTO.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -203,6 +203,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -257,7 +258,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1.61396cm</Size>
+                <Size>1.69334cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox15">
                     <CanGrow>true</CanGrow>
@@ -297,7 +298,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.37432cm</Size>
+                    <Size>2.56135cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox13">
                         <CanGrow>true</CanGrow>
@@ -351,7 +352,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.61245cm</Size>
+                        <Size>2.85057cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox11">
                             <CanGrow>true</CanGrow>
@@ -405,7 +406,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.11516cm</Size>
+                            <Size>3.22099cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox9">
                                 <CanGrow>true</CanGrow>
@@ -459,7 +460,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.4537cm</Size>
+                                <Size>3.77932cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox7">
                                     <CanGrow>true</CanGrow>
@@ -521,7 +522,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.61396cm</Size>
+                <Size>1.69334cm</Size>
                 <CellContents>
                   <Textbox Name="ID_VENDA1">
                     <CanGrow>true</CanGrow>
@@ -530,14 +531,14 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!ID_VENDA1.Value</Value>
+                            <Value>=Fields!ID_VENDA.Value</Value>
                             <Style>
                               <FontWeight>Normal</FontWeight>
                             </Style>
                           </TextRun>
                         </TextRuns>
                         <Style>
-                          <TextAlign>Left</TextAlign>
+                          <TextAlign>Center</TextAlign>
                         </Style>
                       </Paragraph>
                     </Paragraphs>
@@ -569,7 +570,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.37432cm</Size>
+                    <Size>2.56135cm</Size>
                     <CellContents>
                       <Textbox Name="VALOR_VENDA">
                         <CanGrow>true</CanGrow>
@@ -587,7 +588,7 @@
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Left</TextAlign>
+                              <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -619,7 +620,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.61245cm</Size>
+                        <Size>2.85057cm</Size>
                         <CellContents>
                           <Textbox Name="DATA_VENDA">
                             <CanGrow>true</CanGrow>
@@ -636,7 +637,7 @@
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
-                                  <TextAlign>Left</TextAlign>
+                                  <TextAlign>Center</TextAlign>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
@@ -668,7 +669,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>3.11516cm</Size>
+                            <Size>3.22099cm</Size>
                             <CellContents>
                               <Textbox Name="IDENTIDADE_CLIENTE">
                                 <CanGrow>true</CanGrow>
@@ -684,7 +685,7 @@
                                       </TextRun>
                                     </TextRuns>
                                     <Style>
-                                      <TextAlign>Left</TextAlign>
+                                      <TextAlign>Center</TextAlign>
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
@@ -716,7 +717,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.4537cm</Size>
+                                <Size>3.77932cm</Size>
                                 <CellContents>
                                   <Textbox Name="LOGIN_USUARIO">
                                     <CanGrow>true</CanGrow>
@@ -732,7 +733,7 @@
                                           </TextRun>
                                         </TextRuns>
                                         <Style>
-                                          <TextAlign>Left</TextAlign>
+                                          <TextAlign>Center</TextAlign>
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
@@ -768,10 +769,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetVendasReport</DataSetName>
-        <Top>0.05cm</Top>
-        <Left>0.5cm</Left>
+        <Top>0.17639cm</Top>
+        <Left>2cm</Left>
         <Height>1.86146cm</Height>
-        <Width>20.19214cm</Width>
+        <Width>25.7cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -779,13 +780,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>247mm</Height>
+    <Height>150mm</Height>
     <Style />
   </Body>
-  <Width>210mm</Width>
+  <Width>297mm</Width>
   <Page>
     <PageHeader>
-      <Height>3cm</Height>
+      <Height>4cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -793,8 +794,8 @@
           <Source>Embedded</Source>
           <Value>LogoSMold</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.70625cm</Top>
-          <Left>0.5cm</Left>
+          <Top>2cm</Top>
+          <Left>2cm</Left>
           <Height>1.5cm</Height>
           <Width>3.4cm</Width>
           <Style>
@@ -825,10 +826,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox17</rd:DefaultName>
-          <Top>0.70625cm</Top>
-          <Left>3.93528cm</Left>
+          <Top>2cm</Top>
+          <Left>5.4cm</Left>
           <Height>1.5cm</Height>
-          <Width>16.75686cm</Width>
+          <Width>22.3cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -872,9 +873,44 @@
           </Paragraphs>
           <rd:DefaultName>Textbox18</rd:DefaultName>
           <Top>0.73458cm</Top>
-          <Left>18.19214cm</Left>
+          <Left>247mm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>3cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="ExecutionTime">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Now()</Value>
+                  <Style>
+                    <Format>g</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>ExecutionTime</rd:DefaultName>
+          <Top>0.78766cm</Top>
+          <Left>2cm</Left>
+          <Height>0.6cm</Height>
+          <Width>10.32625cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -890,6 +926,7 @@
       <Style>
         <Border>
           <Style>None</Style>
+          <Width>10pt</Width>
         </Border>
       </Style>
     </PageFooter>
@@ -1023,22 +1060,6 @@
           <DataField>ID_VENDA</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ID_PRODUTO1">
-          <DataField>ID_PRODUTO1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="QUANTIDADE_PRODUTO1">
-          <DataField>QUANTIDADE_PRODUTO1</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ID_VENDA1">
-          <DataField>ID_VENDA1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ID_CLIENTE1">
-          <DataField>ID_CLIENTE1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="ID_VENDEDOR">
           <DataField>ID_VENDEDOR</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -1050,6 +1071,22 @@
         <Field Name="VALOR_VENDA">
           <DataField>VALOR_VENDA</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ID_VENDA_VENDA_PRODUTO">
+          <DataField>ID_VENDA_VENDA_PRODUTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_PRODUTO_VENDA_PRODUTO">
+          <DataField>ID_PRODUTO_VENDA_PRODUTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QUANTIDADE_PRODUTO_VENDA_PRODUTO">
+          <DataField>QUANTIDADE_PRODUTO_VENDA_PRODUTO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ID_CLIENTE_VENDAS">
+          <DataField>ID_CLIENTE_VENDAS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
