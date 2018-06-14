@@ -345,6 +345,8 @@ namespace TCCMadeireira.Bancos {
             
             private global::System.Data.DataColumn columnID_CLIENTE_VENDAS;
             
+            private global::System.Data.DataColumn columnVALORTOTALITEM;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -644,6 +646,14 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VALORTOTALITEMColumn {
+                get {
+                    return this.columnVALORTOTALITEM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -708,7 +718,8 @@ namespace TCCMadeireira.Bancos {
                         int ID_VENDA_VENDA_PRODUTO, 
                         int ID_PRODUTO_VENDA_PRODUTO, 
                         decimal QUANTIDADE_PRODUTO_VENDA_PRODUTO, 
-                        int ID_CLIENTE_VENDAS) {
+                        int ID_CLIENTE_VENDAS, 
+                        decimal VALORTOTALITEM) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -743,7 +754,8 @@ namespace TCCMadeireira.Bancos {
                         ID_VENDA_VENDA_PRODUTO,
                         ID_PRODUTO_VENDA_PRODUTO,
                         QUANTIDADE_PRODUTO_VENDA_PRODUTO,
-                        ID_CLIENTE_VENDAS};
+                        ID_CLIENTE_VENDAS,
+                        VALORTOTALITEM};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -810,6 +822,7 @@ namespace TCCMadeireira.Bancos {
                 this.columnID_PRODUTO_VENDA_PRODUTO = base.Columns["ID_PRODUTO_VENDA_PRODUTO"];
                 this.columnQUANTIDADE_PRODUTO_VENDA_PRODUTO = base.Columns["QUANTIDADE_PRODUTO_VENDA_PRODUTO"];
                 this.columnID_CLIENTE_VENDAS = base.Columns["ID_CLIENTE_VENDAS"];
+                this.columnVALORTOTALITEM = base.Columns["VALORTOTALITEM"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -881,6 +894,8 @@ namespace TCCMadeireira.Bancos {
                 base.Columns.Add(this.columnQUANTIDADE_PRODUTO_VENDA_PRODUTO);
                 this.columnID_CLIENTE_VENDAS = new global::System.Data.DataColumn("ID_CLIENTE_VENDAS", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_CLIENTE_VENDAS);
+                this.columnVALORTOTALITEM = new global::System.Data.DataColumn("VALORTOTALITEM", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVALORTOTALITEM);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_CLIENTE,
                                 this.columnID_PRODUTO,
@@ -929,6 +944,7 @@ namespace TCCMadeireira.Bancos {
                 this.columnID_VENDA_PRODUTO.AllowDBNull = false;
                 this.columnID_VENDA_PRODUTO.ReadOnly = true;
                 this.columnID_VENDA.AllowDBNull = false;
+                this.columnVALORTOTALITEM.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1555,6 +1571,22 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal VALORTOTALITEM {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataTable1.VALORTOTALITEMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VALORTOTALITEM\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.VALORTOTALITEMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNOME_CLIENTENull() {
                 return this.IsNull(this.tableDataTable1.NOME_CLIENTEColumn);
             }
@@ -1840,6 +1872,18 @@ namespace TCCMadeireira.Bancos {
             public void SetID_CLIENTE_VENDASNull() {
                 this[this.tableDataTable1.ID_CLIENTE_VENDASColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVALORTOTALITEMNull() {
+                return this.IsNull(this.tableDataTable1.VALORTOTALITEMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVALORTOTALITEMNull() {
+                this[this.tableDataTable1.VALORTOTALITEMColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -2034,6 +2078,7 @@ namespace TCCMadeireira.Bancos.DataSetReportTableAdapters {
             tableMapping.ColumnMappings.Add("ID_PRODUTO_VENDA_PRODUTO", "ID_PRODUTO_VENDA_PRODUTO");
             tableMapping.ColumnMappings.Add("QUANTIDADE_PRODUTO_VENDA_PRODUTO", "QUANTIDADE_PRODUTO_VENDA_PRODUTO");
             tableMapping.ColumnMappings.Add("ID_CLIENTE_VENDAS", "ID_CLIENTE_VENDAS");
+            tableMapping.ColumnMappings.Add("VALORTOTALITEM", "VALORTOTALITEM");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2050,17 +2095,26 @@ namespace TCCMadeireira.Bancos.DataSetReportTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CLIENTES.ID_CLIENTE, CLIENTES.NOME_CLIENTE, CLIENTES.IDENTIDADE_CLIENTE, CLIENTES.CEP_CLIENTE, CLIENTES.RUA_CLIENTE, CLIENTES.NUMERO_CLIENTE, CLIENTES.BAIRRO_CLIENTE, 
-                         CLIENTES.CIDADE_CLIENTE, CLIENTES.ESTADO_CLIENTE, CLIENTES.TELEFONE_CLIENTE, CLIENTES.CELULAR_CLIENTE, CLIENTES.EMAIL_CLIENTE, CLIENTES.DATA_INFO_CLIENTE, CLIENTES.OBS_CLIENTE, 
-                         PRODUTOS.ID_PRODUTO, PRODUTOS.NOME_PRODUTO, PRODUTOS.QUANTIDADE_PRODUTO, PRODUTOS.VALOR_PRODUTO, PRODUTOS.ID_FORNECEDOR_PRODUTO, PRODUTOS.OBS_PRODUTO, USERS.ID_USUARIO, 
-                         USERS.LOGIN_USUARIO, USERS.SENHA_USUARIO, USERS.NIVEL_USUARIO, VENDA_PRODUTO.ID_VENDA_PRODUTO, VENDA_PRODUTO.ID_VENDA AS ID_VENDA_VENDA_PRODUTO, 
-                         VENDA_PRODUTO.ID_PRODUTO AS ID_PRODUTO_VENDA_PRODUTO, VENDA_PRODUTO.QUANTIDADE_PRODUTO AS QUANTIDADE_PRODUTO_VENDA_PRODUTO, VENDAS.ID_VENDA, 
-                         VENDAS.ID_CLIENTE AS ID_CLIENTE_VENDAS, VENDAS.ID_VENDEDOR, VENDAS.DATA_VENDA, VENDAS.VALOR_VENDA
-FROM            VENDA_PRODUTO INNER JOIN
-                         PRODUTOS ON VENDA_PRODUTO.ID_PRODUTO = PRODUTOS.ID_PRODUTO INNER JOIN
-                         VENDAS ON VENDA_PRODUTO.ID_VENDA = VENDAS.ID_VENDA INNER JOIN
-                         USERS ON VENDAS.ID_VENDEDOR = USERS.ID_USUARIO INNER JOIN
-                         CLIENTES ON VENDAS.ID_CLIENTE = CLIENTES.ID_CLIENTE";
+            this._commandCollection[0].CommandText = "SELECT        CLIENTES.ID_CLIENTE, CLIENTES.NOME_CLIENTE, CLIENTES.IDENTIDADE_CLI" +
+                "ENTE, CLIENTES.CEP_CLIENTE, CLIENTES.RUA_CLIENTE, CLIENTES.NUMERO_CLIENTE, CLIEN" +
+                "TES.BAIRRO_CLIENTE, \r\n                         CLIENTES.CIDADE_CLIENTE, CLIENTES" +
+                ".ESTADO_CLIENTE, CLIENTES.TELEFONE_CLIENTE, CLIENTES.CELULAR_CLIENTE, CLIENTES.E" +
+                "MAIL_CLIENTE, CLIENTES.DATA_INFO_CLIENTE, CLIENTES.OBS_CLIENTE, \r\n              " +
+                "           PRODUTOS.ID_PRODUTO, PRODUTOS.NOME_PRODUTO, PRODUTOS.QUANTIDADE_PRODU" +
+                "TO, PRODUTOS.VALOR_PRODUTO, PRODUTOS.ID_FORNECEDOR_PRODUTO, PRODUTOS.OBS_PRODUTO" +
+                ", USERS.ID_USUARIO, \r\n                         USERS.LOGIN_USUARIO, USERS.SENHA_" +
+                "USUARIO, USERS.NIVEL_USUARIO, VENDA_PRODUTO.ID_VENDA_PRODUTO, VENDA_PRODUTO.ID_V" +
+                "ENDA AS ID_VENDA_VENDA_PRODUTO, \r\n                         VENDA_PRODUTO.ID_PROD" +
+                "UTO AS ID_PRODUTO_VENDA_PRODUTO, VENDA_PRODUTO.QUANTIDADE_PRODUTO AS QUANTIDADE_" +
+                "PRODUTO_VENDA_PRODUTO, VENDAS.ID_VENDA, \r\n                         VENDAS.ID_CLI" +
+                "ENTE AS ID_CLIENTE_VENDAS, VENDAS.ID_VENDEDOR, VENDAS.DATA_VENDA, VENDAS.VALOR_V" +
+                "ENDA, \r\n                         VENDA_PRODUTO.QUANTIDADE_PRODUTO * PRODUTOS.VAL" +
+                "OR_PRODUTO AS VALORTOTALITEM\r\nFROM            VENDA_PRODUTO INNER JOIN\r\n        " +
+                "                 PRODUTOS ON VENDA_PRODUTO.ID_PRODUTO = PRODUTOS.ID_PRODUTO INNE" +
+                "R JOIN\r\n                         VENDAS ON VENDA_PRODUTO.ID_VENDA = VENDAS.ID_VE" +
+                "NDA INNER JOIN\r\n                         USERS ON VENDAS.ID_VENDEDOR = USERS.ID_" +
+                "USUARIO INNER JOIN\r\n                         CLIENTES ON VENDAS.ID_CLIENTE = CLI" +
+                "ENTES.ID_CLIENTE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

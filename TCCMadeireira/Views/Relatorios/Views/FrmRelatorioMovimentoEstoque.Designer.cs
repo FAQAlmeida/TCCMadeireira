@@ -28,86 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataSetReport1 = new TCCMadeireira.Bancos.DataSetReport();
-            this.dtpInicial = new System.Windows.Forms.DateTimePicker();
-            this.dtpFinal = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.pnlReportViewer = new System.Windows.Forms.Panel();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1TableAdapter = new TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter();
+            this.pnlReportViewer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataSetReport1
+            // pnlReportViewer
             // 
-            this.dataSetReport1.DataSetName = "DataSetReport";
-            this.dataSetReport1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.pnlReportViewer.Controls.Add(this.reportViewer);
+            this.pnlReportViewer.Location = new System.Drawing.Point(0, 64);
+            this.pnlReportViewer.Name = "pnlReportViewer";
+            this.pnlReportViewer.Size = new System.Drawing.Size(1250, 452);
+            this.pnlReportViewer.TabIndex = 2;
             // 
-            // dtpInicial
+            // reportViewer
             // 
-            this.dtpInicial.Location = new System.Drawing.Point(12, 24);
-            this.dtpInicial.Name = "dtpInicial";
-            this.dtpInicial.Size = new System.Drawing.Size(221, 20);
-            this.dtpInicial.TabIndex = 0;
+            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetVendas";
+            reportDataSource1.Value = this.dataTable1BindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.VendasDataReport.rdlc";
+            this.reportViewer.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer.Name = "reportViewer";
+            this.reportViewer.ServerReport.BearerToken = null;
+            this.reportViewer.Size = new System.Drawing.Size(1250, 452);
+            this.reportViewer.TabIndex = 0;
             // 
-            // dtpFinal
+            // dataSetReport
             // 
-            this.dtpFinal.Location = new System.Drawing.Point(12, 67);
-            this.dtpFinal.Name = "dtpFinal";
-            this.dtpFinal.Size = new System.Drawing.Size(221, 20);
-            this.dtpFinal.TabIndex = 1;
+            this.dataSetReport.DataSetName = "DataSetReport";
+            this.dataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // dataTable1BindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Até:";
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.dataSetReport;
             // 
-            // label2
+            // dataTable1TableAdapter
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "De:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(72, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
             // FrmFiltrarVendasData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 125);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpFinal);
-            this.Controls.Add(this.dtpInicial);
+            this.ClientSize = new System.Drawing.Size(1250, 515);
+            this.Controls.Add(this.pnlReportViewer);
             this.Name = "FrmFiltrarVendasData";
             this.Text = "FrmFiltrarVendasData";
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmFiltrarVendasData_Load);
+            this.pnlReportViewer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bancos.DataSetReport dataSetReport1;
-        private System.Windows.Forms.DateTimePicker dtpInicial;
-        private System.Windows.Forms.DateTimePicker dtpFinal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlReportViewer;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private Bancos.DataSetReport dataSetReport;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private Bancos.DataSetReportTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
     }
 }

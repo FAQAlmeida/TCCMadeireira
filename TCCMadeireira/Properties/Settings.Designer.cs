@@ -65,8 +65,8 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;Integrated Security=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;User ID=FQA;Password" +
+            "=Otavio@435")]
         public string NoteConnectionString {
             get {
                 return ((string)(this["NoteConnectionString"]));
@@ -111,7 +111,7 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("desktop-fqa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("note-fqa")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -129,7 +129,7 @@ namespace TCCMadeireira.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Otavio")]
+        [global::System.Configuration.DefaultSettingValueAttribute("FQA")]
         public string LoginServer {
             get {
                 return ((string)(this["LoginServer"]));
@@ -157,22 +157,11 @@ namespace TCCMadeireira.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-fqa\\fqasqlserver;Initial Catalog=Madeireira;User ID=Otavio;Pa" +
-            "ssword=Otavio@435")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOTE-FQA\\FQASQLSERVER;Initial Catalog=Madeireira;User ID=FQA;Password" +
+            "=Otavio@435")]
         public string MadeireiraConnectionString {
             get {
                 return ((string)(this["MadeireiraConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-fqa\\fqasqlserver;Initial Catalog=Madeireira;User ID=Otavio;Pa" +
-            "ssword=Otavio@435")]
-        public string MadeireiraConnectionString1 {
-            get {
-                return ((string)(this["MadeireiraConnectionString1"]));
             }
         }
     }

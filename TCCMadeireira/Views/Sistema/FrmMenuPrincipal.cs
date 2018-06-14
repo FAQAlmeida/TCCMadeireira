@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Views.Relatorios;
+using TCCMadeireira.Views.Relatorios.Views;
 using TCCMadeireira.Views.Sistema;
 
 namespace TCCMadeireira.Views
@@ -31,6 +32,7 @@ namespace TCCMadeireira.Views
         FrmUsuario frmUsuario;
         FrmBackup frmBackup;
         FrmRelatorioVendas frmRelatorioVendas;
+        FrmFiltrarVendasData frmRelatorioVendasFiltro;
         #endregion
         #region Construtor
         /// <summary>
@@ -265,6 +267,33 @@ namespace TCCMadeireira.Views
                 MessageBox.Show(ex.Message);
             }
         }
+        private void vendasMêsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmFiltrarVendasData"] == null)
+                {
+                    frmRelatorioVendasFiltro = new FrmFiltrarVendasData
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendasFiltro.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmRelatorioVendasFiltro.Name].Close();
+                    frmRelatorioVendas = new FrmRelatorioVendas
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendasFiltro.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         #endregion
         #endregion
         #region Test
@@ -302,6 +331,7 @@ namespace TCCMadeireira.Views
             }
             timer.Start();
         }
+
         #endregion
 
         
