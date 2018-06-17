@@ -46,9 +46,17 @@
             this.fornecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasMêsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasAnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.diaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -178,10 +186,25 @@
             // 
             // vendasToolStripMenuItem
             // 
+            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vendasDiaToolStripMenuItem,
+            this.vendasMêsToolStripMenuItem1,
+            this.vendasAnoToolStripMenuItem,
+            this.vendasToolStripMenuItem1});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vendasToolStripMenuItem.Text = "Vendas";
-            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.VendasToolStripMenuItem_Click);
+            // 
+            // vendasMêsToolStripMenuItem
+            // 
+            this.vendasMêsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.diaToolStripMenuItem,
+            this.mêsToolStripMenuItem,
+            this.anoToolStripMenuItem,
+            this.totalToolStripMenuItem});
+            this.vendasMêsToolStripMenuItem.Name = "vendasMêsToolStripMenuItem";
+            this.vendasMêsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendasMêsToolStripMenuItem.Text = "Fornecimentos";
             // 
             // sistemaToolStripMenuItem
             // 
@@ -198,12 +221,61 @@
             this.backupToolStripMenuItem.Text = "Backup";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
             // 
-            // vendasMêsToolStripMenuItem
+            // vendasDiaToolStripMenuItem
             // 
-            this.vendasMêsToolStripMenuItem.Name = "vendasMêsToolStripMenuItem";
-            this.vendasMêsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vendasMêsToolStripMenuItem.Text = "Vendas Mês";
-            this.vendasMêsToolStripMenuItem.Click += new System.EventHandler(this.vendasMêsToolStripMenuItem_Click);
+            this.vendasDiaToolStripMenuItem.Name = "vendasDiaToolStripMenuItem";
+            this.vendasDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendasDiaToolStripMenuItem.Text = "Vendas Dia";
+            this.vendasDiaToolStripMenuItem.Click += new System.EventHandler(this.vendasDiaToolStripMenuItem_Click);
+            // 
+            // vendasMêsToolStripMenuItem1
+            // 
+            this.vendasMêsToolStripMenuItem1.Name = "vendasMêsToolStripMenuItem1";
+            this.vendasMêsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.vendasMêsToolStripMenuItem1.Text = "Vendas Mês";
+            this.vendasMêsToolStripMenuItem1.Click += new System.EventHandler(this.vendasMêsToolStripMenuItem1_Click);
+            // 
+            // vendasAnoToolStripMenuItem
+            // 
+            this.vendasAnoToolStripMenuItem.Name = "vendasAnoToolStripMenuItem";
+            this.vendasAnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendasAnoToolStripMenuItem.Text = "Vendas Ano";
+            this.vendasAnoToolStripMenuItem.Click += new System.EventHandler(this.vendasAnoToolStripMenuItem_Click);
+            // 
+            // vendasToolStripMenuItem1
+            // 
+            this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
+            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.vendasToolStripMenuItem1.Text = "Total";
+            this.vendasToolStripMenuItem1.Click += new System.EventHandler(this.vendasToolStripMenuItem1_Click);
+            // 
+            // diaToolStripMenuItem
+            // 
+            this.diaToolStripMenuItem.Name = "diaToolStripMenuItem";
+            this.diaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.diaToolStripMenuItem.Text = "Dia";
+            this.diaToolStripMenuItem.Click += new System.EventHandler(this.diaToolStripMenuItem_Click);
+            // 
+            // mêsToolStripMenuItem
+            // 
+            this.mêsToolStripMenuItem.Name = "mêsToolStripMenuItem";
+            this.mêsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mêsToolStripMenuItem.Text = "Mês";
+            this.mêsToolStripMenuItem.Click += new System.EventHandler(this.mêsToolStripMenuItem_Click);
+            // 
+            // anoToolStripMenuItem
+            // 
+            this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
+            this.anoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.anoToolStripMenuItem.Text = "Ano";
+            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
+            // 
+            // totalToolStripMenuItem
+            // 
+            this.totalToolStripMenuItem.Name = "totalToolStripMenuItem";
+            this.totalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.totalToolStripMenuItem.Text = "Total";
+            this.totalToolStripMenuItem.Click += new System.EventHandler(this.totalToolStripMenuItem_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -256,5 +328,13 @@
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasMêsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasDiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasMêsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vendasAnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem diaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mêsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem totalToolStripMenuItem;
     }
 }

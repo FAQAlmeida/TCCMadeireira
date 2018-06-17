@@ -299,7 +299,7 @@ namespace TCCMadeireira.Bancos
         /// <param name="venda">Objeto funcionario, que devera conter todas as informações do funcionario</param>
         public void UpdateVenda(Venda venda)
         {
-            vendasTableAdapter.Update(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor, venda.Id);
+            vendasTableAdapter.Update(venda.Cliente.Id, venda.Usuario.Id, venda.DataInfo, venda.Valor, venda.EndEntrega, venda.Id);
         }
         public VENDASDataTable SelectVenda()
         {

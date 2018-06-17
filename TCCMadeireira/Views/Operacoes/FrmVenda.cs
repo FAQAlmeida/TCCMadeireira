@@ -119,7 +119,8 @@ namespace TCCMadeireira.Views
                 {
                     throw new Exception("A venda não pode conter nenhum produto");
                 }
-                Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
+                txtEndEntrega.Text = txtEndEntrega.Text == String.Empty ? " " : txtEndEntrega.Text;
+                Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor, txtEndEntrega.Text.Trim().ToUpper());
                 banco.InsertVenda(venda);
                 MessageBox.Show("Venda efetuada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
