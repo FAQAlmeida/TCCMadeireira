@@ -2,13 +2,12 @@
 <xs:schema id="DataSetMadeireiraV2" targetNamespace="http://tempuri.org/DataSetMadeireiraV2.xsd" xmlns:mstns="http://tempuri.org/DataSetMadeireiraV2.xsd" xmlns="http://tempuri.org/DataSetMadeireiraV2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MadeireiraConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MadeireiraConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCMadeireira.Properties.Settings.GlobalReference.Default.MadeireiraConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MadereiraConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="MadereiraConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCMadeireira.Properties.Settings.GlobalReference.Default.MadereiraConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_04919_1_C_1_2017ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_04919_1_C_1_2017ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCMadeireira.Properties.Settings.GlobalReference.Default.db_04919_1_C_1_2017ConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MadeireiraConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MadeireiraConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCMadeireira.Properties.Settings.GlobalReference.Default.MadeireiraConnectionString1" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MadeireiraConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MadeireiraConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCMadeireira.Properties.Settings.GlobalReference.Default.MadeireiraConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MadeireiraConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="MadeireiraConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCMadeireira.Properties.Settings.GlobalReference.Default.MadeireiraConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CLIENTESTableAdapter" GeneratorDataComponentClassName="CLIENTESTableAdapter" Name="CLIENTES" UserDataComponentName="CLIENTESTableAdapter">
@@ -135,6 +134,101 @@ WHERE      IDENTIDADE_CLIENTE = @IDENTIDADE_CLIENTE</CommandText>
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VENDASTableAdapter" GeneratorDataComponentClassName="VENDASTableAdapter" Name="VENDAS" UserDataComponentName="VENDASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MadeireiraConnectionString (Settings)" DbObjectName="Madeireira.dbo.VENDAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM VENDAS
+WHERE        (ID_VENDA = @Original_ID_VENDA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_VENDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_VENDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_CLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_CLIENTE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_CLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_CLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_VENDEDOR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_VENDEDOR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_VENDEDOR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_VENDEDOR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DATA_VENDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DATA_VENDA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DATA_VENDA" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DATA_VENDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VALOR_VENDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VALOR_VENDA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_VALOR_VENDA" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="VALOR_VENDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO VENDAS
+                         (ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA)
+VALUES        (@ID_CLIENTE,@ID_VENDEDOR,@DATA_VENDA,@VALOR_VENDA); 
+SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WHERE (ID_VENDA = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_CLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_CLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_VENDEDOR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_VENDEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DATA_VENDA" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DATA_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@VALOR_VENDA" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="VALOR_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM dbo.VENDAS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       VENDAS
+SET                ID_CLIENTE = @ID_CLIENTE, ID_VENDEDOR = @ID_VENDEDOR, DATA_VENDA = @DATA_VENDA, VALOR_VENDA = @VALOR_VENDA
+WHERE        (ID_VENDA = @Original_ID_VENDA);      
+SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WHERE (ID_VENDA = @ID_VENDA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ID_CLIENTE" ColumnName="ID_CLIENTE" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_CLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ID_VENDEDOR" ColumnName="ID_VENDEDOR" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_VENDEDOR" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_VENDEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DATA_VENDA" ColumnName="DATA_VENDA" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DATA_VENDA" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DATA_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="VALOR_VENDA" ColumnName="VALOR_VENDA" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@VALOR_VENDA" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="VALOR_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_ID_VENDA" ColumnName="ID_VENDA" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_ID_VENDA" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_VENDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_VENDA" DataSetColumn="ID_VENDA" />
+              <Mapping SourceColumn="ID_CLIENTE" DataSetColumn="ID_CLIENTE" />
+              <Mapping SourceColumn="ID_VENDEDOR" DataSetColumn="ID_VENDEDOR" />
+              <Mapping SourceColumn="DATA_VENDA" DataSetColumn="DATA_VENDA" />
+              <Mapping SourceColumn="VALOR_VENDA" DataSetColumn="VALOR_VENDA" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="MadeireiraConnectionString (Settings)" DbObjectName="Madeireira.dbo.VENDAS" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataVenda" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataVenda" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataVenda" UserSourceName="GetDataVenda">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA
+FROM            VENDAS
+WHERE        (ID_VENDA = @id_venda)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_venda" ColumnName="ID_VENDA" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_venda" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="MadeireiraConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertVenda" Modifier="Public" Name="InsertVenda" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertVenda">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO VENDAS
+                         (ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA)
+VALUES        (@ID_CLIENTE,@ID_VENDEDOR,@DATA_VENDA,@VALOR_VENDA); 
+SELECT SCOPE_IDENTITY()</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ID_CLIENTE" ColumnName="ID_CLIENTE" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_CLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ID_VENDEDOR" ColumnName="ID_VENDEDOR" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_VENDEDOR" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_VENDEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DATA_VENDA" ColumnName="DATA_VENDA" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DATA_VENDA" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DATA_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="VALOR_VENDA" ColumnName="VALOR_VENDA" DataSourceName="Madeireira.dbo.VENDAS" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@VALOR_VENDA" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="VALOR_VENDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -797,6 +891,7 @@ where login_usuario = @login and senha_usuario = @senha</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+<<<<<<< HEAD
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VENDASTableAdapter" GeneratorDataComponentClassName="VENDASTableAdapter" Name="VENDAS" UserDataComponentName="VENDASTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MadeireiraConnectionString1 (Settings)" DbObjectName="Madeireira.dbo.VENDAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -885,6 +980,8 @@ SELECT SCOPE_IDENTITY();</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+=======
+>>>>>>> parent of 1497c66... .
         </Tables>
         <Sources />
       </DataSource>
@@ -985,7 +1082,22 @@ SELECT SCOPE_IDENTITY();</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+<<<<<<< HEAD
         <xs:element name="FORNECEDORES" msprop:Generator_TableClassName="FORNECEDORESDataTable" msprop:Generator_TableVarName="tableFORNECEDORES" msprop:Generator_TablePropName="FORNECEDORES" msprop:Generator_RowDeletingName="FORNECEDORESRowDeleting" msprop:Generator_RowChangingName="FORNECEDORESRowChanging" msprop:Generator_RowEvHandlerName="FORNECEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORESRowDeleted" msprop:Generator_UserTableName="FORNECEDORES" msprop:Generator_RowChangedName="FORNECEDORESRowChanged" msprop:Generator_RowEvArgName="FORNECEDORESRowChangeEvent" msprop:Generator_RowClassName="FORNECEDORESRow">
+=======
+        <xs:element name="VENDAS" msprop:Generator_TableClassName="VENDASDataTable" msprop:Generator_TableVarName="tableVENDAS" msprop:Generator_RowChangedName="VENDASRowChanged" msprop:Generator_TablePropName="VENDAS" msprop:Generator_RowDeletingName="VENDASRowDeleting" msprop:Generator_RowChangingName="VENDASRowChanging" msprop:Generator_RowEvHandlerName="VENDASRowChangeEventHandler" msprop:Generator_RowDeletedName="VENDASRowDeleted" msprop:Generator_RowClassName="VENDASRow" msprop:Generator_UserTableName="VENDAS" msprop:Generator_RowEvArgName="VENDASRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_VENDA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_VENDA" msprop:Generator_ColumnPropNameInRow="ID_VENDA" msprop:Generator_ColumnPropNameInTable="ID_VENDAColumn" msprop:Generator_UserColumnName="ID_VENDA" type="xs:int" />
+              <xs:element name="ID_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnID_CLIENTE" msprop:Generator_ColumnPropNameInRow="ID_CLIENTE" msprop:Generator_ColumnPropNameInTable="ID_CLIENTEColumn" msprop:Generator_UserColumnName="ID_CLIENTE" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_VENDEDOR" msprop:Generator_ColumnVarNameInTable="columnID_VENDEDOR" msprop:Generator_ColumnPropNameInRow="ID_VENDEDOR" msprop:Generator_ColumnPropNameInTable="ID_VENDEDORColumn" msprop:Generator_UserColumnName="ID_VENDEDOR" type="xs:int" minOccurs="0" />
+              <xs:element name="DATA_VENDA" msprop:Generator_ColumnVarNameInTable="columnDATA_VENDA" msprop:Generator_ColumnPropNameInRow="DATA_VENDA" msprop:Generator_ColumnPropNameInTable="DATA_VENDAColumn" msprop:Generator_UserColumnName="DATA_VENDA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VALOR_VENDA" msprop:Generator_ColumnVarNameInTable="columnVALOR_VENDA" msprop:Generator_ColumnPropNameInRow="VALOR_VENDA" msprop:Generator_ColumnPropNameInTable="VALOR_VENDAColumn" msprop:Generator_UserColumnName="VALOR_VENDA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FORNECEDORES" msprop:Generator_TableClassName="FORNECEDORESDataTable" msprop:Generator_TableVarName="tableFORNECEDORES" msprop:Generator_RowChangedName="FORNECEDORESRowChanged" msprop:Generator_TablePropName="FORNECEDORES" msprop:Generator_RowDeletingName="FORNECEDORESRowDeleting" msprop:Generator_RowChangingName="FORNECEDORESRowChanging" msprop:Generator_RowEvHandlerName="FORNECEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORESRowDeleted" msprop:Generator_RowClassName="FORNECEDORESRow" msprop:Generator_UserTableName="FORNECEDORES" msprop:Generator_RowEvArgName="FORNECEDORESRowChangeEvent">
+>>>>>>> parent of 1497c66... .
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_FORNECEDOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="ID_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ID_FORNECEDORColumn" msprop:Generator_UserColumnName="ID_FORNECEDOR" type="xs:int" />
@@ -1265,29 +1377,15 @@ SELECT SCOPE_IDENTITY();</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VENDAS" msprop:Generator_TableClassName="VENDASDataTable" msprop:Generator_TableVarName="tableVENDAS" msprop:Generator_TablePropName="VENDAS" msprop:Generator_RowDeletingName="VENDASRowDeleting" msprop:Generator_RowChangingName="VENDASRowChanging" msprop:Generator_RowEvHandlerName="VENDASRowChangeEventHandler" msprop:Generator_RowDeletedName="VENDASRowDeleted" msprop:Generator_UserTableName="VENDAS" msprop:Generator_RowChangedName="VENDASRowChanged" msprop:Generator_RowEvArgName="VENDASRowChangeEvent" msprop:Generator_RowClassName="VENDASRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID_VENDA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_VENDA" msprop:Generator_ColumnPropNameInRow="ID_VENDA" msprop:Generator_ColumnPropNameInTable="ID_VENDAColumn" msprop:Generator_UserColumnName="ID_VENDA" type="xs:int" />
-              <xs:element name="ID_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnID_CLIENTE" msprop:Generator_ColumnPropNameInRow="ID_CLIENTE" msprop:Generator_ColumnPropNameInTable="ID_CLIENTEColumn" msprop:Generator_UserColumnName="ID_CLIENTE" type="xs:int" minOccurs="0" />
-              <xs:element name="ID_VENDEDOR" msprop:Generator_ColumnVarNameInTable="columnID_VENDEDOR" msprop:Generator_ColumnPropNameInRow="ID_VENDEDOR" msprop:Generator_ColumnPropNameInTable="ID_VENDEDORColumn" msprop:Generator_UserColumnName="ID_VENDEDOR" type="xs:int" minOccurs="0" />
-              <xs:element name="DATA_VENDA" msprop:Generator_ColumnVarNameInTable="columnDATA_VENDA" msprop:Generator_ColumnPropNameInRow="DATA_VENDA" msprop:Generator_ColumnPropNameInTable="DATA_VENDAColumn" msprop:Generator_UserColumnName="DATA_VENDA" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="VALOR_VENDA" msprop:Generator_ColumnVarNameInTable="columnVALOR_VENDA" msprop:Generator_ColumnPropNameInRow="VALOR_VENDA" msprop:Generator_ColumnPropNameInTable="VALOR_VENDAColumn" msprop:Generator_UserColumnName="VALOR_VENDA" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ENDERECO_ENTREGA_VENDA" msprop:Generator_ColumnVarNameInTable="columnENDERECO_ENTREGA_VENDA" msprop:Generator_ColumnPropNameInRow="ENDERECO_ENTREGA_VENDA" msprop:Generator_ColumnPropNameInTable="ENDERECO_ENTREGA_VENDAColumn" msprop:Generator_UserColumnName="ENDERECO_ENTREGA_VENDA" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:CLIENTES" />
       <xs:field xpath="mstns:ID_CLIENTE" />
+    </xs:unique>
+    <xs:unique name="VENDAS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VENDAS" />
+      <xs:field xpath="mstns:ID_VENDA" />
     </xs:unique>
     <xs:unique name="FORNECEDORES_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:FORNECEDORES" />
@@ -1317,18 +1415,24 @@ SELECT SCOPE_IDENTITY();</CommandText>
       <xs:selector xpath=".//mstns:USERS" />
       <xs:field xpath="mstns:ID_USUARIO" />
     </xs:unique>
-    <xs:unique name="VENDAS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:VENDAS" />
-      <xs:field xpath="mstns:ID_VENDA" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
+<<<<<<< HEAD
       <msdata:Relationship name="FK__FORNECIME__ID_FO__3493CFA7" msdata:parent="FORNECEDORES" msdata:child="FORNECIMENTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserChildTable="FORNECIMENTOS" msprop:Generator_ChildPropName="GetFORNECIMENTOSRows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_ParentPropName="FORNECEDORESRow" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_UserParentTable="FORNECEDORES" />
       <msdata:Relationship name="FK__PRODUTOS__ID_FOR__32E0915F" msdata:parent="FORNECEDORES" msdata:child="PRODUTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR_PRODUTO" msprop:Generator_UserChildTable="PRODUTOS" msprop:Generator_ChildPropName="GetPRODUTOSRows" msprop:Generator_UserRelationName="FK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_RelationVarName="relationFK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_UserParentTable="FORNECEDORES" msprop:Generator_ParentPropName="FORNECEDORESRow" />
       <msdata:Relationship name="FK__FORNECIME__ID_FO__412EB0B6" msdata:parent="FORNECIMENTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_FORNECIMENTO" msdata:childkey="ID_FORNECIMENTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__412EB0B6" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__412EB0B6" msprop:Generator_UserParentTable="FORNECIMENTOS" msprop:Generator_ParentPropName="FORNECIMENTOSRow" />
       <msdata:Relationship name="FK__FORNECIME__ID_PR__4222D4EF" msdata:parent="PRODUTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_ParentPropName="PRODUTOSRow" />
       <msdata:Relationship name="FK__VENDA_PRO__ID_PR__33D4B598" msdata:parent="PRODUTOS" msdata:child="VENDA_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="VENDA_PRODUTO" msprop:Generator_ChildPropName="GetVENDA_PRODUTORows" msprop:Generator_UserRelationName="FK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_RelationVarName="relationFK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_ParentPropName="PRODUTOSRow" />
+=======
+      <msdata:Relationship name="FK__VENDAS__ID_CLIEN__3864608B" msdata:parent="CLIENTES" msdata:child="VENDAS" msdata:parentkey="ID_CLIENTE" msdata:childkey="ID_CLIENTE" msprop:Generator_UserChildTable="VENDAS" msprop:Generator_ChildPropName="GetVENDASRows" msprop:Generator_UserRelationName="FK__VENDAS__ID_CLIEN__3864608B" msprop:Generator_RelationVarName="relationFK__VENDAS__ID_CLIEN__3864608B" msprop:Generator_UserParentTable="CLIENTES" msprop:Generator_ParentPropName="CLIENTESRow" />
+      <msdata:Relationship name="FK__FORNECIME__ID_FO__3493CFA7" msdata:parent="FORNECEDORES" msdata:child="FORNECIMENTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserChildTable="FORNECIMENTOS" msprop:Generator_ChildPropName="GetFORNECIMENTOSRows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_UserParentTable="FORNECEDORES" msprop:Generator_ParentPropName="FORNECEDORESRow" />
+      <msdata:Relationship name="FK__PRODUTOS__ID_FOR__32E0915F" msdata:parent="FORNECEDORES" msdata:child="PRODUTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR_PRODUTO" msprop:Generator_UserChildTable="PRODUTOS" msprop:Generator_ChildPropName="GetPRODUTOSRows" msprop:Generator_UserRelationName="FK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_ParentPropName="FORNECEDORESRow" msprop:Generator_RelationVarName="relationFK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_UserParentTable="FORNECEDORES" />
+      <msdata:Relationship name="FK__FORNECIME__ID_FO__412EB0B6" msdata:parent="FORNECIMENTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_FORNECIMENTO" msdata:childkey="ID_FORNECIMENTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__412EB0B6" msprop:Generator_ParentPropName="FORNECIMENTOSRow" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__412EB0B6" msprop:Generator_UserParentTable="FORNECIMENTOS" />
+      <msdata:Relationship name="FK__FORNECIME__ID_PR__4222D4EF" msdata:parent="PRODUTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_UserParentTable="PRODUTOS" />
+      <msdata:Relationship name="FK__VENDA_PRO__ID_PR__33D4B598" msdata:parent="PRODUTOS" msdata:child="VENDA_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="VENDA_PRODUTO" msprop:Generator_ChildPropName="GetVENDA_PRODUTORows" msprop:Generator_UserRelationName="FK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_RelationVarName="relationFK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_UserParentTable="PRODUTOS" />
+      <msdata:Relationship name="FK__VENDA_PRO__ID_VE__34C8D9D1" msdata:parent="VENDAS" msdata:child="VENDA_PRODUTO" msdata:parentkey="ID_VENDA" msdata:childkey="ID_VENDA" msprop:Generator_UserChildTable="VENDA_PRODUTO" msprop:Generator_ChildPropName="GetVENDA_PRODUTORows" msprop:Generator_UserRelationName="FK__VENDA_PRO__ID_VE__34C8D9D1" msprop:Generator_ParentPropName="VENDASRow" msprop:Generator_RelationVarName="relationFK__VENDA_PRO__ID_VE__34C8D9D1" msprop:Generator_UserParentTable="VENDAS" />
+>>>>>>> parent of 1497c66... .
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

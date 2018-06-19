@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenda));
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
@@ -65,9 +64,7 @@
             this.btnFinalizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.clientesTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.txtEndEntrega = new System.Windows.Forms.TextBox();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
             this.grbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
@@ -92,10 +89,15 @@
             this.grbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCliente.BackColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.grbCliente.Controls.Add(this.txtEndEntrega);
             this.grbCliente.Controls.Add(label4);
+=======
+>>>>>>> parent of 1497c66... .
             this.grbCliente.Controls.Add(this.rbtnCnpj);
+            this.grbCliente.Controls.Add(this.btnRemover);
             this.grbCliente.Controls.Add(this.rbtnCpf);
+            this.grbCliente.Controls.Add(this.btnAdicionar);
             this.grbCliente.Controls.Add(this.lblEndereco);
             this.grbCliente.Controls.Add(this.lblNome);
             this.grbCliente.Controls.Add(this.label2);
@@ -122,7 +124,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(101, 49);
+            this.btnRemover.Location = new System.Drawing.Point(575, 45);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
             this.btnRemover.TabIndex = 1;
@@ -146,7 +148,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(6, 49);
+            this.btnAdicionar.Location = new System.Drawing.Point(575, 16);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 0;
@@ -344,8 +346,11 @@
             this.pnlVenda.BackColor = System.Drawing.Color.White;
             this.pnlVenda.Controls.Add(this.btnCancelar);
             this.pnlVenda.Controls.Add(this.btnFinalizar);
+<<<<<<< HEAD
             this.pnlVenda.Controls.Add(this.btnRemover);
             this.pnlVenda.Controls.Add(this.btnAdicionar);
+=======
+>>>>>>> parent of 1497c66... .
             this.pnlVenda.Location = new System.Drawing.Point(555, 327);
             this.pnlVenda.Name = "pnlVenda";
             this.pnlVenda.Size = new System.Drawing.Size(195, 117);
@@ -387,6 +392,7 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
+<<<<<<< HEAD
             // label4
             // 
             label4.AutoSize = true;
@@ -406,6 +412,8 @@
             this.txtEndEntrega.TabIndex = 39;
             this.txtEndEntrega.Text = " ";
             // 
+=======
+>>>>>>> parent of 1497c66... .
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +476,5 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
         private MaterialSkin.Controls.MaterialRaisedButton btnFinalizar;
-        private System.Windows.Forms.TextBox txtEndEntrega;
     }
 }
