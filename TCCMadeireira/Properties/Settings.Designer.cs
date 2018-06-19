@@ -164,5 +164,16 @@ namespace TCCMadeireira.Properties {
                 return ((string)(this["MadeireiraConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-fqa\\fqasqlserver;Initial Catalog=Madeireira;Integrated Securi" +
+            "ty=True")]
+        public string MadeireiraConnectionString1 {
+            get {
+                return ((string)(this["MadeireiraConnectionString1"]));
+            }
+        }
     }
 }
