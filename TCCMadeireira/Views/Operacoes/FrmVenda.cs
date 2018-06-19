@@ -227,7 +227,7 @@ namespace TCCMadeireira.Views
             {
                 valorTotal += (prod.Quantidade * prod.Produto.Valor);
             }
-            valor = cmbOper.SelectedIndex == 0 ? valorTotal - (valor * numDesc.Value / 100) : valorTotal - numDesc.Value;
+            valor = cmbOper.SelectedIndex == 0 ? valorTotal - (valorTotal * numDesc.Value / 100) : valorTotal - numDesc.Value;
             lblValorTotal.Text = String.Format("Valor Total: R$ {0:f2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
