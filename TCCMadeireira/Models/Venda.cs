@@ -23,8 +23,9 @@ namespace TCCMadeireira.Models
         public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
         public decimal Valor { get => valor; set => valor = value; }
         internal Usuario Usuario { get => usuario; set => usuario = value; }
+        public string EndEntrega { get => endEntrega; set => endEntrega = value; }
 
-        public Venda(int id, Cliente cliente, Usuario usuario, List<ProdOper> produto, DateTime dataInfo, decimal valor)
+        public Venda(int id, Cliente cliente, Usuario usuario, List<ProdOper> produto, DateTime dataInfo, decimal valor, string endEntrega)
         {
             this.Id = id;
             this.Usuario = usuario;
@@ -32,23 +33,17 @@ namespace TCCMadeireira.Models
             this.Produtos = produto;
             this.DataInfo = dataInfo;
             this.Valor = valor;
-<<<<<<< HEAD
             EndEntrega = endEntrega.Trim();
-=======
->>>>>>> parent of 1497c66... .
         }
 
-        public Venda(Cliente cliente, List<ProdOper> produto, Usuario usuario, DateTime dataInfo, decimal valor)
+        public Venda(Cliente cliente, List<ProdOper> produto, Usuario usuario, DateTime dataInfo, decimal valor, string endEntrega)
         {
             this.Cliente = cliente;
             this.Usuario = usuario;
             this.Produtos = produto;
             this.DataInfo = dataInfo;
             this.Valor = valor;
-<<<<<<< HEAD
             EndEntrega = endEntrega.Trim();
-=======
->>>>>>> parent of 1497c66... .
         }
 
         public override string ToString()

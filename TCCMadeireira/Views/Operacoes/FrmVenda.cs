@@ -119,12 +119,8 @@ namespace TCCMadeireira.Views
                 {
                     throw new Exception("A venda não pode conter nenhum produto");
                 }
-<<<<<<< HEAD
                 Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor,
                     (txtEndEntrega.Text.Trim().Equals(String.Empty) ? " " : txtEndEntrega.Text));
-=======
-                Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
->>>>>>> parent of 1497c66... .
                 banco.InsertVenda(venda);
                 MessageBox.Show("Venda efetuada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
