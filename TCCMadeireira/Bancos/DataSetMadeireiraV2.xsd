@@ -892,7 +892,6 @@ where login_usuario = @login and senha_usuario = @senha</CommandText>
             </Sources>
           </TableAdapter>
 <<<<<<< HEAD
-<<<<<<< HEAD
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VENDASTableAdapter" GeneratorDataComponentClassName="VENDASTableAdapter" Name="VENDAS" UserDataComponentName="VENDASTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MadeireiraConnectionString1 (Settings)" DbObjectName="Madeireira.dbo.VENDAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -981,8 +980,6 @@ SELECT SCOPE_IDENTITY();</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-=======
->>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
         </Tables>
@@ -1086,11 +1083,8 @@ SELECT SCOPE_IDENTITY();</CommandText>
           </xs:complexType>
         </xs:element>
 <<<<<<< HEAD
-<<<<<<< HEAD
         <xs:element name="FORNECEDORES" msprop:Generator_TableClassName="FORNECEDORESDataTable" msprop:Generator_TableVarName="tableFORNECEDORES" msprop:Generator_TablePropName="FORNECEDORES" msprop:Generator_RowDeletingName="FORNECEDORESRowDeleting" msprop:Generator_RowChangingName="FORNECEDORESRowChanging" msprop:Generator_RowEvHandlerName="FORNECEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORESRowDeleted" msprop:Generator_UserTableName="FORNECEDORES" msprop:Generator_RowChangedName="FORNECEDORESRowChanged" msprop:Generator_RowEvArgName="FORNECEDORESRowChangeEvent" msprop:Generator_RowClassName="FORNECEDORESRow">
 =======
-=======
->>>>>>> parent of 1497c66... .
         <xs:element name="VENDAS" msprop:Generator_TableClassName="VENDASDataTable" msprop:Generator_TableVarName="tableVENDAS" msprop:Generator_RowChangedName="VENDASRowChanged" msprop:Generator_TablePropName="VENDAS" msprop:Generator_RowDeletingName="VENDASRowDeleting" msprop:Generator_RowChangingName="VENDASRowChanging" msprop:Generator_RowEvHandlerName="VENDASRowChangeEventHandler" msprop:Generator_RowDeletedName="VENDASRowDeleted" msprop:Generator_RowClassName="VENDASRow" msprop:Generator_UserTableName="VENDAS" msprop:Generator_RowEvArgName="VENDASRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -1425,15 +1419,12 @@ SELECT SCOPE_IDENTITY();</CommandText>
   <xs:annotation>
     <xs:appinfo>
 <<<<<<< HEAD
-<<<<<<< HEAD
       <msdata:Relationship name="FK__FORNECIME__ID_FO__3493CFA7" msdata:parent="FORNECEDORES" msdata:child="FORNECIMENTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserChildTable="FORNECIMENTOS" msprop:Generator_ChildPropName="GetFORNECIMENTOSRows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_ParentPropName="FORNECEDORESRow" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_UserParentTable="FORNECEDORES" />
       <msdata:Relationship name="FK__PRODUTOS__ID_FOR__32E0915F" msdata:parent="FORNECEDORES" msdata:child="PRODUTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR_PRODUTO" msprop:Generator_UserChildTable="PRODUTOS" msprop:Generator_ChildPropName="GetPRODUTOSRows" msprop:Generator_UserRelationName="FK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_RelationVarName="relationFK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_UserParentTable="FORNECEDORES" msprop:Generator_ParentPropName="FORNECEDORESRow" />
       <msdata:Relationship name="FK__FORNECIME__ID_FO__412EB0B6" msdata:parent="FORNECIMENTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_FORNECIMENTO" msdata:childkey="ID_FORNECIMENTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__412EB0B6" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__412EB0B6" msprop:Generator_UserParentTable="FORNECIMENTOS" msprop:Generator_ParentPropName="FORNECIMENTOSRow" />
       <msdata:Relationship name="FK__FORNECIME__ID_PR__4222D4EF" msdata:parent="PRODUTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_ParentPropName="PRODUTOSRow" />
       <msdata:Relationship name="FK__VENDA_PRO__ID_PR__33D4B598" msdata:parent="PRODUTOS" msdata:child="VENDA_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="VENDA_PRODUTO" msprop:Generator_ChildPropName="GetVENDA_PRODUTORows" msprop:Generator_UserRelationName="FK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_RelationVarName="relationFK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_ParentPropName="PRODUTOSRow" />
 =======
-=======
->>>>>>> parent of 1497c66... .
       <msdata:Relationship name="FK__VENDAS__ID_CLIEN__3864608B" msdata:parent="CLIENTES" msdata:child="VENDAS" msdata:parentkey="ID_CLIENTE" msdata:childkey="ID_CLIENTE" msprop:Generator_UserChildTable="VENDAS" msprop:Generator_ChildPropName="GetVENDASRows" msprop:Generator_UserRelationName="FK__VENDAS__ID_CLIEN__3864608B" msprop:Generator_RelationVarName="relationFK__VENDAS__ID_CLIEN__3864608B" msprop:Generator_UserParentTable="CLIENTES" msprop:Generator_ParentPropName="CLIENTESRow" />
       <msdata:Relationship name="FK__FORNECIME__ID_FO__3493CFA7" msdata:parent="FORNECEDORES" msdata:child="FORNECIMENTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserChildTable="FORNECIMENTOS" msprop:Generator_ChildPropName="GetFORNECIMENTOSRows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_FO__3493CFA7" msprop:Generator_UserParentTable="FORNECEDORES" msprop:Generator_ParentPropName="FORNECEDORESRow" />
       <msdata:Relationship name="FK__PRODUTOS__ID_FOR__32E0915F" msdata:parent="FORNECEDORES" msdata:child="PRODUTOS" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR_PRODUTO" msprop:Generator_UserChildTable="PRODUTOS" msprop:Generator_ChildPropName="GetPRODUTOSRows" msprop:Generator_UserRelationName="FK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_ParentPropName="FORNECEDORESRow" msprop:Generator_RelationVarName="relationFK__PRODUTOS__ID_FOR__32E0915F" msprop:Generator_UserParentTable="FORNECEDORES" />
@@ -1441,9 +1432,6 @@ SELECT SCOPE_IDENTITY();</CommandText>
       <msdata:Relationship name="FK__FORNECIME__ID_PR__4222D4EF" msdata:parent="PRODUTOS" msdata:child="FORNECIMENTO_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="FORNECIMENTO_PRODUTO" msprop:Generator_ChildPropName="GetFORNECIMENTO_PRODUTORows" msprop:Generator_UserRelationName="FK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_RelationVarName="relationFK__FORNECIME__ID_PR__4222D4EF" msprop:Generator_UserParentTable="PRODUTOS" />
       <msdata:Relationship name="FK__VENDA_PRO__ID_PR__33D4B598" msdata:parent="PRODUTOS" msdata:child="VENDA_PRODUTO" msdata:parentkey="ID_PRODUTO" msdata:childkey="ID_PRODUTO" msprop:Generator_UserChildTable="VENDA_PRODUTO" msprop:Generator_ChildPropName="GetVENDA_PRODUTORows" msprop:Generator_UserRelationName="FK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_RelationVarName="relationFK__VENDA_PRO__ID_PR__33D4B598" msprop:Generator_UserParentTable="PRODUTOS" />
       <msdata:Relationship name="FK__VENDA_PRO__ID_VE__34C8D9D1" msdata:parent="VENDAS" msdata:child="VENDA_PRODUTO" msdata:parentkey="ID_VENDA" msdata:childkey="ID_VENDA" msprop:Generator_UserChildTable="VENDA_PRODUTO" msprop:Generator_ChildPropName="GetVENDA_PRODUTORows" msprop:Generator_UserRelationName="FK__VENDA_PRO__ID_VE__34C8D9D1" msprop:Generator_ParentPropName="VENDASRow" msprop:Generator_RelationVarName="relationFK__VENDA_PRO__ID_VE__34C8D9D1" msprop:Generator_UserParentTable="VENDAS" />
-<<<<<<< HEAD
->>>>>>> parent of 1497c66... .
-=======
 >>>>>>> parent of 1497c66... .
     </xs:appinfo>
   </xs:annotation>

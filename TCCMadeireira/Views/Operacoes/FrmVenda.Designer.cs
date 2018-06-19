@@ -90,11 +90,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCliente.BackColor = System.Drawing.Color.White;
 <<<<<<< HEAD
-<<<<<<< HEAD
             this.grbCliente.Controls.Add(this.txtEndEntrega);
             this.grbCliente.Controls.Add(label4);
-=======
->>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
             this.grbCliente.Controls.Add(this.rbtnCnpj);
@@ -350,11 +347,8 @@
             this.pnlVenda.Controls.Add(this.btnCancelar);
             this.pnlVenda.Controls.Add(this.btnFinalizar);
 <<<<<<< HEAD
-<<<<<<< HEAD
             this.pnlVenda.Controls.Add(this.btnRemover);
             this.pnlVenda.Controls.Add(this.btnAdicionar);
-=======
->>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
             this.pnlVenda.Location = new System.Drawing.Point(555, 327);
@@ -399,7 +393,6 @@
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
 <<<<<<< HEAD
-<<<<<<< HEAD
             // label4
             // 
             label4.AutoSize = true;
@@ -419,8 +412,6 @@
             this.txtEndEntrega.TabIndex = 39;
             this.txtEndEntrega.Text = " ";
             // 
-=======
->>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
             // FrmVenda

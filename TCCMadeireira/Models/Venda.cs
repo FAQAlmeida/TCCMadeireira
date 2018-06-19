@@ -33,10 +33,7 @@ namespace TCCMadeireira.Models
             this.DataInfo = dataInfo;
             this.Valor = valor;
 <<<<<<< HEAD
-<<<<<<< HEAD
             EndEntrega = endEntrega.Trim();
-=======
->>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
         }
@@ -49,10 +46,7 @@ namespace TCCMadeireira.Models
             this.DataInfo = dataInfo;
             this.Valor = valor;
 <<<<<<< HEAD
-<<<<<<< HEAD
             EndEntrega = endEntrega.Trim();
-=======
->>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
         }
