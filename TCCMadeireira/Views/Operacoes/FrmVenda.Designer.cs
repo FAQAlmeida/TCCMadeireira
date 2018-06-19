@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenda));
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
@@ -64,7 +65,9 @@
             this.btnFinalizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.clientesTableAdapter = new TCCMadeireira.Bancos.DataSetMadeireiraV2TableAdapters.CLIENTESTableAdapter();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.txtEndEntrega = new System.Windows.Forms.TextBox();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             this.grbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetMadeireiraV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
@@ -89,10 +92,10 @@
             this.grbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCliente.BackColor = System.Drawing.Color.White;
+            this.grbCliente.Controls.Add(this.txtEndEntrega);
+            this.grbCliente.Controls.Add(label4);
             this.grbCliente.Controls.Add(this.rbtnCnpj);
-            this.grbCliente.Controls.Add(this.btnRemover);
             this.grbCliente.Controls.Add(this.rbtnCpf);
-            this.grbCliente.Controls.Add(this.btnAdicionar);
             this.grbCliente.Controls.Add(this.lblEndereco);
             this.grbCliente.Controls.Add(this.lblNome);
             this.grbCliente.Controls.Add(this.label2);
@@ -119,7 +122,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(575, 45);
+            this.btnRemover.Location = new System.Drawing.Point(101, 49);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
             this.btnRemover.TabIndex = 1;
@@ -143,7 +146,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(575, 16);
+            this.btnAdicionar.Location = new System.Drawing.Point(6, 49);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 0;
@@ -154,18 +157,16 @@
             // 
             // lblEndereco
             // 
-            this.lblEndereco.AutoSize = true;
             this.lblEndereco.Location = new System.Drawing.Point(87, 60);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(0, 13);
+            this.lblEndereco.Size = new System.Drawing.Size(241, 35);
             this.lblEndereco.TabIndex = 35;
             // 
             // lblNome
             // 
-            this.lblNome.AutoSize = true;
             this.lblNome.Location = new System.Drawing.Point(84, 37);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(0, 13);
+            this.lblNome.Size = new System.Drawing.Size(244, 23);
             this.lblNome.TabIndex = 34;
             // 
             // label2
@@ -343,6 +344,8 @@
             this.pnlVenda.BackColor = System.Drawing.Color.White;
             this.pnlVenda.Controls.Add(this.btnCancelar);
             this.pnlVenda.Controls.Add(this.btnFinalizar);
+            this.pnlVenda.Controls.Add(this.btnRemover);
+            this.pnlVenda.Controls.Add(this.btnAdicionar);
             this.pnlVenda.Location = new System.Drawing.Point(555, 327);
             this.pnlVenda.Name = "pnlVenda";
             this.pnlVenda.Size = new System.Drawing.Size(195, 117);
@@ -383,6 +386,25 @@
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(331, 16);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(143, 13);
+            label4.TabIndex = 38;
+            label4.Text = "ENDEREÇO DE ENTREGA:";
+            // 
+            // txtEndEntrega
+            // 
+            this.txtEndEntrega.Location = new System.Drawing.Point(334, 37);
+            this.txtEndEntrega.MaxLength = 250;
+            this.txtEndEntrega.Multiline = true;
+            this.txtEndEntrega.Name = "txtEndEntrega";
+            this.txtEndEntrega.Size = new System.Drawing.Size(398, 58);
+            this.txtEndEntrega.TabIndex = 39;
+            this.txtEndEntrega.Text = " ";
             // 
             // FrmVenda
             // 
@@ -446,5 +468,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
         private MaterialSkin.Controls.MaterialRaisedButton btnFinalizar;
+        private System.Windows.Forms.TextBox txtEndEntrega;
     }
 }
