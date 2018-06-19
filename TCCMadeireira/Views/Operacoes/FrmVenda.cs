@@ -121,12 +121,8 @@ namespace TCCMadeireira.Views
                 }
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
                 Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor,
                     (txtEndEntrega.Text.Trim().Equals(String.Empty) ? " " : txtEndEntrega.Text));
-=======
-                Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
->>>>>>> parent of 1497c66... .
 =======
                 Venda venda = new Venda(cliente, produtos, usuario, DateTime.Now, valor);
 >>>>>>> parent of 1497c66... .
