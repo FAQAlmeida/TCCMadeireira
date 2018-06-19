@@ -2165,6 +2165,7 @@ namespace TCCMadeireira.Bancos {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class FUNCIONARIOSDataTable : global::System.Data.TypedTableBase<FUNCIONARIOSRow> {
 <<<<<<< HEAD
+<<<<<<< HEAD
             
             private global::System.Data.DataColumn columnID_FUNCIONARIO;
             
@@ -2220,10 +2221,40 @@ namespace TCCMadeireira.Bancos {
             
             private global::System.Data.DataColumn columnCELULAR_FUNCIONARIO;
             
+=======
+            
+            private global::System.Data.DataColumn columnID_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnNOME_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnIDENTIDADE_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnCARGO_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnCEP_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnRUA_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnNUMERO_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnBAIRRO_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnCIDADE_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnESTADO_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnTELEFONE_FUNCIONARIO;
+            
+            private global::System.Data.DataColumn columnCELULAR_FUNCIONARIO;
+            
+>>>>>>> parent of 1497c66... .
             private global::System.Data.DataColumn columnEMAIL_FUNCIONARIO;
             
             private global::System.Data.DataColumn columnDATA_INFO_FUNCIONARIO;
             
+<<<<<<< HEAD
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
             private global::System.Data.DataColumn columnOBS_FUNCIONARIO;
             
@@ -2305,6 +2336,8 @@ namespace TCCMadeireira.Bancos {
             public global::System.Data.DataColumn RUA_FUNCIONARIOColumn {
                 get {
                     return this.columnRUA_FUNCIONARIO;
+<<<<<<< HEAD
+=======
                 }
             }
             
@@ -2377,20 +2410,34 @@ namespace TCCMadeireira.Bancos {
             public global::System.Data.DataColumn OBS_FUNCIONARIOColumn {
                 get {
                     return this.columnOBS_FUNCIONARIO;
+>>>>>>> parent of 1497c66... .
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
+            public global::System.Data.DataColumn NUMERO_FUNCIONARIOColumn {
                 get {
-                    return this.Rows.Count;
+                    return this.columnNUMERO_FUNCIONARIO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn BAIRRO_FUNCIONARIOColumn {
+                get {
+                    return this.columnBAIRRO_FUNCIONARIO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CIDADE_FUNCIONARIOColumn {
+                get {
+                    return this.columnCIDADE_FUNCIONARIO;
+                }
+=======
             public FUNCIONARIOSRow this[int index] {
                 get {
                     return ((FUNCIONARIOSRow)(this.Rows[index]));
@@ -2413,6 +2460,249 @@ namespace TCCMadeireira.Bancos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void AddFUNCIONARIOSRow(FUNCIONARIOSRow row) {
                 this.Rows.Add(row);
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn ESTADO_FUNCIONARIOColumn {
+                get {
+                    return this.columnESTADO_FUNCIONARIO;
+                }
+=======
+            public FUNCIONARIOSRow AddFUNCIONARIOSRow(string NOME_FUNCIONARIO, string IDENTIDADE_FUNCIONARIO, string CARGO_FUNCIONARIO, string CEP_FUNCIONARIO, string RUA_FUNCIONARIO, string NUMERO_FUNCIONARIO, string BAIRRO_FUNCIONARIO, string CIDADE_FUNCIONARIO, string ESTADO_FUNCIONARIO, string TELEFONE_FUNCIONARIO, string CELULAR_FUNCIONARIO, string EMAIL_FUNCIONARIO, System.DateTime DATA_INFO_FUNCIONARIO, string OBS_FUNCIONARIO) {
+                FUNCIONARIOSRow rowFUNCIONARIOSRow = ((FUNCIONARIOSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        NOME_FUNCIONARIO,
+                        IDENTIDADE_FUNCIONARIO,
+                        CARGO_FUNCIONARIO,
+                        CEP_FUNCIONARIO,
+                        RUA_FUNCIONARIO,
+                        NUMERO_FUNCIONARIO,
+                        BAIRRO_FUNCIONARIO,
+                        CIDADE_FUNCIONARIO,
+                        ESTADO_FUNCIONARIO,
+                        TELEFONE_FUNCIONARIO,
+                        CELULAR_FUNCIONARIO,
+                        EMAIL_FUNCIONARIO,
+                        DATA_INFO_FUNCIONARIO,
+                        OBS_FUNCIONARIO};
+                rowFUNCIONARIOSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFUNCIONARIOSRow);
+                return rowFUNCIONARIOSRow;
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn TELEFONE_FUNCIONARIOColumn {
+                get {
+                    return this.columnTELEFONE_FUNCIONARIO;
+                }
+=======
+            public FUNCIONARIOSRow FindByID_FUNCIONARIO(int ID_FUNCIONARIO) {
+                return ((FUNCIONARIOSRow)(this.Rows.Find(new object[] {
+                            ID_FUNCIONARIO})));
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn CELULAR_FUNCIONARIOColumn {
+                get {
+                    return this.columnCELULAR_FUNCIONARIO;
+                }
+=======
+            public override global::System.Data.DataTable Clone() {
+                FUNCIONARIOSDataTable cln = ((FUNCIONARIOSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn EMAIL_FUNCIONARIOColumn {
+                get {
+                    return this.columnEMAIL_FUNCIONARIO;
+                }
+=======
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FUNCIONARIOSDataTable();
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn DATA_INFO_FUNCIONARIOColumn {
+                get {
+                    return this.columnDATA_INFO_FUNCIONARIO;
+                }
+=======
+            internal void InitVars() {
+                this.columnID_FUNCIONARIO = base.Columns["ID_FUNCIONARIO"];
+                this.columnNOME_FUNCIONARIO = base.Columns["NOME_FUNCIONARIO"];
+                this.columnIDENTIDADE_FUNCIONARIO = base.Columns["IDENTIDADE_FUNCIONARIO"];
+                this.columnCARGO_FUNCIONARIO = base.Columns["CARGO_FUNCIONARIO"];
+                this.columnCEP_FUNCIONARIO = base.Columns["CEP_FUNCIONARIO"];
+                this.columnRUA_FUNCIONARIO = base.Columns["RUA_FUNCIONARIO"];
+                this.columnNUMERO_FUNCIONARIO = base.Columns["NUMERO_FUNCIONARIO"];
+                this.columnBAIRRO_FUNCIONARIO = base.Columns["BAIRRO_FUNCIONARIO"];
+                this.columnCIDADE_FUNCIONARIO = base.Columns["CIDADE_FUNCIONARIO"];
+                this.columnESTADO_FUNCIONARIO = base.Columns["ESTADO_FUNCIONARIO"];
+                this.columnTELEFONE_FUNCIONARIO = base.Columns["TELEFONE_FUNCIONARIO"];
+                this.columnCELULAR_FUNCIONARIO = base.Columns["CELULAR_FUNCIONARIO"];
+                this.columnEMAIL_FUNCIONARIO = base.Columns["EMAIL_FUNCIONARIO"];
+                this.columnDATA_INFO_FUNCIONARIO = base.Columns["DATA_INFO_FUNCIONARIO"];
+                this.columnOBS_FUNCIONARIO = base.Columns["OBS_FUNCIONARIO"];
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public global::System.Data.DataColumn OBS_FUNCIONARIOColumn {
+                get {
+                    return this.columnOBS_FUNCIONARIO;
+                }
+=======
+            private void InitClass() {
+                this.columnID_FUNCIONARIO = new global::System.Data.DataColumn("ID_FUNCIONARIO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_FUNCIONARIO);
+                this.columnNOME_FUNCIONARIO = new global::System.Data.DataColumn("NOME_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOME_FUNCIONARIO);
+                this.columnIDENTIDADE_FUNCIONARIO = new global::System.Data.DataColumn("IDENTIDADE_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDENTIDADE_FUNCIONARIO);
+                this.columnCARGO_FUNCIONARIO = new global::System.Data.DataColumn("CARGO_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCARGO_FUNCIONARIO);
+                this.columnCEP_FUNCIONARIO = new global::System.Data.DataColumn("CEP_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCEP_FUNCIONARIO);
+                this.columnRUA_FUNCIONARIO = new global::System.Data.DataColumn("RUA_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRUA_FUNCIONARIO);
+                this.columnNUMERO_FUNCIONARIO = new global::System.Data.DataColumn("NUMERO_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNUMERO_FUNCIONARIO);
+                this.columnBAIRRO_FUNCIONARIO = new global::System.Data.DataColumn("BAIRRO_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBAIRRO_FUNCIONARIO);
+                this.columnCIDADE_FUNCIONARIO = new global::System.Data.DataColumn("CIDADE_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCIDADE_FUNCIONARIO);
+                this.columnESTADO_FUNCIONARIO = new global::System.Data.DataColumn("ESTADO_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnESTADO_FUNCIONARIO);
+                this.columnTELEFONE_FUNCIONARIO = new global::System.Data.DataColumn("TELEFONE_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTELEFONE_FUNCIONARIO);
+                this.columnCELULAR_FUNCIONARIO = new global::System.Data.DataColumn("CELULAR_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCELULAR_FUNCIONARIO);
+                this.columnEMAIL_FUNCIONARIO = new global::System.Data.DataColumn("EMAIL_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEMAIL_FUNCIONARIO);
+                this.columnDATA_INFO_FUNCIONARIO = new global::System.Data.DataColumn("DATA_INFO_FUNCIONARIO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATA_INFO_FUNCIONARIO);
+                this.columnOBS_FUNCIONARIO = new global::System.Data.DataColumn("OBS_FUNCIONARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOBS_FUNCIONARIO);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_FUNCIONARIO}, true));
+                this.columnID_FUNCIONARIO.AutoIncrement = true;
+                this.columnID_FUNCIONARIO.AutoIncrementSeed = -1;
+                this.columnID_FUNCIONARIO.AutoIncrementStep = -1;
+                this.columnID_FUNCIONARIO.AllowDBNull = false;
+                this.columnID_FUNCIONARIO.ReadOnly = true;
+                this.columnID_FUNCIONARIO.Unique = true;
+                this.columnNOME_FUNCIONARIO.MaxLength = 100;
+                this.columnIDENTIDADE_FUNCIONARIO.AllowDBNull = false;
+                this.columnIDENTIDADE_FUNCIONARIO.MaxLength = 30;
+                this.columnCARGO_FUNCIONARIO.MaxLength = 50;
+                this.columnCEP_FUNCIONARIO.MaxLength = 30;
+                this.columnRUA_FUNCIONARIO.MaxLength = 100;
+                this.columnNUMERO_FUNCIONARIO.MaxLength = 30;
+                this.columnBAIRRO_FUNCIONARIO.MaxLength = 100;
+                this.columnCIDADE_FUNCIONARIO.MaxLength = 100;
+                this.columnESTADO_FUNCIONARIO.MaxLength = 2;
+                this.columnTELEFONE_FUNCIONARIO.MaxLength = 30;
+                this.columnCELULAR_FUNCIONARIO.MaxLength = 30;
+                this.columnEMAIL_FUNCIONARIO.MaxLength = 100;
+                this.columnOBS_FUNCIONARIO.MaxLength = 100;
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+=======
+            public FUNCIONARIOSRow NewFUNCIONARIOSRow() {
+                return ((FUNCIONARIOSRow)(this.NewRow()));
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public FUNCIONARIOSRow this[int index] {
+                get {
+                    return ((FUNCIONARIOSRow)(this.Rows[index]));
+                }
+=======
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FUNCIONARIOSRow(builder);
+>>>>>>> parent of 1497c66... .
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public event FUNCIONARIOSRowChangeEventHandler FUNCIONARIOSRowChanging;
+=======
+            protected override global::System.Type GetRowType() {
+                return typeof(FUNCIONARIOSRow);
+            }
+>>>>>>> parent of 1497c66... .
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public event FUNCIONARIOSRowChangeEventHandler FUNCIONARIOSRowChanged;
+=======
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FUNCIONARIOSRowChanged != null)) {
+                    this.FUNCIONARIOSRowChanged(this, new FUNCIONARIOSRowChangeEvent(((FUNCIONARIOSRow)(e.Row)), e.Action));
+                }
+            }
+>>>>>>> parent of 1497c66... .
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+            public event FUNCIONARIOSRowChangeEventHandler FUNCIONARIOSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event FUNCIONARIOSRowChangeEventHandler FUNCIONARIOSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddFUNCIONARIOSRow(FUNCIONARIOSRow row) {
+                this.Rows.Add(row);
+=======
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FUNCIONARIOSRowChanging != null)) {
+                    this.FUNCIONARIOSRowChanging(this, new FUNCIONARIOSRowChangeEvent(((FUNCIONARIOSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FUNCIONARIOSRowDeleted != null)) {
+                    this.FUNCIONARIOSRowDeleted(this, new FUNCIONARIOSRowChangeEvent(((FUNCIONARIOSRow)(e.Row)), e.Action));
+                }
+>>>>>>> parent of 1497c66... .
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4508,6 +4798,140 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+=======
+            public void SetCIDADE_CLIENTENull() {
+                this[this.tableCLIENTES.CIDADE_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsESTADO_CLIENTENull() {
+                return this.IsNull(this.tableCLIENTES.ESTADO_CLIENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetESTADO_CLIENTENull() {
+                this[this.tableCLIENTES.ESTADO_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTELEFONE_CLIENTENull() {
+                return this.IsNull(this.tableCLIENTES.TELEFONE_CLIENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTELEFONE_CLIENTENull() {
+                this[this.tableCLIENTES.TELEFONE_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCELULAR_CLIENTENull() {
+                return this.IsNull(this.tableCLIENTES.CELULAR_CLIENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCELULAR_CLIENTENull() {
+                this[this.tableCLIENTES.CELULAR_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEMAIL_CLIENTENull() {
+                return this.IsNull(this.tableCLIENTES.EMAIL_CLIENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEMAIL_CLIENTENull() {
+                this[this.tableCLIENTES.EMAIL_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDATA_INFO_CLIENTENull() {
+                return this.IsNull(this.tableCLIENTES.DATA_INFO_CLIENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDATA_INFO_CLIENTENull() {
+                this[this.tableCLIENTES.DATA_INFO_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOBS_CLIENTENull() {
+                return this.IsNull(this.tableCLIENTES.OBS_CLIENTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOBS_CLIENTENull() {
+                this[this.tableCLIENTES.OBS_CLIENTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public VENDASRow[] GetVENDASRows() {
+                if ((this.Table.ChildRelations["FK__VENDAS__ID_CLIEN__3864608B"] == null)) {
+                    return new VENDASRow[0];
+                }
+                else {
+                    return ((VENDASRow[])(base.GetChildRows(this.Table.ChildRelations["FK__VENDAS__ID_CLIEN__3864608B"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VENDASRow : global::System.Data.DataRow {
+            
+            private VENDASDataTable tableVENDAS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal VENDASRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVENDAS = ((VENDASDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID_VENDA {
+                get {
+                    return ((int)(this[this.tableVENDAS.ID_VENDAColumn]));
+                }
+                set {
+                    this[this.tableVENDAS.ID_VENDAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID_CLIENTE {
+                get {
+                    try {
+                        return ((int)(this[this.tableVENDAS.ID_CLIENTEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_CLIENTE\' in table \'VENDAS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVENDAS.ID_CLIENTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+>>>>>>> parent of 1497c66... .
             public int ID_VENDEDOR {
                 get {
                     try {
@@ -4540,6 +4964,9 @@ namespace TCCMadeireira.Bancos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
             public decimal VALOR_VENDA {
@@ -6095,15 +6522,21 @@ namespace TCCMadeireira.Bancos {
                 set {
                     this[this.tableUSERS.SENHA_USUARIOColumn] = value;
                 }
+<<<<<<< HEAD
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
 <<<<<<< HEAD
+<<<<<<< HEAD
             public void SetQUANTIDADE_PRODUTONull() {
                 this[this.tableVENDA_PRODUTO.QUANTIDADE_PRODUTOColumn] = global::System.Convert.DBNull;
 =======
+=======
+>>>>>>> parent of 1497c66... .
             public string NIVEL_USUARIO {
                 get {
                     return ((string)(this[this.tableUSERS.NIVEL_USUARIOColumn]));
@@ -6111,11 +6544,15 @@ namespace TCCMadeireira.Bancos {
                 set {
                     this[this.tableUSERS.NIVEL_USUARIOColumn] = value;
                 }
+<<<<<<< HEAD
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
             }
         }
         
         /// <summary>
+<<<<<<< HEAD
 <<<<<<< HEAD
         ///Represents strongly named DataRow class.
         ///</summary>
@@ -6151,10 +6588,13 @@ namespace TCCMadeireira.Bancos {
                     this[this.tableUSERS.LOGIN_USUARIOColumn] = value;
                 }
 =======
+=======
+>>>>>>> parent of 1497c66... .
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public class CLIENTESRowChangeEvent : global::System.EventArgs {
+<<<<<<< HEAD
             
             private CLIENTESRow eventRow;
             
@@ -6211,18 +6651,31 @@ namespace TCCMadeireira.Bancos {
             
             private VENDASRow eventRow;
             
+=======
+            
+            private CLIENTESRow eventRow;
+            
+>>>>>>> parent of 1497c66... .
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
             public VENDASRowChangeEvent(VENDASRow row, global::System.Data.DataRowAction action) {
+=======
+            public CLIENTESRowChangeEvent(CLIENTESRow row, global::System.Data.DataRowAction action) {
+>>>>>>> parent of 1497c66... .
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+<<<<<<< HEAD
             public VENDASRow Row {
+=======
+            public CLIENTESRow Row {
+>>>>>>> parent of 1497c66... .
                 get {
                     return this.eventRow;
                 }
@@ -6509,6 +6962,9 @@ namespace TCCMadeireira.Bancos {
                 }
             }
         }
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
     }
@@ -7511,6 +7967,7 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
         public virtual int Update(global::System.Nullable<int> ID_CLIENTE, global::System.Nullable<int> ID_VENDEDOR, global::System.Nullable<global::System.DateTime> DATA_VENDA, global::System.Nullable<decimal> VALOR_VENDA, int Original_ID_VENDA) {
             if ((ID_CLIENTE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_CLIENTE.Value));
+<<<<<<< HEAD
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -7548,6 +8005,45 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA FROM VENDAS WH
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+=======
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((ID_VENDEDOR.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID_VENDEDOR.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DATA_VENDA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DATA_VENDA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((VALOR_VENDA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(VALOR_VENDA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_VENDA));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+>>>>>>> parent of 1497c66... .
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7967,6 +8463,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
             if ((CIDADE_FORNECEDOR == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+<<<<<<< HEAD
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(CIDADE_FORNECEDOR));
             }
@@ -7992,6 +8489,79 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
+=======
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string NOME_FORNECEDOR, string IDENTIDADE_FORNECEDOR, string CEP_FORNECEDOR, string RUA_FORNECEDOR, string NUMERO_FORNECEDOR, string BAIRRO_FORNECEDOR, string CIDADE_FORNECEDOR, string ESTADO_FORNECEDOR, string TELEFONE_FORNECEDOR, string CELULAR_FORNECEDOR, string EMAIL_FORNECEDOR, global::System.Nullable<global::System.DateTime> DATA_INFO_FORNECEDOR, string OBS_FORNECEDOR) {
+            if ((NOME_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NOME_FORNECEDOR));
+            }
+            if ((IDENTIDADE_FORNECEDOR == null)) {
+                throw new global::System.ArgumentNullException("IDENTIDADE_FORNECEDOR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(IDENTIDADE_FORNECEDOR));
+            }
+            if ((CEP_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CEP_FORNECEDOR));
+            }
+            if ((RUA_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(RUA_FORNECEDOR));
+            }
+            if ((NUMERO_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NUMERO_FORNECEDOR));
+            }
+            if ((BAIRRO_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(BAIRRO_FORNECEDOR));
+            }
+            if ((CIDADE_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(CIDADE_FORNECEDOR));
+            }
+            if ((ESTADO_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ESTADO_FORNECEDOR));
+            }
+            if ((TELEFONE_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(TELEFONE_FORNECEDOR));
+            }
+            if ((CELULAR_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CELULAR_FORNECEDOR));
+            }
+            if ((EMAIL_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+>>>>>>> parent of 1497c66... .
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(EMAIL_FORNECEDOR));
             }
             if ((DATA_INFO_FORNECEDOR.HasValue == true)) {
@@ -8066,6 +8636,9 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
             if ((CIDADE_FORNECEDOR == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 1497c66... .
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(CIDADE_FORNECEDOR));
@@ -8100,6 +8673,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
+<<<<<<< HEAD
 =======
             }
             else {
@@ -8135,6 +8709,8 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, IDENTIDADE_FORNECEDOR, CEP_FORNECEDOR, RU
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
             if ((OBS_FORNECEDOR == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
@@ -8491,6 +9067,7 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
         public virtual int Update(global::System.Nullable<global::System.DateTime> DATA_FORNECIMENTO, global::System.Nullable<decimal> VALOR_FORNECIMENTO, global::System.Nullable<int> ID_FORNECEDOR, string OBS_FORNECIMENTO, int ID_FORNECIMENTO) {
             if ((DATA_FORNECIMENTO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DATA_FORNECIMENTO.Value));
+<<<<<<< HEAD
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -8530,6 +9107,45 @@ SELECT ID_FORNECIMENTO, DATA_FORNECIMENTO, VALOR_FORNECIMENTO, ID_FORNECEDOR, OB
                 }
             }
 =======
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OBS_FORNECIMENTO));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_FORNECIMENTO));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+>>>>>>> parent of 1497c66... .
+=======
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((VALOR_FORNECIMENTO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(VALOR_FORNECIMENTO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ID_FORNECEDOR.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ID_FORNECEDOR.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((OBS_FORNECIMENTO == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OBS_FORNECIMENTO));
@@ -8920,6 +9536,7 @@ WHERE IDENTIDADE_FUNCIONARIO = @IDENTIDADE_FUNCIONARIO";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NOME_FUNCIONARIO));
+<<<<<<< HEAD
             }
             if ((IDENTIDADE_FUNCIONARIO == null)) {
                 throw new global::System.ArgumentNullException("IDENTIDADE_FUNCIONARIO");
@@ -8997,6 +9614,85 @@ WHERE IDENTIDADE_FUNCIONARIO = @IDENTIDADE_FUNCIONARIO";
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
+=======
+            }
+            if ((IDENTIDADE_FUNCIONARIO == null)) {
+                throw new global::System.ArgumentNullException("IDENTIDADE_FUNCIONARIO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(IDENTIDADE_FUNCIONARIO));
+            }
+            if ((CARGO_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CARGO_FUNCIONARIO));
+            }
+            if ((CEP_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CEP_FUNCIONARIO));
+            }
+            if ((RUA_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(RUA_FUNCIONARIO));
+            }
+            if ((NUMERO_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(NUMERO_FUNCIONARIO));
+            }
+            if ((BAIRRO_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(BAIRRO_FUNCIONARIO));
+            }
+            if ((CIDADE_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(CIDADE_FUNCIONARIO));
+            }
+            if ((ESTADO_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(ESTADO_FUNCIONARIO));
+            }
+            if ((TELEFONE_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(TELEFONE_FUNCIONARIO));
+            }
+            if ((CELULAR_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CELULAR_FUNCIONARIO));
+            }
+            if ((EMAIL_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(EMAIL_FUNCIONARIO));
+            }
+            if ((DATA_INFO_FUNCIONARIO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(DATA_INFO_FUNCIONARIO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((OBS_FUNCIONARIO == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+>>>>>>> parent of 1497c66... .
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(OBS_FUNCIONARIO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
@@ -9488,8 +10184,11 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             if ((NOME_PRODUTO == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
 =======
+=======
+>>>>>>> parent of 1497c66... .
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NOME_PRODUTO));
@@ -9501,6 +10200,7 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NOME_PRODUTO));
             }
+<<<<<<< HEAD
 <<<<<<< HEAD
             if ((QUANTIDADE_PRODUTO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(QUANTIDADE_PRODUTO.Value));
@@ -9513,6 +10213,8 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
 <<<<<<< HEAD
+=======
+>>>>>>> parent of 1497c66... .
             if ((VALOR_PRODUTO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(VALOR_PRODUTO.Value));
             }
@@ -9534,6 +10236,7 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_PRODUTO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+<<<<<<< HEAD
 =======
             if ((ID_FORNECEDOR_PRODUTO.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_FORNECEDOR_PRODUTO.Value));
@@ -9675,6 +10378,37 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
+=======
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEstoqueFornecimento(global::System.Nullable<decimal> QUANTIDADE_PRODUTO, int ID_PRODUTO) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((QUANTIDADE_PRODUTO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(QUANTIDADE_PRODUTO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(ID_PRODUTO));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
             int returnValue;
@@ -9687,6 +10421,40 @@ SELECT ID_PRODUTO, NOME_PRODUTO, QUANTIDADE_PRODUTO, VALOR_PRODUTO, ID_FORNECEDO
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEstoqueVenda(global::System.Nullable<decimal> QUANTIDADE_PRODUTO, int ID_PRODUTO) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((QUANTIDADE_PRODUTO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(QUANTIDADE_PRODUTO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(ID_PRODUTO));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+>>>>>>> parent of 1497c66... .
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
         }
@@ -10632,9 +11400,15 @@ SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM VENDA_PRO
             this._adapter.DeleteCommand.Connection = this.Connection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this._adapter.DeleteCommand.CommandText = "DELETE FROM VENDAS\r\nWHERE        (ID_VENDA = @ID_VENDA)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_VENDA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_VENDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+=======
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM USERS\r\nWHERE        (ID_USUARIO = @ID_USUARIO)";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_USUARIO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+>>>>>>> parent of 1497c66... .
 =======
             this._adapter.DeleteCommand.CommandText = "DELETE FROM USERS\r\nWHERE        (ID_USUARIO = @ID_USUARIO)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
@@ -10659,6 +11433,7 @@ SELECT ID_VENDA_PRODUTO, ID_VENDA, ID_PRODUTO, QUANTIDADE_PRODUTO FROM VENDA_PRO
             this._adapter.UpdateCommand.Connection = this.Connection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this._adapter.UpdateCommand.CommandText = @"UPDATE       VENDAS
 SET                ID_CLIENTE = @ID_CLIENTE, ID_VENDEDOR = @ID_VENDEDOR, DATA_VENDA = @DATA_VENDA, VALOR_VENDA = @VALOR_VENDA, ENDERECO_ENTREGA_VENDA = @ENDERECO_ENTREGA_VENDA
 WHERE        (ID_VENDA = @ID_VENDA); 
@@ -10666,11 +11441,16 @@ SELECT ID_VENDA, ID_CLIENTE, ID_VENDEDOR, DATA_VENDA, VALOR_VENDA, ENDERECO_ENTR
 =======
 =======
 >>>>>>> parent of 1497c66... .
+=======
+>>>>>>> parent of 1497c66... .
             this._adapter.UpdateCommand.CommandText = @"UPDATE       USERS
 SET                LOGIN_USUARIO = @LOGIN_USUARIO, SENHA_USUARIO = @SENHA_USUARIO, NIVEL_USUARIO = @NIVEL_USUARIO
 WHERE        (ID_USUARIO = @ID_USUARIO); 
 SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE (ID_USUARIO = @ID_USUARIO)";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
@@ -10707,6 +11487,7 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
             this._commandCollection[2].Connection = this.Connection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this._commandCollection[2].CommandText = "INSERT INTO VENDAS\r\n                         (ID_CLIENTE, ID_VENDEDOR, DATA_VENDA" +
                 ", VALOR_VENDA, ENDERECO_ENTREGA_VENDA)\r\nVALUES        (@ID_CLIENTE,@ID_VENDEDOR," +
                 "@DATA_VENDA,@VALOR_VENDA,@ENDERECO_ENTREGA_VENDA);    \r\nSELECT SCOPE_IDENTITY();" +
@@ -10726,6 +11507,11 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
                 "ere id_usuario = @id_usuario";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
 >>>>>>> parent of 1497c66... .
+=======
+            this._commandCollection[2].CommandText = "SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM dbo.USERS\r\nwh" +
+                "ere id_usuario = @id_usuario";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+>>>>>>> parent of 1497c66... .
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_usuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -10735,6 +11521,9 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "LOGIN_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senha", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "SENHA_USUARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
@@ -10834,8 +11623,13 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         public virtual int Delete(int ID_VENDA) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_VENDA));
+=======
+        public virtual int Delete(int ID_USUARIO) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_USUARIO));
+>>>>>>> parent of 1497c66... .
 =======
         public virtual int Delete(int ID_USUARIO) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID_USUARIO));
@@ -10944,6 +11738,7 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         public virtual object InsertVenda(global::System.Nullable<int> ID_CLIENTE, global::System.Nullable<int> ID_VENDEDOR, global::System.Nullable<global::System.DateTime> DATA_VENDA, global::System.Nullable<decimal> VALOR_VENDA, string ENDERECO_ENTREGA_VENDA) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((ID_CLIENTE.HasValue == true)) {
@@ -10963,11 +11758,16 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
 =======
 =======
 >>>>>>> parent of 1497c66... .
+=======
+>>>>>>> parent of 1497c66... .
         public virtual object LoginValidation(string login, string senha) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((login == null)) {
                 throw new global::System.ArgumentNullException("login");
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1497c66... .
+=======
 >>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
@@ -10981,12 +11781,15 @@ SELECT ID_USUARIO, LOGIN_USUARIO, SENHA_USUARIO, NIVEL_USUARIO FROM USERS WHERE 
             else {
                 command.Parameters[1].Value = ((string)(senha));
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
             if ((ENDERECO_ENTREGA_VENDA == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[4].Value = ((string)(ENDERECO_ENTREGA_VENDA));
+=======
+>>>>>>> parent of 1497c66... .
 =======
 >>>>>>> parent of 1497c66... .
             }
