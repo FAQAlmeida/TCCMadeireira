@@ -221,8 +221,6 @@ namespace TCCMadeireira.Views
         {
             try
             {
-                if (Properties.Settings.Default.nivelUsuario != "Admin")
-                    throw new Exception("O usuário atual não tem permissão de acesso a este formulário");
                 if (Application.OpenForms["FrmUsuario"] == null)
                 {
                     frmUsuario = new FrmUsuario
@@ -242,45 +240,7 @@ namespace TCCMadeireira.Views
             }
         }
         #region Relatorios
-        private void vendasDiaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vendasMêsToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Application.OpenForms["FrmFiltrarVendasData"] == null)
-                {
-                    frmRelatorioVendasFiltro = new FrmFiltrarVendasData
-                    {
-                        MdiParent = this
-                    };
-                    frmRelatorioVendasFiltro.Show();
-                }
-                else
-                {
-                    Application.OpenForms[frmRelatorioVendasFiltro.Name].Close();
-                    frmRelatorioVendas = new FrmRelatorioVendas
-                    {
-                        MdiParent = this
-                    };
-                    frmRelatorioVendasFiltro.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void vendasAnoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vendasToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void VendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -307,25 +267,32 @@ namespace TCCMadeireira.Views
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void diaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void vendasMêsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void mêsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void anoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void totalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            try
+            {
+                if (Application.OpenForms["FrmFiltrarVendasData"] == null)
+                {
+                    frmRelatorioVendasFiltro = new FrmFiltrarVendasData
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendasFiltro.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmRelatorioVendasFiltro.Name].Close();
+                    frmRelatorioVendas = new FrmRelatorioVendas
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendasFiltro.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
         #endregion
@@ -365,9 +332,8 @@ namespace TCCMadeireira.Views
             timer.Start();
         }
 
-
         #endregion
 
-
+        
     }
 }

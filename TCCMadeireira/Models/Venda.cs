@@ -10,7 +10,6 @@ namespace TCCMadeireira.Models
     class Venda
     {
         private int id;
-        private string endEntrega;
         private Cliente cliente;
         private Usuario usuario;
         private List<ProdOper> produtos;
@@ -23,9 +22,8 @@ namespace TCCMadeireira.Models
         public DateTime DataInfo { get => dataInfo; set => dataInfo = value; }
         public decimal Valor { get => valor; set => valor = value; }
         internal Usuario Usuario { get => usuario; set => usuario = value; }
-        public string EndEntrega { get => endEntrega; set => endEntrega = value; }
 
-        public Venda(int id, Cliente cliente, Usuario usuario, List<ProdOper> produto, DateTime dataInfo, decimal valor, string endEntrega)
+        public Venda(int id, Cliente cliente, Usuario usuario, List<ProdOper> produto, DateTime dataInfo, decimal valor)
         {
             this.Id = id;
             this.Usuario = usuario;
@@ -33,17 +31,15 @@ namespace TCCMadeireira.Models
             this.Produtos = produto;
             this.DataInfo = dataInfo;
             this.Valor = valor;
-            EndEntrega = endEntrega;
         }
 
-        public Venda(Cliente cliente, List<ProdOper> produto, Usuario usuario, DateTime dataInfo, decimal valor, string endEntrega)
+        public Venda(Cliente cliente, List<ProdOper> produto, Usuario usuario, DateTime dataInfo, decimal valor)
         {
             this.Cliente = cliente;
             this.Usuario = usuario;
             this.Produtos = produto;
             this.DataInfo = dataInfo;
             this.Valor = valor;
-            EndEntrega = endEntrega;
         }
 
         public override string ToString()
@@ -59,7 +55,7 @@ namespace TCCMadeireira.Models
                 "Produtos: \n{2}\n" +
                 "Data: {3}\n" +
                 "Vendedor: {4}\n" +
-                "Valor: R${5}", Id, Cliente.Nome, @string, DataInfo, Usuario.Nome, Valor, EndEntrega);
+                "Valor: R${5}", Id, Cliente.Nome, @string, DataInfo, Usuario.Nome, Valor);
         }
     }
 }
