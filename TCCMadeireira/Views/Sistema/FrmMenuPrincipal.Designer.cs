@@ -45,10 +45,13 @@
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.diaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.diaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasMêsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -170,18 +173,50 @@
             // relatóriosToolStripMenuItem
             // 
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendasToolStripMenuItem,
-            this.vendasMêsToolStripMenuItem});
+            this.vendasToolStripMenuItem1,
+            this.fornecimentosToolStripMenuItem});
+            this.relatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
-            // vendasToolStripMenuItem
+            // vendasToolStripMenuItem1
             // 
-            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vendasToolStripMenuItem.Text = "Vendas";
-            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.VendasToolStripMenuItem_Click);
+            this.vendasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.totalToolStripMenuItem,
+            this.diaToolStripMenuItem});
+            this.vendasToolStripMenuItem1.Name = "vendasToolStripMenuItem1";
+            this.vendasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.vendasToolStripMenuItem1.Text = "Vendas";
+            // 
+            // totalToolStripMenuItem
+            // 
+            this.totalToolStripMenuItem.Name = "totalToolStripMenuItem";
+            this.totalToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.totalToolStripMenuItem.Text = "Total";
+            this.totalToolStripMenuItem.Click += new System.EventHandler(this.totalToolStripMenuItem_Click);
+            // 
+            // diaToolStripMenuItem
+            // 
+            this.diaToolStripMenuItem.Name = "diaToolStripMenuItem";
+            this.diaToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.diaToolStripMenuItem.Text = "Mês";
+            this.diaToolStripMenuItem.Click += new System.EventHandler(this.MesToolStripMenuItem_Click);
+            // 
+            // fornecimentosToolStripMenuItem
+            // 
+            this.fornecimentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.diaToolStripMenuItem1});
+            this.fornecimentosToolStripMenuItem.Name = "fornecimentosToolStripMenuItem";
+            this.fornecimentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecimentosToolStripMenuItem.Text = "Fornecimentos";
+            // 
+            // diaToolStripMenuItem1
+            // 
+            this.diaToolStripMenuItem1.Name = "diaToolStripMenuItem1";
+            this.diaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.diaToolStripMenuItem1.Text = "Mês";
+            this.diaToolStripMenuItem1.Click += new System.EventHandler(this.MesToolStripMenuItem1_Click);
             // 
             // sistemaToolStripMenuItem
             // 
@@ -197,13 +232,6 @@
             this.backupToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.backupToolStripMenuItem.Text = "Backup";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.BackupToolStripMenuItem_Click);
-            // 
-            // vendasMêsToolStripMenuItem
-            // 
-            this.vendasMêsToolStripMenuItem.Name = "vendasMêsToolStripMenuItem";
-            this.vendasMêsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vendasMêsToolStripMenuItem.Text = "Vendas Mês";
-            this.vendasMêsToolStripMenuItem.Click += new System.EventHandler(this.vendasMêsToolStripMenuItem_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -254,7 +282,10 @@
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasMêsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem totalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem diaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fornecimentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem diaToolStripMenuItem1;
     }
 }

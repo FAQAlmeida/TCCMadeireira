@@ -146,7 +146,7 @@
             "R$"});
             this.cmbOper.Location = new System.Drawing.Point(126, 31);
             this.cmbOper.Name = "cmbOper";
-            this.cmbOper.Size = new System.Drawing.Size(48, 21);
+            this.cmbOper.Size = new System.Drawing.Size(52, 21);
             this.cmbOper.TabIndex = 7;
             this.cmbOper.SelectedIndexChanged += new System.EventHandler(this.CmbOper_SelectedIndexChanged);
             // 

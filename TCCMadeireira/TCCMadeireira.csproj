@@ -215,6 +215,12 @@
     <Compile Include="Views\Cadastro\FrmFuncionario.Designer.cs">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Relatorios\Views\Fornecimento\FrmRelatorioFornecimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\Views\Fornecimento\FrmRelatorioFornecimento.Designer.cs">
+      <DependentUpon>FrmRelatorioFornecimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Relatorios\Views\Venda\FrmRelatorioMovimentoEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,8 +298,12 @@
     <EmbeddedResource Include="Views\Cadastro\FrmFuncionario.resx">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\Reports\Fornecimento\ReportFornecimento.rdlc" />
     <EmbeddedResource Include="Views\Relatorios\Reports\Venda\VendasDataReport.rdlc" />
     <EmbeddedResource Include="Views\Relatorios\Reports\Venda\VendasReport.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\Views\Fornecimento\FrmRelatorioFornecimento.resx">
+      <DependentUpon>FrmRelatorioFornecimento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\Views\Venda\FrmRelatorioMovimentoEstoque.resx">
       <DependentUpon>FrmRelatorioMovimentoEstoque.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,8 +418,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Relatorios\Views\Fornecimento\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

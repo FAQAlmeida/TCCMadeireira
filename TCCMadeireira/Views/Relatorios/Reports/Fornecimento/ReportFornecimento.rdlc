@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID DA VENDA: </Value>
+                              <Value>ID DO FORNCIMENTO: </Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>14pt</FontSize>
@@ -40,7 +40,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>=Fields!ID_VENDA.Value</Value>
+                              <Value>=Fields!ID_FORNECIMENTO.Value</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>14pt</FontSize>
@@ -99,7 +99,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DATA DA VENDA: </Value>
+                              <Value>DATA DO FORNECIMENTO: </Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -115,7 +115,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DATA_VENDA.Value</Value>
+                              <Value>=Fields!DATA_FORNECIMENTO.Value</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -176,7 +176,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>VALOR VENDA: </Value>
+                              <Value>VALOR: </Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -185,7 +185,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>=Fields!VALOR_VENDA.Value</Value>
+                              <Value>=Fields!VALOR_FORNECIMENTO.Value</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -290,14 +290,14 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CLIENTE: </Value>
+                              <Value>FORNECEDOR: </Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>=Fields!NOME_CLIENTE.Value</Value>
+                              <Value>=Fields!NOME_FORNECEDOR.Value</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -332,14 +332,14 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>IDENTIDADE CLIENTE: </Value>
+                              <Value>IDENTIDADE: </Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>=Fields!IDENTIDADE_CLIENTE.Value</Value>
+                              <Value>=Fields!IDENTIDADE_FORNECEDOR.Value</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -374,14 +374,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>VENDEDOR: </Value>
-                              <Style>
-                                <FontFamily>times New Roman</FontFamily>
-                                <FontSize>11pt</FontSize>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>=Fields!LOGIN_USUARIO.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -646,14 +639,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QUANTIDADE_PRODUTO_VENDA_PRODUTO">
+                    <Textbox Name="QUANTIDADE_PRODUTO">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QUANTIDADE_PRODUTO_VENDA_PRODUTO.Value</Value>
+                              <Value>=Fields!QUANTIDADE_PRODUTO.Value</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <Format>n4</Format>
@@ -665,7 +658,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QUANTIDADE_PRODUTO_VENDA_PRODUTO</rd:DefaultName>
+                      <rd:DefaultName>QUANTIDADE_PRODUTO</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -851,7 +844,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox26">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -859,7 +852,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <Format>n4</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -867,7 +862,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -992,9 +987,9 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
-              <Group Name="ID_VENDA">
+              <Group Name="ID_Fornecimento">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!ID_VENDA.Value</GroupExpression>
+                  <GroupExpression>=Fields!ID_FORNECIMENTO.Value</GroupExpression>
                 </GroupExpressions>
                 <PageBreak>
                   <BreakLocation>Between</BreakLocation>
@@ -1002,7 +997,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!ID_VENDA.Value</Value>
+                  <Value>=Fields!ID_FORNECIMENTO.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -1031,13 +1026,13 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetVendas</DataSetName>
+        <DataSetName>DataSet1</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=Month(Fields!DATA_VENDA.Value)</FilterExpression>
+            <FilterExpression>=Month(Fields!DATA_FORNECIMENTO.Value)</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>= Month(Now())</FilterValue>
+              <FilterValue>=Month(Today())</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
@@ -1105,7 +1100,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Relatório de Vendas</Value>
+                  <Value>Relatório de Fornecimento</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>24pt</FontSize>
@@ -1120,7 +1115,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox17</rd:DefaultName>
           <Top>2cm</Top>
-          <Left>5.4cm</Left>
+          <Left>5.47056cm</Left>
           <Height>1.5cm</Height>
           <Width>22.3cm</Width>
           <ZIndex>1</ZIndex>
@@ -1165,8 +1160,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.65537cm</Top>
-          <Left>18.89cm</Left>
+          <Top>0.7cm</Top>
+          <Left>18.96056cm</Left>
           <Height>0.6cm</Height>
           <Width>8.81cm</Width>
           <Style>
@@ -1203,86 +1198,122 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>2bd3c26a-aad3-4bed-a786-ab4ef066837f</rd:DataSourceID>
+      <rd:DataSourceID>a8d80547-c00f-48d7-8892-918510a0ec4b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetVendas">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DataSetReport</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID_CLIENTE">
-          <DataField>ID_CLIENTE</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NOME_CLIENTE">
-          <DataField>NOME_CLIENTE</DataField>
+        <Field Name="NOME_FORNECEDOR">
+          <DataField>NOME_FORNECEDOR</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IDENTIDADE_CLIENTE">
-          <DataField>IDENTIDADE_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CEP_CLIENTE">
-          <DataField>CEP_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RUA_CLIENTE">
-          <DataField>RUA_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NUMERO_CLIENTE">
-          <DataField>NUMERO_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BAIRRO_CLIENTE">
-          <DataField>BAIRRO_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CIDADE_CLIENTE">
-          <DataField>CIDADE_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ESTADO_CLIENTE">
-          <DataField>ESTADO_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TELEFONE_CLIENTE">
-          <DataField>TELEFONE_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CELULAR_CLIENTE">
-          <DataField>CELULAR_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EMAIL_CLIENTE">
-          <DataField>EMAIL_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DATA_INFO_CLIENTE">
-          <DataField>DATA_INFO_CLIENTE</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="OBS_CLIENTE">
-          <DataField>OBS_CLIENTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ID_PRODUTO">
-          <DataField>ID_PRODUTO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NOME_PRODUTO">
-          <DataField>NOME_PRODUTO</DataField>
+        <Field Name="IDENTIDADE_FORNECEDOR">
+          <DataField>IDENTIDADE_FORNECEDOR</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="QUANTIDADE_PRODUTO">
           <DataField>QUANTIDADE_PRODUTO</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="NOME_PRODUTO">
+          <DataField>NOME_PRODUTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="VALOR_PRODUTO">
           <DataField>VALOR_PRODUTO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="VALOR_FORNECIMENTO">
+          <DataField>VALOR_FORNECIMENTO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DATA_FORNECIMENTO">
+          <DataField>DATA_FORNECIMENTO</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="OBS_FORNECIMENTO">
+          <DataField>OBS_FORNECIMENTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID_FORNECIMENTO">
+          <DataField>ID_FORNECIMENTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_FORNECEDOR">
+          <DataField>ID_FORNECEDOR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CEP_FORNECEDOR">
+          <DataField>CEP_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RUA_FORNECEDOR">
+          <DataField>RUA_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NUMERO_FORNECEDOR">
+          <DataField>NUMERO_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BAIRRO_FORNECEDOR">
+          <DataField>BAIRRO_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CIDADE_FORNECEDOR">
+          <DataField>CIDADE_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ESTADO_FORNECEDOR">
+          <DataField>ESTADO_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TELEFONE_FORNECEDOR">
+          <DataField>TELEFONE_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CELULAR_FORNECEDOR">
+          <DataField>CELULAR_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EMAIL_FORNECEDOR">
+          <DataField>EMAIL_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DATA_INFO_FORNECEDOR">
+          <DataField>DATA_INFO_FORNECEDOR</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="OBS_FORNECEDOR">
+          <DataField>OBS_FORNECEDOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_FORNECIMENTO_PRODUTO">
+          <DataField>ID_FORNECIMENTO_PRODUTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr2">
+          <DataField>Expr2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_PRODUTO">
+          <DataField>ID_PRODUTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr3">
+          <DataField>Expr3</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr4">
+          <DataField>Expr4</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ID_FORNECEDOR_PRODUTO">
@@ -1293,58 +1324,6 @@
           <DataField>OBS_PRODUTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_USUARIO">
-          <DataField>ID_USUARIO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="LOGIN_USUARIO">
-          <DataField>LOGIN_USUARIO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SENHA_USUARIO">
-          <DataField>SENHA_USUARIO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NIVEL_USUARIO">
-          <DataField>NIVEL_USUARIO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ID_VENDA_PRODUTO">
-          <DataField>ID_VENDA_PRODUTO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ID_VENDA">
-          <DataField>ID_VENDA</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ID_VENDEDOR">
-          <DataField>ID_VENDEDOR</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DATA_VENDA">
-          <DataField>DATA_VENDA</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="VALOR_VENDA">
-          <DataField>VALOR_VENDA</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ID_VENDA_VENDA_PRODUTO">
-          <DataField>ID_VENDA_VENDA_PRODUTO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ID_PRODUTO_VENDA_PRODUTO">
-          <DataField>ID_PRODUTO_VENDA_PRODUTO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="QUANTIDADE_PRODUTO_VENDA_PRODUTO">
-          <DataField>QUANTIDADE_PRODUTO_VENDA_PRODUTO</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ID_CLIENTE_VENDAS">
-          <DataField>ID_CLIENTE_VENDAS</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="VALORTOTALITEM">
           <DataField>VALORTOTALITEM</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -1353,10 +1332,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetReport</rd:DataSetName>
         <rd:SchemaPath>C:\Users\otavi\OneDrive\Documentos\Projetos\CSHARP\TCCMadeireira\TCCMadeireira\Bancos\DataSetReport.xsd</rd:SchemaPath>
-        <rd:TableName>DataTable1</rd:TableName>
+        <rd:TableName>DataTable2</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>DataTable1TableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>DataTable2TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -1422,5 +1401,5 @@ KtlXSgMydzOQ+ZtW+PkRUvvyXbK9KjoA2By5Fvsj117x5waFn72ROa0jW5l9C5C5n4sEIWcj1/Ic5HyY
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>9aac1c2a-d6ff-4e2e-a5be-cf52b30cfb1a</rd:ReportID>
+  <rd:ReportID>67e9aada-7744-438b-b500-685ce17b2e50</rd:ReportID>
 </Report>

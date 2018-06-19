@@ -67,15 +67,47 @@ FROM            VENDA_PRODUTO INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MadeireiraConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FORNECEDORES.NOME_FORNECEDOR, FORNECEDORES.IDENTIDADE_FORNECEDOR, FORNECIMENTO_PRODUTO.QUANTIDADE_PRODUTO, PRODUTOS.NOME_PRODUTO, FORNECIMENTOS.VALOR_FORNECIMENTO, 
+                         FORNECIMENTOS.DATA_FORNECIMENTO, FORNECIMENTOS.ID_FORNECIMENTO, FORNECEDORES.ID_FORNECEDOR, 
+                         PRODUTOS.VALOR_PRODUTO * FORNECIMENTO_PRODUTO.QUANTIDADE_PRODUTO AS VALORTOTALITEM, PRODUTOS.VALOR_PRODUTO
+FROM            FORNECEDORES INNER JOIN
+                         FORNECIMENTOS ON FORNECEDORES.ID_FORNECEDOR = FORNECIMENTOS.ID_FORNECEDOR INNER JOIN
+                         FORNECIMENTO_PRODUTO ON FORNECIMENTOS.ID_FORNECIMENTO = FORNECIMENTO_PRODUTO.ID_FORNECIMENTO INNER JOIN
+                         PRODUTOS ON FORNECEDORES.ID_FORNECEDOR = PRODUTOS.ID_FORNECEDOR_PRODUTO AND FORNECIMENTO_PRODUTO.ID_PRODUTO = PRODUTOS.ID_PRODUTO CROSS JOIN
+                         USERS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOME_FORNECEDOR" DataSetColumn="NOME_FORNECEDOR" />
+              <Mapping SourceColumn="IDENTIDADE_FORNECEDOR" DataSetColumn="IDENTIDADE_FORNECEDOR" />
+              <Mapping SourceColumn="QUANTIDADE_PRODUTO" DataSetColumn="QUANTIDADE_PRODUTO" />
+              <Mapping SourceColumn="NOME_PRODUTO" DataSetColumn="NOME_PRODUTO" />
+              <Mapping SourceColumn="VALOR_PRODUTO" DataSetColumn="VALOR_PRODUTO" />
+              <Mapping SourceColumn="VALOR_FORNECIMENTO" DataSetColumn="VALOR_FORNECIMENTO" />
+              <Mapping SourceColumn="DATA_FORNECIMENTO" DataSetColumn="DATA_FORNECIMENTO" />
+              <Mapping SourceColumn="ID_FORNECIMENTO" DataSetColumn="ID_FORNECIMENTO" />
+              <Mapping SourceColumn="ID_FORNECEDOR" DataSetColumn="ID_FORNECEDOR" />
+              <Mapping SourceColumn="VALORTOTALITEM" DataSetColumn="VALORTOTALITEM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReport" msprop:Generator_UserDSName="DataSetReport">
+  <xs:element name="DataSetReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReport" msprop:Generator_UserDSName="DataSetReport">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_CLIENTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_CLIENTE" msprop:Generator_ColumnPropNameInRow="ID_CLIENTE" msprop:Generator_ColumnPropNameInTable="ID_CLIENTEColumn" msprop:Generator_UserColumnName="ID_CLIENTE" type="xs:int" />
@@ -217,6 +249,40 @@ FROM            VENDA_PRODUTO INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOME_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_UserColumnName="NOME_FORNECEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDENTIDADE_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnIDENTIDADE_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="IDENTIDADE_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="IDENTIDADE_FORNECEDORColumn" msprop:Generator_UserColumnName="IDENTIDADE_FORNECEDOR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUANTIDADE_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnQUANTIDADE_PRODUTO" msprop:Generator_ColumnPropNameInRow="QUANTIDADE_PRODUTO" msprop:Generator_ColumnPropNameInTable="QUANTIDADE_PRODUTOColumn" msprop:Generator_UserColumnName="QUANTIDADE_PRODUTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOME_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnNOME_PRODUTO" msprop:Generator_ColumnPropNameInRow="NOME_PRODUTO" msprop:Generator_ColumnPropNameInTable="NOME_PRODUTOColumn" msprop:Generator_UserColumnName="NOME_PRODUTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VALOR_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnVALOR_PRODUTO" msprop:Generator_ColumnPropNameInRow="VALOR_PRODUTO" msprop:Generator_ColumnPropNameInTable="VALOR_PRODUTOColumn" msprop:Generator_UserColumnName="VALOR_PRODUTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VALOR_FORNECIMENTO" msprop:Generator_ColumnVarNameInTable="columnVALOR_FORNECIMENTO" msprop:Generator_ColumnPropNameInRow="VALOR_FORNECIMENTO" msprop:Generator_ColumnPropNameInTable="VALOR_FORNECIMENTOColumn" msprop:Generator_UserColumnName="VALOR_FORNECIMENTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATA_FORNECIMENTO" msprop:Generator_ColumnVarNameInTable="columnDATA_FORNECIMENTO" msprop:Generator_ColumnPropNameInRow="DATA_FORNECIMENTO" msprop:Generator_ColumnPropNameInTable="DATA_FORNECIMENTOColumn" msprop:Generator_UserColumnName="DATA_FORNECIMENTO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ID_FORNECIMENTO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_FORNECIMENTO" msprop:Generator_ColumnPropNameInRow="ID_FORNECIMENTO" msprop:Generator_ColumnPropNameInTable="ID_FORNECIMENTOColumn" msprop:Generator_UserColumnName="ID_FORNECIMENTO" type="xs:int" />
+              <xs:element name="ID_FORNECEDOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="ID_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ID_FORNECEDORColumn" msprop:Generator_UserColumnName="ID_FORNECEDOR" type="xs:int" />
+              <xs:element name="VALORTOTALITEM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVALORTOTALITEM" msprop:Generator_ColumnPropNameInRow="VALORTOTALITEM" msprop:Generator_ColumnPropNameInTable="VALORTOTALITEMColumn" msprop:Generator_UserColumnName="VALORTOTALITEM" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -226,6 +292,10 @@ FROM            VENDA_PRODUTO INNER JOIN
       <xs:field xpath="mstns:ID_USUARIO" />
       <xs:field xpath="mstns:ID_VENDA_PRODUTO" />
       <xs:field xpath="mstns:ID_VENDA" />
+    </xs:unique>
+    <xs:unique name="DataTable2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable2" />
+      <xs:field xpath="mstns:ID_FORNECIMENTO" />
     </xs:unique>
   </xs:element>
 </xs:schema>

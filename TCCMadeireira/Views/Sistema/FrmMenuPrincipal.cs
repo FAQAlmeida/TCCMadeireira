@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TCCMadeireira.Views.Relatorios;
 using TCCMadeireira.Views.Relatorios.Views;
+using TCCMadeireira.Views.Relatorios.Views.Fornecimento;
 using TCCMadeireira.Views.Sistema;
 
 namespace TCCMadeireira.Views
@@ -33,6 +34,7 @@ namespace TCCMadeireira.Views
         FrmBackup frmBackup;
         FrmRelatorioVendas frmRelatorioVendas;
         FrmFiltrarVendasData frmRelatorioVendasFiltro;
+        FrmRelatorioFornecimento frmRelatoriofornecimento;
         #endregion
         #region Construtor
         /// <summary>
@@ -332,8 +334,76 @@ namespace TCCMadeireira.Views
             timer.Start();
         }
 
+
         #endregion
 
-        
+        private void totalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmRelatorioVendas"] == null)
+                {
+                    frmRelatorioVendas = new FrmRelatorioVendas
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendas.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmRelatorioVendas.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void MesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmFiltrarVendasData"] == null)
+                {
+                    frmRelatorioVendasFiltro = new FrmFiltrarVendasData
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatorioVendasFiltro.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmRelatorioVendasFiltro.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void MesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Application.OpenForms["FrmRelatorioFornecimento"] == null)
+                {
+                    frmRelatoriofornecimento = new FrmRelatorioFornecimento
+                    {
+                        MdiParent = this
+                    };
+                    frmRelatoriofornecimento.Show();
+                }
+                else
+                {
+                    Application.OpenForms[frmRelatoriofornecimento.Name].BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -239,7 +239,17 @@
             Represents the strongly named DataTable class.
             </summary>
         </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable2DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable1Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable2Row">
              <summary>
             Represents strongly named DataRow class.
             </summary>
@@ -249,7 +259,17 @@
             Row event argument class
             </summary>
         </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReport.DataTable2RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
         <member name="T:TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable2TableAdapter">
              <summary>
             Represents the connection and commands used to retrieve and save data.
             </summary>
@@ -800,6 +820,23 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:TCCMadeireira.Views.FrmFuncionario.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:TCCMadeireira.Views.Relatorios.Views.Fornecimento.FrmRelatorioFornecimento.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TCCMadeireira.Views.Relatorios.Views.Fornecimento.FrmRelatorioFornecimento.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TCCMadeireira.Views.Relatorios.Views.Fornecimento.FrmRelatorioFornecimento.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
