@@ -215,16 +215,16 @@
     <Compile Include="Views\Cadastro\FrmFuncionario.Designer.cs">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Relatorios\Views\FrmRelatorioMovimentoEstoque.cs">
+    <Compile Include="Views\Relatorios\Views\Venda\FrmRelatorioMovimentoEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Relatorios\Views\FrmRelatorioMovimentoEstoque.Designer.cs">
+    <Compile Include="Views\Relatorios\Views\Venda\FrmRelatorioMovimentoEstoque.Designer.cs">
       <DependentUpon>FrmRelatorioMovimentoEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Relatorios\Views\FrmRelatorioVendas.cs">
+    <Compile Include="Views\Relatorios\Views\Venda\FrmRelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Relatorios\Views\FrmRelatorioVendas.Designer.cs">
+    <Compile Include="Views\Relatorios\Views\Venda\FrmRelatorioVendas.Designer.cs">
       <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Sistema\FrmBackup.cs">
@@ -292,12 +292,12 @@
     <EmbeddedResource Include="Views\Cadastro\FrmFuncionario.resx">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Relatorios\Reports\VendasDataReport.rdlc" />
-    <EmbeddedResource Include="Views\Relatorios\Reports\VendasReport.rdlc" />
-    <EmbeddedResource Include="Views\Relatorios\Views\FrmRelatorioMovimentoEstoque.resx">
+    <EmbeddedResource Include="Views\Relatorios\Reports\Venda\VendasDataReport.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\Reports\Venda\VendasReport.rdlc" />
+    <EmbeddedResource Include="Views\Relatorios\Views\Venda\FrmRelatorioMovimentoEstoque.resx">
       <DependentUpon>FrmRelatorioMovimentoEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Relatorios\Views\FrmRelatorioVendas.resx">
+    <EmbeddedResource Include="Views\Relatorios\Views\Venda\FrmRelatorioVendas.resx">
       <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sistema\FrmBackup.resx">
@@ -407,6 +407,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Relatorios\Views\Fornecimento\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

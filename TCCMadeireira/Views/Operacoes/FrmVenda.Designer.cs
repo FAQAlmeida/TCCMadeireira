@@ -56,8 +56,8 @@
             this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cmbOper = new System.Windows.Forms.ComboBox();
+            this.numDesc = new System.Windows.Forms.NumericUpDown();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.pnlVenda = new System.Windows.Forms.Panel();
             this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -71,7 +71,7 @@
             this.grbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDesc)).BeginInit();
             this.pnlVenda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -291,8 +291,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.cmbOper);
+            this.panel1.Controls.Add(this.numDesc);
             this.panel1.Controls.Add(this.lblValorTotal);
             this.panel1.Location = new System.Drawing.Point(555, 177);
             this.panel1.Name = "panel1";
@@ -308,25 +308,28 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "DESCONTO:";
             // 
-            // comboBox1
+            // cmbOper
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbOper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOper.FormattingEnabled = true;
+            this.cmbOper.Items.AddRange(new object[] {
             "%",
             "R$"});
-            this.comboBox1.Location = new System.Drawing.Point(126, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(36, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbOper.Location = new System.Drawing.Point(126, 31);
+            this.cmbOper.Name = "cmbOper";
+            this.cmbOper.Size = new System.Drawing.Size(52, 21);
+            this.cmbOper.TabIndex = 4;
+            this.cmbOper.SelectedIndexChanged += new System.EventHandler(this.CmbOper_SelectedIndexChanged);
             // 
-            // numericUpDown1
+            // numDesc
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.numDesc.DecimalPlaces = 2;
+            this.numDesc.Location = new System.Drawing.Point(6, 32);
+            this.numDesc.Name = "numDesc";
+            this.numDesc.Size = new System.Drawing.Size(114, 20);
+            this.numDesc.TabIndex = 3;
+            this.numDesc.ValueChanged += new System.EventHandler(this.NumDesc_ValueChanged);
+            this.numDesc.Leave += new System.EventHandler(this.NumDesc_Leave);
             // 
             // lblValorTotal
             // 
@@ -408,7 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDesc)).EndInit();
             this.pnlVenda.ResumeLayout(false);
             this.pnlVenda.PerformLayout();
             this.ResumeLayout(false);
@@ -442,8 +445,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox cmbOper;
+        private System.Windows.Forms.NumericUpDown numDesc;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
         private MaterialSkin.Controls.MaterialRaisedButton btnFinalizar;
     }

@@ -37,13 +37,17 @@
             this.btnFinalizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cmbOper = new System.Windows.Forms.ComboBox();
+            this.numDesc = new System.Windows.Forms.NumericUpDown();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.grbProdutos = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbFornecedor = new System.Windows.Forms.GroupBox();
             this.rbtnCnpj = new System.Windows.Forms.RadioButton();
             this.rbtnCpf = new System.Windows.Forms.RadioButton();
@@ -52,14 +56,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
-            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
             this.pnlVenda.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDesc)).BeginInit();
             this.grbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbFornecedor.SuspendLayout();
@@ -120,8 +120,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.cmbOper);
+            this.panel1.Controls.Add(this.numDesc);
             this.panel1.Controls.Add(this.lblValorTotal);
             this.panel1.Location = new System.Drawing.Point(555, 177);
             this.panel1.Name = "panel1";
@@ -137,25 +137,27 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "DESCONTO:";
             // 
-            // comboBox1
+            // cmbOper
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbOper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOper.FormattingEnabled = true;
+            this.cmbOper.Items.AddRange(new object[] {
             "%",
             "R$"});
-            this.comboBox1.Location = new System.Drawing.Point(126, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(36, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cmbOper.Location = new System.Drawing.Point(126, 31);
+            this.cmbOper.Name = "cmbOper";
+            this.cmbOper.Size = new System.Drawing.Size(48, 21);
+            this.cmbOper.TabIndex = 7;
+            this.cmbOper.SelectedIndexChanged += new System.EventHandler(this.CmbOper_SelectedIndexChanged);
             // 
-            // numericUpDown1
+            // numDesc
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
-            this.numericUpDown1.TabIndex = 6;
+            this.numDesc.DecimalPlaces = 2;
+            this.numDesc.Location = new System.Drawing.Point(6, 32);
+            this.numDesc.Name = "numDesc";
+            this.numDesc.Size = new System.Drawing.Size(114, 20);
+            this.numDesc.TabIndex = 6;
+            this.numDesc.ValueChanged += new System.EventHandler(this.NumDesc_ValueChanged);
             // 
             // lblValorTotal
             // 
@@ -220,6 +222,32 @@
             this.dgvProdutos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProdutos_KeyDown);
             this.dgvProdutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvProdutos_KeyPress);
             this.dgvProdutos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProdutos_KeyUp);
+            // 
+            // IdProduto
+            // 
+            this.IdProduto.HeaderText = "ID";
+            this.IdProduto.Name = "IdProduto";
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.HeaderText = "NOME";
+            this.NomeProduto.Name = "NomeProduto";
+            // 
+            // QuantidadeProduto
+            // 
+            dataGridViewCellStyle1.Format = "N4";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.QuantidadeProduto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.QuantidadeProduto.HeaderText = "QUANTIDADE";
+            this.QuantidadeProduto.Name = "QuantidadeProduto";
+            // 
+            // ValorProduto
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.ValorProduto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ValorProduto.HeaderText = "VALOR";
+            this.ValorProduto.Name = "ValorProduto";
             // 
             // grbFornecedor
             // 
@@ -308,32 +336,6 @@
             this.txtIdentidade.TabIndex = 31;
             this.txtIdentidade.Leave += new System.EventHandler(this.TxtIdentidade_Leave);
             // 
-            // IdProduto
-            // 
-            this.IdProduto.HeaderText = "ID";
-            this.IdProduto.Name = "IdProduto";
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.HeaderText = "NOME";
-            this.NomeProduto.Name = "NomeProduto";
-            // 
-            // QuantidadeProduto
-            // 
-            dataGridViewCellStyle1.Format = "N4";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.QuantidadeProduto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.QuantidadeProduto.HeaderText = "QUANTIDADE";
-            this.QuantidadeProduto.Name = "QuantidadeProduto";
-            // 
-            // ValorProduto
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.ValorProduto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ValorProduto.HeaderText = "VALOR";
-            this.ValorProduto.Name = "ValorProduto";
-            // 
             // FrmFornecimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,7 +356,7 @@
             this.pnlVenda.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDesc)).EndInit();
             this.grbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.grbFornecedor.ResumeLayout(false);
@@ -381,8 +383,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtIdentidade;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox cmbOper;
+        private System.Windows.Forms.NumericUpDown numDesc;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
         private MaterialSkin.Controls.MaterialRaisedButton btnFinalizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;

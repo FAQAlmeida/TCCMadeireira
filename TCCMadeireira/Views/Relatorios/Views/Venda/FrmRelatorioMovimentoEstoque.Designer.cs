@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
             this.pnlReportViewer = new System.Windows.Forms.Panel();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new TCCMadeireira.Bancos.DataSetReportTableAdapters.DataTable1TableAdapter();
-            this.pnlReportViewer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).BeginInit();
+            this.pnlReportViewer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.dataSetReport;
+            // 
+            // dataSetReport
+            // 
+            this.dataSetReport.DataSetName = "DataSetReport";
+            this.dataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnlReportViewer
             // 
@@ -54,22 +64,12 @@
             reportDataSource1.Name = "DataSetVendas";
             reportDataSource1.Value = this.dataTable1BindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.VendasDataReport.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.Venda.VendasDataReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
             this.reportViewer.Size = new System.Drawing.Size(1250, 452);
             this.reportViewer.TabIndex = 0;
-            // 
-            // dataSetReport
-            // 
-            this.dataSetReport.DataSetName = "DataSetReport";
-            this.dataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.dataSetReport;
             // 
             // dataTable1TableAdapter
             // 
@@ -84,9 +84,9 @@
             this.Name = "FrmFiltrarVendasData";
             this.Text = "FrmFiltrarVendasData";
             this.Load += new System.EventHandler(this.FrmFiltrarVendasData_Load);
-            this.pnlReportViewer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();
+            this.pnlReportViewer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

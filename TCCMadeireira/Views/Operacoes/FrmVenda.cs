@@ -104,6 +104,7 @@ namespace TCCMadeireira.Views
                 Convert.ToString(usersdt.Rows[0]["nivel_usuario"])
             );
              frmProdOper = new FrmProdOper(this);
+            cmbOper.SelectedIndex = 0;
         }
         #endregion
         #region @event.Click
@@ -226,7 +227,7 @@ namespace TCCMadeireira.Views
             {
                 valorTotal += (prod.Quantidade * prod.Produto.Valor);
             }
-            valor = valorTotal;
+            valor = cmbOper.SelectedIndex == 0 ? valorTotal - (valor * numDesc.Value / 100) : valorTotal - numDesc.Value;
             lblValorTotal.Text = String.Format("Valor Total: R$ {0:f2}", valor);
         }
         private void ValorSet(object sender, DataGridViewRowsAddedEventArgs e)
@@ -459,6 +460,31 @@ namespace TCCMadeireira.Views
             //if(!(dgvProdutos.CurrentCell is null))
             //    if(dgvProdutos.Columns[dgvProdutos.CurrentCell.ColumnIndex].HeaderText.Equals("QUANTIDADE"))
             //        toolTip.Show("Quantidade Máxima" + dgvProdutos.CurrentCell.Value.ToString(), this);
+        }
+
+        private void CmbOper_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbOper.SelectedIndex == 0)
+            {
+                numDesc.DecimalPlaces = 0;
+                numDesc.Maximum = 100;
+            }
+
+            else
+            {
+                numDesc.DecimalPlaces = 2;
+                numDesc.Maximum = valor;
+            }
+        }
+
+        private void NumDesc_ValueChanged(object sender, EventArgs e)
+        {
+            ValorSet();
+        }
+
+        private void NumDesc_Leave(object sender, EventArgs e)
+        {
+            ValorSet();
         }
     }
 }

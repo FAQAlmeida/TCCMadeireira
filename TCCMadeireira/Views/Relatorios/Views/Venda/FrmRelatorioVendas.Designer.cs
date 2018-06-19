@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetReport = new TCCMadeireira.Bancos.DataSetReport();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -53,10 +53,10 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSetVendasReport";
-            reportDataSource2.Value = this.dataTable1BindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.VendasReport.rdlc";
+            reportDataSource1.Name = "DataSetVendasReport";
+            reportDataSource1.Value = this.dataTable1BindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "TCCMadeireira.Views.Relatorios.Reports.Venda.VendasReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
