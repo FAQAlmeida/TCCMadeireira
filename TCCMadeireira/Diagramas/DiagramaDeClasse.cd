@@ -3,70 +3,63 @@
   <Class Name="TCCMadeireira.Views.FrmCliente">
     <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>4ABQRIAHdLgKAIigAKDAGIAqGIBAoKCLAVkQJBZAAgg=</HashCode>
-      <FileName>Views\FrmCliente.cs</FileName>
+      <HashCode>4ABRRIAncLgKIYigEaDEGIAqGoBAoKGLAMkYphZAAyg=</HashCode>
+      <FileName>Views\Cadastro\FrmCliente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmVenda">
-    <Position X="14.5" Y="8.25" Width="1.5" />
+    <Position X="12.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QEAIAQACACAARJAAGGiKAAACSAgAAQQAQMRAkQQAAhA=</HashCode>
-      <FileName>Views\FrmVenda.cs</FileName>
+      <HashCode>YFgIBQgiACAAZpAAGWqKAgACyggABQQIQexAkQwEChA=</HashCode>
+      <FileName>Views\Operacoes\FrmVenda.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmFornecedor">
     <Position X="5.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIQAIAGYDAqAEKBACDUEIAGCQFAIACBACAAAQQAAgQ=</HashCode>
-      <FileName>Views\FrmFornecedor.cs</FileName>
+      <HashCode>4CBQAIAGYDAKAMqBACDkGIAuGAEAIKgLAEgIARZgAgQ=</HashCode>
+      <FileName>Views\Cadastro\FrmFornecedor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmFornecimento">
     <Position X="4" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAIAQAAACAABJAAWGCIAAACCAAAAQQAAARAEQAAAgA=</HashCode>
-      <FileName>Views\FrmFornecimento.cs</FileName>
+      <HashCode>YFAIAQgoACAARpAAWW6IAgACSABABQQIAeRAkQAECgA=</HashCode>
+      <FileName>Views\Operacoes\FrmFornecimento.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmFuncionario">
     <Position X="2.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gCAQSIAEYDAaQBqBACDEEIA6GAAAJKgLAmgAARQDAgQ=</HashCode>
-      <FileName>Views\FrmFuncionario.cs</FileName>
+      <HashCode>wAAQSIAGYjAaAJiAECDIEIB7GAAAIKoLAGgKCTIAAgQ=</HashCode>
+      <FileName>Views\Cadastro\FrmFuncionario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmMenuPrincipal">
     <Position X="7.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAAQCAASABAABZwYKEAIQDAABBAIJBBAAAAAAgAAE=</HashCode>
-      <FileName>Views\FrmMenuPrincipal.cs</FileName>
+      <HashCode>BKQCBYCAiSgBAIBRxQOcAIQDAABBAIJDBAEEACAgAAM=</HashCode>
+      <FileName>Views\Sistema\FrmMenuPrincipal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmProduto">
     <Position X="9.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAQAIACBDAjAECRAADAEABCAAEAAAAhACAAAQUAAQQ=</HashCode>
-      <FileName>Views\FrmProduto.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="TCCMadeireira.Views.FrmProdVenda">
-    <Position X="12.75" Y="8.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>QCAAQBACADAoAICBDACAQCAKRABAIAEAAAAAAQQAAAQ=</HashCode>
-      <FileName>Views\FrmProdVenda.cs</FileName>
+      <HashCode>wEBQAAACICAiAIiAAAGAEAAqBAAATSApBggBAQIBB4A=</HashCode>
+      <FileName>Views\Cadastro\FrmProduto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Views.FrmUsuario">
     <Position X="11" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAACCCAJAAAACAEAACAAAAAEABgAAAAAAAAAA=</HashCode>
-      <FileName>Views\FrmUsuario.cs</FileName>
+      <HashCode>QAAEAAICIDCqANiAAACBGAAiAAAAAGAJgAAIAAZAAAQ=</HashCode>
+      <FileName>Views\Cadastro\FrmUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Bancos.Banco">
     <Position X="16.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAABABERAAAAAAAACEQQEJAAAAAAAAIAgAAAAABA=</HashCode>
+      <HashCode>AhEARABABEVQQIgCCASCEQQVJFAAAAAAANJgGABgABA=</HashCode>
       <FileName>Util\Banco.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -84,11 +77,11 @@
       <FileName>Models\Cliente.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TCCMadeireira.Model.ValidarCpfCnpj">
+  <Class Name="TCCMadeireira.Model.ValidarIdentidade">
     <Position X="19.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAAA=</HashCode>
-      <FileName>Util\ValidarCpfCnpj.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Util\ValidarIdentidade.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Models.Funcionario">
@@ -108,36 +101,64 @@
   <Class Name="TCCMadeireira.Models.Usuario">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAGAAAABAAAAAAAAAABIAAAASAAAAAAAAAAAAEAAgA=</HashCode>
+      <HashCode>AQAGAAAABAAAAAAEgAABIAAAASAAAIAAAAAAAAEAAgA=</HashCode>
       <FileName>Models\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Models.Produto">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQACAAAAAAAAAAAAAAABAAAEAQAABAAAAAASAAEAEgA=</HashCode>
+      <HashCode>AQACAAAAAAAAIAAAACAAAAAEAAAABAAAAAASAAEAEgA=</HashCode>
       <FileName>Models\Produto.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TCCMadeireira.Models.ProdVenda">
+  <Class Name="TCCMadeireira.Models.ProdOper">
     <Position X="12.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAE=</HashCode>
-      <FileName>Models\ProdVenda.cs</FileName>
+      <HashCode>AAAAAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAQAAAAEAE=</HashCode>
+      <FileName>Models\ProdOper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Models.Venda">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAQAAAAAAAAAAAACBAAAEgQAABAAAAAAAAAAAAgE=</HashCode>
+      <HashCode>AAAKAAAAAAAAAAAEAACBAAAEgQAABAQAAAAEAAAACgA=</HashCode>
       <FileName>Models\Venda.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TCCMadeireira.Models.Fornecimento">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAKAAAAAAAAAAAAAAABAAAAAQAAAAAAAAACAAEACgA=</HashCode>
+      <HashCode>AAAKAAAAAAAAIAAAACABAAAEAQAABAQAAAAGAAAACgA=</HashCode>
       <FileName>Models\Fornecimento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Views.FrmLogin">
+    <Position X="14.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACCAAAAAAACAAQAiALAAAEAIAAAAAABAAAA=</HashCode>
+      <FileName>Views\Sistema\FrmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Views.Relatorios.Views.FrmFiltrarVendasData">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQSAAESCAAAAAAAAAAAAAIAgAAA=</HashCode>
+      <FileName>Views\Relatorios\Views\Venda\FrmRelatorioMovimentoEstoque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Views.Relatorios.FrmRelatorioVendas">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQSAAASCAAAAAAAgAEAAAIAgAAA=</HashCode>
+      <FileName>Views\Relatorios\Views\Venda\FrmRelatorioVendas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TCCMadeireira.Views.Relatorios.Views.Fornecimento.FrmRelatorioFornecimento">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAASCAAAIAAAAAAAAAIAogAA=</HashCode>
+      <FileName>Views\Relatorios\Views\Fornecimento\FrmRelatorioFornecimento.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

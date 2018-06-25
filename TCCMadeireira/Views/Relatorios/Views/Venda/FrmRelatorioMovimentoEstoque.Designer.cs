@@ -48,6 +48,7 @@
             // dataSetReport
             // 
             this.dataSetReport.DataSetName = "DataSetReport";
+            this.dataSetReport.EnforceConstraints = false;
             this.dataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnlReportViewer
@@ -82,7 +83,7 @@
             this.ClientSize = new System.Drawing.Size(1250, 515);
             this.Controls.Add(this.pnlReportViewer);
             this.Name = "FrmFiltrarVendasData";
-            this.Text = "FrmFiltrarVendasData";
+            this.Text = "Relatório de Vendas";
             this.Load += new System.EventHandler(this.FrmFiltrarVendasData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReport)).EndInit();

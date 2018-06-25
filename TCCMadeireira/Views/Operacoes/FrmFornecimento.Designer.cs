@@ -40,8 +40,6 @@
             this.cmbOper = new System.Windows.Forms.ComboBox();
             this.numDesc = new System.Windows.Forms.NumericUpDown();
             this.lblValorTotal = new System.Windows.Forms.Label();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
             this.grbProdutos = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentidade = new System.Windows.Forms.MaskedTextBox();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             cPF_CNPJ_CLIENTELabel = new System.Windows.Forms.Label();
             this.pnlVenda.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -167,28 +167,6 @@
             this.lblValorTotal.Size = new System.Drawing.Size(84, 13);
             this.lblValorTotal.TabIndex = 2;
             this.lblValorTotal.Text = "Valor Total:  R$ ";
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Location = new System.Drawing.Point(549, 40);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(75, 23);
-            this.btnRemover.TabIndex = 1;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Visible = false;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Location = new System.Drawing.Point(549, 11);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionar.TabIndex = 0;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Visible = false;
-            this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // grbProdutos
             // 
@@ -336,6 +314,28 @@
             this.txtIdentidade.TabIndex = 31;
             this.txtIdentidade.Leave += new System.EventHandler(this.TxtIdentidade_Leave);
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Location = new System.Drawing.Point(549, 40);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(75, 23);
+            this.btnRemover.TabIndex = 1;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Visible = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Location = new System.Drawing.Point(549, 11);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Visible = false;
+            this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
+            // 
             // FrmFornecimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,8 +370,6 @@
         private System.Windows.Forms.Panel pnlVenda;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblValorTotal;
-        private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.GroupBox grbProdutos;
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.GroupBox grbFornecedor;
@@ -391,5 +389,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnAdicionar;
     }
 }

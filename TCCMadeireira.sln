@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCMadeireira", "TCCMadeireira\TCCMadeireira.csproj", "{5E666828-E2C2-4951-958C-05F305BFDEAC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TCCMedeireiraSetup", "TCCMedeireiraSetup\TCCMedeireiraSetup.vdproj", "{FFA108FB-B812-4BE9-94AB-900C949A89B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{5E666828-E2C2-4951-958C-05F305BFDEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E666828-E2C2-4951-958C-05F305BFDEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E666828-E2C2-4951-958C-05F305BFDEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA108FB-B812-4BE9-94AB-900C949A89B5}.Debug|Any CPU.ActiveCfg = Debug
+		{FFA108FB-B812-4BE9-94AB-900C949A89B5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

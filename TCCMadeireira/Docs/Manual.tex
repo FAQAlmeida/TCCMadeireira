@@ -70,7 +70,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Manual do Software MadeOeste}
+\titulo{Manual do Software São José}
 \autor{Otávio A. de Almeida \\ Cauê R. Sampaio \\ Ranan Augusto}
 \local{Sorocaba}
 \data{2018, v-1.0.2}
@@ -87,9 +87,9 @@
 	%pagebackref=true,
 	pdftitle={\@title}, 
 	pdfauthor={\@author},
-	pdfsubject={Manual do Software MadeOeste},
+	pdfsubject={Manual do Software São José},
 	pdfcreator={LaTeX with abnTeX2},
-	pdfkeywords={Manual}{MadeOeste}{TCC}{Fernendo Prestes}{Informática}, 
+	pdfkeywords={Manual}{São José}{TCC}{Fernendo Prestes}{Informática}, 
 	colorlinks=true,       		% false: boxed links; true: colored links
 	linkcolor=black,          	% color of internal links
 	citecolor=blue,        		% color of links to bibliography
@@ -375,34 +375,34 @@
 			\subsubsection{Região da Tabela}
 			A parte inferior é uma tabela que mostra todos os produtos registrados no sistema caso não haja filtro, senão ela mostra todos os produtos registrados que coincidem com o filtro.
 \newpage
-	\section{Formulário de I.P.O (Inserção de Produto em Operações)}
-		\begin{figure}[!htb]
-			\centering
-			\includegraphics[scale=0.9]{./Figuras/FrmProdVenda.png}
-			\caption{Formulário de Inserção de Produto em Operações}
-		\end{figure}
-		\subsection{Objetivo}
-		O formulário de I.P.O tem o objetivo de cadastrar novos produtos em uma venda ou fornecimento.
-		\subsection{Funcionalidades}
-		\begin{itemize}
-			\item Incluir um novo produto em uma venda ou fornecimento
-			\item Acessar informações dos produtos cadastrados
-		\end{itemize}
-		\subsection{Componentes}
-			\subsubsection{Região de dados}
-			O formulário de I.P.O terá uma região de dados, que ocupa a região superior esquerda da tela, destinada a inserção dados de um produto para o fornecimento ou venda especificados. 
-			
-			Os componentes dessa região são:
-			\begin{itemize}\itemsep1.5pt
-				\item A quantidade do produto
-				\item O valor do produto
-			\end{itemize}	
-			\subsubsection{Região de operações e miscelânea}
-			A região superior direita é destinada aos botões de operação, o campo de filtro por código ou nome do produto.
-			\subsubsection{Região da Tabela}
-			A parte inferior é uma tabela que mostra todos os produtos registrados no sistema caso não haja filtro, senão ela mostra todos os produtos registrados que coincidem com o filtro.
-			
-			Essa região é importante porque o produto selecionado na tabela será repassado no formulário de venda ou fornecimento especificados.
+%	\section{Formulário de I.P.O (Inserção de Produto em Operações)}
+%		\begin{figure}[!htb]
+%			\centering
+%			\includegraphics[scale=0.9]{./Figuras/FrmProdVenda.png}
+%			\caption{Formulário de Inserção de Produto em Operações}
+%		\end{figure}
+%		\subsection{Objetivo}
+%		O formulário de I.P.O tem o objetivo de cadastrar novos produtos em uma venda ou fornecimento.
+%		\subsection{Funcionalidades}
+%		\begin{itemize}
+%			\item Incluir um novo produto em uma venda ou fornecimento
+%			\item Acessar informações dos produtos cadastrados
+%		\end{itemize}
+%		\subsection{Componentes}
+%			\subsubsection{Região de dados}
+%			O formulário de I.P.O terá uma região de dados, que ocupa a região superior esquerda da tela, destinada a inserção dados de um produto para o fornecimento ou venda especificados. 
+%			
+%			Os componentes dessa região são:
+%			\begin{itemize}\itemsep1.5pt
+%				\item A quantidade do produto
+%				\item O valor do produto
+%			\end{itemize}	
+%			\subsubsection{Região de operações e miscelânea}
+%			A região superior direita é destinada aos botões de operação, o campo de filtro por código ou nome do produto.
+%			\subsubsection{Região da Tabela}
+%			A parte inferior é uma tabela que mostra todos os produtos registrados no sistema caso não haja filtro, senão ela mostra todos os produtos registrados que coincidem com o filtro.
+%			
+%			Essa região é importante porque o produto selecionado na tabela será repassado no formulário de venda ou fornecimento especificados.
 	\newpage
 	\section{Formulário de Usuários}
 		\begin{figure}[!htb]
@@ -445,5 +445,26 @@
 			\item Senha: Campo destinado a entrada da senha do usuário	
 			\item Botão Entrar: Verifica os campos do usuário e senha e, se houver registro no sistema, garante acesso ao software	
 			\item Botão Sair: Encerra a aplicação	
+		\end{itemize}
+	\newpage
+	\section{Formulário de Relatório}
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[scale=0.4]{./Figuras/FrmRelatorio.png}
+			\caption{Formulário de Relatório}
+		\end{figure}
+		\subsection{Objetivo}
+		O formulário de relatórios tem como objetivo mostrar ao usuário logado informações relacionadas as operações do sistema.
+		
+		Essas informações são dispostas de forma clara e filtrada por data.
+		\subsection{Funcionalidades}
+		\begin{itemize}
+			\item Obter informações das operações do sistema
+		\end{itemize}
+		\subsection{Componentes}
+		Os componentes dessa região são:
+		\begin{itemize}\itemsep1.5pt	
+			\item Barra de ferramentas: Barra localizada logo abaixo do cabeçalho do formulário, permite visualizar e imprimir as páginas do relatório, recarregar o relatório e exportar esse relatório para PDF, WORD e EXCEL
+			\item Relatório: Páginas contendo a informação especifica, ocupa toda a parte abaixo da barra de ferramentas e recebe os comandos da barra de ferramentas
 		\end{itemize}
 \end{document}
